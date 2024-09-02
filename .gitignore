@@ -228,6 +228,7 @@ fabric.properties
 
 #Webstorm Project
 .idea/.gitignore
+.idea/codeStyles/Project.xml
 .idea/codeStyles/codeStyleConfig.xml
 .idea/inspectionProfiles/Project_Default.xml
 .idea/vcs.xml
