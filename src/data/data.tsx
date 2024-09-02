@@ -108,16 +108,17 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Use this bio section as your way of describing yourself and saying what you do, what technologies you like
-  to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing
-  in.`,
+  description: `I am an innovative and down-to-earth team player who learns continuously and analyses quickly. I develop 
+  creative solutions for complex problems. What I develop works reliably.`,
   aboutItems: [
-    {label: 'Location', text: 'Victoria, BC', Icon: MapIcon},
-    {label: 'Age', text: '29', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Canadian / Irish', Icon: FlagIcon},
-    {label: 'Interests', text: 'Motorcycles, Muay Thai, Banjos', Icon: SparklesIcon},
-    {label: 'Study', text: 'University of Victoria', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Instant Domains, inc.', Icon: BuildingOffice2Icon},
+    {label: 'Location', text: 'Leipzig, Germany and Povoado do Moinho, Alto Paraíso de Goiás, Brazil', Icon: MapIcon},
+    {label: 'Study', text: 'Self-studied', Icon: AcademicCapIcon},
+    {label: 'Nationality', text: 'German / Brazil Residence', Icon: FlagIcon},
+    {label: 'Job Training', text: 'Full-Stack Web Developer (2021)', Icon: AcademicCapIcon},
+    {label: 'Age', text: '49', Icon: CalendarIcon},
+    {label: 'Job Training', text: 'Scrum Master PSMI (2020)', Icon: AcademicCapIcon},
+    {label: 'Interests', text: 'Travel, Family, Music', Icon: SparklesIcon},
+    {label: 'Job Education', text: 'Industrial clerk (2004)', Icon: BuildingOffice2Icon},
   ],
 };
 
