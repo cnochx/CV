@@ -69,25 +69,29 @@ export type SectionId = (typeof SectionId)[keyof typeof SectionId];
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
-  name: `I'm Tim Baker.`,
+  name: `I'm Martin (Rudra) Grellmann.`,
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Victoria based <strong className="text-stone-100">Full Stack Software Engineer</strong>, currently working
-        at <strong className="text-stone-100">Instant Domains</strong> helping build a modern, mobile-first, domain
-        registrar and site builder.
+        I am a <strong className="text-stone-100">Full-stack software engineer</strong>, currently working as
+        <strong className="text-stone-100">Technical Consult</strong>. I am trained on the requirements of
+        enterprise software development in an industrial context. I am a german with Brasilien residence, working as
+        developer <strong className="text-stone-100">since 2002</strong>.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, you can catch me training in <strong className="text-stone-100">Muay Thai</strong>,
-        plucking my <strong className="text-stone-100">banjo</strong>, or exploring beautiful{' '}
-        <strong className="text-stone-100">Vancouver Island</strong>.
+        I am an innovative and down-to-earth team player who <strong className="text-stone-100">learns continuously</strong> and
+        <strong className="text-stone-100">analyses quickly</strong>. I develop
+        creative solutions for complex problems. <strong className="text-stone-100">Clean code</strong> and <strong className="text-stone-100">S.O.L.I.D.</strong>
+        principles
+        are important to me in order to guarantee <strong className="text-stone-100">high software quality</strong>. What I
+        develop works.
       </p>
     </>
   ),
   actions: [
     {
-      href: '/assets/resume.pdf',
-      text: 'Resume',
+      href: '/assets/cv_martin_grellmann.pdf',
+      text: 'CV as PDF',
       primary: true,
       Icon: ArrowDownTrayIcon,
     },
