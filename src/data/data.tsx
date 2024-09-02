@@ -723,7 +723,7 @@ export const imprintItems: ImprintSection = {
       text: 'Martin Grellmann',
     },
     {
-      text: 'Vogelweide 43',
+      text: 'Vogelmauer 43',
     },
     {
       text: '86152 Augsburg',
