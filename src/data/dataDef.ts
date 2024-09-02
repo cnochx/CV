@@ -90,7 +90,18 @@ export interface TimelineItem {
   date: string;
   location: string;
   title: string;
+  about: string;
   content: JSX.Element;
+  experiences: expItem[];
+}
+export interface expItem {
+  text: string;
+}
+export interface LifeItem {
+  relationshipStatus: string;
+  familyStatus: string;
+  privateInterests: string;
+  location: string;
 }
 
 /**
