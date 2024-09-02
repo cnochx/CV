@@ -10,7 +10,7 @@ import {
 
 import GithubIcon from '../components/Icon/GithubIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
-import heroImage from '../images/header-background.webp';
+import heroImage from '../images/hero_background.webp';
 import porfolioImage1 from '../images/portfolio/portfolio-01.jpg';
 import porfolioImage2 from '../images/portfolio/portfolio-02.jpg';
 import porfolioImage3 from '../images/portfolio/portfolio-03.jpg';
@@ -38,12 +38,12 @@ import {
   Hero,
   HomepageMeta,
   ImprintSection,
+  LifeItem,
   PortfolioItem,
   SkillGroup,
   Social,
   TestimonialSection,
   TimelineItem,
-  LifeItem,
 } from './dataDef';
 
 /**
