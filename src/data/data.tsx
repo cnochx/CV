@@ -9,10 +9,7 @@ import {
 } from '@heroicons/react/24/outline';
 
 import GithubIcon from '../components/Icon/GithubIcon';
-import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
-import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
-import TwitterIcon from '../components/Icon/TwitterIcon';
 import heroImage from '../images/header-background.webp';
 import porfolioImage1 from '../images/portfolio/portfolio-01.jpg';
 import porfolioImage2 from '../images/portfolio/portfolio-02.jpg';
@@ -40,6 +37,7 @@ import {
   ContactType,
   Hero,
   HomepageMeta,
+  ImprintSection,
   PortfolioItem,
   SkillGroup,
   Social,
@@ -683,7 +681,6 @@ export const testimonial: TestimonialSection = {
 /**
  * Contact section
  */
-
 export const contact: ContactSection = {
   headerText: 'Get in touch.',
   description: 'Other ways to contact me:',
@@ -710,9 +707,82 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tbakerx'},
-  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/timbakerx/'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/reactresume/'},
-  {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},
+  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/martingrellmann/'},
+  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/chnochx'},
 ];
+
+/**
+ * Imprint items
+ */
+
+export const imprintItems: ImprintSection = {
+  description: '',
+  headerText: 'Person in charge:',
+  items: [
+    {
+      text: 'Martin Grellmann',
+    },
+    {
+      text: 'Vogelweide 43',
+    },
+    {
+      text: '86152 Augsburg',
+    },
+    {
+      text: 'Germany',
+    },
+    {
+      text: '---',
+    },
+    {
+      text: 'Sitio de Cristal',
+    },
+    {
+      text: '73770-000, Povoado do Moinho',
+    },
+    {
+      text: 'Alto Paraíso de Goiás',
+    },
+    {
+      text: 'Goiás, Brazil',
+    },
+  ],
+
+  linkItems: [
+    {
+    linkLabel: 'e-mail:',
+    text: 'martin@grellmann.eu',
+    href: 'mailto:martin@grellmann.eu',
+    },
+    {
+      linkLabel: 'Fax:',
+      text: '+49 322 239 432 99',
+      href: 'tel:004932223943299',
+    }
+  ],
+
+  headerDSGVO: 'Data protection:',
+
+  itemsDSGVO: [
+    {
+      text: 'The sole purpose of this website is to present my CV and related content.'
+    },
+    {
+      text: 'No data will be collected on this page, apart from the usual log files of the domain hoster. '
+    },
+    {
+      text: 'The Logfiles are not evaluated for business purposes'
+    },
+    {
+      text:
+        'By submitting the contact form, name and email will be requested and sent.'
+    },
+    {
+      text:
+        'The responsibility for the websites accessed via any links lies with the respective operators.'
+    },
+    {
+      text: 'When a contact request is made, the corresponding e-mail is saved on the host and the e-mail client.'
+    },
+  ]
+};

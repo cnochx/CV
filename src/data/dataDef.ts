@@ -159,3 +159,29 @@ export interface Social {
   Icon: FC<IconProps>;
   href: string;
 }
+
+/**
+ * Imprint
+ */
+export interface ImprintSection {
+  headerText?: string;
+  description: string;
+  items: ImprintAddressItem[];
+  linkItems: linkItems[];
+  headerDSGVO: string;
+  itemsDSGVO: itemDSGVO[];
+}
+
+export interface itemDSGVO {
+  text: string;
+}
+
+export interface ImprintAddressItem {
+  text: string;
+}
+
+export interface linkItems {
+  linkLabel: string;
+  text: string;
+  href?: string;
+}
