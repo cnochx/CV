@@ -87,7 +87,7 @@ const Testimonials: FC = memo(() => {
               {testimonials.map((testimonial, index) => {
                 const isActive = index === activeIndex;
                 return (
-                  <Testimonial isActive={isActive} key={`${testimonial.name}-${index}`} testimonial={testimonial} />
+                  <Testimonial isActive={isActive} key={`${testimonial.label}-${index}`} testimonial={testimonial} />
                 );
               })}
             </div>
@@ -114,7 +114,7 @@ const Testimonials: FC = memo(() => {
 });
 
 const Testimonial: FC<{testimonial: Testimonial; isActive: boolean}> = memo(
-  ({testimonial: {text, name, image}, isActive}) => (
+  ({testimonial: {text, label, image}, isActive}) => (
     <div
       className={classNames(
         'flex w-full shrink-0 snap-start snap-always flex-col items-start gap-y-4 p-2 transition-opacity duration-1000 sm:flex-row sm:gap-x-6',
@@ -123,14 +123,14 @@ const Testimonial: FC<{testimonial: Testimonial; isActive: boolean}> = memo(
       {image ? (
         <div className="relative h-14 w-14 shrink-0 sm:h-16 sm:w-16">
           <QuoteIcon className="absolute -left-2 -top-2 h-4 w-4 stroke-black text-white" />
-          <img className="h-full w-full rounded-full" src={image} />
+          <img  alt={label} className="h-full w-full rounded-full" src={image} />
         </div>
       ) : (
         <QuoteIcon className="h-5 w-5 shrink-0 text-white sm:h-8 sm:w-8" />
       )}
       <div className="flex flex-col gap-y-4">
+        <p className="text-xs italic text-white sm:text-sm md:text-base lg:text-lg">{label}</p>
         <p className="prose prose-sm font-medium italic text-white sm:prose-base">{text}</p>
-        <p className="text-xs italic text-white sm:text-sm md:text-base lg:text-lg">-- {name}</p>
       </div>
     </div>
   ),

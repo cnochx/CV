@@ -14,17 +14,24 @@ import LinkedInIcon from '../components/Icon/LinkedInIcon';
 import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
 import TwitterIcon from '../components/Icon/TwitterIcon';
 import heroImage from '../images/header-background.webp';
-import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
-import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
-import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
-import porfolioImage4 from '../images/portfolio/portfolio-4.jpg';
-import porfolioImage5 from '../images/portfolio/portfolio-5.jpg';
-import porfolioImage6 from '../images/portfolio/portfolio-6.jpg';
-import porfolioImage7 from '../images/portfolio/portfolio-7.jpg';
-import porfolioImage8 from '../images/portfolio/portfolio-8.jpg';
-import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
+import porfolioImage1 from '../images/portfolio/portfolio-01.jpg';
+import porfolioImage2 from '../images/portfolio/portfolio-02.jpg';
+import porfolioImage3 from '../images/portfolio/portfolio-03.jpg';
+import porfolioImage4 from '../images/portfolio/portfolio-04.jpg';
+import porfolioImage5 from '../images/portfolio/portfolio-05.jpg';
+import porfolioImage6 from '../images/portfolio/portfolio-06.jpg';
+import porfolioImage7 from '../images/portfolio/portfolio-07.jpg';
+import porfolioImage8 from '../images/portfolio/portfolio-08.jpg';
+import porfolioImage9 from '../images/portfolio/portfolio-09.jpg';
 import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
 import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
+import porfolioImage12 from '../images/portfolio/portfolio-12.jpg';
+import porfolioImage13 from '../images/portfolio/portfolio-13.jpg';
+import porfolioImage14 from '../images/portfolio/portfolio-14.jpg';
+import porfolioImage15 from '../images/portfolio/portfolio-15.jpg';
+import porfolioImage16 from '../images/portfolio/portfolio-16.jpg';
+import porfolioImage17 from '../images/portfolio/portfolio-17.jpg';
+import porfolioImage18 from '../images/portfolio/portfolio-18.jpg';
 import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
 import {
@@ -56,11 +63,11 @@ export const SectionId = {
   Hero: 'hero',
   About: 'about',
   Contact: 'contact',
-  Portfolio: 'portfolio',
+  Portfolio: 'stack',
   Resume: 'CV',
   Skills: 'skills',
   Stats: 'stats',
-  Testimonials: 'testimonials',
+  Testimonials: 'foresight',
 } as const;
 
 export type SectionId = (typeof SectionId)[keyof typeof SectionId];
@@ -539,112 +546,115 @@ export const additionalInterests: LifeItem[] = [
  */
 export const portfolioItems: PortfolioItem[] = [
   {
-    title: 'Project title 1',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
+    title: 'HTML5',
+    description: 'HTML5',
+    url: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
     image: porfolioImage1,
   },
   {
-    title: 'Project title 2',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
+    title: 'CSS3',
+    description: 'CSS3',
+    url: 'https://developer.mozilla.org/pt-BR/docs/Web/CSS',
     image: porfolioImage2,
   },
   {
-    title: 'Project title 3',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
+    title: 'JavaScript',
+    description: 'JavaScript',
+    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
     image: porfolioImage3,
   },
   {
-    title: 'Project title 4',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
+    title: 'Ubuntu',
+    description: 'Ubuntu',
+    url: 'https://ubuntu.com/server',
     image: porfolioImage4,
   },
   {
-    title: 'Project title 5',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
+    title: 'PHP 8',
+    description: 'PHP 8',
+    url: 'https://www.php.net',
     image: porfolioImage5,
   },
   {
-    title: 'Project title 6',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
+    title: 'Drupal',
+    description: 'Drupal',
+    url: 'https://www.drupal.org',
     image: porfolioImage6,
   },
   {
-    title: 'Project title 7',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
+    title: 'MySQL',
+    description: 'MySQL',
+    url: 'https://www.mysql.com',
     image: porfolioImage7,
   },
   {
-    title: 'Project title 8',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
+    title: 'Scrum Master PSMI',
+    description: 'Scrum Master PSMI',
+    url: 'https://www.scrum.org/assessments/professional-scrum-master-i-certification',
     image: porfolioImage8,
   },
   {
-    title: 'Project title 9',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
+    title: 'CentOS',
+    description: 'CentOS',
+    url: 'https://www.centos.org',
     image: porfolioImage9,
   },
   {
-    title: 'Project title 10',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
+    title: 'Rocky Linux',
+    description: 'Rocky Linux',
+    url: 'https://rockylinux.org',
     image: porfolioImage10,
   },
   {
-    title: 'Project title 11',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
+    title: 'Node.js',
+    description: 'Node.js',
+    url: 'https://nodejs.org/en',
     image: porfolioImage11,
   },
+  {
+    title: 'React',
+    description: 'React',
+    url: 'https://react.dev',
+    image: porfolioImage12,
+  },
+  {
+    title: 'Material UI',
+    description: 'Material UI',
+    url: 'https://mui.com/material-ui/',
+    image: porfolioImage13,
+  },
+  {
+    title: 'UI5',
+    description: 'UI5',
+    url: 'https://sapui5.hana.ondemand.com/sdk/#/',
+    image: porfolioImage14,
+  },
+  {
+    title: 'Fiori Elements',
+    description: 'Fiori Elements',
+    url: 'https://experience.sap.com/fiori-design-web/',
+    image: porfolioImage15,
+  },
+  {
+    title: 'ABAP',
+    description: 'ABAP',
+    url: 'https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en-US/index.htm',
+    image: porfolioImage16,
+  },
+  {
+    title: 'SAP BTP',
+    description: 'SAP BTP',
+    url: 'https://www.sap.com/products/technology-platform.html',
+    image: porfolioImage17,
+  },
+  {
+    title: 'S/4Hana Cloud - Public Edition Extension',
+    description: 'S/4Hana Cloud - Public Edition Extension',
+    url: 'https://community.sap.com/t5/enterprise-resource-planning-blogs-by-sap/sap-s-4hana-extensibility-simplified-guide-for-beginners/ba-p/13548988',
+    image: porfolioImage18,
+  },
 ];
 
-/**
- * Resume section -- TODO: Standardize resume contact format or offer MDX
- */
-export const education: TimelineItem[] = [
-  {
-    date: 'April 2007',
-    location: 'Clown college',
-    title: 'Masters in Beer tasting',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
-  },
-  {
-    date: 'March 2003',
-    location: 'School of Business',
-    title: 'What did you study 101',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
-  },
-];
-
-export const experience: TimelineItem[] = [
-  {
-    date: 'March 2010 - Present',
-    location: 'Awesome Development Company',
-    title: 'Senior UX Engineer',
-    content: (
-      <p>
-    ),
-  },
-  {
-    date: 'March 2007 - February 2010',
-    location: 'Garage Startup Studio',
-    title: 'Junior bug fixer',
-    content: (
-      <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
-      </p>
-    ),
-  },
-];
 
 /**
  * Testimonial section
@@ -653,19 +663,19 @@ export const testimonial: TestimonialSection = {
   imageSrc: testimonialImage,
   testimonials: [
     {
-      name: 'John Doe',
-      text: 'Use this as an opportunity to promote what it is like to work with you. High value testimonials include ones from current or past co-workers, managers, or from happy clients.',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/169.jpg',
+      label: 'Full-Stack Development',
+      text: 'For me, full-stack development means that new technologies can be learned quickly based on existing knowledge.',
+      image: '',
     },
     {
-      name: 'Jane Doe',
-      text: 'Here you should write some nice things that someone has said about you. Encourage them to be specific and include important details (notes about a project you were on together, impressive quality produced, etc).',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/14.jpg',
+      label: 'Cloud Development',
+      text: 'The future is now, and all previous technologies have led to the cloud. That\'s why there\'s no way around developments in the cloud.',
+      image: '',
     },
     {
-      name: 'Someone else',
-      text: 'Add several of these, and keep them as fresh as possible, but be sure to focus on quality testimonials with strong highlights of your skills/work ethic.',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/69.jpg',
+      label: 'Clean Code and Microservices',
+      text: 'Embracing clean code, S.O.L.I.D principles, and microservices enhances software maintainability, scalability, and reliability, fostering an efficient development environment.',
+      image: '',
     },
   ],
 };
