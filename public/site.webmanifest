@@ -10,7 +10,7 @@
     {"src": "/favicon96.ico", "type": "image/png", "sizes": "96x96"},
     {"src": "/favicon128.ico", "type": "image/png", "sizes": "128x128"},
     {"src": "/favicon256.ico", "type": "image/png", "sizes": "256x256"},
-    {"src": "/favicon1024.ico", "type": "image/png", "sizes": "1024x1024"},
+    {"src": "/favicon1024.ico", "type": "image/png", "sizes": "1024x1024"}
   ],
   "theme_color": "#515455",
   "background_color": "#515455",
