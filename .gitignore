@@ -232,6 +232,9 @@ fabric.properties
 .idea/codeStyles/codeStyleConfig.xml
 .idea/inspectionProfiles/Project_Default.xml
 .idea/vcs.xml
+.idea/CV.iml
+.idea/material_theme_project_new.xml
+.idea/modules.xml
 
 # --------------------------
 # " Other                  "
