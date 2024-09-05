@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "yarn compile && yarn next build",
+    "postbuild": "next-sitemap --config next-sitemap.js",
     "clean": "rm -rf build-tsc .next",
     "compile": "yarn run -T tsc --build --verbose",
     "dev": "yarn compile && yarn next dev",
@@ -17,6 +18,8 @@
     "autoprefixer": "10.4.16",
     "classnames": "^2.3.2",
     "next": "^14.0.3",
+    "next-sitemap": "^4.2.3",
+    "package": "^1.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "ts-pattern": "^5.0.4"
