@@ -4,10 +4,10 @@ import {additionalInterests, education, experience, SectionId, skills, summaryIt
 import Section from '../../Layout/Section';
 import AdditionalInterests from './AdditionalInterests';
 import AdditionalSection from './AdditionalSection';
-import {SkillGroup} from './Skills';
 import ResumeSection from './ResumeSection';
-import TimelineItem from './TimelineItem';
+import {SkillGroup} from './Skills';
 import SummaryItem from './SummaryItem';
+import TimelineItem from './TimelineItem';
 
 const Resume: FC = memo(() => {
   return (
