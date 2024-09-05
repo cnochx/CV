@@ -1,6 +1,6 @@
 /* eslint-env node */
 module.exports = {
-  siteUrl: 'grellmann.app',
+  siteUrl: process.env.SITE_URL,
   exclude: ['/404*', '/500*'],
   transform: async (config, path) => {
     return {
