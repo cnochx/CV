@@ -432,7 +432,7 @@ export const education: TimelineItem[] = [
   {
     date: 'January 2020 – January 2021',
     location: 'Indisoft GmbH, Germany',
-    title: 'Further training as a full-stack web developer',
+    title: 'Further training as a Full-Stack Web Developer',
     about: 'The further training certified the quality of my knowledge.',
     content: <p>The training covered best practices in responsive web design, the scripting languages
       Javascript and PHP as well as MySQL. Content management, e-commerce, online PR, online marketing
