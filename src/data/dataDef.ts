@@ -87,6 +87,7 @@ export interface PortfolioItem {
  * Resume section
  */
 export interface TimelineItem {
+  tlKey: number;
   date: string;
   location: string;
   title: string;
@@ -95,9 +96,11 @@ export interface TimelineItem {
   experiences: expItem[];
 }
 export interface expItem {
+  eiKey: number;
   text: string;
 }
 export interface LifeItem {
+  liKey: number;
   relationshipStatus: string;
   familyStatus: string;
   privateInterests: string;
