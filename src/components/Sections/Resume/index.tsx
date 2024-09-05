@@ -21,18 +21,18 @@ const Resume: FC = memo(() => {
           </div>
         </ResumeSection>
         <ResumeSection title="Work">
-          {experience.map((item, index) => (
-            <TimelineItem item={item} key={`${item.title}-${index}`} />
+          {experience.map((item) => (
+            <TimelineItem item={item} key={`${item.title}-${item.tlKey}`} />
           ))}
         </ResumeSection>
         <ResumeSection title="Education">
-          {education.map((item, index) => (
-            <TimelineItem item={item} key={`${item.title}-${index}`} />
+          {education.map((item) => (
+            <TimelineItem item={item} key={`${item.title}-${item.tlKey}`} />
           ))}
         </ResumeSection>
         <AdditionalSection title="Interests">
-          {additionalInterests.map((interest, index) => (
-            <AdditionalInterests item={interest} key={index} />
+          {additionalInterests.map((interest) => (
+            <AdditionalInterests item={interest} key={interest.liKey} />
           ))}
         </AdditionalSection>
       </div>

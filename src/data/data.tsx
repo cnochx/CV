@@ -249,6 +249,7 @@ export const skills: SkillGroup[] = [
 
 export const experience: TimelineItem[] = [
   {
+    tlKey: 1,
     date: 'February 2022 - Present',
     location: 'BA Business Advice GmbH, Germany',
     title: 'SAP Technical Consultant, SAP Full-Stack Development',
@@ -267,23 +268,29 @@ export const experience: TimelineItem[] = [
     ),
     experiences: [
       {
+        eiKey: 1,
         text: 'SAP S/4HANA.',
       },
       {
+        eiKey: 2,
         text: 'Migration from ERP to S/4HANA.',
       },
       {
+        eiKey: 3,
         text: 'Basic topics BTP / S4 Hana Cloud – Public Edition.',
       },
       {
+        eiKey: 4,
         text: 'S/4HANA Cloud – Public Edition Extension (Key User / Developer / Side-by-Side).',
       },
       {
+        eiKey: 5,
         text: 'ABAP Clean Core.',
       },
     ],
   },
   {
+    tlKey: 2,
     date: 'February 2021 - January 2022',
     location: 'Sengicon GmbH, Germany',
     title: 'Software developer and Linux administrator',
@@ -305,20 +312,25 @@ export const experience: TimelineItem[] = [
     ),
     experiences: [
       {
+        eiKey: 1,
         text: 'Setup, management and administration of CentOS / Rocky Linux as VM.',
       },
       {
+        eiKey: 2,
         text: 'Application development ERP sub-systems.',
       },
       {
+        eiKey: 3,
         text: 'Structure, setup and development of LAMP stack.',
       },
       {
+        eiKey: 4,
         text: 'Application development and refactoring REST API in PHP.',
       },
     ],
   },
   {
+    tlKey: 3,
     date: 'April 2004 - January 2019',
     location: 'Ferienhaus-Vermittlung fincaferien.de GmbH, Germany',
     title: 'Webmaster (with development tasks)',
@@ -345,41 +357,53 @@ export const experience: TimelineItem[] = [
     ),
     experiences: [
       {
+        eiKey: 1,
         text: 'Active involvement in all website and network enhancements.',
       },
       {
+        eiKey: 2,
         text: '20 years of experience with HTML/HTML5 and CSS/CSS3.',
       },
       {
+        eiKey: 3,
         text: '8 years of experience with JavaScript.',
       },
       {
+        eiKey: 4,
         text: 'Expertise in implementing Git and Jira.',
       },
       {
+        eiKey: 5,
         text: '6 years of experience with Git.',
       },
       {
+        eiKey: 6,
         text: '5 years of experience with Drupal 7, Responsible for maintenance and extension of modules.',
       },
       {
+        eiKey: 7,
         text: '16 years of expertise in administration of Windows networks.',
       },
       {
+        eiKey: 8,
         text: '7 years of expertise in Linux administration.',
       },
       {
+        eiKey: 9,
         text: '7 years of experience in professional photo editing with Adobe Photoshop.',
       },
       {
+        eiKey: 10,
         text: '20 years of expertise in SEO.',
       },
       {
+        eiKey: 11,
         text: '5 years expertise in SEA.',
       },
     ],
   },
   {
+    tlKey: 4,
     date: 'August 1998 - Juli 2002',
     location: 'As freelance work in Germany: Berlin, Hanover, Braunschweig, and Wolfsburg',
     title: 'Stagehand',
@@ -393,12 +417,15 @@ export const experience: TimelineItem[] = [
     ),
     experiences: [
       {
+        eiKey: 1,
         text: 'Collaborated with others to assemble stage sets, props, and scenery.'
       },
       {
+        eiKey: 2,
         text: 'During performances, assists with lights, sound and moving scenery and artist support.',
       },
       {
+        eiKey: 3,
         text: 'Effective collaboration and communication with crew.'
       },
     ],
@@ -410,6 +437,7 @@ export const experience: TimelineItem[] = [
  */
 export const education: TimelineItem[] = [
   {
+    tlKey: 1,
     date: 'November 2021 - January 2021',
     location: 'Sengicon GmbH, Germany',
     title: 'Internship as part of the Full-Stack Web Developer training program',
@@ -419,17 +447,21 @@ export const education: TimelineItem[] = [
       MySQL/MariaDB, and PHP software stacks under Linux. In addition, Drupal 8 was installed and set up.</p>,
     experiences: [
       {
+        eiKey: 1,
         text: 'Installation and setup of Drupal 8 (https://sengicon.de)'
       },
       {
+        eiKey: 2,
         text: 'Installation and setup of Linux VMs.'
       },
       {
+        eiKey: 3,
         text: 'Structure, setup, and development of the LAMP stack.'
       },
     ],
   },
   {
+    tlKey: 2,
     date: 'January 2020 – January 2021',
     location: 'Indisoft GmbH, Germany',
     title: 'Further training as a Full-Stack Web Developer',
@@ -440,45 +472,58 @@ export const education: TimelineItem[] = [
       were part of it. An internship rounded off the activities.</p>,
     experiences: [
       {
+        eiKey: 1,
         text: 'Responsive web design with HTML 5 and CSS 3.',
       },
       {
+        eiKey: 2,
         text: 'Content management for programmers (Typo 3).',
       },
       {
+        eiKey: 3,
         text: 'Search engine optimisation.',
       },
       {
+        eiKey: 4,
         text: 'Search engine marketing.',
       },
       {
+        eiKey: 5,
         text: 'Keyword advertising, Google Analytics.',
       },
       {
+        eiKey: 6,
         text: 'Online PR, social media marketing - writing for the web',
       },
       {
+        eiKey: 7,
         text: 'Agile project management with Scrum Master certificate.',
       },
       {
+        eiKey: 8,
         text: 'E-commerce, store systems (WordPress with Whoo-commerce).',
       },
       {
+        eiKey: 9,
         text: 'Scripting languages Javascript (Vanilla Javascript).',
       },
       {
+        eiKey: 10,
         text: 'Javascript development with Node.js, jQuery, AJAX.',
       },
       {
+        eiKey: 11,
         text: ' PHP scripting language (OOP based on concept of MVC).',
       },
       {
+        eiKey: 12,
         text: 'Internship.',
       },
 
     ],
   },
   {
+    tlKey: 3,
     date: 'Juni 2020',
     location: 'Indisoft GmbH, Germany',
     title: 'Scrum Master (PSMI)',
@@ -487,26 +532,33 @@ export const education: TimelineItem[] = [
       principles and practices.</p>,
     experiences: [
       {
+        eiKey: 1,
         text: 'Scrum Theory and Principles (Understand the empirical process and Comprehend the Scrum values ).'
       },
       {
+        eiKey: 2,
         text: 'The Scrum Framework (Roles, Events, Artifacts).'
       },
       {
+        eiKey: 3,
         text: 'Scrum Roles (Responsibilities of the Scrum Master, Product Owner, and Development Team).'
       },
       {
+        eiKey: 4,
         text: 'Scrum Events (Purpose and timing of each event, facilitate and ensure each event\'s effectiveness).'
       },
       {
+        eiKey: 5,
         text: 'Scrum Artifacts (Purpose and content of Product Backlog, Sprint Backlog, and Increment, importance of Definition of Done).'
       },
       {
+        eiKey: 6,
         text: 'Scaling Scrum (Basics of scaling Scrum for larger projects and teams).'
       },
     ],
   },
   {
+    tlKey: 4,
     date: 'August 2002 - Juni 2004',
     location: 'DAA GmbH in Hildesheim, Germany',
     title: 'Training as an industrial clerk',
@@ -515,12 +567,15 @@ export const education: TimelineItem[] = [
       commercial management and control, and economic and social studies.</p>,
     experiences: [
       {
+        eiKey: 1,
         text: 'Business processes'
       },
       {
+        eiKey: 2,
         text: 'Commercial management and control'
       },
       {
+        eiKey: 3,
         text: 'Economic and social studies'
       },
     ],
@@ -532,6 +587,7 @@ export const education: TimelineItem[] = [
  */
 export const additionalInterests: LifeItem[] = [
   {
+    liKey: 1,
     relationshipStatus: 'I have been married since 2004.',
     familyStatus: 'We have three kids together (born in 2002, 2004, and 2019).',
     privateInterests: 'I am interested in electronic music and developing our property in Alto Paraíso de Goiás.',
