@@ -80,7 +80,7 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I am a <strong className="text-stone-100">Full-Stack software engineer</strong>, currently working as<strong
+        I am a <strong className="text-stone-100">Full-Stack software engineer</strong>, currently working as <strong
         className="text-stone-100">Technical Consultant</strong>. I am <strong className="text-stone-100">trained</strong>
         on the requirements of <strong className="text-stone-100">enterprise software</strong> development in an
         industrial context. I am a german with Brasilien residence, working as developer <strong
