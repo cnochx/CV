@@ -42,9 +42,9 @@ import {
   PortfolioItem,
   SkillGroup,
   Social,
+  SummaryItem,
   TestimonialSection,
   TimelineItem,
-  SummaryItem,
 } from './dataDef';
 
 /**
