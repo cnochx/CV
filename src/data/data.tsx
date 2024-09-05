@@ -44,6 +44,7 @@ import {
   Social,
   TestimonialSection,
   TimelineItem,
+  SummaryItem,
 } from './dataDef';
 
 /**
@@ -127,6 +128,69 @@ export const aboutData: About = {
     {label: 'Job Education', text: 'Industrial clerk (2004)', Icon: BuildingOffice2Icon},
   ],
 };
+
+export const summaryItems: SummaryItem[] = [
+  {
+    siKey: 1,
+    date: 'February 2022 - Present',
+    location: 'BA Business Advice GmbH, Germany',
+    title: 'SAP Technical Consultant, SAP Full-Stack Development',
+    experiences: [
+      {
+        eiKey: 1,
+        text: 'Developed and refactored SAP applications, including migrations from ERP to S/4 HANA.',
+      },
+      {
+        eiKey: 2,
+        text: 'Worked on various SAP modules and cloud extensions.',
+      },
+      {
+        eiKey: 3,
+        text: 'Ensured high software quality through clean code practices.',
+      },
+    ],
+  },
+  {
+    siKey: 2,
+    date: 'February 2021 – January 2022',
+    location: 'Sengicon GmbH, Germany',
+    title: 'Software Developer and Linux Administrator',
+    experiences: [
+      {
+        eiKey: 1,
+        text: 'Developed and refactored PHP backend for ERP subsystems.',
+      },
+      {
+        eiKey: 2,
+        text: 'Managed Linux VMs and LAMP stacks.',
+      },
+      {
+        eiKey: 3,
+        text: 'Developed React web frontends and conducted application tests using PHPUnit.',
+      },
+    ],
+  },
+  {
+    siKey: 3,
+    date: 'April 2004 – December 2001',
+    location: 'Ferienhaus-Vermittlung fincaferien.de GmbH, Germany',
+    title: 'Webmaster (with development tasks)',
+    experiences: [
+      {
+        eiKey: 1,
+        text: 'Led technical SEO implementations and web development.',
+      },
+      {
+        eiKey: 2,
+        text: 'Introduced and managed Git and Jira for version and project management.',
+      },
+      {
+        eiKey: 3,
+        text: 'Developed and maintained Drupal 7 modules and administered Windows networks.',
+      },
+    ],
+  },
+];
 
 /**
  * Skills section
