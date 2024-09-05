@@ -84,8 +84,16 @@ export interface PortfolioItem {
 }
 
 /**
- * Resume section
+ * CV section
  */
+export interface SummaryItem {
+  siKey: number;
+  date: string;
+  location: string;
+  title: string;
+  experiences: expItem[];
+}
+
 export interface TimelineItem {
   tlKey: number;
   date: string;

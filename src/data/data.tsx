@@ -44,6 +44,7 @@ import {
   Social,
   TestimonialSection,
   TimelineItem,
+  SummaryItem,
 } from './dataDef';
 
 /**
@@ -79,18 +80,23 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I am a <strong className="text-stone-100">Full-stack software engineer</strong>, currently working as
-        <strong className="text-stone-100">Technical Consultant</strong>. I am trained on the requirements of
-        enterprise software development in an industrial context. I am a german with Brasilien residence, working as
-        developer <strong className="text-stone-100">since 2002</strong>.
-      </p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I am an innovative and down-to-earth team player who <strong className="text-stone-100">learns continuously</strong> and
-        <strong className="text-stone-100">analyses quickly</strong>. I develop
-        creative solutions for complex problems. <strong className="text-stone-100">Clean code</strong> and <strong className="text-stone-100">S.O.L.I.D.</strong>
-        principles
-        are important to me in order to guarantee <strong className="text-stone-100">high software quality</strong>. What I
-        develop works.
+        I am a <strong className="text-stone-100">Full-Stack software engineer</strong>, currently working as<strong
+        className="text-stone-100">Technical Consultant</strong>. I am <strong className="text-stone-100">trained</strong>
+        on the requirements of <strong className="text-stone-100">enterprise software</strong> development in an
+        industrial context. I am a german with Brasilien residence, working as developer <strong
+        className="text-stone-100">since 2002</strong>. I am an innovative and down-to-earth team player who <strong
+        className="text-stone-100">learns continuously</strong> and <strong className="text-stone-100">analyses quickly
+      </strong>.</p>
+      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">My career is marked by a commitment to <strong
+        className="text-stone-100">continuous learning</strong>. I deliver high-quality, reliable <strong
+        className="text-stone-100">software solutions</strong>. I thrive in <strong className="text-stone-100">
+        collaborative environments</strong> and am dedicated to <strong className="text-stone-100">developing innovative
+      </strong> and <strong className="text-stone-100">efficient solutions</strong> for complex challenges.</p>
+      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg"><strong className="text-stone-100">Clean
+        code</strong> and <strong className="text-stone-100">S.O.L.I.D.</strong> principles are important to me in
+        order to guarantee <strong className="text-stone-100">high software quality</strong>. My work is characterized
+        by a <strong className="text-stone-100">commitment to best practices</strong>, ensuring that <strong
+          className="text-stone-100">what I develop works</strong>.
       </p>
     </>
   ),
@@ -127,6 +133,69 @@ export const aboutData: About = {
     {label: 'Job Education', text: 'Industrial clerk (2004)', Icon: BuildingOffice2Icon},
   ],
 };
+
+export const summaryItems: SummaryItem[] = [
+  {
+    siKey: 1,
+    date: 'February 2022 - Present',
+    location: 'BA Business Advice GmbH, Germany',
+    title: 'SAP Technical Consultant, SAP Full-Stack Development',
+    experiences: [
+      {
+        eiKey: 1,
+        text: 'Developed and refactored SAP applications, including migrations from ERP to S/4 HANA.',
+      },
+      {
+        eiKey: 2,
+        text: 'Worked on various SAP modules and cloud extensions.',
+      },
+      {
+        eiKey: 3,
+        text: 'Ensured high software quality through clean code practices.',
+      },
+    ],
+  },
+  {
+    siKey: 2,
+    date: 'February 2021 – January 2022',
+    location: 'Sengicon GmbH, Germany',
+    title: 'Software Developer and Linux Administrator',
+    experiences: [
+      {
+        eiKey: 1,
+        text: 'Developed and refactored PHP backend for ERP subsystems.',
+      },
+      {
+        eiKey: 2,
+        text: 'Managed Linux VMs and LAMP stacks.',
+      },
+      {
+        eiKey: 3,
+        text: 'Developed React web frontends and conducted application tests using PHPUnit.',
+      },
+    ],
+  },
+  {
+    siKey: 3,
+    date: 'April 2004 – December 2001',
+    location: 'Ferienhaus-Vermittlung fincaferien.de GmbH, Germany',
+    title: 'Webmaster (with development tasks)',
+    experiences: [
+      {
+        eiKey: 1,
+        text: 'Led technical SEO implementations and web development.',
+      },
+      {
+        eiKey: 2,
+        text: 'Introduced and managed Git and Jira for version and project management.',
+      },
+      {
+        eiKey: 3,
+        text: 'Developed and maintained Drupal 7 modules and administered Windows networks.',
+      },
+    ],
+  },
+];
 
 /**
  * Skills section
