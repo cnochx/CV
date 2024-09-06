@@ -86,6 +86,12 @@ export interface PortfolioItem {
 /**
  * CV section
  */
+
+export interface CVSubHeader {
+  title: string;
+  content: JSX.Element;
+  showSpacer: boolean;
+}
 export interface SummaryItem {
   siKey: number;
   date: string;
