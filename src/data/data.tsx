@@ -136,7 +136,7 @@ export const sumHeader: CVSubHeader = {
     <>
         <p className="pb-8">My career is marked by a commitment to continuous learning. I deliver high-quality, reliable software solutions. I thrive in
           collaborative environments and am dedicated to developing innovative and efficient solutions for complex
-          challenges.</p>x§
+          challenges.</p>
     </>
   ),
   showSpacer: true
