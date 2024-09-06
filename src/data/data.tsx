@@ -35,6 +35,7 @@ import {
   About,
   ContactSection,
   ContactType,
+  CVSubHeader,
   Hero,
   HomepageMeta,
   ImprintSection,
@@ -87,11 +88,6 @@ export const heroData: Hero = {
         className="text-stone-100">since 2002</strong>. I am an innovative and down-to-earth team player who <strong
         className="text-stone-100">learns continuously</strong> and <strong className="text-stone-100">analyses quickly
       </strong>.</p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">My career is marked by a commitment to <strong
-        className="text-stone-100">continuous learning</strong>. I deliver high-quality, reliable <strong
-        className="text-stone-100">software solutions</strong>. I thrive in <strong className="text-stone-100">
-        collaborative environments</strong> and am dedicated to <strong className="text-stone-100">developing innovative
-      </strong> and <strong className="text-stone-100">efficient solutions</strong> for complex challenges.</p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg"><strong className="text-stone-100">Clean
         code</strong> and <strong className="text-stone-100">S.O.L.I.D.</strong> principles are important to me in
         order to guarantee <strong className="text-stone-100">high software quality</strong>. My work is characterized
@@ -133,6 +129,18 @@ export const aboutData: About = {
     {label: 'Job Education', text: 'Industrial clerk (2004)', Icon: BuildingOffice2Icon},
   ],
 };
+
+export const sumHeader: CVSubHeader = {
+  title: 'Resume',
+  content: (
+    <>
+        <p className="pb-8">My career is marked by a commitment to continuous learning. I deliver high-quality, reliable software solutions. I thrive in
+          collaborative environments and am dedicated to developing innovative and efficient solutions for complex
+          challenges.</p>x§
+    </>
+  ),
+  showSpacer: true
+}
 
 export const summaryItems: SummaryItem[] = [
   {
@@ -200,6 +208,17 @@ export const summaryItems: SummaryItem[] = [
 /**
  * Skills section
  */
+
+export const skillHeader: CVSubHeader = {
+  title: 'Skills',
+  content: (
+   <>
+      <p className="pb-8">Value based on years</p>
+   </>
+  ),
+  showSpacer: false
+};
+
 export const skills: SkillGroup[] = [
 
   {
@@ -316,6 +335,15 @@ export const skills: SkillGroup[] = [
   },
 ];
 
+export const expHeader: CVSubHeader = {
+  title: 'Work',
+  content: (
+    <>
+    </>
+  ),
+  showSpacer: false
+};
+
 export const experience: TimelineItem[] = [
   {
     tlKey: 1,
@@ -324,7 +352,7 @@ export const experience: TimelineItem[] = [
     title: 'SAP Technical Consultant, SAP Full-Stack Development',
     about: 'BA Business Advice offers business consulting and SAP solutions.',
     content: (
-      <div>
+      <>
       <p>
         Various projects are undertaken in the areas of SAP ABAP, SAP MII, SAP UI5 Freestyle, and SAP Fiori Elements.
         These projects include collaboration and cooperation in development, object-oriented development of individual
@@ -333,7 +361,7 @@ export const experience: TimelineItem[] = [
         areas such as PPDS, QM, cloud extension (key user, developer, side-by-side), LE, and PM. These have so far been
         carried out in the metal industry, steel industry, manufacturing industry, and public transport.
       </p>
-      </div>
+      </>
     ),
     experiences: [
       {
@@ -365,7 +393,7 @@ export const experience: TimelineItem[] = [
     title: 'Software developer and Linux administrator',
     about: 'Sengicon offers full-stack software development and Industry 4.0 applications.',
     content: (
-      <div>
+      <>
       <p>
          The application development in the area of ERP subsystems includes PHP backend development for intranet web
         applications and the refactoring of PHP code. Additionally, database schemas and data models were created and
@@ -377,7 +405,7 @@ export const experience: TimelineItem[] = [
           This also included the installation, configuration, and administration of LAMP stacks under Linux. Application
           tests were conducted using PHPUnit.
         </p>
-      </div>
+      </>
     ),
     experiences: [
       {
@@ -405,7 +433,7 @@ export const experience: TimelineItem[] = [
     title: 'Webmaster (with development tasks)',
     about: 'Fincaferien was one of the first German agencies to successfully broker vacation homes online.',
     content: (
-      <div>
+      <>
         <p>
           Special attention was paid to SEO techniques and user-friendliness. Within this framework, I carried out all
           technical SEO implementations and was actively involved in all enhancements. This has given me twenty years
@@ -422,7 +450,7 @@ export const experience: TimelineItem[] = [
           the agency, the core of it was a Linux server with Samba. My knowledge of Linux administration includes the
           setup, maintenance, and administration of Linux systems, including Samba and Apache.
         </p>
-      </div>
+      </>
     ),
     experiences: [
       {
@@ -478,11 +506,9 @@ export const experience: TimelineItem[] = [
     title: 'Stagehand',
     about: 'My primary responsibility was to assist with the setup, maintenance, and operation of stage equipment.',
     content: (
-      <div>
         <p>
           Adhering to safety protocols I had a Safety Training for Slinging Techniques.
         </p>
-      </div>
     ),
     experiences: [
       {
@@ -504,6 +530,16 @@ export const experience: TimelineItem[] = [
 /**
  * Resume section -- TODO: Standardize resume contact format or offer MDX
  */
+
+export const eduHeader: CVSubHeader = {
+  title: 'Education',
+  content: (
+    <>
+    </>
+  ),
+  showSpacer: false
+};
+
 export const education: TimelineItem[] = [
   {
     tlKey: 1,
@@ -511,9 +547,11 @@ export const education: TimelineItem[] = [
     location: 'Sengicon GmbH, Germany',
     title: 'Internship as part of the Full-Stack Web Developer training program',
     about: 'Sengicon offers full-stack software development and Industry 4.0 applications.',
-    content: <p>The activities included
+    content: (
+      <p>The activities included
       the installation and setup of Linux VMs, as well as the installation, configuration, and administration of Apache,
-      MySQL/MariaDB, and PHP software stacks under Linux. In addition, Drupal 8 was installed and set up.</p>,
+      MySQL/MariaDB, and PHP software stacks under Linux. In addition, Drupal 8 was installed and set up.</p>
+    ),
     experiences: [
       {
         eiKey: 1,
@@ -535,10 +573,12 @@ export const education: TimelineItem[] = [
     location: 'Indisoft GmbH, Germany',
     title: 'Further training as a Full-Stack Web Developer',
     about: 'The further training certified the quality of my knowledge.',
-    content: <p>The training covered best practices in responsive web design, the scripting languages
+    content: (
+      <p>The training covered best practices in responsive web design, the scripting languages
       Javascript and PHP as well as MySQL. Content management, e-commerce, online PR, online marketing
       marketing, SEO, SEA including keyword advertising and controlling with Google Analytics
-      were part of it. An internship rounded off the activities.</p>,
+      were part of it. An internship rounded off the activities.</p>
+    ),
     experiences: [
       {
         eiKey: 1,
@@ -597,8 +637,10 @@ export const education: TimelineItem[] = [
     location: 'Indisoft GmbH, Germany',
     title: 'Scrum Master (PSMI)',
     about: 'The Professional Scrum Master I (PSM I) is an entry-level certification provided by Scrum.org.',
-    content: <p>It demonstrates a fundamental level of Scrum mastery, including understanding Scrum
-      principles and practices.</p>,
+    content:(
+      <p>It demonstrates a fundamental level of Scrum mastery, including understanding Scrum
+      principles and practices.</p>
+    ),
     experiences: [
       {
         eiKey: 1,
@@ -631,9 +673,10 @@ export const education: TimelineItem[] = [
     date: 'August 2002 - Juni 2004',
     location: 'DAA GmbH in Hildesheim, Germany',
     title: 'Training as an industrial clerk',
-    about: 'Training is the basis of all my further development activities',
-    content: <p>I underwent training as an industrial clerk. During this period, I focused on business processes,
-      commercial management and control, and economic and social studies.</p>,
+    about: 'Jobtraining as an industrial clerk',
+    content: (
+      <p>I focused on business processes, commercial management and control, and economic and social studies.</p>
+    ),
     experiences: [
       {
         eiKey: 1,
@@ -654,6 +697,15 @@ export const education: TimelineItem[] = [
 /**
  * Additional section
  */
+export const addHeader: CVSubHeader = {
+  title: 'Interests',
+  content: (
+    <>
+    </>
+  ),
+  showSpacer: false
+};
+
 export const additionalInterests: LifeItem[] = [
   {
     liKey: 1,
