@@ -90,7 +90,7 @@ export const heroData: Hero = {
       </strong>.</p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg"><strong className="text-stone-100">Clean
         code</strong> and <strong className="text-stone-100">S.O.L.I.D.</strong> principles are important to me in
-        order to guarantee <strong className="text-stone-100">high software quality</strong>. My work is characterized
+        order to guarantee <strong className="text-stone-100">high software quality</strong>. My work is characterised
         by a <strong className="text-stone-100">commitment to best practices</strong>, ensuring that <strong
           className="text-stone-100">what I develop works</strong>.
       </p>
