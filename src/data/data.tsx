@@ -935,6 +935,11 @@ export const imprintItems: ImprintSection = {
       linkLabel: 'Fax:',
       text: '+49 322 239 432 99',
       href: 'tel:004932223943299',
+    },
+    {
+      linkLabel: 'Phone:',
+      text: '+55 113 042 5721',
+      href: 'tel:00551130425721',
     }
   ],
 
