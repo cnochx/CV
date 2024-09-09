@@ -721,7 +721,7 @@ export const additionalInterests: LifeItem[] = [
 ];
 
 export const proHeader: ProSubHeader = {
-  title: 'Example projects',
+  title: 'Projects',
   content: (
     <>
       <p>Outstanding projects that I have realized alone or together with others.</p>
