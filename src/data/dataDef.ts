@@ -121,6 +121,20 @@ export interface LifeItem {
   location: string;
 }
 
+export interface ProSubHeader {
+  title: string;
+  content: JSX.Element;
+  showSpacer: boolean;
+}
+
+export interface ProjectItem {
+  piKey: number;
+  title: string;
+  stack: string;
+  role: string;
+  content: JSX.Element;
+}
+
 /**
  * Testimonial section
  */

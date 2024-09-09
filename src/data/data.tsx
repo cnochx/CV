@@ -41,6 +41,8 @@ import {
   ImprintSection,
   LifeItem,
   PortfolioItem,
+  ProSubHeader,
+  ProjectItem,
   SkillGroup,
   Social,
   SummaryItem,
@@ -717,6 +719,184 @@ export const additionalInterests: LifeItem[] = [
     location: 'I live in Germany for a small part of the year, but I spend most of my time in Brazil.',
   }
 ];
+
+export const proHeader: ProSubHeader = {
+  title: 'Projects',
+  content: (
+    <>
+      <p>Outstanding projects that I have realized alone or together with others.</p>
+    </>
+  ),
+  showSpacer: true
+};
+
+export const projectItem: ProjectItem[] = [
+  {
+    piKey: 1,
+    title: 'Serverless React Website with Next.js on Vercel',
+    stack: 'node.js, next.js, Typescript, react.js, Serverless, Vercel',
+    role: 'Full-Stack Developer',
+    content: (
+      <>
+        <p>I have developed a highly customized version of a this React resume website. This project is a robust fork
+          of reactresume.com and is built using Next.js, TypeScript, React.js, and Webpack. The website is hosted on
+          Vercel, leveraging serverless architecture for enhanced performance and scalability.
+        </p>
+      </>
+    ),
+  },
+  {
+    piKey: 2,
+    title: 'Business Logic as Loading App API in ABAP for Logistics Execution Module',
+    stack: 'ABAP Clean Core',
+    role: 'SAP Developer, Technical Consultant',
+    content: (
+      <>
+        <p>I developed a robust loading application API in OOP-ABAP, adhering to the Clean Core principles. The app
+          based on the Logistics Execution (LE) module. This API efficiently collects the necessary data for a delivery
+          number and utilizes a custom Z-table to ensure the delivery is blocked for other users, maintaining data
+          integrity and preventing conflicts. Implanted for an Metal processing company.</p>
+      </>
+    ),
+  },
+  {
+    piKey: 3,
+    title: 'UI5 Customization for QM Feedbacks, Hosted on SAP MII',
+    stack: 'UI5 Freestyle, SAP MII',
+    role: 'Frontend-Developer, Technical Consultant',
+    content: (
+      <>
+        <p>
+          I developed a customized QM feedback mask with advanced input recognition logic using JavaScript. The system
+          identifies specific patterns in user input, such as decimal numbers and number ranges before and after the
+          decimal point, effectively serving as shortcuts where only the decimal points represent the exact value. This
+          microservice, hosted on SAP MII, was implemented for a steelworks company in Austria and is based on the SAP
+          QM-Module.
+        </p>
+        <p>Although the logic ideally belongs in the controller area (business logic) following the MVC principle, it was
+          a requirement to implement it in the frontend.
+        </p>
+      </>
+    ),
+  },
+  {
+    piKey: 4,
+    title: 'Z-Application in Classic ABAP with Multi-layered Dynpro\n',
+    stack: 'Classical ABAP, OOP, Dynpro',
+    role: 'SAP-Developer, Technical Consultant',
+    content: (
+      <>
+        <p>
+          I developed a custom Z application in classic ABAP that includes a multi-layered screen for output. The
+          application contains sophisticated logic that compiles the appropriate items from all customer orders to be
+          rolled based on optimal conditions such as length, weight, type and output. The backend was implemented using
+          ABAP Object-Oriented Programming (ABAP-OOP) to ensure efficient and maintainable code. Implemented for a
+          German steel mill.
+        </p>
+      </>
+    ),
+  },
+  {
+    piKey: 5,
+    title: 'React Frontend for CNC Tool Maintenance',
+    stack: 'react.js, Webpack, LAMP-Stack',
+    role: 'Frontend-Devloper',
+    content: (
+      <>
+        <p>I developed a React frontend for CNC tool maintenance, interfacing with a PHP RESTful API. To
+          meet the requirement of reducing dependencies, I wrote a custom, simple router. The frontend is served by
+          Apache on a CentOS virtual machine, ensuring a streamlined and efficient user experience.</p>
+      </>
+    ),
+  },
+  {
+    piKey: 6,
+    title: 'PHP RESTful API Backend Refactoring for CNC Tool Maintenance\n',
+    stack: 'PHP, OOP, MariaDB, LAMP-Stack',
+    role: 'Backend Developer',
+    content: (
+      <>
+        <p>
+          I led the refactoring of a process-oriented PHP 4.5 backend to an object-oriented PHP 8.0 backend and
+          transformed it into a microservice for monitoring tool maintenance for CNC machines. The RESTful API I
+          developed includes robust authorization mechanisms, comprehensive business logic and efficient database
+          modeling in MariaDB. Additionally, I set up the Apache server on a virtual machine with Debian OS, creating
+          a classic LAMP stack environment. Implemented for a German metal processing company.
+        </p>
+      </>
+    ),
+  },
+  {
+    piKey: 7,
+    title: 'Setting Up CentOS / Rocky Linux',
+    stack: 'CentOS',
+    role: 'Linux-Administrator',
+    content: (
+      <>
+        <p>I performed a full setup with sufficient security guidelines of a CentOS installation on a virtual machine.
+          This included configuring the system to meet specific requirements and ensuring robust backup procedures were
+          in place to ensure the integrity and reliability of the system.</p>
+        <p>The Linux VM was used as a template for all subsequent projects.</p>
+      </>
+    ),
+  },
+  {
+    piKey: 8,
+    title: 'Complete Setup and Customization of Drupal 8 Installation',
+    stack: 'Drupal 8, PHP',
+    role: 'Full-stack Developer',
+    content: (
+      <>
+        <p>I executed a complete setup and customization of a Drupal 8 installation, incorporating a purchased theme.
+          This involved configuring the system, customizing the theme to meet specific requirements, and ensuring a
+          seamless and visually appealing user experience.
+        </p>
+      </>
+    ),
+  },
+  {
+    piKey: 9,
+    title: 'Maintenance and Optimization of Drupal 7 e-commerce Platform',
+    stack: 'Drupal 7, PHP, Composer',
+    role: 'Full-Stack Developer, SEO-Expert',
+    content: (
+      <>
+        <p>I took care of the maintenance and technical debt reduction for a Drupal 7 installation that contained
+          exclusively custom, purchased modules. Additionally, I integrated technical SEO elements to improve the
+          visibility and performance of the platform as a webshop or e-commerce platform.</p>
+        <p>
+          The platform was spread across 3 domains that were separate from each other</p>
+      </>
+    ),
+  },
+  {
+    piKey: 10,
+    title: 'Setup, Protection, and Maintenance of Ubuntu Office Server\n',
+    stack: 'Ubuntu Server',
+    role: 'Linux-Administrator',
+    content: (
+      <>
+        <p>
+          I was responsible for the setup, protection, and maintenance of an Ubuntu server application used as an office
+          server. This included configuring Samba for file sharing, Apache for web services, and integrating the server
+          into the Windows network to ensure seamless connectivity and functionality.</p>
+      </>
+    ),
+  },
+  {
+    piKey: 11,
+    title: 'Setup, Protection, and Maintenance of a Windows Network',
+    stack: 'Windows 98, Windows NT, Windows XP and Windows 7',
+    role: '',
+    content: (
+      <>
+        <p>I managed the setup, protection, and maintenance of a Windows network encompassing various systems. This
+          involved ensuring network security, optimizing system performance, and maintaining seamless connectivity
+          across all platforms.</p>
+      </>
+    ),
+  },
+]
 
 /**
  * Portfolio section

@@ -7,15 +7,17 @@ import {
   eduHeader,
   experience,
   expHeader,
+  proHeader,
+  projectItem,
   SectionId,
   skillHeader,
   skills,
   sumHeader,
-  summaryItems,
-} from '../../../data/data';
+  summaryItems} from '../../../data/data';
 import Section from '../../Layout/Section';
 import AdditionalInterests from './AdditionalInterests';
 import AdditionalSection from './AdditionalSection';
+import ProjectItem from './ProjectItem';
 import ResumeSection from './ResumeSection';
 import {SkillGroup} from './Skills';
 import SummaryItem from './SummaryItem';
@@ -72,6 +74,15 @@ const Resume: FC = memo(() => {
             <AdditionalInterests item={interest} key={interest.liKey} />
           ))}
         </AdditionalSection>
+        <ResumeSection title={proHeader.title}>
+          {proHeader.content}
+          <div className="flex flex-col space-y-32">
+            {proHeader.showSpacer && <br />}
+          </div>
+          {projectItem.map((item) => (
+            <ProjectItem item={item} key={`${item.title}-${item.piKey}`} />
+          ))}
+        </ResumeSection>
       </div>
     </Section>
   );
