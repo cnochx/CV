@@ -504,7 +504,9 @@ export const experience: TimelineItem[] = [
     date: 'August 1998 - Juli 2002',
     location: 'As freelance work in Germany: Berlin, Hanover, Braunschweig, and Wolfsburg',
     title: 'Stagehand',
-    about: 'My primary responsibility was to assist with the setup, maintenance, and operation of stage equipment.',
+    about: 'At events, concerts, congresses, corporate events and trade fair appearances, my main task was to help ' +
+      'set up, maintain and operate the stage equipment. To comply with safety protocols, I had completed safety ' +
+      'training in rigging techniques.',
     content: (
         <p>
           Adhering to safety protocols I had a Safety Training for Slinging Techniques.
