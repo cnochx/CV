@@ -25,10 +25,6 @@ const AdditionalInterests: FC<{item: LifeItem}> = memo(({item}) => {
           {location}
         </li>
       </ul>
-
-      <div className="flex flex-col space-y-32">
-      <br />
-      </div>
     </div>
 
 

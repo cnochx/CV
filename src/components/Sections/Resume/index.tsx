@@ -65,15 +65,6 @@ const Resume: FC = memo(() => {
             <TimelineItem item={item} key={`${item.title}-${item.tlKey}`} />
           ))}
         </ResumeSection>
-        <AdditionalSection title={addHeader.title}>
-          {addHeader.content}
-          <div className="flex flex-col space-y-32">
-            {addHeader.showSpacer && <br />}
-          </div>
-          {additionalInterests.map((interest) => (
-            <AdditionalInterests item={interest} key={interest.liKey} />
-          ))}
-        </AdditionalSection>
         <ResumeSection title={proHeader.title}>
           {proHeader.content}
           <div className="flex flex-col space-y-32">
@@ -83,6 +74,15 @@ const Resume: FC = memo(() => {
             <ProjectItem item={item} key={`${item.title}-${item.piKey}`} />
           ))}
         </ResumeSection>
+        <AdditionalSection title={addHeader.title}>
+          {addHeader.content}
+          <div className="flex flex-col space-y-32">
+            {addHeader.showSpacer && <br />}
+          </div>
+          {additionalInterests.map((interest) => (
+            <AdditionalInterests item={interest} key={interest.liKey} />
+          ))}
+        </AdditionalSection>
       </div>
     </Section>
   );
