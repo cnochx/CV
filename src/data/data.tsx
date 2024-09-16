@@ -547,7 +547,7 @@ export const eduHeader: CVSubHeader = {
 export const education: TimelineItem[] = [
   {
     tlKey: 1,
-    date: 'November 2021 - January 2021',
+    date: 'November 2020 - January 2021',
     location: 'Sengicon GmbH, Germany',
     title: 'Internship as part of the Full-Stack Web Developer training program',
     about: 'Sengicon offers full-stack software development and Industry 4.0 applications.',
@@ -571,8 +571,46 @@ export const education: TimelineItem[] = [
       },
     ],
   },
+
   {
     tlKey: 2,
+    date: 'Juni 2020',
+    location: 'Indisoft GmbH, Germany',
+    title: 'Scrum Master (PSMI)',
+    about: 'The Professional Scrum Master I (PSM I) is an entry-level certification provided by Scrum.org.',
+    content:(
+      <p>It demonstrates a fundamental level of Scrum mastery, including understanding Scrum
+        principles and practices.</p>
+    ),
+    experiences: [
+      {
+        eiKey: 1,
+        text: 'Scrum Theory and Principles (Understand the empirical process and Comprehend the Scrum values ).'
+      },
+      {
+        eiKey: 2,
+        text: 'The Scrum Framework (Roles, Events, Artifacts).'
+      },
+      {
+        eiKey: 3,
+        text: 'Scrum Roles (Responsibilities of the Scrum Master, Product Owner, and Development Team).'
+      },
+      {
+        eiKey: 4,
+        text: 'Scrum Events (Purpose and timing of each event, facilitate and ensure each event\'s effectiveness).'
+      },
+      {
+        eiKey: 5,
+        text: 'Scrum Artifacts (Purpose and content of Product Backlog, Sprint Backlog, and Increment, importance of Definition of Done).'
+      },
+      {
+        eiKey: 6,
+        text: 'Scaling Scrum (Basics of scaling Scrum for larger projects and teams).'
+      },
+    ],
+  },
+  {
+    tlKey: 3,
     date: 'January 2020 – January 2021',
     location: 'Indisoft GmbH, Germany',
     title: 'Further training as a Full-Stack Web Developer',
@@ -633,43 +671,6 @@ export const education: TimelineItem[] = [
         text: 'Internship.',
       },
 
-    ],
-  },
-  {
-    tlKey: 3,
-    date: 'Juni 2020',
-    location: 'Indisoft GmbH, Germany',
-    title: 'Scrum Master (PSMI)',
-    about: 'The Professional Scrum Master I (PSM I) is an entry-level certification provided by Scrum.org.',
-    content:(
-      <p>It demonstrates a fundamental level of Scrum mastery, including understanding Scrum
-      principles and practices.</p>
-    ),
-    experiences: [
-      {
-        eiKey: 1,
-        text: 'Scrum Theory and Principles (Understand the empirical process and Comprehend the Scrum values ).'
-      },
-      {
-        eiKey: 2,
-        text: 'The Scrum Framework (Roles, Events, Artifacts).'
-      },
-      {
-        eiKey: 3,
-        text: 'Scrum Roles (Responsibilities of the Scrum Master, Product Owner, and Development Team).'
-      },
-      {
-        eiKey: 4,
-        text: 'Scrum Events (Purpose and timing of each event, facilitate and ensure each event\'s effectiveness).'
-      },
-      {
-        eiKey: 5,
-        text: 'Scrum Artifacts (Purpose and content of Product Backlog, Sprint Backlog, and Increment, importance of Definition of Done).'
-      },
-      {
-        eiKey: 6,
-        text: 'Scaling Scrum (Basics of scaling Scrum for larger projects and teams).'
-      },
     ],
   },
   {
