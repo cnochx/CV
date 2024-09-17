@@ -119,6 +119,7 @@ export interface LifeItem {
   familyStatus: string;
   privateInterests: string;
   location: string;
+  legal: string;
 }
 
 export interface ProSubHeader {
