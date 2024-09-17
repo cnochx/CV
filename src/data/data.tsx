@@ -50,6 +50,8 @@ import {
   TimelineItem,
 } from './dataDef';
 
+
+
 /**
  * Page meta data
  */
@@ -67,6 +69,7 @@ export const SectionId = {
   Contact: 'contact',
   Portfolio: 'stack',
   Resume: 'CV',
+  Freelance: 'Freelance',
   Skills: 'skills',
   Stats: 'stats',
   Testimonials: 'foresight',
@@ -898,7 +901,7 @@ export const projectItem: ProjectItem[] = [
       </>
     ),
   },
-]
+];
 
 /**
  * Portfolio section
