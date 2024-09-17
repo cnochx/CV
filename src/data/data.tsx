@@ -718,6 +718,7 @@ export const additionalInterests: LifeItem[] = [
     familyStatus: 'We have three kids together (born in 2002, 2004, and 2019).',
     privateInterests: 'I am interested in electronic music and developing our property in Alto Paraíso de Goiás.',
     location: 'I live in Germany for a small part of the year, but I spend most of my time in Brazil.',
+    legal: 'I have an official Brazilian National Migratory Registry Card (CRNM) with an unrestricted work and residence permit.',
   }
 ];
 
