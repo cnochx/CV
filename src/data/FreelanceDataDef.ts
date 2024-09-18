@@ -6,7 +6,6 @@ export interface FrlHeader {
 }
 
 export interface Freelance {
-  title: string;
   stack: Item[];
   content: JSX.Element;
   highlight: string;
