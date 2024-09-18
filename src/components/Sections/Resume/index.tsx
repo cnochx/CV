@@ -32,9 +32,12 @@ const Resume: FC = memo(() => {
           <div className="flex flex-col space-y-32">
             {sumHeader.showSpacer && <br />}
           </div>
-          {summaryItems.map((item) => (
-            <SummaryItem item={item} key={`${item.title}-${item.siKey}`} />
-          ))}
+          {summaryItems.length >= 1 ?
+            summaryItems.map((item) => (
+              <SummaryItem item={item} key={`${item.title}-${item.siKey}`} />
+            ))
+            : null
+          }
         </ResumeSection>
         <ResumeSection title={skillHeader.title}>
           {skillHeader.content}
@@ -52,9 +55,11 @@ const Resume: FC = memo(() => {
           <div className="flex flex-col space-y-32">
             {expHeader.showSpacer && <br />}
           </div>
-          {experience.map((item) => (
+          {experience.length >= 1 ?
+            experience.map((item) => (
             <TimelineItem item={item} key={`${item.title}-${item.tlKey}`} />
-          ))}
+          )): null
+          }
         </ResumeSection>
         <ResumeSection title={eduHeader.title}>
           {eduHeader.content}

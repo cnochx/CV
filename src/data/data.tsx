@@ -89,14 +89,16 @@ export const heroData: Hero = {
         I am a <strong className="text-stone-100">Full-Stack software engineer</strong>, currently working as <strong
         className="text-stone-100">Technical Consultant</strong>.
       </p>
-        <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">I am an innovative and down-to-earth team player continuously learning to
-          develop <strong className="text-stone-100">creative solutions</strong> for complex problems.</p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">I work according to the principles of <strong className="text-stone-100">Clean Code and S.O.L.I.D.</strong> to
-        guarantee <strong className="text-stone-100">high software quality</strong>.</p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">I have 20
-        years of <strong className="text-stone-100">experience in web development</strong>, seven years in <strong className="text-stone-100">Linux
-          administration</strong>, three and half years <strong className="text-stone-100">experience in business
-          software development</strong> (ERP)
+        <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">I am an innovative and down-to-earth team player
+          continuously learning and able to develop <strong className="text-stone-100">reasonable solutions for
+          complex problems</strong>.</p>
+      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">I work according to the principles of
+        <strong className="text-stone-100">Clean Code and S.O.L.I.D.</strong> to guarantee
+        <strong className="text-stone-100">high software quality</strong>.</p>
+      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">I have 20 years of
+        <strong className="text-stone-100">experience in web development</strong>, seven years in
+        <strong className="text-stone-100">Linux administration</strong>, three and half years
+        <strong className="text-stone-100">experience in business software development</strong> (ERP)
         and have dabbled in <strong className="text-stone-100">various tech skills throughout my career</strong>.</p>
     </>
   ),
@@ -139,8 +141,7 @@ export const sumHeader: CVSubHeader = {
   content: (
     <>
         <p className="pb-8">My career is marked by a commitment to continuous learning. I deliver high-quality, reliable software solutions. I thrive in
-          collaborative environments and am dedicated to developing innovative and efficient solutions for complex
-          challenges.</p>
+          collaborative environments and am dedicated to developing innovative and efficient solutions.</p>
     </>
   ),
   showSpacer: true
@@ -149,21 +150,13 @@ export const sumHeader: CVSubHeader = {
 export const summaryItems: SummaryItem[] = [
   {
     siKey: 1,
-    date: 'February 2022 - Present',
-    location: 'BA Business Advice GmbH, Germany',
-    title: 'SAP Technical Consultant, SAP Full-Stack Development',
+    date: 'April 2004 – December 2001',
+    location: 'Ferienhaus-Vermittlung fincaferien.de GmbH, Germany',
+    title: 'Webmaster (with development tasks)',
     experiences: [
       {
         eiKey: 1,
-        text: 'Developed and refactored SAP applications, including migrations from ERP to S/4 HANA.',
-      },
-      {
-        eiKey: 2,
-        text: 'Worked on various SAP modules and cloud extensions.',
-      },
-      {
-        eiKey: 3,
-        text: 'Ensured high software quality through clean code practices.',
+        text: 'HTML/HTML5, CSS/CSS3, Git and Jira, PHP, Drupal SEO, SEA and Linux administration.',
       },
     ],
   },
@@ -175,38 +168,47 @@ export const summaryItems: SummaryItem[] = [
     experiences: [
       {
         eiKey: 1,
-        text: 'Developed and refactored PHP backend for ERP subsystems.',
+        text: 'Full-stack software development and Industry 4.0 applications on LAMP Stack.',
       },
       {
         eiKey: 2,
-        text: 'Managed Linux VMs and LAMP stacks.',
+        text: 'Refactoring PHP code to PHP 8 with PHP Unit',
       },
       {
         eiKey: 3,
-        text: 'Developed React web frontends and conducted application tests using PHPUnit.',
+        text: 'React web frontends with Material Design.',
       },
     ],
   },
   {
-    siKey: 3,
-    date: 'April 2004 – December 2001',
-    location: 'Ferienhaus-Vermittlung fincaferien.de GmbH, Germany',
-    title: 'Webmaster (with development tasks)',
+    siKey: 1,
+    date: 'February 2022 - Present',
+    location: 'BA Business Advice GmbH, Germany',
+    title: 'SAP Technical Consultant, SAP Full-Stack Development',
     experiences: [
       {
         eiKey: 1,
-        text: 'Led technical SEO implementations and web development.',
+        text: 'Business consulting and SAP solutions.',
       },
       {
         eiKey: 2,
-        text: 'Introduced and managed Git and Jira for version and project management.',
+        text: 'SAP ABAP, SAP MII, SAP UI5 Freestyle, SAP Fiori Elements.',
       },
       {
         eiKey: 3,
-        text: 'Developed and maintained Drupal 7 modules and administered Windows networks.',
+        text: 'SAP S4/Hana Public Cloud Side-By-Side Extension, S4/Hana Public Cloud Side-By-Side Extension.',
+      },
+      {
+        eiKey: 4,
+        text: 'SAP RAP and SAP CAP.',
+      },
+      {
+        eiKey: 5,
+        text: 'Implemented migrations from ERP to S/4 HANA and refactored existing applications.',
       },
     ],
   },
+
 ];
 
 /**
@@ -354,39 +356,42 @@ export const experience: TimelineItem[] = [
     date: 'February 2022 - Present',
     location: 'BA Business Advice GmbH, Germany',
     title: 'SAP Technical Consultant, SAP Full-Stack Development',
-    about: 'BA Business Advice offers business consulting and SAP solutions.',
+    about: 'Business consulting and SAP solutions.',
     content: (
       <>
-      <p>
-        Various projects are undertaken in the areas of SAP ABAP, SAP MII, SAP UI5 Freestyle, and SAP Fiori Elements.
-        These projects include collaboration and cooperation in development, object-oriented development of individual
-        Z-applications in S/4 HANA, as well as collaboration in expert teams and application services. Additionally,
-        migrations from ERP to S/4 HANA are implemented, and existing applications are refactored. The projects encompass
-        areas such as PPDS, QM, cloud extension (key user, developer, side-by-side), LE, and PM. These have so far been
-        carried out in the metal industry, steel industry, manufacturing industry, and public transport.
-      </p>
+      <p>Including SAP ABAP, SAP MII, SAP UI5 Freestyle, SAP Fiori Elements, SAP S4/Hana Public Cloud Side-By-Side
+        Extension, S4/Hana Public Cloud Side-By-Side Extension, SAP RAP and SAP CAP. Implemented migrations from ERP to
+        S/4 HANA and refactored existing applications.</p>
       </>
     ),
     experiences: [
       {
         eiKey: 1,
-        text: 'SAP S/4HANA.',
+        text: 'SAP ABAP (Clean Core).',
       },
       {
         eiKey: 2,
-        text: 'Migration from ERP to S/4HANA.',
+        text: 'SAP MII, SAP UI5 Freestyle and SAP Fiori Elements.',
       },
       {
         eiKey: 3,
-        text: 'Basic topics BTP / S4 Hana Cloud – Public Edition.',
+        text: 'SAP S4/Hana Public Cloud Side-By-Side Extension, S4/Hana Public Cloud Side-By-Side Extension, ',
       },
       {
         eiKey: 4,
+        text: 'SAP BTP Side-By-Side Extension',
+    },
+      {
+        eiKey: 5,
+        text: 'SAP RAP and SAP CAP.',
+      },
+      {
+        eiKey: 6,
         text: 'S/4HANA Cloud – Public Edition Extension (Key User / Developer / Side-by-Side).',
       },
       {
-        eiKey: 5,
-        text: 'ABAP Clean Core.',
+        eiKey: 7,
+        text: 'Implemented migrations from ERP to S/4 HANA and refactored existing applications.',
       },
     ],
   },
@@ -395,38 +400,31 @@ export const experience: TimelineItem[] = [
     date: 'February 2021 - January 2022',
     location: 'Sengicon GmbH, Germany',
     title: 'Software developer and Linux administrator',
-    about: 'Sengicon offers full-stack software development and Industry 4.0 applications.',
+    about: 'Full-stack software development and Industry 4.0 applications.',
     content: (
       <>
-      <p>
-         The application development in the area of ERP subsystems includes PHP backend development for intranet web
-        applications and the refactoring of PHP code. Additionally, database schemas and data models were created and
-        adapted. In the frontend area, React web frontends were developed and refactored. In the area of system
-        administration, various Linux VMs were set up and managed. This also included the installation, configuration,
-        and administration of LAMP stacks under Linux. Application tests were conducted using PHPUnit.
-      </p>
         <p>
-          This also included the installation, configuration, and administration of LAMP stacks under Linux. Application
-          tests were conducted using PHPUnit.
-        </p>
+          Refactoring PHP code and conducted application tests using PHPUnit. Developing React web frontends with
+          Material Design. Also Installation, configuration of Linux and LAMP-stacks under Linux. Hardening and
+          administration of CentOS. </p>
       </>
     ),
     experiences: [
       {
         eiKey: 1,
-        text: 'Setup, management and administration of CentOS / Rocky Linux as VM.',
+        text: 'PHP, Composer, PHPUnit',
       },
       {
         eiKey: 2,
-        text: 'Application development ERP sub-systems.',
+        text: 'React web frontends with Material Design.',
       },
       {
         eiKey: 3,
-        text: 'Structure, setup and development of LAMP stack.',
+        text: 'Installation, configuration of Linux and LAMP-stacks.',
       },
       {
         eiKey: 4,
-        text: 'Application development and refactoring REST API in PHP.',
+        text: 'Hardening and administration of CentOS.',
       },
     ],
   },
@@ -439,68 +437,31 @@ export const experience: TimelineItem[] = [
     content: (
       <>
         <p>
-          Special attention was paid to SEO techniques and user-friendliness. Within this framework, I carried out all
-          technical SEO implementations and was actively involved in all enhancements. This has given me twenty years
-          of valuable experience in web development with HTML/HTML5, CSS/CSS3 and JavaScript web extensions.
-        </p>
-        <p>
-          With the introduction of Git and Jira, I optimized version and project management. The websites were later
-          provided with Drupal 7, where completely self-written Drupal modules were used without a maintenance contract.
-          This sparked my interest in clean code and best practices. For the web presence with Drupal, I did professional
-          photo editing with Adobe Photoshop.
-        </p>
-        <p>
-          I have sixteen years of experience in the maintenance and administration of Windows networks at
-          the agency, the core of it was a Linux server with Samba. My knowledge of Linux administration includes the
-          setup, maintenance, and administration of Linux systems, including Samba and Apache.
-        </p>
+          Active involvement in web and network enhancements. Experience with
+          HTML/HTML5, CSS/CSS3, Git, Jira, PHP, Drupal, SEO, SEA and Linux administration.</p>
       </>
     ),
     experiences: [
       {
         eiKey: 1,
-        text: 'Active involvement in all website and network enhancements.',
+        text: 'HTML/HTML5, CSS/CSS3',
       },
       {
         eiKey: 2,
-        text: '20 years of experience with HTML/HTML5 and CSS/CSS3.',
+        text: 'PHP, Drupal',
       },
       {
         eiKey: 3,
-        text: '8 years of experience with JavaScript.',
+        text: 'Git and Jira',
       },
       {
         eiKey: 4,
-        text: 'Expertise in implementing Git and Jira.',
+        text: 'SEO, SEA',
       },
       {
         eiKey: 5,
-        text: '6 years of experience with Git.',
-      },
-      {
-        eiKey: 6,
-        text: '5 years of experience with Drupal 7, Responsible for maintenance and extension of modules.',
-      },
-      {
-        eiKey: 7,
-        text: '16 years of expertise in administration of Windows networks.',
-      },
-      {
-        eiKey: 8,
-        text: '7 years of expertise in Linux administration.',
-      },
-      {
-        eiKey: 9,
-        text: '7 years of experience in professional photo editing with Adobe Photoshop.',
-      },
-      {
-        eiKey: 10,
-        text: '20 years of expertise in SEO.',
-      },
-      {
-        eiKey: 11,
-        text: '5 years expertise in SEA.',
-      },
+        text: 'Linux administration',
+      }
     ],
   },
   {
@@ -508,28 +469,14 @@ export const experience: TimelineItem[] = [
     date: 'August 1998 - Juli 2002',
     location: 'As freelance work in Germany: Berlin, Hanover, Braunschweig, and Wolfsburg',
     title: 'Stagehand',
-    about: 'At events, concerts, congresses, corporate events and trade fair appearances, my main task was to help ' +
-      'set up, maintain and operate the stage equipment. To comply with safety protocols, I had completed safety ' +
-      'training in rigging techniques.',
+    about: 'At events, concerts, congresses, corporate events and trade fair appearances',
     content: (
-        <p>
-          Adhering to safety protocols I had a Safety Training for Slinging Techniques.
-        </p>
+      <p>
+        In order to comply with the safety protocols, I had completed a
+        safety training for rigging technology.
+      </p>
     ),
-    experiences: [
-      {
-        eiKey: 1,
-        text: 'Collaborated with others to assemble stage sets, props, and scenery.'
-      },
-      {
-        eiKey: 2,
-        text: 'During performances, assists with lights, sound and moving scenery and artist support.',
-      },
-      {
-        eiKey: 3,
-        text: 'Effective collaboration and communication with crew.'
-      },
-    ],
+    experiences: [],
   },
 ];
 
@@ -550,154 +497,41 @@ export const education: TimelineItem[] = [
   {
     tlKey: 1,
     date: 'November 2020 - January 2021',
-    location: 'Sengicon GmbH, Germany',
-    title: 'Internship as part of the Full-Stack Web Developer training program',
-    about: 'Sengicon offers full-stack software development and Industry 4.0 applications.',
+    location: 'DAA GmbH in Hildesheim, Germany',
+    title: 'Industrial Clerk',
+    about: '',
     content: (
-      <p>The activities included
-      the installation and setup of Linux VMs, as well as the installation, configuration, and administration of Apache,
-      MySQL/MariaDB, and PHP software stacks under Linux. In addition, Drupal 8 was installed and set up.</p>
+      <p>Focused on business processes, commercial management and control,
+        and economic and social studies.</p>
     ),
-    experiences: [
-      {
-        eiKey: 1,
-        text: 'Installation and setup of Drupal 8 (https://sengicon.de)'
-      },
-      {
-        eiKey: 2,
-        text: 'Installation and setup of Linux VMs.'
-      },
-      {
-        eiKey: 3,
-        text: 'Structure, setup, and development of the LAMP stack.'
-      },
-    ],
+    experiences: [],
   },
 
   {
     tlKey: 2,
-    date: 'Juni 2020',
+    date: '',
     location: 'Indisoft GmbH, Germany',
-    title: 'Scrum Master (PSMI)',
+    title: 'Full-Stack Web Developer',
     about: 'The Professional Scrum Master I (PSM I) is an entry-level certification provided by Scrum.org.',
     content:(
-      <p>It demonstrates a fundamental level of Scrum mastery, including understanding Scrum
-        principles and practices.</p>
+      <p>Training covered best practices in responsive web design, Javascript and
+        PHP, MySQL, content management, e-commerce, and online marketing,
+        including SEO, SEA and Google Analytics.
+        Included a Scrum Master (PSMI) certificate.</p>
     ),
-    experiences: [
-      {
-        eiKey: 1,
-        text: 'Scrum Theory and Principles (Understand the empirical process and Comprehend the Scrum values ).'
-      },
-      {
-        eiKey: 2,
-        text: 'The Scrum Framework (Roles, Events, Artifacts).'
-      },
-      {
-        eiKey: 3,
-        text: 'Scrum Roles (Responsibilities of the Scrum Master, Product Owner, and Development Team).'
-      },
-      {
-        eiKey: 4,
-        text: 'Scrum Events (Purpose and timing of each event, facilitate and ensure each event\'s effectiveness).'
-      },
-      {
-        eiKey: 5,
-        text: 'Scrum Artifacts (Purpose and content of Product Backlog, Sprint Backlog, and Increment, importance of Definition of Done).'
-      },
-      {
-        eiKey: 6,
-        text: 'Scaling Scrum (Basics of scaling Scrum for larger projects and teams).'
-      },
-    ],
+    experiences: [],
   },
   {
     tlKey: 3,
-    date: 'January 2020 – January 2021',
-    location: 'Indisoft GmbH, Germany',
+    date: '',
+    location: 'Full-Stack Web Developer, Practical Internship',
     title: 'Further training as a Full-Stack Web Developer',
     about: 'The further training certified the quality of my knowledge.',
     content: (
-      <p>The training covered best practices in responsive web design, the scripting languages
-      Javascript and PHP as well as MySQL. Content management, e-commerce, online PR, online marketing
-      marketing, SEO, SEA including keyword advertising and controlling with Google Analytics
-      were part of it. An internship rounded off the activities.</p>
+      <p>Practical training covered best practices in LAMP-Stack, Javascript, PHP,
+        MySQL and Linux-Administration.</p>
     ),
-    experiences: [
-      {
-        eiKey: 1,
-        text: 'Responsive web design with HTML 5 and CSS 3.',
-      },
-      {
-        eiKey: 2,
-        text: 'Content management for programmers (Typo 3).',
-      },
-      {
-        eiKey: 3,
-        text: 'Search engine optimisation.',
-      },
-      {
-        eiKey: 4,
-        text: 'Search engine marketing.',
-      },
-      {
-        eiKey: 5,
-        text: 'Keyword advertising, Google Analytics.',
-      },
-      {
-        eiKey: 6,
-        text: 'Online PR, social media marketing - writing for the web',
-      },
-      {
-        eiKey: 7,
-        text: 'Agile project management with Scrum Master certificate.',
-      },
-      {
-        eiKey: 8,
-        text: 'E-commerce, store systems (WordPress with Whoo-commerce).',
-      },
-      {
-        eiKey: 9,
-        text: 'Scripting languages Javascript (Vanilla Javascript).',
-      },
-      {
-        eiKey: 10,
-        text: 'Javascript development with Node.js, jQuery, AJAX.',
-      },
-      {
-        eiKey: 11,
-        text: ' PHP scripting language (OOP based on concept of MVC).',
-      },
-      {
-        eiKey: 12,
-        text: 'Internship.',
-      },
-
-    ],
-  },
-  {
-    tlKey: 4,
-    date: 'August 2002 - Juni 2004',
-    location: 'DAA GmbH in Hildesheim, Germany',
-    title: 'Training as an industrial clerk',
-    about: 'Jobtraining as an industrial clerk',
-    content: (
-      <p>I focused on business processes, commercial management and control, and economic and social studies.</p>
-    ),
-    experiences: [
-      {
-        eiKey: 1,
-        text: 'Business processes'
-      },
-      {
-        eiKey: 2,
-        text: 'Commercial management and control'
-      },
-      {
-        eiKey: 3,
-        text: 'Economic and social studies'
-      },
-    ],
+    experiences: [],
   },
 ];
 
@@ -716,8 +550,8 @@ export const addHeader: CVSubHeader = {
 export const additionalInterests: LifeItem[] = [
   {
     liKey: 1,
-    relationshipStatus: 'I have been married since 2004.',
-    familyStatus: 'We have three kids together (born in 2002, 2004, and 2019).',
+    relationshipStatus: '',
+    familyStatus: '',
     privateInterests: 'I am interested in electronic music and developing our property in Alto Paraíso de Goiás.',
     location: 'I live in Germany for a small part of the year, but I spend most of my time in Brazil.',
     legal: 'I have an official Brazilian National Migratory Registry Card (CRNM) with an unrestricted work and residence permit.',
