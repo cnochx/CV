@@ -87,18 +87,17 @@ export const heroData: Hero = {
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         I am a <strong className="text-stone-100">Full-Stack software engineer</strong>, currently working as <strong
-        className="text-stone-100">Technical Consultant</strong>. I am <strong className="text-stone-100">trained</strong>
-        on the requirements of <strong className="text-stone-100">enterprise software</strong> development in an
-        industrial context. I am a german with Brasilien residence, working as developer <strong
-        className="text-stone-100">since 2002</strong>. I am an innovative and down-to-earth team player who <strong
-        className="text-stone-100">learns continuously</strong> and <strong className="text-stone-100">analyses quickly
-      </strong>.</p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg"><strong className="text-stone-100">Clean
-        code</strong> and <strong className="text-stone-100">S.O.L.I.D.</strong> principles are important to me in
-        order to guarantee <strong className="text-stone-100">high software quality</strong>. My work is characterised
-        by a <strong className="text-stone-100">commitment to best practices</strong>, ensuring that <strong
-          className="text-stone-100">what I develop works</strong>.
+        className="text-stone-100">Technical Consultant</strong>.
       </p>
+        <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">I am an innovative and down-to-earth team player continuously learning to
+          develop <strong className="text-stone-100">creative solutions</strong> for complex problems.</p>
+      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">I work according to the principles of <strong className="text-stone-100">Clean Code and S.O.L.I.D.</strong> to
+        guarantee <strong className="text-stone-100">high software quality</strong>.</p>
+      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">I have 20
+        years of <strong className="text-stone-100">experience in web development</strong>, seven years in <strong className="text-stone-100">Linux
+          administration</strong>, three and half years <strong className="text-stone-100">experience in business
+          software development</strong> (ERP)
+        and have dabbled in <strong className="text-stone-100">various tech skills throughout my career</strong>.</p>
     </>
   ),
   actions: [
