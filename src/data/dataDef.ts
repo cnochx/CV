@@ -136,6 +136,18 @@ export interface ProjectItem {
   content: JSX.Element;
 }
 
+export interface FrlSubHeader {
+  title: string;
+  content: JSX.Element;
+  showSpacer: boolean;
+}
+
+export interface Freelance {
+  title: string;
+  stack: expItem[];
+  content: JSX.Element;
+}
+
 /**
  * Testimonial section
  */

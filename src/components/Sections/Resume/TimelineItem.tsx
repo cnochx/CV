@@ -22,19 +22,22 @@ const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
 
       {content}
 
-      <h4><strong>Experiences</strong></h4>
-      <ul className="list-inside list-disc">
-        {experiences.map(({eiKey, text}) => {
-          return (
-            <li key={eiKey}>
-              {text}
-            </li>
-          );
-        })}
-      </ul>
+      {experiences && experiences.length > 0 && (
+        <>
+          <h4><strong>Experiences</strong></h4>
+          <ul className="list-inside list-disc">
+            {experiences.map(({eiKey, text}) => {
+              return (
+                <li key={eiKey}>
+                  {text}
+                </li>
+              );
+            })}
+          </ul>
+        </>
+      )}
 
       <div className="flex flex-col space-y-32">
-        <br />
       </div>
     </div>
 
