@@ -118,8 +118,7 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `I am an innovative and down-to-earth team player who learns continuously and analyses quickly. I develop 
-  creative solutions for complex problems. What I develop works reliably.`,
+  description: `With 20 years in web development, seven in Linux administration, and three and a half in ERP, I develop reasonable solutions for complex challenges, adhering to Clean Code and S.O.L.I.D. principles to ensure high software quality.`,
   aboutItems: [
     {label: 'Location', text: 'Leipzig, Germany and Povoado do Moinho, Alto Paraíso de Goiás, Brazil', Icon: MapIcon},
     {label: 'Study', text: 'Self-studied', Icon: AcademicCapIcon},
