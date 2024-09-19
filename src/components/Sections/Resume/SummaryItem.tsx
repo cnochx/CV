@@ -17,19 +17,21 @@ const SummaryItem: FC<{item: SummaryItem}> = memo(({item}) => {
           <span className="flex-1 text-sm sm:flex-none">{date}</span>
         </div>
       </div>
-      <ul className="list-inside list-disc">
-        {experiences.map(({eiKey, text}) => {
-          return (
-            <li key={eiKey}>
-              {text}
-            </li>
-          );
-        })}
-      </ul>
+      {experiences && experiences.length > 0 && (
+        <>
+          <ul className="list-inside list-disc">
+            {experiences.map(({eiKey, text}) => {
+              return (
+                <li key={eiKey}>
+                  {text}
+                </li>
+              );
+            })}
+          </ul>
+        </>
+      )}
 
-      <div className="flex flex-col space-y-32">
-        <br />
-      </div>
+      <div className="flex flex-col space-y-32"></div>
     </div>
 
 
