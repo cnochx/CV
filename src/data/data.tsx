@@ -92,9 +92,9 @@ export const heroData: Hero = {
         <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">I am an innovative and down-to-earth team player
           continuously learning and able to develop <strong className="text-stone-100">reasonable solutions for
           complex problems</strong>.</p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">I work according to the principles of
-        <strong className="text-stone-100">Clean Code and S.O.L.I.D.</strong> to guarantee
-        <strong className="text-stone-100">high software quality</strong>.</p>
+      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">I work according to the principles of <strong className="text-stone-100">
+        Clean Code and S.O.L.I.D.</strong> to guarantee <strong className="text-stone-100">
+          high software quality</strong>.</p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">I have 20 years of
         <strong className="text-stone-100">experience in web development</strong>, seven years in
         <strong className="text-stone-100">Linux administration</strong>, three and half years
