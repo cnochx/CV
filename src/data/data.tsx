@@ -495,7 +495,7 @@ export const eduHeader: CVSubHeader = {
 export const education: TimelineItem[] = [
   {
     tlKey: 1,
-    date: 'November 2020 - January 2021',
+    date: '',
     location: 'DAA GmbH in Hildesheim, Germany',
     title: 'Industrial Clerk',
     about: '',
@@ -511,7 +511,7 @@ export const education: TimelineItem[] = [
     date: '',
     location: 'Indisoft GmbH, Germany',
     title: 'Full-Stack Web Developer',
-    about: 'The Professional Scrum Master I (PSM I) is an entry-level certification provided by Scrum.org.',
+    about: '',
     content:(
       <p>Training covered best practices in responsive web design, Javascript and
         PHP, MySQL, content management, e-commerce, and online marketing,
@@ -525,7 +525,7 @@ export const education: TimelineItem[] = [
     date: '',
     location: 'Full-Stack Web Developer, Practical Internship',
     title: 'Further training as a Full-Stack Web Developer',
-    about: 'The further training certified the quality of my knowledge.',
+    about: 'Practical Internship to get deep into best practises.',
     content: (
       <p>Practical training covered best practices in LAMP-Stack, Javascript, PHP,
         MySQL and Linux-Administration.</p>
