@@ -1,3 +1,4 @@
+import {Analytics} from '@vercel/analytics/react';
 import {NextPage} from 'next';
 import Head from 'next/head';
 import {useRouter} from 'next/router';
@@ -33,6 +34,7 @@ const Page: NextPage<PropsWithChildren<HomepageMeta>> = memo(({children, title, 
         <meta content={description} name="twitter:description" />
       </Head>
       {children}
+      <Analytics />
     </>
   );
 });
