@@ -280,7 +280,7 @@ export const skills: SkillGroup[] = [
       },
       {
         name: 'React Framework',
-        level: 5,
+        level: 7,
       }
     ],
   },
