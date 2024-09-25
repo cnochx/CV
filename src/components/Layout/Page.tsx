@@ -1,4 +1,5 @@
 import {Analytics} from '@vercel/analytics/react';
+import {SpeedInsights} from '@vercel/speed-insights/next';
 import {NextPage} from 'next';
 import Head from 'next/head';
 import {useRouter} from 'next/router';
@@ -35,6 +36,7 @@ const Page: NextPage<PropsWithChildren<HomepageMeta>> = memo(({children, title, 
       </Head>
       {children}
       <Analytics />
+      <SpeedInsights />
     </>
   );
 });
