@@ -195,14 +195,18 @@ export const summaryItems: SummaryItem[] = [
       },
       {
         eiKey: 3,
-        text: 'SAP S4/Hana Public Cloud Side-By-Side Extension, S4/Hana Public Cloud Side-By-Side Extension.',
+        text: 'SAP S4/Hana Public Cloud Side-By-Side Extension.',
       },
       {
         eiKey: 4,
-        text: 'SAP RAP and SAP CAP.',
+        text: 'S4/Hana Public Cloud Side-By-Side Extension.',
       },
       {
         eiKey: 5,
+        text: 'SAP RAP and SAP CAP.',
+      },
+      {
+        eiKey: 6,
         text: 'Implemented migrations from ERP to S/4 HANA and refactored existing applications.',
       },
     ],
