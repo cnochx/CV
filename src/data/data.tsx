@@ -38,13 +38,12 @@ import {
   CVSubHeader,
   Hero,
   HomepageMeta,
-  ImprintSection,
   LifeItem,
   PortfolioItem,
   ProjectItem,
-  ProSubHeader,
   SkillGroup,
   Social,
+  SubHeader,
   SummaryItem,
   TestimonialSection,
   TimelineItem,
@@ -86,8 +85,8 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I am a <strong className="text-stone-100">Full-Stack software engineer</strong>, currently working as <strong
-        className="text-stone-100">Technical Consultant</strong>.
+        I am a <strong className="text-stone-100">Full-Stack software engineer</strong>, with the Knowledge as <strong
+        className="text-stone-100">SAP Technical Consultant</strong>.
       </p>
         <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">I am an innovative and down-to-earth team player
           continuously learning and able to develop <strong className="text-stone-100">reasonable solutions for
@@ -121,6 +120,7 @@ export const heroData: Hero = {
  * About section
  */
 export const aboutData: About = {
+  header: 'About me',
   profileImageSrc: profilepic,
   description: `With 20 years in web development, seven in Linux administration, and three and a half in ERP, I develop reasonable solutions for complex challenges, adhering to Clean Code and S.O.L.I.D. principles to ensure high software quality.`,
   aboutItems: [
@@ -136,20 +136,20 @@ export const aboutData: About = {
 };
 
 export const sumHeader: CVSubHeader = {
-  title: 'Resume',
+  title: 'Summary',
   content: (
     <>
         <p className="pb-8">My career is marked by a commitment to continuous learning. I deliver high-quality, reliable software solutions. I thrive in
           collaborative environments and am dedicated to developing innovative and efficient solutions.</p>
     </>
   ),
-  showSpacer: true
+  showSpacer: false
 }
 
 export const summaryItems: SummaryItem[] = [
   {
     siKey: 1,
-    date: 'April 2004 – December 2001',
+    date: 'April 2004 – December 2019',
     location: 'Ferienhaus-Vermittlung fincaferien.de GmbH, Germany',
     title: 'Webmaster (with development tasks)',
     experiences: [
@@ -429,7 +429,7 @@ export const experience: TimelineItem[] = [
   },
   {
     tlKey: 3,
-    date: 'April 2004 - January 2019',
+    date: 'April 2004 - December 2019',
     location: 'Ferienhaus-Vermittlung fincaferien.de GmbH, Germany',
     title: 'Webmaster (with development tasks)',
     about: 'Fincaferien was one of the first German agencies to successfully broker vacation homes online.',
@@ -557,7 +557,7 @@ export const additionalInterests: LifeItem[] = [
   }
 ];
 
-export const proHeader: ProSubHeader = {
+export const proHeader: SubHeader = {
   title: 'Projects',
   content: (
     <>
@@ -738,6 +738,14 @@ export const projectItem: ProjectItem[] = [
 /**
  * Portfolio section
  */
+export const ptfHeader: SubHeader = {
+  title: 'I am proficient with the technical stack',
+  content: (
+    <></>
+  ),
+  showSpacer: false
+};
+
 export const portfolioItems: PortfolioItem[] = [
   {
     title: 'HTML5',
@@ -906,84 +914,3 @@ export const socialLinks: Social[] = [
   {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/martingrellmann/'},
   {label: 'Github', Icon: GithubIcon, href: 'https://github.com/chnochx'},
 ];
-
-/**
- * Imprint items
- */
-
-export const imprintItems: ImprintSection = {
-  description: '',
-  headerText: 'Person in charge:',
-  items: [
-    {
-      text: 'Martin Grellmann',
-    },
-    {
-      text: 'Vogelmauer 43',
-    },
-    {
-      text: '86152 Augsburg',
-    },
-    {
-      text: 'Germany',
-    },
-    {
-      text: '---',
-    },
-    {
-      text: 'Sitio de Cristal',
-    },
-    {
-      text: '73770-000, Povoado do Moinho',
-    },
-    {
-      text: 'Alto Paraíso de Goiás',
-    },
-    {
-      text: 'Goiás, Brazil',
-    },
-  ],
-
-  linkItems: [
-    {
-    linkLabel: 'e-mail:',
-    text: 'martin@grellmann.eu',
-    href: 'mailto:martin@grellmann.eu',
-    },
-    {
-      linkLabel: 'Fax:',
-      text: '+49 322 239 432 99',
-      href: 'tel:004932223943299',
-    },
-    {
-      linkLabel: 'Phone:',
-      text: '+55 113 042 5721',
-      href: 'tel:00551130425721',
-    }
-  ],
-
-  headerDSGVO: 'Data protection:',
-
-  itemsDSGVO: [
-    {
-      text: 'The sole purpose of this website is to present my CV and related content.'
-    },
-    {
-      text: 'No data will be collected on this page, apart from the usual log files of the domain hoster. '
-    },
-    {
-      text: 'The Logfiles are not evaluated for business purposes'
-    },
-    {
-      text:
-        'By submitting the contact form, name and email will be requested and sent.'
-    },
-    {
-      text:
-        'The responsibility for the websites accessed via any links lies with the respective operators.'
-    },
-    {
-      text: 'When a contact request is made, the corresponding e-mail is saved on the host and the e-mail client.'
-    },
-  ]
-};
