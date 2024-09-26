@@ -38,6 +38,7 @@ interface HeroActionItem {
  * About section
  */
 export interface About {
+  header: string;
   profileImageSrc?: string;
   description: string;
   aboutItems: AboutItem[];
@@ -122,7 +123,7 @@ export interface LifeItem {
   legal: string;
 }
 
-export interface ProSubHeader {
+export interface SubHeader {
   title: string;
   content: JSX.Element;
   showSpacer: boolean;
@@ -204,28 +205,3 @@ export interface Social {
   href: string;
 }
 
-/**
- * Imprint
- */
-export interface ImprintSection {
-  headerText?: string;
-  description: string;
-  items: ImprintAddressItem[];
-  linkItems: linkItems[];
-  headerDSGVO: string;
-  itemsDSGVO: itemDSGVO[];
-}
-
-export interface itemDSGVO {
-  text: string;
-}
-
-export interface ImprintAddressItem {
-  text: string;
-}
-
-export interface linkItems {
-  linkLabel: string;
-  text: string;
-  href?: string;
-}
