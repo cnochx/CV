@@ -357,7 +357,7 @@ export const experience: TimelineItem[] = [
   {
     tlKey: 1,
     date: 'February 2022 - Present',
-    location: 'BA Business Advice GmbH, Germany',
+    location: 'BA Business Advice GmbH, Oldenburg, Germany',
     title: 'SAP Technical Consultant, SAP Full-Stack Development',
     about: 'Business consulting and SAP solutions.',
     content: (
@@ -401,7 +401,7 @@ export const experience: TimelineItem[] = [
   {
     tlKey: 2,
     date: 'February 2021 - January 2022',
-    location: 'Sengicon GmbH, Germany',
+    location: 'Sengicon GmbH, Leipzig, Germany',
     title: 'Software developer and Linux administrator',
     about: 'Full-stack software development and Industry 4.0 applications.',
     content: (
@@ -434,7 +434,7 @@ export const experience: TimelineItem[] = [
   {
     tlKey: 3,
     date: 'April 2004 - December 2019',
-    location: 'Ferienhaus-Vermittlung fincaferien.de GmbH, Germany',
+    location: 'Ferienhaus-Vermittlung fincaferien.de GmbH, Bockenem, Germany',
     title: 'Webmaster (with development tasks)',
     about: 'Fincaferien was one of the first German agencies to successfully broker vacation homes online.',
     content: (
@@ -500,7 +500,7 @@ export const education: TimelineItem[] = [
   {
     tlKey: 1,
     date: '',
-    location: 'DAA GmbH in Hildesheim, Germany',
+    location: 'DAA GmbH, Hildesheim, Germany',
     title: 'Industrial Clerk',
     about: '',
     content: (
@@ -527,8 +527,8 @@ export const education: TimelineItem[] = [
   {
     tlKey: 3,
     date: '',
-    location: 'Full-Stack Web Developer, Practical Internship',
-    title: 'Further training as a Full-Stack Web Developer',
+    location: 'Sengicon GmbH, Germany',
+    title: 'Full-Stack Web Developer, Practical Internship',
     about: 'Practical Internship to get deep into best practises.',
     content: (
       <p>Practical training covered best practices in LAMP-Stack, Javascript, PHP,
