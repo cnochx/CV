@@ -9,15 +9,15 @@ const Freelance: FC = memo(() => {
   const {content, stack} = freelance;
   return (
     <Section className="bg-neutral-800" sectionId={SectionId.Freelance}>
-      <article className="flex flex-col divide-y-2 divide-neutral-300">
-        <div className="grid grid-cols-1 gap-y-4 py-8 first:pt-0 last:pb-0  md:grid-cols-4">
+      <div className="flex flex-col divide-y-2 divide-neutral-300">
+        <article className="grid grid-cols-1 gap-y-4 py-8 first:pt-0 last:pb-0  md:grid-cols-4">
           <header className="col-span-1 flex justify-center md:justify-start">
             <div className="relative h-max">
               <h2 className="text-xl font-bold uppercase text-white">{frlHeader.title}</h2>
               <span className="absolute inset-x-0 -bottom-1 border-b-2 border-orange-400" />
             </div>
           </header>
-          <div className="col-span-1 flex flex-col md:col-span-3 text-white">
+          <section className="col-span-1 flex flex-col md:col-span-3 text-white">
             {frlHeader.content}
             <div className="flex flex-col space-y-32">
               {frlHeader.showSpacer && <br />}
@@ -58,11 +58,11 @@ const Freelance: FC = memo(() => {
               </aside>
 
             </div>
-          </div>
+          </section>
 
 
-        </div>
-      </article>
+        </article>
+      </div>
     </Section>
   );
 });

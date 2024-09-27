@@ -26,7 +26,7 @@ const Resume: FC = memo(() => {
       <div className="flex flex-col divide-y-2 divide-neutral-300">
         <ResumeSection title={sumHeader.title}>
           {sumHeader.content}
-          <div className="flex flex-col space-y-32">
+          <div className="flex flex-col space-y-4">
             {sumHeader.showSpacer && <br />}
           </div>
           {summaryItems.length >= 1 ?

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import {FC, memo, MouseEvent, useCallback, useEffect, useRef, useState} from 'react';
 
 import {isMobile} from '../../config';
-import {portfolioItems, SectionId} from '../../data/data';
+import {portfolioItems, ptfHeader, SectionId} from '../../data/data';
 import {PortfolioItem} from '../../data/dataDef';
 import useDetectOutsideClick from '../../hooks/useDetectOutsideClick';
 import Section from '../Layout/Section';
@@ -14,8 +14,8 @@ const Portfolio: FC = memo(() => {
     <Section className="bg-neutral-800" sectionId={SectionId.Portfolio}>
 
       <div className="flex flex-col gap-y-8">
-        <h2 className="self-center text-xl font-bold text-white">I am proficient with the technical stack</h2>
-        <div className=" w-full columns-2 md:columns-3 lg:columns-4">
+        <h2 className="self-center text-xl font-bold text-white">{ptfHeader.title}</h2>
+        <article className=" w-full columns-2 md:columns-3 lg:columns-4">
           {portfolioItems.map((item, index) => {
             const {title, image} = item;
             return (
@@ -30,7 +30,7 @@ const Portfolio: FC = memo(() => {
               </div>
             );
           })}
-        </div>
+        </article>
       </div>
 
     </Section>
