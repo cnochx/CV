@@ -43,7 +43,7 @@ export const imprintItems: ImprintItems = {
   addressBrazil: [
     {
       aiKey: 0,
-      text: 'C4, Sitio de Cristal',
+      text: 'Sitio de Cristal, C4 - Chácara Shanti',
     },
     {
       aiKey: 1,

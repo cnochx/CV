@@ -555,7 +555,7 @@ export const additionalInterests: LifeItem[] = [
     liKey: 1,
     relationshipStatus: '',
     familyStatus: '',
-    privateInterests: 'I am interested in electronic music and developing our property in Alto Paraíso de Goiás.',
+    privateInterests: 'I am interested in electronic music, a DJ since 3 decades and developing our property in Moinho, Alto Paraíso de Goiás.',
     location: 'I live in Germany for a small part of the year, but I spend most of my time in Brazil.',
     legal: 'I have an official Brazilian National Migratory Registry Card (CRNM) with an unrestricted work and residence permit.',
   }
