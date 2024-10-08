@@ -42,6 +42,8 @@ export interface About {
   profileImageSrc?: string;
   description: string;
   aboutItems: AboutItem[];
+  imagePublicURL?: string;
+  imagePublicAlt: string;
 }
 
 export interface AboutItem {
