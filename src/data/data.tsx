@@ -55,8 +55,8 @@ import {
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
-  title: 'Martin (Rudra) Grellmann',
-  description: 'Curriculum vitae of Martin (Rudra) Grellmann',
+  title: 'Full Stack Web Developer Martin (Rudra) Grellmann',
+  description: 'Curriculum vitae of Martin (Rudra) Grellmann, Full Stack Web Developer',
 };
 
 /**
@@ -88,17 +88,26 @@ export const heroData: Hero = {
         I am a <strong className="text-stone-100">Full-Stack software engineer</strong>, with the Knowledge as <strong
         className="text-stone-100">SAP Technical Consultant</strong>.
       </p>
-        <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">I am an innovative and down-to-earth team player
-          continuously learning and able to develop <strong className="text-stone-100">reasonable solutions for
-          complex problems</strong>.</p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">I work according to the principles of <strong className="text-stone-100">
-        Clean Code and S.O.L.I.D.</strong> to guarantee <strong className="text-stone-100">
-          high software quality</strong>.</p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">I have 20 years of
-        <strong className="text-stone-100">experience in web development</strong>, seven years in
-        <strong className="text-stone-100">Linux administration</strong>, three and half years
-        <strong className="text-stone-100">experience in business software development</strong> (ERP)
-        and have dabbled in <strong className="text-stone-100">various tech skills throughout my career</strong>.</p>
+      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">I am an innovative and down-to-earth team player
+         able to develop <strong className="text-stone-100">reasonable solutions for complex problems</strong>.</p>
+      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
+        Experienced in full-stack web development with <strong className="text-stone-100">over 20 years in the
+        field</strong>
+        Proficient in <strong className="text-stone-100">HTML</strong>, <strong className="text-stone-100">CSS</strong>,
+        <strong className="text-stone-100">React</strong>, <strong
+        className="text-stone-100">JavaScript</strong>, <strong className="text-stone-100">Node.js</strong>,
+        <strong className="text-stone-100">PHP</strong>, and <strong className="text-stone-100">MySQL</strong>. Possess
+        7 years
+        of experience in <strong className="text-stone-100">Linux administration</strong> and 3.5 years in
+        <strong className="text-stone-100">business software development</strong>, including 2.5 years in <strong
+        className="text-stone-100">SAP technology</strong>.
+      </p>
+      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">I am committed to <strong className="text-stone-100">continuous
+        learning</strong> and innovation, with a strong focus on <strong className="text-stone-100">clean code</strong> and
+        <strong className="text-stone-100">S.O.L.I.D principles</strong>. Skilled in designing, testing, and maintaining web systems,
+        with a proven track record in <strong className="text-stone-100">business consulting</strong> and <strong className="text-stone-100">Industry
+          4.0
+          applications</strong>.</p>
     </>
   ),
   actions: [
@@ -122,7 +131,7 @@ export const heroData: Hero = {
 export const aboutData: About = {
   header: 'About me',
   profileImageSrc: profilepic,
-  description: `With 20 years in web development, seven in Linux administration, and three and a half in ERP, I develop reasonable solutions for complex challenges, adhering to Clean Code and S.O.L.I.D. principles to ensure high software quality.`,
+  description: `With 20 years experience, I develop reasonable solutions for complex challenges, adhering to Clean Code and S.O.L.I.D. principles to ensure high software quality.`,
   aboutItems: [
     {label: 'Location', text: 'Leipzig, Germany and Povoado do Moinho, Alto Paraíso de Goiás, Brazil', Icon: MapIcon},
     {label: 'Study', text: 'Self-studied', Icon: AcademicCapIcon},
@@ -239,39 +248,39 @@ export const skills: SkillGroup[] = [
       },
       {
         name: 'Git / Gitflow',
-        level: 9,
+        level: 10,
       },
       {
         name: 'Jira',
-        level: 8,
-      },
-      {
-        name: 'Linuxadministration',
-        level: 8
+        level: 7,
       },
       {
         name: 'OOP (ABAP / JS / PHP)',
-        level: 8,
+        level: 9,
       },
       {
         name: 'Scrum Master',
         level: 5,
+      },
+      {
+        name: 'Linuxadministration',
+        level: 7
+      },
+      {
+        name: 'Samba',
+        level: 8
       }
     ],
   },
   {
     name: 'Frontend development',
-    skills: [
+    skills: [ 
       {
-        name: 'CSS / CSS 3',
+        name: 'HTML / HTML 5',
         level: 10,
       },
       {
-        name: 'Drupal 7',
-        level: 8,
-      },
-      {
-        name: 'HTML / HTML 5',
+        name: 'CSS / CSS 3',
         level: 10,
       },
       {
@@ -282,30 +291,60 @@ export const skills: SkillGroup[] = [
         name: 'Typescript',
         level: 8,
       },
+    ],
+  },
+  {
+    name: 'Framworks / CMS',
+    skills: [
       {
         name: 'React Framework',
         level: 7,
-      }
+      },
+      {
+        name: 'TailwindCSS',
+        level: 7,
+      },
+      {
+        name: 'Bootstrap',
+        level: 7,
+      },
+      {
+        name: 'Drupal / Drupal 7',
+        level: 9,
+      },
+      
     ],
   },
   {
     name: 'Backend development',
     skills: [
       {
-        name: 'Node.js / NPM',
+        name: 'Node.js / Javecsript',
         level: 8,
       },
       {
-        name: 'MySql',
+        name: 'Express.js',
         level: 8,
       },
       {
-        name: 'PHP / Composer',
+        name: 'Next.js',
+        level: 8,
+      },
+      {
+        name: 'PHP',
+        level: 10,
+      },
+      {
+        name: 'Composer / NPM',
         level: 9,
       },
       {
         name: 'UnitPHP',
-        level: 5,
+        level: 6,
+      },
+      {
+        name: 'Jest.js',
+        level: 6,
       },
       {
         name: 'Python',
@@ -314,7 +353,36 @@ export const skills: SkillGroup[] = [
     ],
   },
   {
-    name: 'SAP Full-Stack Development',
+    name: 'Database modelleing',
+    skills: [
+      {
+        name: 'MySql',
+        level: 8,
+      },
+      {
+        name: 'MariaDB',
+        level: 8,
+      },
+      {
+        name: 'PostgreSQL',
+        level: 7,
+      },
+      {
+        name: 'ABAP SQL',
+        level: 7,
+      },
+      {
+        name: 'MongoDB',
+        level: 5,
+      },
+      {
+        name: 'SQLite',
+        level: 6,
+      },
+    ],
+  },
+  {
+    name: 'SAP Technologies',
     skills: [
       {
         name: 'SAP ABAP (Modern, Clean Core)',
@@ -325,7 +393,7 @@ export const skills: SkillGroup[] = [
         level: 7,
       },
       {
-        name: 'SAP UI5 Freestyle',
+        name: 'SAP UI5 Freestyle (JS-Framework)',
         level: 8,
       },
       {
@@ -334,6 +402,14 @@ export const skills: SkillGroup[] = [
       },
       {
         name: 'SAP S/4Hana Cloud - Public Edition Extensions',
+        level: 6,
+      },
+      {
+        name: 'SAP S/4Hana Cloud - Side-by-Side Ext.',
+        level: 6,
+      },
+      {
+        name: 'S/4Hana Cloud - Developer Ext.',
         level: 6,
       },
       {
@@ -361,11 +437,10 @@ export const experience: TimelineItem[] = [
     title: 'SAP Technical Consultant, SAP Full-Stack Development',
     about: 'Business consulting and SAP solutions.',
     content: (
-      <>
-      <p>Including SAP ABAP, SAP MII, SAP UI5 Freestyle, SAP Fiori Elements, SAP S4/Hana Public Cloud Side-By-Side
-        Extension, S4/Hana Public Cloud Side-By-Side Extension, SAP RAP and SAP CAP. Implemented migrations from ERP to
-        S/4 HANA and refactored existing applications.</p>
-      </>
+      <p>SAP Technical Consultant, SAP Full-Stack Development at BA Business Advice GmbH, Oldenburg, Germany Business
+        consulting and SAP solutions, including SAP ABAP, SAP MII, SAP UI5 Freestyle, SAP Fiori Elements, SAP S4/Hana
+        Public Cloud Side-By-Side Extension, S4/Hana Public Cloud Side-By-Side Extension, SAP RAP and SAP CAP.
+        Implemented migrations from ERP to S/4 HANA and refactored existing applications.</p>
     ),
     experiences: [
       {
@@ -378,7 +453,11 @@ export const experience: TimelineItem[] = [
       },
       {
         eiKey: 3,
-        text: 'SAP S4/Hana Public Cloud Side-By-Side Extension, S4/Hana Public Cloud Side-By-Side Extension, ',
+        text: 'S4/Hana Public Cloud Side-By-Side Extension, ',
+      },
+      {
+        eiKey: 3,
+        text: 'S4/Hana Public Cloud Side-By-Side Extension, ',
       },
       {
         eiKey: 4,
@@ -386,11 +465,11 @@ export const experience: TimelineItem[] = [
     },
       {
         eiKey: 5,
-        text: 'SAP RAP and SAP CAP.',
+        text: 'SAP RAP',
       },
       {
         eiKey: 6,
-        text: 'S/4HANA Cloud – Public Edition Extension (Key User / Developer / Side-by-Side).',
+        text: 'SAP CAP',
       },
       {
         eiKey: 7,
@@ -405,12 +484,11 @@ export const experience: TimelineItem[] = [
     title: 'Software developer and Linux administrator',
     about: 'Full-stack software development and Industry 4.0 applications.',
     content: (
-      <>
         <p>
-          Refactoring PHP code and conducted application tests using PHPUnit. Developing React web frontends with
-          Material Design. Also Installation, configuration of Linux and LAMP-stacks under Linux. Hardening and
-          administration of CentOS. </p>
-      </>
+          Full-stack software development and Industry 4.0 applications. Refactoring PHP code and developing React web
+          frontends with Material Design. Also involved in the installation, configuration, and administration of
+          LAMP-stacks under Linux. Conducted application tests using PHPUnit and Jest.js.
+        </p>
     ),
     experiences: [
       {
@@ -427,7 +505,7 @@ export const experience: TimelineItem[] = [
       },
       {
         eiKey: 4,
-        text: 'Hardening and administration of CentOS.',
+        text: 'Installation, Hardening and administration of CentOS as VM.',
       },
     ],
   },
@@ -440,14 +518,15 @@ export const experience: TimelineItem[] = [
     content: (
       <>
         <p>
-          Active involvement in web and network enhancements. Experience with
-          HTML/HTML5, CSS/CSS3, Git, Jira, PHP, Drupal, SEO, SEA and Linux administration.</p>
+          Active web and network enhancer. Skilled in HTML, CSS, Git, Jira, PHP, Drupal, SEO, SEA, and Linux admin.
+          Monitored analytics, maintained Drupal CMS with customized Modules, performed website audits, and developed
+          SEO strategies to boost traffic. Managed Linux (Samba) and Windows networks.</p>
       </>
     ),
     experiences: [
       {
         eiKey: 1,
-        text: 'HTML/HTML5, CSS/CSS3',
+        text: 'HTML / CSS',
       },
       {
         eiKey: 2,
@@ -459,7 +538,7 @@ export const experience: TimelineItem[] = [
       },
       {
         eiKey: 4,
-        text: 'SEO, SEA',
+        text: 'SEO, SEA, Analytics',
       },
       {
         eiKey: 5,
