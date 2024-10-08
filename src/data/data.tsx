@@ -273,6 +273,43 @@ export const skills: SkillGroup[] = [
     ],
   },
   {
+    name: 'Backend development',
+    skills: [
+      {
+        name: 'Node.js / Javecsript',
+        level: 8,
+      },
+      {
+        name: 'Express.js',
+        level: 8,
+      },
+      {
+        name: 'Next.js',
+        level: 8,
+      },
+      {
+        name: 'PHP',
+        level: 10,
+      },
+      {
+        name: 'Composer / NPM',
+        level: 9,
+      },
+      {
+        name: 'UnitPHP',
+        level: 6,
+      },
+      {
+        name: 'Jest.js',
+        level: 6,
+      },
+      {
+        name: 'Python',
+        level: 4,
+      },
+    ],
+  },
+  {
     name: 'Frontend development',
     skills: [ 
       {
@@ -316,44 +353,7 @@ export const skills: SkillGroup[] = [
     ],
   },
   {
-    name: 'Backend development',
-    skills: [
-      {
-        name: 'Node.js / Javecsript',
-        level: 8,
-      },
-      {
-        name: 'Express.js',
-        level: 8,
-      },
-      {
-        name: 'Next.js',
-        level: 8,
-      },
-      {
-        name: 'PHP',
-        level: 10,
-      },
-      {
-        name: 'Composer / NPM',
-        level: 9,
-      },
-      {
-        name: 'UnitPHP',
-        level: 6,
-      },
-      {
-        name: 'Jest.js',
-        level: 6,
-      },
-      {
-        name: 'Python',
-        level: 4,
-      },
-    ],
-  },
-  {
-    name: 'Database modelleing',
+    name: 'Database modelling',
     skills: [
       {
         name: 'MySql',
