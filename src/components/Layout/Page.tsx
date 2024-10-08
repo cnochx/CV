@@ -7,7 +7,7 @@ import {memo, PropsWithChildren} from 'react';
 
 import {HomePageMeta} from '../../data/homepageDataDef';
 
-const Page: NextPage<PropsWithChildren<HomePageMeta>> = memo(({children, title, description, image, url, ogType, twitterCardType, twitterCreator}) => {
+const Page: NextPage<PropsWithChildren<HomePageMeta>> = memo(({children, title, description, image, url, ogImg, ogImgType, ogImgWidth, ogImgHeight, ogImgAlt, ogType, ogLinkPreView ,twitterCardType, twitterCreator}) => {
   const {asPath: pathname} = useRouter();
   const urlPath = `${url}${pathname}`;
   return (
@@ -30,6 +30,14 @@ const Page: NextPage<PropsWithChildren<HomePageMeta>> = memo(({children, title, 
         <meta content={description} property="og:description" />
         <meta content={urlPath} property="og:url" />
         <meta content={image} property="og:image" />
+
+        <meta content={ogImg} property="og:image" />
+        <meta content={ogImg} property="og:image:secure_url" />
+        <meta content={ogImgType} property="og:image:type" />
+        <meta content={ogImgWidth} property="og:image:width" />
+        <meta content={ogImgHeight} property="og:image:height" />
+        <meta content={ogImgAlt} property="og:image:alt" />
+        <meta content={ogLinkPreView} property="og:site_name" />
 
         <meta content={twitterCardType} name="twitter:card" />
         <meta content={twitterCreator} name="twitter:site" />
