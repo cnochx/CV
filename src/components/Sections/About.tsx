@@ -13,7 +13,7 @@ const About: FC = memo(() => {
         {!!profileImageSrc && (
           <div className="col-span-1 flex justify-center md:justify-start">
             <div className="relative h-24 w-24 overflow-hidden rounded-xl md:h-32 md:w-32">
-              <a href={imagePublicURL}><Image alt={imagePublicAlt} className="h-full w-full object-cover" src={profileImageSrc} /></a>
+              <a href={imagePublicURL} rel="noopener noreferrer" target="_blank"><Image alt={imagePublicAlt} className="h-full w-full object-cover" src={profileImageSrc} /></a>
             </div>
           </div>
         )}
