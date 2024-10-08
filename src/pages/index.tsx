@@ -10,16 +10,21 @@ import Hero from '../components/Sections/Hero';
 import Portfolio from '../components/Sections/Portfolio';
 import Resume from '../components/Sections/Resume';
 import Testimonials from '../components/Sections/Testimonials';
-import {homePageMeta} from '../data/data';
+import {homePageMeta} from '../data/homepageData';
 
 // eslint-disable-next-line react-memo/require-memo
 const Header = dynamic(() => import('../components/Sections/Header'), {ssr: false});
 
 const Home: FC = memo(() => {
-  const {title, description} = homePageMeta;
+  const {title, description, image, url, ogType, twitterCardType, twitterCreator} = homePageMeta;
   return (
     <Page description={description}
-          title={title}>
+          image={image}
+          ogType={ogType}
+          title={title}
+          twitterCardType={twitterCardType}
+          twitterCreator={twitterCreator}
+          url={url}>
       <Header />
       <Hero />
       <About />
