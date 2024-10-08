@@ -131,6 +131,8 @@ export const aboutData: About = {
     {label: 'Interests', text: 'Travel, Family, Music', Icon: SparklesIcon},
     {label: 'Job Education', text: 'Industrial clerk (2004)', Icon: BuildingOffice2Icon},
   ],
+  imagePublicURL: 'https://grellmann.app/images/profilepic.jpg',
+  imagePublicAlt: 'MArtin Grellmann, Full-Stack software engineer'
 };
 
 export const sumHeader: CVSubHeader = {

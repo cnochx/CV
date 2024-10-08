@@ -6,14 +6,14 @@ import {aboutData, SectionId} from '../../data/data';
 import Section from '../Layout/Section';
 
 const About: FC = memo(() => {
-  const {header, profileImageSrc, description, aboutItems} = aboutData;
+  const {header, profileImageSrc, description, aboutItems, imagePublicURL, imagePublicAlt} = aboutData;
   return (
     <Section className="bg-neutral-800" sectionId={SectionId.About}>
       <article className={classNames('grid grid-cols-1 gap-y-4', {'md:grid-cols-4': !!profileImageSrc})}>
         {!!profileImageSrc && (
           <div className="col-span-1 flex justify-center md:justify-start">
             <div className="relative h-24 w-24 overflow-hidden rounded-xl md:h-32 md:w-32">
-              <Image alt="about-me-image" className="h-full w-full object-cover" src={profileImageSrc} />
+              <a href={imagePublicURL}><Image alt={imagePublicAlt} className="h-full w-full object-cover" src={profileImageSrc} /></a>
             </div>
           </div>
         )}
