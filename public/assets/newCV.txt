@@ -1,0 +1,102 @@
+Martin Grellmann
+Full Stack Web Developer
+
+Alto Paraíso de Goiás
+00551130425721
+
+Experienced in full-stack web development with over 20 years in the field. Proficient in HTML, CSS, React, JavaScript, Node.js, PHP, and MySQL. Possess 7 years of experience in Linux administration and 3.5 years in business software development, including 2.5 years in SAP technology.
+I am committed to continuous learning and innovation, with a strong focus on clean code and S.O.L.I.D principles. Skilled in designing, testing, and maintaining web systems, with a proven track record in business consulting and Industry 4.0 applications.
+
+PERSONAL INFORMATION
+  Address: Sitio de Cristal, C4 - Chácara Shanti, Povoado do Moinho, Alto Paraíso de Goiás, 73770-000
+  Nationality: 
+  Driving License: 
+  Hobbies: 
+
+SOCIAL PROFILES
+  * Online CV: https://grellmann.app
+  * LinkedIn: https://www.linkedin.com/in/martingrellmann
+
+LANGUAGES
+  ★★★☆☆ English
+  ★★★★★ German
+
+SKILLS
+  ★★★★☆ Clean Core / S.O.L.I.D.
+  ★★★★★ Git / Gitflow
+  ★★★☆☆ Jira
+  ★★★☆☆ Scrum / Scrum Master
+  ★★★★☆ OOP (ABAP / JS / PHP)
+  ★★★★☆ Linux admininstration
+  ★★★★☆ Samba
+  ★★★★★ HTML5
+  ★★★★★ CSS3
+  ★★★★★ JavaScript
+  ★★★★☆ Typescript
+  ★★★★☆ React
+  ★★★★☆ TailwindCSS
+  ★★★★☆ Bootstrap
+  ★★★★★ Drupal 7 / Drupal
+  ★★★★★ Node.js
+  ★★★★☆ Express.js
+  ★★★★☆ Next.js
+  ★★★★★ PHP
+  ★★★★★ Composer / NPM
+  ★★★☆☆ UnitPHP
+  ★★★☆☆ JestJS
+  ★★☆☆☆ Python
+  ★★★★☆ MySQL
+  ★★★★☆ MariaDB
+  ★★★☆☆ PostgreSQL
+  ★★★☆☆ ABAP SQL
+  ★★☆☆☆ MongoDB
+  ★★☆☆☆ SQLite
+  ★★★★☆ SAP ABAP (Modern, Clean Core)
+  ★★★☆☆ SAP MII
+  ★★★★☆ SAP UI5 Freestyle (JS-Framework)
+  ★★★☆☆ SAP Fiori Elements
+  ★★★☆☆ S/4Hana Cloud - Public Edition Extensions
+  ★★★☆☆ S/4Hana Cloud - Side-by-Side Ext.
+  ★★★☆☆ S/4Hana Cloud - Developer Ext.
+  ★★★☆☆ SAP BTP
+
+WORK EXPERIENCE
+  * February 2022 – Present
+    SAP Technical Consultant, SAP Full-Stack Development at BA Business Advice GmbH, Oldenburg, Germany
+      Business consulting and SAP solutions, including SAP ABAP, SAP MII, SAP
+UI5 Freestyle, SAP Fiori Elements, SAP S4/Hana Public Cloud Side-By-Side
+Extension, S4/Hana Public Cloud Side-By-Side Extension, SAP RAP and SAP
+CAP. Implemented migrations from ERP to S/4 HANA and refactored
+existing applications.
+
+  * February 2021 – January 2022
+    Software Developer and Linux administrator at Sengicon GmbH, Leipzig, Germany
+      Full-stack software development and Industry 4.0 applications. Refactoring PHP code and developing React web frontends with Material Design. Also involved in the installation, configuration, and administration of LAMP-stacks under Linux. Conducted application tests using PHPUnit and Jest.js.
+
+  * April 2004 – December 2019
+    Webmaster at Ferienhaus-Vermittlung fincaferien.de GmbH, Bockenem, Germany
+      Active web and network enhancer. Skilled in HTML, CSS, Git, Jira, PHP, Drupal, SEO, SEA, and Linux admin. Monitored analytics, maintained Drupal CMS with customized Modules, performed website audits, and developed SEO strategies to boost traffic. Managed Linux (Samba) and Windows networks.
+
+
+EDUCATION
+  * 2002 – 2004
+    DAA GmbH, Hildesheim, Germany Industrial Clerk
+
+    Focused on business processes, commercial management and control, and economic and social studies.
+  * 2020 – 2021
+    Indisoft GmbH, Leipzig, Germay Training Full-Stack Web Developer
+
+    Training covered best practices in responsive web design, Javascript and PHP, MySQL, content management, e-commerce, and online marketing, including SEO, SEA and Google Analytics. Included a Scrum Master (PSMI) certificate.
+  * 2020 – 2021
+    Sengicon GmbH, Leipzig, Germany 
+
+    Practical Internship to get deep into best practises.
+Practical training covered best practices in LAMP-Stack, Javascript, PHP, MySQL and Linux-Administration.
+
+INTERNSHIPS
+  * 2020 – 2021
+    Practical Internship Full-Stack Web Developer at Sengicon GmbH, Leipzig, Germany
+
+    Practical training covered best practices in LAMP-Stack, Javascript, PHP, MySQL and Linux-Administration. Developed a full stack web application from scratch, including back-end services in PHP, front-end interface in React, and database-modeling.
+Maintained a Drupal Website from the scratch.
+
