@@ -37,7 +37,6 @@ import {
   ContactType,
   CVSubHeader,
   Hero,
-  HomepageMeta,
   LifeItem,
   PortfolioItem,
   ProjectItem,
@@ -48,16 +47,6 @@ import {
   TestimonialSection,
   TimelineItem,
 } from './dataDef';
-
-
-
-/**
- * Page meta data
- */
-export const homePageMeta: HomepageMeta = {
-  title: 'Full Stack Web Developer Martin (Rudra) Grellmann',
-  description: 'Curriculum vitae of Martin (Rudra) Grellmann, Full Stack Web Developer',
-};
 
 /**
  * Section definition
