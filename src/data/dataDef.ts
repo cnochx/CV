@@ -111,6 +111,7 @@ export interface TimelineItem {
   about: string;
   content: JSX.Element;
   experiences: expItem[];
+  reference: HeroActionItem[];
 }
 export interface expItem {
   eiKey: number;
