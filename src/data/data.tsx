@@ -467,6 +467,7 @@ export const experience: TimelineItem[] = [
         text: 'Implemented migrations from ERP to S/4 HANA and refactored existing applications.',
       },
     ],
+    reference: [],
   },
   {
     tlKey: 2,
@@ -497,6 +498,14 @@ export const experience: TimelineItem[] = [
       {
         eiKey: 4,
         text: 'Installation, Hardening and administration of CentOS as VM.',
+      },
+    ],
+    reference: [
+      {
+        href: '/assets/reference/translated_sengicon.pdf',
+        text: 'Letter of recommendation (Translated from German)',
+        primary: true,
+        Icon: ArrowDownTrayIcon,
       },
     ],
   },
@@ -536,6 +545,14 @@ export const experience: TimelineItem[] = [
         text: 'Linux administration',
       }
     ],
+    reference: [
+      {
+        href: '/assets/reference/translated_fincaferien.pdf',
+        text: 'Letter of recommendation (Translated from German)',
+        primary: true,
+        Icon: ArrowDownTrayIcon,
+      },
+    ],
   },
   {
     tlKey: 4,
@@ -550,6 +567,7 @@ export const experience: TimelineItem[] = [
       </p>
     ),
     experiences: [],
+    reference: [],
   },
 ];
 
@@ -578,12 +596,13 @@ export const education: TimelineItem[] = [
         and economic and social studies.</p>
     ),
     experiences: [],
+    reference: [],
   },
 
   {
     tlKey: 2,
     date: '',
-    location: 'Indisoft GmbH, Germany',
+    location: 'Indisoft GmbH, Leipzig, Germany',
     title: 'Full-Stack Web Developer',
     about: '',
     content:(
@@ -593,6 +612,20 @@ export const education: TimelineItem[] = [
         Included a Scrum Master (PSMI) certificate.</p>
     ),
     experiences: [],
+    reference: [
+      {
+        href: '/assets/reference/translated_cert_full_stack_web_dev.pdf',
+        text: 'Certificate Full stack web developer (Translated from German)',
+        primary: true,
+        Icon: ArrowDownTrayIcon,
+      },
+      {
+        href: '/assets/reference/translated_cert_agile_project_managament.pdf',
+        text: 'Certificate Agile Project Management (Translated from German)',
+        primary: true,
+        Icon: ArrowDownTrayIcon,
+      },
+    ],
   },
   {
     tlKey: 3,
@@ -605,6 +638,7 @@ export const education: TimelineItem[] = [
         MySQL and Linux-Administration.</p>
     ),
     experiences: [],
+    reference: [],
   },
 ];
 
