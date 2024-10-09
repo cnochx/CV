@@ -78,7 +78,8 @@ export const heroData: Hero = {
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         Experienced in full-stack web development with <strong className="text-stone-100">over 20 years in the field</strong> Proficient in <strong className="text-stone-100">HTML</strong>, <strong className="text-stone-100">CSS</strong>, <strong className="text-stone-100">React</strong>, <strong className="text-stone-100">JavaScript</strong>, <strong className="text-stone-100">Node.js</strong>, <strong className="text-stone-100">PHP</strong>, and <strong className="text-stone-100">MySQL</strong>. Possess 7 years of experience in <strong className="text-stone-100">Linux administration</strong> and 3.5 years in <strong className="text-stone-100">business software development</strong>, including 2.5 years in <strong className="text-stone-100">SAP technology</strong>.
       </p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">I am committed to <strong className="text-stone-100">continuous learning</strong> and innovation, with a strong focus on <strong className="text-stone-100">clean code</strong> and <strong className="text-stone-100">S.O.L.I.D principles</strong>. Skilled in designing, testing, and maintaining web systems, with a proven track record in <strong className="text-stone-100">business consulting</strong> and <strong className="text-stone-100">Industry 4.0 applications</strong>.</p>
+      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">I am committed to <strong className="text-stone-100">continuous learning</strong> and <strong className="text-stone-100">innovation</strong>,
+        with a strong focus on <strong className="text-stone-100">clean code</strong> and <strong className="text-stone-100">S.O.L.I.D principles</strong>. Skilled in designing, testing, and maintaining web systems, with a proven track record in <strong className="text-stone-100">business consulting</strong> and <strong className="text-stone-100">Industry 4.0 applications</strong>.</p>
     </>
   ),
   actions: [
@@ -105,7 +106,7 @@ export const aboutData: About = {
   description: `With 20 years experience, I develop reasonable solutions for complex challenges, adhering to Clean Code and S.O.L.I.D. principles to ensure high software quality.`,
   aboutItems: [
     {label: 'Location', text: 'Povoado do Moinho, Alto Paraíso de Goiás, Brazil and Augsburg, Germany', Icon: MapIcon},
-    {label: 'Study', text: 'Autodictatic, Self-studied', Icon: AcademicCapIcon},
+    {label: 'Study', text: 'Certified Full-Stack Web Developer', Icon: AcademicCapIcon},
     {label: 'Nationality', text: 'German / Brazil Residence', Icon: FlagIcon},
     {label: 'Job Training', text: 'Full-Stack Web Developer (2021)', Icon: AcademicCapIcon},
     {label: 'Age', text: '49', Icon: CalendarIcon},
