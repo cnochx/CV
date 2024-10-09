@@ -149,7 +149,7 @@ export const sumHeader: CVSubHeader = {
 export const summaryItems: SummaryItem[] = [
   {
     siKey: 1,
-    date: 'April 2004 – December 2019',
+    date: 'April 2002 – December 2019',
     location: 'Ferienhaus-Vermittlung fincaferien.de GmbH, Germany',
     title: 'Webmaster (with development tasks)',
     experiences: [
@@ -502,7 +502,7 @@ export const experience: TimelineItem[] = [
   },
   {
     tlKey: 3,
-    date: 'April 2004 - December 2019',
+    date: 'April 2002 - December 2019',
     location: 'Ferienhaus-Vermittlung fincaferien.de GmbH, Bockenem, Germany',
     title: 'Webmaster (with development tasks)',
     about: 'Fincaferien was one of the first German agencies to successfully broker vacation homes online.',
