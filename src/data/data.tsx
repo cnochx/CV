@@ -234,7 +234,15 @@ export const skills: SkillGroup[] = [
     name: 'Techniques / Administration',
     skills: [
       {
-        name: 'Clean Core / S.O.L.I.D.',
+        name: 'Clean Code',
+        level: 8,
+      },
+      {
+        name: 'Clean Core',
+        level: 8,
+      },
+      {
+        name: 'S.O.L.I.D. Principle',
         level: 8,
       },
       {
@@ -254,7 +262,7 @@ export const skills: SkillGroup[] = [
         level: 5,
       },
       {
-        name: 'Linuxadministration',
+        name: 'Linux Administration',
         level: 7
       },
       {
@@ -267,7 +275,7 @@ export const skills: SkillGroup[] = [
     name: 'Backend development',
     skills: [
       {
-        name: 'Node.js / Javecsript',
+        name: 'Node.js / Javascript',
         level: 8,
       },
       {
