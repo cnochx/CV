@@ -74,10 +74,7 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I am a certified <strong className="text-stone-100">Full-stack web developer</strong> and <strong className="text-stone-100">Full-stack software engineer</strong>, with the Knowledge as <strong className="text-stone-100">SAP Technical Consultant</strong>.
-      </p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I am an <strong className="text-stone-100">innovative</strong> and down-to-earth team player able to develop <strong className="text-stone-100">reasonable solutions for complex problems</strong>.</p>
+        I am an <strong className="text-stone-100">innovative</strong> and a certified <strong className="text-stone-100">Full-stack web developer</strong> and <strong className="text-stone-100">Full-stack software engineer</strong>, with the Knowledge as <strong className="text-stone-100">SAP Technical Consultant</strong>.</p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         Experienced in full-stack web development with <strong className="text-stone-100">over 20 years in the field</strong> Proficient in <strong className="text-stone-100">HTML</strong>, <strong className="text-stone-100">CSS</strong>, <strong className="text-stone-100">React</strong>, <strong className="text-stone-100">JavaScript</strong>, <strong className="text-stone-100">Node.js</strong>, <strong className="text-stone-100">PHP</strong>, and <strong className="text-stone-100">MySQL</strong>. Possess 7 years of experience in <strong className="text-stone-100">Linux administration</strong> and 3.5 years in <strong className="text-stone-100">business software development</strong>, including 2.5 years in <strong className="text-stone-100">SAP technology</strong>.
       </p>
