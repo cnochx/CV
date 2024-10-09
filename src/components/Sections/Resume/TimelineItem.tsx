@@ -44,7 +44,7 @@ const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
           {reference.map(({href, text, primary, Icon}) => (
             <a
               className={classNames(
-                'flex gap-x-4 rounded-full border-2 bg-none px-4 py-2 text-sm font-medium ring-offset-gray-700/80 hover:bg-gray-700/80 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-base',
+                'flex gap-x-4 rounded-full border-2 bg-none px-4 py-2 text-sm font-medium ring-offset-gray-700/80 hover:bg-gray-700/80 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-base',
                 primary ? 'border-orange-500 ring-amber-500' : 'border-b-amber-500 ring-amber-300',
               )}
               href={href}
