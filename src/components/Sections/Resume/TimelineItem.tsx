@@ -1,7 +1,7 @@
+import classNames from 'classnames';
 import {FC, memo} from 'react';
 
 import {TimelineItem} from '../../../data/dataDef';
-import classNames from 'classnames';
 
 const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
 
