@@ -386,11 +386,11 @@ export const skills: SkillGroup[] = [
         level: 6,
       },
       {
-        name: 'SAP S/4Hana Cloud - Side-by-Side Ext.',
+        name: 'S4/Hana Cloud - Public Edition: Side-By-Side Extension',
         level: 6,
       },
       {
-        name: 'S/4Hana Cloud - Developer Ext.',
+        name: 'S4/Hana Cloud - Public Edition: Developer Extension',
         level: 6,
       },
       {
@@ -434,23 +434,23 @@ export const experience: TimelineItem[] = [
       },
       {
         eiKey: 3,
-        text: 'S4/Hana Public Cloud Side-By-Side Extension, ',
+        text: 'S4/Hana Cloud - Public Edition: Side-By-Side Extension, ',
       },
       {
         eiKey: 3,
-        text: 'S4/Hana Public Cloud Side-By-Side Extension, ',
+        text: 'S4/Hana Cloud - Public Edition: Extension, ',
       },
       {
         eiKey: 4,
-        text: 'SAP BTP Side-By-Side Extension',
+        text: 'SAP RAP',
     },
       {
         eiKey: 5,
-        text: 'SAP RAP',
+        text: 'SAP CAP',
       },
       {
         eiKey: 6,
-        text: 'SAP CAP',
+        text: 'SAP BTP',
       },
       {
         eiKey: 7,
