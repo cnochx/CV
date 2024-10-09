@@ -105,7 +105,7 @@ export const aboutData: About = {
   profileImageSrc: profilepic,
   description: `With 20 years experience, I develop reasonable solutions for complex challenges, adhering to Clean Code and S.O.L.I.D. principles to ensure high software quality.`,
   aboutItems: [
-    {label: 'Location', text: 'Povoado do Moinho, Alto Paraíso de Goiás, Brazil and Augsburg, Germany', Icon: MapIcon},
+    {label: 'Location', text: 'Povoado do Moinho, Alto Paraíso de Goiás, Brazil', Icon: MapIcon},
     {label: 'Study', text: 'Certified Full-Stack Web Developer', Icon: AcademicCapIcon},
     {label: 'Nationality', text: 'German / Brazil Residence', Icon: FlagIcon},
     {label: 'Job Training', text: 'Full-Stack Web Developer (2021)', Icon: AcademicCapIcon},
