@@ -173,6 +173,7 @@ export const skills: SkillGroup[] = [
         sKey: 2,
         name: 'Express.js',
         expLevel: 8,
+        years: 2,
         groupOfOrigin: [
           {
             oKey: 1,
