@@ -8,15 +8,15 @@ import {
   experience,
   expHeader,
   SectionId,
-  skillHeader,
-  skills,
   sumHeader,
   summaryItems} from '../../../data/data';
+
+import {skillSubHeader, skills} from '../../../data/skillData';
 import Section from '../../Layout/Section';
 import AdditionalInterests from './AdditionalInterests';
 import AdditionalSection from './AdditionalSection';
 import ResumeSection from './ResumeSection';
-import {SkillGroup} from './Skills';
+import {SkillGroup} from '../skills/skillGroup';
 import SummaryItem from './SummaryItem';
 import TimelineItem from './TimelineItem';
 
@@ -36,14 +36,14 @@ const Resume: FC = memo(() => {
             : null
           }
         </ResumeSection>
-        <ResumeSection title={skillHeader.title}>
-          {skillHeader.content}
+        <ResumeSection title={skillSubHeader.title}>
+          {skillSubHeader.content}
           <div className="flex flex-col space-y-32">
-            {skillHeader.showSpacer && <br />}
+            {skillSubHeader.showSpacer && <br />}
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            {skills.map((skillgroup, index) => (
-              <SkillGroup key={`${skillgroup.name}-${index}`} skillGroup={skillgroup} />
+            {skills.map((skillGroup) => (
+              <SkillGroup key={`${skillGroup.head}-${skillGroup.sgKey}`} skillGroup={skillGroup} />
             ))}
           </div>
         </ResumeSection>
