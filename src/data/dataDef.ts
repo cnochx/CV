@@ -86,6 +86,7 @@ export interface SummaryItem {
   date: string;
   location: string;
   title: string;
+  content:JSX.Element;
   experiences: expItem[];
 }
 

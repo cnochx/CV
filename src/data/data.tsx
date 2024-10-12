@@ -135,6 +135,11 @@ export const summaryItems: SummaryItem[] = [
     date: 'February 2022 - Present',
     location: 'BA Business Advice GmbH, Germany',
     title: 'SAP Technical Consultant, SAP Full-Stack Development',
+    content: (
+      <>
+        <p>Proficient in SAP ABAP (Clean Core), SAP MII, SAP UI5 Freestyle, SAP Fiori Elements, SAP S4/HANA Public Cloud Side-By-Side Extension, SAP RAP, and SAP CAP. Successfully implemented migrations from ERP to S/4 HANA and refactored existing applications. Also experienced in JavaScript, TypeScript, and Jest.js for the UI5 framework.</p>
+      </>
+    ),
     experiences: [],
   },
   {
@@ -142,6 +147,11 @@ export const summaryItems: SummaryItem[] = [
     date: 'February 2021 – January 2022',
     location: 'Sengicon GmbH, Germany',
     title: 'Software Developer and Linux Administrator',
+    content: (
+      <>
+        <p>Focused on full-stack software development and Industry 4.0 applications. Skilled in refactoring PHP code, developing React web frontends with Material Design, and managing Linux and LAMP-stacks. Conducted application tests using PHPUnit and Jest.js.</p>
+      </>
+    ),
     experiences: [],
   },
   {
@@ -149,6 +159,11 @@ export const summaryItems: SummaryItem[] = [
     date: 'April 2002 – December 2019',
     location: 'Ferienhaus-Vermittlung fincaferien.de GmbH, Germany',
     title: 'Webmaster (with development tasks)',
+    content: (
+      <>
+        <p>Expertise in HTML, CSS, PHP, Drupal, Git, Jira, SEO, SEA, and Linux administration. Managed Drupal CMS, performed website audits, and developed SEO strategies to boost traffic.</p>
+      </>
+    ),
     experiences: [],
   },
 

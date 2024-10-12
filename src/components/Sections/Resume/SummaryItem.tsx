@@ -3,7 +3,7 @@ import {FC, memo} from 'react';
 import {SummaryItem} from '../../../data/dataDef';
 
 const SummaryItem: FC<{item: SummaryItem}> = memo(({item}) => {
-  const {siKey, title, date, location, experiences} = item;
+  const {siKey, title, date, location, content, experiences} = item;
   return (
     <div className="flex flex-col space-y-2 pb-8 text-center last:pb-0 md:text-left"
          key={siKey}>
@@ -15,8 +15,11 @@ const SummaryItem: FC<{item: SummaryItem}> = memo(({item}) => {
           <span className="flex-1 text-sm sm:flex-none">{date}</span>
         </div>
       </header>
+      <section>
+        {content && (
+          <div>{content}</div>
+        )}
       {experiences && experiences.length > 0 && (
-        <section>
           <ul className="list-inside list-disc">
             {experiences.map(({eiKey, text}) => {
               return (
@@ -26,8 +29,8 @@ const SummaryItem: FC<{item: SummaryItem}> = memo(({item}) => {
               );
             })}
           </ul>
-        </section>
       )}
+      </section>
     </div>
   );
 });
