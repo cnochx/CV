@@ -129,69 +129,27 @@ export const sumHeader: CVSubHeader = {
 }
 
 export const summaryItems: SummaryItem[] = [
+
   {
     siKey: 1,
-    date: 'April 2002 – December 2019',
-    location: 'Ferienhaus-Vermittlung fincaferien.de GmbH, Germany',
-    title: 'Webmaster (with development tasks)',
-    experiences: [
-      {
-        eiKey: 1,
-        text: 'HTML/HTML5, CSS/CSS3, Git and Jira, PHP, Drupal SEO, SEA and Linux administration.',
-      },
-    ],
+    date: 'February 2022 - Present',
+    location: 'BA Business Advice GmbH, Germany',
+    title: 'SAP Technical Consultant, SAP Full-Stack Development',
+    experiences: [],
   },
   {
     siKey: 2,
     date: 'February 2021 – January 2022',
     location: 'Sengicon GmbH, Germany',
     title: 'Software Developer and Linux Administrator',
-    experiences: [
-      {
-        eiKey: 1,
-        text: 'Full-stack software development and Industry 4.0 applications on LAMP Stack.',
-      },
-      {
-        eiKey: 2,
-        text: 'Refactoring PHP code to PHP 8 with PHP Unit',
-      },
-      {
-        eiKey: 3,
-        text: 'React web frontends with Material Design.',
-      },
-    ],
+    experiences: [],
   },
   {
-    siKey: 1,
-    date: 'February 2022 - Present',
-    location: 'BA Business Advice GmbH, Germany',
-    title: 'SAP Technical Consultant, SAP Full-Stack Development',
-    experiences: [
-      {
-        eiKey: 1,
-        text: 'Business consulting and SAP solutions.',
-      },
-      {
-        eiKey: 2,
-        text: 'SAP ABAP, SAP MII, SAP UI5 Freestyle, SAP Fiori Elements.',
-      },
-      {
-        eiKey: 3,
-        text: 'SAP S4/Hana Public Cloud Side-By-Side Extension.',
-      },
-      {
-        eiKey: 4,
-        text: 'S4/Hana Public Cloud Side-By-Side Extension.',
-      },
-      {
-        eiKey: 5,
-        text: 'SAP RAP and SAP CAP.',
-      },
-      {
-        eiKey: 6,
-        text: 'Implemented migrations from ERP to S/4 HANA and refactored existing applications.',
-      },
-    ],
+    siKey: 3,
+    date: 'April 2002 – December 2019',
+    location: 'Ferienhaus-Vermittlung fincaferien.de GmbH, Germany',
+    title: 'Webmaster (with development tasks)',
+    experiences: [],
   },
 
 ];
