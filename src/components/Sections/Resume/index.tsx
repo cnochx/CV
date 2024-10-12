@@ -11,7 +11,8 @@ import {
   sumHeader,
   summaryItems} from '../../../data/data';
 
-import {skillSubHeader, skills} from '../../../data/skillData';
+import {skills} from '../../../data/skillData';
+import {skillSubHeader} from '../../../data/generalData';
 import Section from '../../Layout/Section';
 import AdditionalInterests from './AdditionalInterests';
 import AdditionalSection from './AdditionalSection';

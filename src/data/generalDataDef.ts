@@ -6,3 +6,10 @@ export interface SubHeader {
   content: JSX.Element;
   showSpacer: boolean;
 }
+
+  export interface SubSkillTexts {
+    experiencePre: string;
+    experiencePost: string;
+    roleText: string;
+
+}

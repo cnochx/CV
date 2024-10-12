@@ -2,6 +2,7 @@ import {FC, memo, useMemo, useState} from 'react';
 import {ChevronDownIcon, ChevronUpIcon} from '@heroicons/react/24/solid'; // Heroicons v2
 
 import {Skill as SkillType} from '../../../data/skillDataDef';
+import {subSkillTexts} from '../../../data/generalData';
 
 export const Skill: FC<{skill: SkillType}> = memo(({skill}) => {
   const {name, expLevel, max = 10, years, groupOfOrigin} = skill;
@@ -15,9 +16,9 @@ export const Skill: FC<{skill: SkillType}> = memo(({skill}) => {
   return (
     <div className={`flex flex-col w-96 h-auto border rounded-2xl p-4 ${isOpen ? 'border-amber-500' : 'border-neutral-300'} ${isOpen ? 'hover:bg-gray-100' : ''}`}>
       <div className="flex items-center justify-between cursor-pointer" onClick={toggleAccordion}>
-        <p className="ml-2 text-sm font-medium">
+        <h4 className="ml-2 text-sm font-medium">
           <strong>{name}</strong>
-        </p>
+        </h4>
         {isOpen ? (
           <ChevronUpIcon className="w-5 h-5 text-amber-500" />
         ) : (
@@ -29,11 +30,11 @@ export const Skill: FC<{skill: SkillType}> = memo(({skill}) => {
       </div>
       {isOpen && (
         <div className="ml-2 mt-2 text-sm text-neutral-600">
-          {years ? <p>Experience since: {years} years</p> : null}
+          {years ? <p>{subSkillTexts.experiencePre} {years} {subSkillTexts.experiencePost}</p> : null}
           {groupOfOrigin && groupOfOrigin.length > 0 && (
             <>
               <p>
-                <em className="italic">Applied the skill into the role of:</em>
+                <em className="italic">{subSkillTexts.roleText}</em>
               </p>
               <ul className="list-disc pl-4">
                 {groupOfOrigin.map((origin) => (
