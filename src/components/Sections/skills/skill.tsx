@@ -1,8 +1,8 @@
-import {FC, memo, useMemo, useState} from 'react';
 import {ChevronDownIcon, ChevronUpIcon} from '@heroicons/react/24/solid'; // Heroicons v2
+import {FC, memo, useMemo, useState} from 'react';
 
-import {Skill as SkillType} from '../../../data/skillDataDef';
 import {subSkillTexts} from '../../../data/generalData';
+import {Skill as SkillType} from '../../../data/skillDataDef';
 
 export const Skill: FC<{skill: SkillType}> = memo(({skill}) => {
   const {name, expLevel, max = 10, years, groupOfOrigin} = skill;

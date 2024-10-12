@@ -1,5 +1,5 @@
-import {FC, memo, useState} from 'react';
 import {ChevronDownIcon, ChevronUpIcon} from '@heroicons/react/24/solid'; // Heroicons v2
+import {FC, memo, useState} from 'react';
 
 import {SkillGroup as SkillGroupType} from '../../../data/skillDataDef';
 import {Skill} from './skill';

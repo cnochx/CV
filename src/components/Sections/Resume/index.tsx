@@ -10,14 +10,13 @@ import {
   SectionId,
   sumHeader,
   summaryItems} from '../../../data/data';
-
-import {skills} from '../../../data/skillData';
 import {skillSubHeader} from '../../../data/generalData';
+import {skills} from '../../../data/skillData';
 import Section from '../../Layout/Section';
+import {SkillGroup} from '../skills/skillGroup';
 import AdditionalInterests from './AdditionalInterests';
 import AdditionalSection from './AdditionalSection';
 import ResumeSection from './ResumeSection';
-import {SkillGroup} from '../skills/skillGroup';
 import SummaryItem from './SummaryItem';
 import TimelineItem from './TimelineItem';
 
