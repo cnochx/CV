@@ -347,7 +347,7 @@ export const education: TimelineItem[] = [
     tlKey: 1,
     date: '',
     location: 'DAA GmbH, Hildesheim, Germany',
-    title: 'Vocational training to a Industrial Clerk',
+    title: 'Vocational training as an Industrial Clerk',
     about: '',
     content: (
       <p>Focused on business processes, commercial management and control,
