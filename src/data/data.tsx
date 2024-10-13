@@ -89,6 +89,12 @@ export const heroData: Hero = {
       Icon: ArrowDownTrayIcon,
     },
     {
+      href: '/assets/cv_martin_grellmann-ext.pdf',
+      text: 'CV in detail as PDF',
+      primary: true,
+      Icon: ArrowDownTrayIcon,
+    },
+    {
       href: `#${SectionId.Contact}`,
       text: 'Contact',
       primary: false,
