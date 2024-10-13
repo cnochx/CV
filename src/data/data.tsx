@@ -293,6 +293,14 @@ eiKey: 8,
           Implemented Industry 4.0 solutions to enhance automation and data exchange in manufacturing technologies.
         </p>
         <header>
+          <h6 className="mt-4 font-semibold">React Web Frontends with Material Design</h6>
+        </header>
+        <ul className="list-inside list-disc">
+          <li>Created dynamic and responsive web frontends using React and Material Design principles.</li>
+          <li>Enhanced user experience through intuitive and visually appealing interfaces.</li>
+          <li>Developed a custom router in React to manage client-side navigation efficiently.</li>
+        </ul>
+        <header>
           <h5 className="font-bold text-lg mt-4">Technical Skills</h5>
         </header>
         <header>
@@ -303,23 +311,6 @@ eiKey: 8,
           <li>Utilized Composer for dependency management and PHPUnit for unit testing, ensuring robust and error-free
             code.
           </li>
-        </ul>
-        <header>
-          <h6 className="mt-4 font-semibold">React Web Frontends with Material Design</h6>
-        </header>
-        <ul className="list-inside list-disc">
-          <li>Created dynamic and responsive web frontends using React and Material Design principles.</li>
-          <li>Enhanced user experience through intuitive and visually appealing interfaces.</li>
-          <li>Developed a custom router in React to manage client-side navigation efficiently.</li>
-        </ul>
-        <header>
-          <h6 className="mt-4 font-semibold">LAMP-Stack Management</h6>
-        </header>
-        <ul className="list-inside list-disc">
-          <li>Installed, configured, and administered LAMP-stacks (Linux, Apache, MySQL, PHP) to support web
-            applications.
-          </li>
-          <li> Expertise in setting up and managing Linux servers, including CentOS as a virtual machine (VM).</li>
         </ul>
         <header>
           <h6 className="mt-4 font-semibold">Database Modeling</h6>
@@ -348,11 +339,13 @@ eiKey: 8,
           <li>Identified and resolved bugs and performance issues through systematic testing and debugging.</li>
         </ul>
         <header>
-          <h5 className="mt-4 font-semibold">Web Development</h5>
+          <h6 className="mt-4 font-semibold">LAMP-Stack Management</h6>
         </header>
         <ul className="list-inside list-disc">
-          <li>Developing React web frontends</li>
-          <li>Refactoring and optimizing PHP code.</li>
+          <li>Installed, configured, and administered LAMP-stacks (Linux, Apache, MySQL, PHP) to support web
+            applications.
+          </li>
+          <li> Expertise in setting up and managing Linux servers, including CentOS as a virtual machine (VM).</li>
         </ul>
         <header>
           <h5 className="mt-4 font-semibold">System Administration</h5>
@@ -379,10 +372,12 @@ eiKey: 8,
         </header>
         <ul className="list-inside list-disc">
           <li>Implemented Industry 4.0 solutions to enhance automation and data exchange in manufacturing
-            technologies.</li>
+            technologies.
+          </li>
           <li>Distinguished myself in particular by successfully converting an outdated PHP web application to a modern
             PHP REST backend with a connection to an independently created new React-Web-Frontend including
-            Database modelling .</li>
+            Database modelling .
+          </li>
         </ul>
       </>
     ),
