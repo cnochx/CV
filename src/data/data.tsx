@@ -200,25 +200,30 @@ export const experience: TimelineItem[] = [
         </header>
         <ul className="list-inside list-disc">
           <li>Proficient in SAP ABAP (Clean Core), SAP MII, SAP UI5 Freestyle, SAP Fiori Elements, SAP RAP, SAP CAP,
-            OData v2, OData v4, and ABAP CDS.</li>
+            OData v2, OData v4, and ABAP CDS.
+          </li>
           <li>Experienced in using JavaScript, TypeScript, and Jest.js for the UI5 framework.</li>
           <li>Extensive experience with S4/Hana Cloud - Public Edition: Side-By-Side Extension and S4/Hana Cloud -
-            Public Edition: Developer Extension. </li>
+            Public Edition: Developer Extension.
+          </li>
           <li>Competent with SAP BTP (Business Technology Platform).</li>
         </ul>
         <header>
-        <h5 className="font-bold text-lg mt-4">Achievements</h5>
-        </header>
-        <ul className="list-inside list-disc">
-          <li>Implemented migrations from ERP to S/4 HANA.</li>
-          <li>Refactored existing applications to enhance performance and maintainability.</li>
-        </ul>
-        <header>
-        <h5 className="font-bold text-lg mt-4">Additional Information</h5>
+          <h5 className="font-bold text-lg mt-4">Additional Information</h5>
         </header>
         <ul className="list-inside list-disc">
           <li>Successfully implemented migrations from ERP to S/4 HANA and refactored existing applications.</li>
           <li>Demonstrated proficiency in JavaScript, TypeScript, and Jest.js for the UI5 framework.</li>
+        </ul>
+        <header>
+          <h5 className="font-bold text-lg mt-4">Achievements</h5>
+        </header>
+        <ul className="list-inside list-disc">
+          <li>Implemented migrations from ERP to S/4 HANA.</li>
+          <li>Refactored existing applications to enhance performance and maintainability.</li>
+          <li>Experienced in problem-solving within SAP technology and customizing ABAP Application und UI5,
+            consistently delivering innovative solutions to complex challenges.
+          </li>
         </ul>
       </>
     ),
@@ -288,7 +293,10 @@ eiKey: 8,
           Implemented Industry 4.0 solutions to enhance automation and data exchange in manufacturing technologies.
         </p>
         <header>
-          <h5 className="font-bold text-lg mt-4">PHP Code Refactoring</h5>
+          <h5 className="font-bold text-lg mt-4">Technical Skills</h5>
+        </header>
+        <header>
+          <h6 className="mt-4 font-semibold">PHP Code Refactoring</h6>
         </header>
         <ul className="list-inside list-disc">
           <li>Refactored legacy PHP code to improve performance, maintainability, and scalability.</li>
@@ -297,7 +305,7 @@ eiKey: 8,
           </li>
         </ul>
         <header>
-          <h5 className="font-bold text-lg mt-4">React Web Frontends with Material Design</h5>
+          <h6 className="mt-4 font-semibold">React Web Frontends with Material Design</h6>
         </header>
         <ul className="list-inside list-disc">
           <li>Created dynamic and responsive web frontends using React and Material Design principles.</li>
@@ -305,7 +313,7 @@ eiKey: 8,
           <li>Developed a custom router in React to manage client-side navigation efficiently.</li>
         </ul>
         <header>
-          <h5 className="font-bold text-lg mt-4">LAMP-Stack Management</h5>
+          <h6 className="mt-4 font-semibold">LAMP-Stack Management</h6>
         </header>
         <ul className="list-inside list-disc">
           <li>Installed, configured, and administered LAMP-stacks (Linux, Apache, MySQL, PHP) to support web
@@ -314,21 +322,24 @@ eiKey: 8,
           <li> Expertise in setting up and managing Linux servers, including CentOS as a virtual machine (VM).</li>
         </ul>
         <header>
-          <h5 className="font-bold text-lg mt-4">Database Modeling</h5>
+          <h6 className="mt-4 font-semibold">Database Modeling</h6>
         </header>
         <ul className="list-inside list-disc">
           <li>Designed and implemented relational database models using MySQL, MariaDB, and PostgreSQL.</li>
-          <li>Ensured data integrity and optimized database performance through efficient schema design and indexing.</li>
+          <li>Ensured data integrity and optimized database performance through efficient schema design and indexing.
+          </li>
         </ul>
         <header>
-          <h5 className="font-bold text-lg mt-4">Integration of RESTful APIs with PHP</h5>
+          <h6 className="mt-4 font-semibold">Integration of RESTful APIs with PHP</h6>
         </header>
         <ul className="list-inside list-disc">
-          <li>Developed and integrated RESTful APIs using PHP to facilitate communication between different software systems.</li>
+          <li>Developed and integrated RESTful APIs using PHP to facilitate communication between different software
+            systems.
+          </li>
           <li>Ensured secure and efficient data exchange between client and server applications.</li>
         </ul>
         <header>
-          <h5 className="font-bold text-lg mt-4">Application Testing</h5>
+          <h5 className="mt-4 font-semibold">Application Testing</h5>
         </header>
         <ul className="list-inside list-disc">
           <li>Conducted rigorous application tests using PHPUnit for PHP and Jest.js for JavaScript to ensure
@@ -337,27 +348,41 @@ eiKey: 8,
           <li>Identified and resolved bugs and performance issues through systematic testing and debugging.</li>
         </ul>
         <header>
-          <h5 className="font-bold text-lg mt-4">Web Development</h5>
+          <h5 className="mt-4 font-semibold">Web Development</h5>
         </header>
         <ul className="list-inside list-disc">
           <li>Developing React web frontends</li>
           <li>Refactoring and optimizing PHP code.</li>
         </ul>
         <header>
-          <h5 className="font-bold text-lg mt-4">System Administration</h5>
+          <h5 className="mt-4 font-semibold">System Administration</h5>
         </header>
         <ul className="list-inside list-disc">
           <li>Installation, configuration, and administration of Linux and LAMP-stacks.</li>
           <li>Hardening and managing CentOS as a virtual machine (VM).</li>
         </ul>
         <header>
-          <h5 className="font-bold text-lg mt-4">Additional Expertise</h5>
+          <h5 className="font-bold text-lg mt-4">Additional Information</h5>
         </header>
         <ul className="list-inside list-disc">
           <li>Proficient in version control systems like Git.</li>
           <li>Strong understanding of web security practices and performance optimization.</li>
           <li>Excellent problem-solving skills and attention to detail.</li>
           <li>Ability to collaborate effectively with cross-functional teams.</li>
+          <li>Ability to collaborate effectively with cross-functional teams.</li>
+          <li>Experienced in problem-solving within software development, consistently delivering innovative solutions
+            to complex challenges.
+          </li>
+        </ul>
+        <header>
+          <h5 className="font-bold text-lg mt-4">Achievements</h5>
+        </header>
+        <ul className="list-inside list-disc">
+          <li>Implemented Industry 4.0 solutions to enhance automation and data exchange in manufacturing
+            technologies.</li>
+          <li>Distinguished myself in particular by successfully converting an outdated PHP web application to a modern
+            PHP REST backend with a connection to an independently created new React-Web-Frontend including
+            Database modelling .</li>
         </ul>
       </>
     ),
@@ -431,7 +456,9 @@ eiKey: 8,
         <p>Extensive experience in web development, network management, and SEO.
           Skilled in driving traffic, improving user experience, maintaining robust networks, and managing
           Linux.</p>
-
+        <header>
+          <h6 className="font-bold text-lg mt-4">Technical Skills</h6>
+        </header>
         <header>
           <h5 className="font-bold text-lg mt-4">Web Development</h5>
         </header>
@@ -464,7 +491,8 @@ eiKey: 8,
         </header>
         <ul className="list-inside list-disc">
           <li>Competent in managing Linux-based systems, including Samba for file
-            sharing and network management.</li>
+            sharing and network management.
+          </li>
           <li>Managed Linux (Samba) and Windows networks, ensuring secure and efficient operations.</li>
           <li>Performed regular maintenance and troubleshooting to minimize downtime.</li>
         </ul>
@@ -481,6 +509,15 @@ eiKey: 8,
         <ul className="list-inside list-disc">
           <li>Monitored website analytics to track performance metrics, user behavior, and campaign effectiveness.</li>
           <li>Utilized data insights to optimize user experience and content strategy.</li>
+        </ul>
+
+        <header>
+          <h5 className="font-bold text-lg mt-4">Additional Information</h5>
+        </header>
+        <ul className="list-inside list-disc">
+          <li>Self-taught and adept at acquiring the know-how to solve complex problems in Web Design, PHP, Drupal,
+            SEO / SEM and Project management.
+            .</li>
         </ul>
         <header>
           <h5 className="font-bold text-lg mt-4">Achievements</h5>
