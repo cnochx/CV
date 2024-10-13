@@ -347,7 +347,7 @@ export const education: TimelineItem[] = [
     tlKey: 1,
     date: '',
     location: 'DAA GmbH, Hildesheim, Germany',
-    title: 'Industrial Clerk',
+    title: 'Vocational training to a Industrial Clerk',
     about: '',
     content: (
       <p>Focused on business processes, commercial management and control,
@@ -388,7 +388,7 @@ export const education: TimelineItem[] = [
   {
     tlKey: 3,
     date: '',
-    location: 'Sengicon GmbH, Germany',
+    location: 'Sengicon GmbH, Leipzig, Germany',
     title: 'Full-Stack Web Developer, Practical Internship',
     about: 'Practical Internship to get deep into best practises.',
     content: (
