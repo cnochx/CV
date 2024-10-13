@@ -137,7 +137,7 @@ export const summaryItems: SummaryItem[] = [
     title: 'SAP Technical Consultant, SAP Full-Stack Development',
     content: (
       <>
-        <p>Proficient in SAP ABAP (Clean Core), SAP MII, SAP UI5 Freestyle, SAP Fiori Elements, SAP S4/HANA Public Cloud Side-By-Side Extension, SAP RAP, and SAP CAP. Successfully implemented migrations from ERP to S/4 HANA and refactored existing applications. Also experienced in JavaScript, TypeScript, and Jest.js for the UI5 framework.</p>
+        <p>Business consulting and SAP solutions expert with extensive experience in SAP ABAP (Clean Core), SAP MII, SAP UI5 Freestyle, SAP Fiori Elements, SAP S4/HANA Public Cloud Side-By-Side Extension, SAP RAP, SAP CAP, OData v2, OData v4, and ABAP CDS. Proficient in implementing migrations from ERP to S/4 HANA and refactoring existing applications. Also experienced in JavaScript, TypeScript, and Jest.js for the UI5 framework.</p>
       </>
     ),
     experiences: [],
@@ -149,7 +149,7 @@ export const summaryItems: SummaryItem[] = [
     title: 'Software Developer and Linux Administrator',
     content: (
       <>
-        <p>Focused on full-stack software development and Industry 4.0 applications. Skilled in refactoring PHP code, developing React web frontends with Material Design, and managing Linux and LAMP-stacks. Conducted application tests using PHPUnit and Jest.js.</p>
+        <p>Focused on full-stack software development and Industry 4.0 applications. I possess extensive experience in refactoring PHP code and developing React web frontends with Material Design. Additionally, I have a strong background in the installation, configuration, and administration of LAMP-stacks under Linux environments. My skill set also includes conducting comprehensive application tests using PHPUnit and Jest.js, as well as database modeling and integrating RESTful APIs with PHP.</p>
       </>
     ),
     experiences: [],
@@ -161,7 +161,7 @@ export const summaryItems: SummaryItem[] = [
     title: 'Webmaster (with development tasks)',
     content: (
       <>
-        <p>Expertise in HTML, CSS, PHP, Drupal, Git, Jira, SEO, SEA, and Linux administration. Managed Drupal CMS, performed website audits, and developed SEO strategies to boost traffic.</p>
+        <p>Dynamic and results-driven web and network enhancer with extensive experience in web development, network management, and search engine optimization. Adept at leveraging a diverse skill set to drive traffic, improve user experience, and maintain robust network systems. Demonstrated expertise in HTML, CSS, PHP, Drupal, Git, Jira, SEO, SEA, and Linux administration. Proven ability to monitor analytics, develop effective SEO strategies, and perform comprehensive website audits. Skilled in managing both Linux (Samba) and Windows networks to ensure seamless operations.</p>
       </>
     ),
     experiences: [],
@@ -186,44 +186,91 @@ export const experience: TimelineItem[] = [
     title: 'SAP Technical Consultant, SAP Full-Stack Development',
     about: 'Business consulting and SAP solutions.',
     content: (
-      <p>SAP Technical Consultant, SAP Full-Stack Development at BA Business Advice GmbH, Oldenburg, Germany Business
-        consulting and SAP solutions, including SAP ABAP, SAP MII, SAP UI5 Freestyle, SAP Fiori Elements, SAP S4/Hana
-        Public Cloud Side-By-Side Extension, S4/Hana Public Cloud Side-By-Side Extension, SAP RAP and SAP CAP.
-        Implemented migrations from ERP to S/4 HANA and refactored existing applications.</p>
+      <>
+        <p>
+          Delivered expert SAP solutions tailored to client needs. Leveraged extensive technical skills to realise
+          Solution in SAP landscapes and enhance business processes.
+          Provided comprehensive business consulting services and SAP solutions. Specialized in SAP ABAP, SAP MII, SAP
+          UI5 Freestyle, SAP Fiori Elements, and SAP S4/HANA Public Cloud
+          Side-By-Side Extension. Successfully implemented migrations from ERP to S/4 HANA and refactored existing
+          applications.
+        </p>
+        <header>
+          <h5 className="font-bold text-lg mt-4">Technical Skills</h5>
+        </header>
+        <ul className="list-inside list-disc">
+          <li>Proficient in SAP ABAP (Clean Core), SAP MII, SAP UI5 Freestyle, SAP Fiori Elements, SAP RAP, SAP CAP,
+            OData v2, OData v4, and ABAP CDS.</li>
+          <li>Experienced in using JavaScript, TypeScript, and Jest.js for the UI5 framework.</li>
+          <li>Extensive experience with S4/Hana Cloud - Public Edition: Side-By-Side Extension and S4/Hana Cloud -
+            Public Edition: Developer Extension. </li>
+          <li>Competent with SAP BTP (Business Technology Platform).</li>
+        </ul>
+        <header>
+        <h5 className="font-bold text-lg mt-4">Achievements</h5>
+        </header>
+        <ul className="list-inside list-disc">
+          <li>Implemented migrations from ERP to S/4 HANA.</li>
+          <li>Refactored existing applications to enhance performance and maintainability.</li>
+        </ul>
+        <header>
+        <h5 className="font-bold text-lg mt-4">Additional Information</h5>
+        </header>
+        <ul className="list-inside list-disc">
+          <li>Successfully implemented migrations from ERP to S/4 HANA and refactored existing applications.</li>
+          <li>Demonstrated proficiency in JavaScript, TypeScript, and Jest.js for the UI5 framework.</li>
+        </ul>
+      </>
     ),
     experiences: [
       {
         eiKey: 1,
-        text: 'SAP ABAP (Clean Core).',
+        text: 'SAP ABAP (Clean Core)',
       },
       {
         eiKey: 2,
-        text: 'SAP MII, SAP UI5 Freestyle and SAP Fiori Elements.',
+        text: 'SAP MII',
       },
       {
         eiKey: 3,
-        text: 'S4/Hana Cloud - Public Edition: Side-By-Side Extension, ',
+        text: 'SAP UI5 Freestyle',
       },
       {
         eiKey: 3,
-        text: 'S4/Hana Cloud - Public Edition: Extension, ',
+        text: 'SAP Fiori Elements',
       },
       {
         eiKey: 4,
-        text: 'SAP RAP',
-    },
+        text: 'S4/HANA Cloud - Public Edition: Side-By-Side Extension',
+      },
       {
         eiKey: 5,
-        text: 'SAP CAP',
+        text: 'S4/HANA Cloud - Public Edition: Developer Extension',
       },
       {
         eiKey: 6,
-        text: 'SAP BTP',
+        text: 'SAP RAP',
       },
       {
         eiKey: 7,
-        text: 'Implemented migrations from ERP to S/4 HANA and refactored existing applications.',
+        text: 'SAP CAP',
       },
+      {
+        eiKey: 7,
+        text: 'oData v2',
+      },
+      {
+        eiKey: 7,
+        text: 'oData v4',
+      },
+{
+  eiKey: 8,
+    text: 'ABAP CDS',
+},
+{
+eiKey: 8,
+  text: 'ABAP BTP',
+},
     ],
     reference: [],
   },
@@ -234,28 +281,134 @@ export const experience: TimelineItem[] = [
     title: 'Software developer and Linux administrator',
     about: 'Full-stack software development and Industry 4.0 applications.',
     content: (
+      <>
         <p>
-          Full-stack software development and Industry 4.0 applications. Refactoring PHP code and developing React web
-          frontends with Material Design. Also involved in the installation, configuration, and administration of
-          LAMP-stacks under Linux. Conducted application tests using PHPUnit and Jest.js.
+          Developed and maintained full-stack applications, ensuring seamless integration between front-end and back-end
+          systems.
+          Implemented Industry 4.0 solutions to enhance automation and data exchange in manufacturing technologies.
         </p>
+        <header>
+          <h5 className="font-bold text-lg mt-4">PHP Code Refactoring</h5>
+        </header>
+        <ul className="list-inside list-disc">
+          <li>Refactored legacy PHP code to improve performance, maintainability, and scalability.</li>
+          <li>Utilized Composer for dependency management and PHPUnit for unit testing, ensuring robust and error-free
+            code.
+          </li>
+        </ul>
+        <header>
+          <h5 className="font-bold text-lg mt-4">React Web Frontends with Material Design</h5>
+        </header>
+        <ul className="list-inside list-disc">
+          <li>Created dynamic and responsive web frontends using React and Material Design principles.</li>
+          <li>Enhanced user experience through intuitive and visually appealing interfaces.</li>
+          <li>Developed a custom router in React to manage client-side navigation efficiently.</li>
+        </ul>
+        <header>
+          <h5 className="font-bold text-lg mt-4">LAMP-Stack Management</h5>
+        </header>
+        <ul className="list-inside list-disc">
+          <li>Installed, configured, and administered LAMP-stacks (Linux, Apache, MySQL, PHP) to support web
+            applications.
+          </li>
+          <li> Expertise in setting up and managing Linux servers, including CentOS as a virtual machine (VM).</li>
+        </ul>
+        <header>
+          <h5 className="font-bold text-lg mt-4">Database Modeling</h5>
+        </header>
+        <ul className="list-inside list-disc">
+          <li>Designed and implemented relational database models using MySQL, MariaDB, and PostgreSQL.</li>
+          <li>Ensured data integrity and optimized database performance through efficient schema design and indexing.</li>
+        </ul>
+        <header>
+          <h5 className="font-bold text-lg mt-4">Integration of RESTful APIs with PHP</h5>
+        </header>
+        <ul className="list-inside list-disc">
+          <li>Developed and integrated RESTful APIs using PHP to facilitate communication between different software systems.</li>
+          <li>Ensured secure and efficient data exchange between client and server applications.</li>
+        </ul>
+        <header>
+          <h5 className="font-bold text-lg mt-4">Application Testing</h5>
+        </header>
+        <ul className="list-inside list-disc">
+          <li>Conducted rigorous application tests using PHPUnit for PHP and Jest.js for JavaScript to ensure
+            high-quality software delivery.
+          </li>
+          <li>Identified and resolved bugs and performance issues through systematic testing and debugging.</li>
+        </ul>
+        <header>
+          <h5 className="font-bold text-lg mt-4">Web Development</h5>
+        </header>
+        <ul className="list-inside list-disc">
+          <li>Developing React web frontends</li>
+          <li>Refactoring and optimizing PHP code.</li>
+        </ul>
+        <header>
+          <h5 className="font-bold text-lg mt-4">System Administration</h5>
+        </header>
+        <ul className="list-inside list-disc">
+          <li>Installation, configuration, and administration of Linux and LAMP-stacks.</li>
+          <li>Hardening and managing CentOS as a virtual machine (VM).</li>
+        </ul>
+        <header>
+          <h5 className="font-bold text-lg mt-4">Additional Expertise</h5>
+        </header>
+        <ul className="list-inside list-disc">
+          <li>Proficient in version control systems like Git.</li>
+          <li>Strong understanding of web security practices and performance optimization.</li>
+          <li>Excellent problem-solving skills and attention to detail.</li>
+          <li>Ability to collaborate effectively with cross-functional teams.</li>
+        </ul>
+      </>
     ),
     experiences: [
       {
         eiKey: 1,
-        text: 'PHP, Composer, PHPUnit',
+        text: 'PHP',
       },
       {
         eiKey: 2,
-        text: 'React web frontends with Material Design.',
+        text: 'Composer',
       },
       {
         eiKey: 3,
-        text: 'Installation, configuration of Linux and LAMP-stacks.',
+        text: 'PHPUnit',
       },
       {
         eiKey: 4,
-        text: 'Installation, Hardening and administration of CentOS as VM.',
+        text: 'JavaScript',
+      },
+      {
+        eiKey: 5,
+        text: 'Typescript',
+      },
+      {
+        eiKey: 6,
+        text: 'React.js',
+      },
+      {
+        eiKey: 7,
+        text: 'Jest.js',
+      },
+      {
+        eiKey: 8,
+        text: ' Database modeling',
+      },
+      {
+        eiKey: 9,
+        text: ' Database management',
+      },
+      {
+        eiKey: 10,
+        text: 'MySQL',
+      },
+      {
+        eiKey: 11,
+        text: 'MariaDB',
+      },
+      {
+        eiKey: 12,
+        text: 'PostgreSQL',
       },
     ],
     reference: [
@@ -275,33 +428,116 @@ export const experience: TimelineItem[] = [
     about: 'Fincaferien was one of the first German agencies to successfully broker vacation homes online.',
     content: (
       <>
-        <p>
-          Active web and network enhancer. Skilled in HTML, CSS, Git, Jira, PHP, Drupal, SEO, SEA, and Linux admin.
-          Monitored analytics, maintained Drupal CMS with customized Modules, performed website audits, and developed
-          SEO strategies to boost traffic. Managed Linux (Samba) and Windows networks.</p>
+        <p>Extensive experience in web development, network management, and SEO.
+          Skilled in driving traffic, improving user experience, maintaining robust networks, and managing
+          Linux.</p>
+
+        <header>
+          <h5 className="font-bold text-lg mt-4">Web Development</h5>
+        </header>
+        <ul className="list-inside list-disc">
+          <li>Developed and maintained websites using HTML, CSS, PHP, and Drupal.</li>
+          <li>Customized Drupal modules to meet specific client needs and enhance functionality.</li>
+          <li>Proficient in creating and maintaining web pages with a strong understanding of usability design
+            principles.
+          </li>
+        </ul>
+        <header>
+          <h5 className="font-bold text-lg mt-4">PHP, Drupal</h5>
+        </header>
+        <ul className="list-inside list-disc">
+          <li>Experienced in developing and managing dynamic web applications and Drupal content management systems,
+            including custom module development.
+          </li>
+        </ul>
+        <header>
+          <h5 className="font-bold text-lg mt-4">Project Management</h5>
+        </header>
+        <ul className="list-inside list-disc">
+          <li>Utilized Git for version control and Jira for project management to facilitate smooth and efficient
+            development processes.
+          </li>
+          <li>Collaborated with cross-functional teams to deliver projects on time and within scope.</li>
+        </ul>
+        <header>
+          <h5 className="font-bold text-lg mt-4">Linux Administration</h5>
+        </header>
+        <ul className="list-inside list-disc">
+          <li>Competent in managing Linux-based systems, including Samba for file
+            sharing and network management.</li>
+          <li>Managed Linux (Samba) and Windows networks, ensuring secure and efficient operations.</li>
+          <li>Performed regular maintenance and troubleshooting to minimize downtime.</li>
+        </ul>
+        <header>
+          <h5 className="font-bold text-lg mt-4">SEO Strategies</h5>
+        </header>
+        <ul className="list-inside list-disc">
+          <li>Developed and implemented SEO strategies to boost website traffic and improve search engine rankings.</li>
+          <li>Conducted thorough website audits to identify areas for improvement.</li>
+        </ul>
+        <header>
+          <h5 className="font-bold text-lg mt-4">Analytics Monitoring</h5>
+        </header>
+        <ul className="list-inside list-disc">
+          <li>Monitored website analytics to track performance metrics, user behavior, and campaign effectiveness.</li>
+          <li>Utilized data insights to optimize user experience and content strategy.</li>
+        </ul>
+        <header>
+          <h5 className="font-bold text-lg mt-4">Achievements</h5>
+        </header>
+        <ul className="list-inside list-disc">
+          <li>Successfully increased organic traffic through targeted technical SEO strategies.</li>
+          <li>Enhanced website performance and user experience, resulting in a reduction in bounce rate through
+            implementing usability methods recommended by Jacob Nielsen.
+          </li>
+        </ul>
       </>
     ),
     experiences: [
       {
         eiKey: 1,
-        text: 'HTML / CSS',
+        text: 'HTML',
+      },
+      {
+        eiKey: 1,
+        text: 'CSS',
       },
       {
         eiKey: 2,
-        text: 'PHP, Drupal',
+        text: 'Usability',
+      },
+      {
+        eiKey: 2,
+        text: 'Drupal',
       },
       {
         eiKey: 3,
-        text: 'Git and Jira',
+        text: 'Git',
+      },
+      {
+        eiKey: 3,
+        text: 'Jira',
       },
       {
         eiKey: 4,
-        text: 'SEO, SEA, Analytics',
+        text: 'Linux Administration',
       },
       {
         eiKey: 5,
-        text: 'Linux administration',
-      }
+        text: 'Samba',
+      },
+      {
+        eiKey: 5,
+        text: 'SEO',
+      },
+      {
+        eiKey: 5,
+        text: 'SEA',
+      },
+      {
+        eiKey: 5,
+        text: 'Analytics Monitoring',
+      },
     ],
     reference: [
       {
