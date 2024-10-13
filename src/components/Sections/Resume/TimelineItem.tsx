@@ -17,7 +17,7 @@ const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
           {date && <span>&bull;</span>}
           {date && <span className="flex-1 text-sm sm:flex-none">{date}</span>}
         </div>
-        <h4>{about}</h4>
+        <h3 className="font-bold text-lg">{about}</h3>
       </header>
       <section>
         {content}
@@ -25,7 +25,7 @@ const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
       {experiences && experiences.length > 0 && (
         <>
           <header>
-            <h4 className="font-bold text-lg">Experiences</h4>
+            <h4 className="font-bold text-lg mt-4">Skills</h4>
           </header>
           <ul className="list-inside list-disc">
             {experiences.map(({eiKey, text}) => {
