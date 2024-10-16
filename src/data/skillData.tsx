@@ -394,7 +394,7 @@ export const skills: SkillGroup[] = [
     ],
   },
   {
-    head: 'Framworks / CMS',
+    head: 'Frameworks / CMS',
     sgKey: 4,
     skills: [
       {

@@ -299,6 +299,9 @@ eiKey: 8,
           Implemented Industry 4.0 solutions to enhance automation and data exchange in manufacturing technologies.
         </p>
         <header>
+          <h5 className="font-bold text-lg mt-4">Technical Skills</h5>
+        </header>
+        <header>
           <h6 className="mt-4 font-semibold">React Web Frontends with Material Design</h6>
         </header>
         <ul className="list-inside list-disc">
@@ -306,9 +309,6 @@ eiKey: 8,
           <li>Enhanced user experience through intuitive and visually appealing interfaces.</li>
           <li>Developed a custom router in React to manage client-side navigation efficiently.</li>
         </ul>
-        <header>
-          <h5 className="font-bold text-lg mt-4">Technical Skills</h5>
-        </header>
         <header>
           <h6 className="mt-4 font-semibold">PHP Code Refactoring</h6>
         </header>
