@@ -382,7 +382,7 @@ eiKey: 8,
           </li>
           <li>Distinguished myself in particular by successfully converting an outdated PHP web application to a modern
             PHP REST backend with a connection to an independently created new React-Web-Frontend including
-            Database modelling .
+            Database modelling.
           </li>
         </ul>
       </>
