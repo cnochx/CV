@@ -620,17 +620,16 @@ export const education: TimelineItem[] = [
   {
     tlKey: 1,
     date: '',
-    location: 'DAA GmbH, Hildesheim, Germany',
-    title: 'Vocational training as an Industrial Clerk',
-    about: '',
+    location: 'Sengicon GmbH, Leipzig, Germany',
+    title: 'Full-Stack Web Developer, Practical Internship',
+    about: 'Practical Internship to get deep into best practises.',
     content: (
-      <p>Focused on business processes, commercial management and control,
-        and economic and social studies.</p>
+      <p>Practical training covered best practices in LAMP-Stack, Javascript, PHP,
+        MySQL and Linux-Administration.</p>
     ),
     experiences: [],
     reference: [],
   },
-
   {
     tlKey: 2,
     date: '',
@@ -662,12 +661,12 @@ export const education: TimelineItem[] = [
   {
     tlKey: 3,
     date: '',
-    location: 'Sengicon GmbH, Leipzig, Germany',
-    title: 'Full-Stack Web Developer, Practical Internship',
-    about: 'Practical Internship to get deep into best practises.',
+    location: 'DAA GmbH, Hildesheim, Germany',
+    title: 'Vocational training as an Industrial Clerk',
+    about: '',
     content: (
-      <p>Practical training covered best practices in LAMP-Stack, Javascript, PHP,
-        MySQL and Linux-Administration.</p>
+      <p>Focused on business processes, commercial management and control,
+        and economic and social studies.</p>
     ),
     experiences: [],
     reference: [],
