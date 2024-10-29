@@ -283,7 +283,14 @@ eiKey: 8,
   text: 'ABAP BTP',
 },
     ],
-    reference: [],
+    reference: [
+      {
+        href: '/assets/reference/sap_projectlist.pdf',
+        text: 'SAP Projectlist',
+        primary: true,
+        Icon: ArrowDownTrayIcon,
+      },
+    ],
   },
   {
     tlKey: 2,
