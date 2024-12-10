@@ -3,12 +3,13 @@ import classNames from 'classnames';
 import Image from 'next/image';
 import {FC, memo} from 'react';
 
-import {heroData, SectionId} from '../../data/data';
+import {SectionId} from '../../data/data';
+import {heroData} from '../../data/HeroData';
 import Section from '../Layout/Section';
 import Socials from '../Socials';
 
 const Hero: FC = memo(() => {
-  const {imageSrc, name, description, actions} = heroData;
+  const {name, imageSrc, title, subTitle, descrList, actions} = heroData;
 
   return (
     <Section noPadding sectionId={SectionId.Hero}>
@@ -21,11 +22,21 @@ const Hero: FC = memo(() => {
           src={imageSrc}
         />
         <article className="z-10  max-w-screen-lg px-4 lg:px-0">
-          <div className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/40 p-6 text-center shadow-lg backdrop-blur-sm">
+          <div
+            className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/40 p-6 text-center shadow-lg backdrop-blur-sm">
             <header>
-            <h1 className="text-4xl font-bold text-white sm:text-5xl lg:text-7xl">{name}</h1>
+              <h1 className="text-4xl font-bold text-stone-300 sm:text-5xl lg:text-7xl">{title}</h1>
+              <h2 className="text-3xl font-bold text-stone-100 sm:text-3xl lg:text-5xl">{subTitle}</h2>
             </header>
-            {description}
+            <ul className="list-inside list-none text-left pl-6">
+              {descrList.map(({hdlKey,listElement}) => {
+                return (
+                  <li className="prose-sm text-stone-200 sm:prose-base lg:prose-lg" key={hdlKey}>
+                    <strong className="text-stone-100">{listElement}</strong>
+                  </li>
+                );
+              })}
+            </ul>
             <div className="flex gap-x-4 text-neutral-100">
               <Socials />
             </div>
