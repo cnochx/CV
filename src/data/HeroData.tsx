@@ -37,7 +37,7 @@ export const heroData: Hero = {
       hdlKey: 3,
       listElement: (
         <>
-         <span> 3.5 years in business software development.</span>
+          <span>HTML, CSS, JavaScript, PHP, MySQL and Drupal.</span>
         </>
       ),
     },
@@ -45,7 +45,7 @@ export const heroData: Hero = {
       hdlKey: 4,
       listElement: (
         <>
-          <span>2.5 years of experience in SAP technology.</span>
+         <span> 3.5 years in business software development.</span>
         </>
       ),
     },
@@ -53,7 +53,7 @@ export const heroData: Hero = {
       hdlKey: 5,
       listElement: (
         <>
-          <span>Professional knowledge in web development:</span>
+          <span>PHP, Node.js, Javascript, React, Samba.</span>
         </>
       ),
     },
@@ -61,7 +61,7 @@ export const heroData: Hero = {
       hdlKey: 6,
       listElement: (
         <>
-          <span>HTML, CSS, JavaScript, Node.js, React, PHP, MySQL and Drupal.</span>
+          <span>2.5 years of experience in SAP technology.</span>
         </>
       ),
     },
@@ -69,20 +69,12 @@ export const heroData: Hero = {
       hdlKey: 7,
       listElement: (
         <>
-          <span>Professional knowledge in ABAP development:</span>
+          <span>ABAP, Fiori / UI5, BTP, Side-by-Side Extension, Developer Extension.</span>
         </>
       ),
     },
     {
       hdlKey: 8,
-      listElement: (
-        <>
-          <span>ABAP, Clean Core, Fiori / UI5, BTP, Side-by-Side Extension, Developer Extension</span>
-        </>
-      ),
-    },
-    {
-      hdlKey: 9,
       listElement: (
         <>
           <span>Experience in Industry 4.0 applications.</span>
