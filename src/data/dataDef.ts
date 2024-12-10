@@ -2,23 +2,7 @@ import {StaticImageData} from 'next/image';
 import {FC, ForwardRefExoticComponent, SVGProps} from 'react';
 
 import {IconProps} from '../components/Icon/Icon';
-
-/**
- * Hero section
- */
-export interface Hero {
-  imageSrc: string;
-  name: string;
-  description: JSX.Element;
-  actions: HeroActionItem[];
-}
-
-interface HeroActionItem {
-  href: string;
-  text: string;
-  primary?: boolean;
-  Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
-}
+import {HeroActionItem} from './HeroDataDef';
 
 /**
  * About section
