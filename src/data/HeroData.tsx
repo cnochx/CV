@@ -53,7 +53,7 @@ export const heroData: Hero = {
       hdlKey: 5,
       listElement: (
         <>
-          <span>Proficient in HTML, CSS, React, JavaScript, Node.js, React, PHP, MySQL and Drupal.</span>
+          <span>Professional knowledge in web development:</span>
         </>
       ),
     },
@@ -61,12 +61,28 @@ export const heroData: Hero = {
       hdlKey: 6,
       listElement: (
         <>
-          <span>SAP Knowledge: ABAP, Clean Core, Fiori / UI5, BTP, Side-by-Side Extension, Developer Extension.</span>
+          <span>HTML, CSS, JavaScript, Node.js, React, PHP, MySQL and Drupal.</span>
         </>
       ),
     },
     {
       hdlKey: 7,
+      listElement: (
+        <>
+          <span>Professional knowledge in ABAP development:</span>
+        </>
+      ),
+    },
+    {
+      hdlKey: 8,
+      listElement: (
+        <>
+          <span>ABAP, Clean Core, Fiori / UI5, BTP, Side-by-Side Extension, Developer Extension</span>
+        </>
+      ),
+    },
+    {
+      hdlKey: 9,
       listElement: (
         <>
           <span>Experience in Industry 4.0 applications.</span>
