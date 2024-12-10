@@ -37,7 +37,7 @@ export const heroData: Hero = {
       hdlKey: 3,
       listElement: (
         <>
-          <span>7 years of experience in Linux administration.</span>
+         <span> 3.5 years in business software development.</span>
         </>
       ),
     },
@@ -45,7 +45,7 @@ export const heroData: Hero = {
       hdlKey: 4,
       listElement: (
         <>
-         <span> 3.5 years in business software development.</span>
+          <span>2.5 years of experience in SAP technology.</span>
         </>
       ),
     },
@@ -53,7 +53,7 @@ export const heroData: Hero = {
       hdlKey: 5,
       listElement: (
         <>
-          <span>2.5 years of experience in SAP technology.</span>
+          <span>Proficient in HTML, CSS, React, JavaScript, Node.js, React, PHP, MySQL and Drupal.</span>
         </>
       ),
     },
@@ -61,7 +61,7 @@ export const heroData: Hero = {
       hdlKey: 6,
       listElement: (
         <>
-          <span>Proficient in HTML, CSS, React, JavaScript, Node.js, React, PHP, MySQL and Drupal.</span>
+          <span>SAP Knowledge: ABAP, Clean Core, Fiori / UI5, BTP, Side-by-Side Extension, Developer Extension.</span>
         </>
       ),
     },
@@ -69,55 +69,7 @@ export const heroData: Hero = {
       hdlKey: 7,
       listElement: (
         <>
-          <span>SAP Knowledge: ABAP, Clean Core, Fiori / UI5, BTP, Side-by-Side Extension, Developer Extension.</span>
-        </>
-      ),
-    },
-    {
-      hdlKey: 8,
-      listElement: (
-        <>
-          <span>Committed to continuous learning and innovation.</span>
-        </>
-      ),
-    },
-    {
-      hdlKey: 9,
-      listElement: (
-        <>
-          <span>Focus on clean code and S.O.L.I.D principles.</span>
-        </>
-      ),
-    },
-    {
-      hdlKey: 10,
-      listElement: (
-        <>
-          <span>Skilled in designing, testing, and maintaining web systems.</span>
-        </>
-      ),
-    },
-    {
-      hdlKey: 11,
-      listElement: (
-        <>
-          <span>Proven track record in business consulting.</span>
-        </>
-      ),
-    },
-    {
-      hdlKey: 12,
-      listElement: (
-        <>
           <span>Experience in Industry 4.0 applications.</span>
-        </>
-      ),
-    },
-    {
-      hdlKey: 13,
-      listElement: (
-        <>
-          <span>Strong problem-solving abilities.</span>
         </>
       ),
     },
