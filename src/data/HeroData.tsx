@@ -37,7 +37,7 @@ export const heroData: Hero = {
       hdlKey: 3,
       listElement: (
         <>
-          <span className="pl-8">HTML, CSS, JS, PHP, MySQL and Drupal.</span>
+          <span className="pl-8 block">HTML, CSS, JS, PHP, MySQL and Drupal.</span>
         </>
       ),
     },
@@ -53,7 +53,7 @@ export const heroData: Hero = {
       hdlKey: 5,
       listElement: (
         <>
-          <span className="pl-8">PHP, Node.js, Javascript, React, Samba.</span>
+          <span className="pl-8 block">PHP, Node.js, Javascript, React, Samba.</span>
         </>
       ),
     },
@@ -69,7 +69,7 @@ export const heroData: Hero = {
       hdlKey: 7,
       listElement: (
         <>
-          <span className="pl-8">ABAP, Fiori / UI5, Side-by-Side and Developer Extension.</span>
+          <span className="pl-8 block">ABAP, Fiori / UI5, Side-by-Side and Developer Extension.</span>
         </>
       ),
     },
