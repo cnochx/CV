@@ -22,24 +22,22 @@ const Hero: FC = memo(() => {
           src={imageSrc}
         />
         <div className="z-10  max-w-screen-lg px-4 lg:px-0">
-          <div
+          <article
             className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/40 p-6 text-center shadow-lg backdrop-blur-sm">
-            <article>
-              <header>
-                <h1 className="text-4xl font-bold text-stone-300 sm:text-5xl lg:text-7xl">{title}</h1>
-                <h2 className="text-3xl font-bold text-stone-100 sm:text-3xl lg:text-5xl">{subTitle}</h2>
-              </header>
+            <header>
+              <h1 className="text-4xl font-bold text-stone-300 sm:text-5xl lg:text-7xl">{title}</h1>
+              <h2 className="text-3xl font-bold text-stone-100 sm:text-3xl lg:text-5xl">{subTitle}</h2>
+            </header>
+
               <ul className="list-inside list-none text-left pl-6">
-                {descrList.map(({hdlKey,listElement}) => {
+                {descrList.map(({hdlKey, listElement}) => {
                   return (
                     <li className="prose-sm text-stone-200 sm:prose-base lg:prose-lg" key={hdlKey}>
                       <strong className="text-stone-100">{listElement}</strong>
                     </li>
                   );
-               })}
-             </ul>
-            </article>
-            <aside>
+                })}
+              </ul>
               <div className="flex gap-x-4 text-neutral-100">
                 <Socials />
               </div>
@@ -57,8 +55,7 @@ const Hero: FC = memo(() => {
                   </a>
                 ))}
               </div>
-            </aside>
-          </div>
+          </article>
         </div>
         <div className="absolute inset-x-0 bottom-6 flex justify-center">
           <nav>

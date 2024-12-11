@@ -29,7 +29,7 @@ export const heroData: Hero = {
       hdlKey: 2,
       listElement: (
         <>
-          <span>Over 20 years in full-stack web development.</span>
+          <span>20+ years in full-stack web development.</span>
         </>
       ),
     },
@@ -37,7 +37,7 @@ export const heroData: Hero = {
       hdlKey: 3,
       listElement: (
         <>
-          <span>HTML, CSS, JS, PHP, MySQL and Drupal.</span>
+          <span className="pl-8">HTML, CSS, JS, PHP, MySQL and Drupal.</span>
         </>
       ),
     },
@@ -45,7 +45,7 @@ export const heroData: Hero = {
       hdlKey: 4,
       listElement: (
         <>
-         <span> 3.5 years in business software development.</span>
+         <span>3.5 years in business software development.</span>
         </>
       ),
     },
@@ -53,7 +53,7 @@ export const heroData: Hero = {
       hdlKey: 5,
       listElement: (
         <>
-          <span>PHP, Node.js, Javascript, React, Samba.</span>
+          <span className="pl-8">PHP, Node.js, Javascript, React, Samba.</span>
         </>
       ),
     },
@@ -69,7 +69,7 @@ export const heroData: Hero = {
       hdlKey: 7,
       listElement: (
         <>
-          <span>ABAP, Fiori / UI5, Side-by-Side and Developer Extension.</span>
+          <span className="pl-8">ABAP, Fiori / UI5, Side-by-Side and Developer Extension.</span>
         </>
       ),
     },
@@ -77,13 +77,13 @@ export const heroData: Hero = {
   actions: [
     {
       href: '/assets/cv_martin_grellmann.pdf',
-      text: 'CV as PDF',
+      text: 'CV',
       primary: true,
       Icon: ArrowDownTrayIcon,
     },
     {
       href: '/assets/cv_martin_grellmann-ext.pdf',
-      text: 'CV in detail as PDF',
+      text: 'CV in detail',
       primary: true,
       Icon: ArrowDownTrayIcon,
     },
