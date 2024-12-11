@@ -43,7 +43,7 @@ export const imprintItems: ImprintItems = {
   addressBrazil: [
     {
       aiKey: 0,
-      text: 'Sitio de Cristal, C4 - Chácara Shanti',
+      text: 'Cha. Cristal / Sitio de Cristal, Casa 5',
     },
     {
       aiKey: 1,
@@ -87,6 +87,12 @@ export const imprintItems: ImprintItems = {
     },
     {
       liKey: 3,
+      linkLabel: 'Phone:',
+      text: '+49 151 594 231 33',
+      href: 'tel:004915159423133',
+    },
+    {
+      liKey: 4,
       linkLabel: 'Skype:',
       text: 'live:rudra_117',
       href: 'skype:live:rudra_117?call',
