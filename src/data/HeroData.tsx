@@ -53,7 +53,9 @@ export const heroData: Hero = {
       hdlKey: 5,
       listElement: (
         <>
-          <span className="pl-8 block">PHP, Node.js, Javascript, React, Samba.</span>
+          <div className="block pl-8 sm:pl-12">
+            PHP, MariaDB Node.js, Javascript, React, Samba.
+          </div>
         </>
       ),
     },
