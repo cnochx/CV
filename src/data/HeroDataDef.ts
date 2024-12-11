@@ -8,7 +8,6 @@ export interface Hero {
   title: string;
   subTitle: string;
   name: string;
-  description: JSX.Element;
   descrList: HeroDescList[];
   actions: HeroActionItem[];
 }
