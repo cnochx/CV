@@ -1,659 +1,353 @@
 import {SkillGroup} from './skillDataDef';
 
-
 export const skills: SkillGroup[] = [
-
   {
-    head: 'Techniques / Administration',
+    head: 'SAP development / Architecture',
     sgKey: 1,
     skills: [
       {
         sKey: 1,
-        name: 'Clean Code',
+        name: 'ABAP / ABAP Objects',
         expLevel: 8,
-        years: 5,
+        years: 4.5,
         groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Software Developer and Linux Administrator',
-          },
-          {
-            oKey: 2,
-            origin: 'SAP Technical Consultant, SAP Full-Stack Development',
-          },
+          {oKey: 1, origin: 'Senior SAP Developer'},
+          {oKey: 2, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
         ],
       },
       {
         sKey: 2,
+        name: 'ABAP CDS',
+        expLevel: 8,
+        years: 4,
+        groupOfOrigin: [
+          {oKey: 1, origin: 'Senior SAP Developer'},
+          {oKey: 2, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
+        ],
+      },
+      {
+        sKey: 3,
+        name: 'OData v2 / v4',
+        expLevel: 8,
+        years: 4,
+        groupOfOrigin: [
+          {oKey: 1, origin: 'Senior SAP Developer'},
+          {oKey: 2, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
+        ],
+      },
+      {
+        sKey: 4,
+        name: 'SAP UI5 / Fiori',
+        expLevel: 8,
+        years: 4,
+        groupOfOrigin: [
+          {oKey: 1, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
+        ],
+      },
+      {
+        sKey: 5,
+        name: 'SAP BTP',
+        expLevel: 7,
+        years: 3,
+        groupOfOrigin: [
+          {oKey: 1, origin: 'Senior SAP Developer'},
+          {oKey: 2, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
+        ],
+      },
+      {
+        sKey: 6,
+        name: 'RAP / CAP',
+        expLevel: 7,
+        years: 2.5,
+        groupOfOrigin: [
+          {oKey: 1, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
+        ],
+      },
+      {
+        sKey: 7,
+        name: 'S/4HANA modernization',
+        expLevel: 8,
+        years: 3,
+        groupOfOrigin: [
+          {oKey: 1, origin: 'Senior SAP Developer'},
+          {oKey: 2, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
+        ],
+      },
+      {
+        sKey: 8,
         name: 'Clean Core',
         expLevel: 8,
         years: 2.5,
         groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'SAP Technical Consultant, SAP Full-Stack Development',
-          },
-        ],
-      },
-      {
-        sKey: 3,
-        name: 'S.O.L.I.D. Principle',
-        expLevel: 8,
-        years: 5,
-        groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Software Developer and Linux Administrator',
-          },
-          {
-            oKey: 2,
-            origin: 'SAP Technical Consultant, SAP Full-Stack Development',
-          },
-        ],
-      },
-      {
-        sKey: 4,
-        name: 'Git / Gitflow',
-        expLevel: 10,
-        years: 11,
-        groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Webmaster (with development tasks)',
-          },
-          {
-            oKey: 2,
-            origin: 'Software Developer and Linux Administrator',
-          },
-          {
-            oKey: 3,
-            origin: 'SAP Technical Consultant, SAP Full-Stack Development',
-          },
-        ],
-      },
-      {
-        sKey: 5,
-        name: 'Jira',
-        expLevel: 7,
-        years: 11,
-        groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Webmaster (with development tasks)',
-          },
-          {
-            oKey: 2,
-            origin: 'Software Developer and Linux Administrator',
-          },
-          {
-            oKey: 3,
-            origin: 'SAP Technical Consultant, SAP Full-Stack Development',
-          },
-        ],
-      },
-      {
-        sKey: 6,
-        name: 'OOP (ABAP / JS / PHP)',
-        expLevel: 9,
-        years: 6,
-        groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Webmaster (with development tasks)',
-          },
-          {
-            oKey: 2,
-            origin: 'Software Developer and Linux Administrator',
-          },
-          {
-            oKey: 3,
-            origin: 'SAP Technical Consultant, SAP Full-Stack Development',
-          },
-        ],
-      },
-      {
-        sKey: 7,
-        name: 'Scrum Master',
-        expLevel: 5,
-        years: 0,
-        groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Scrum Master PSMI',
-          },
-        ],
-      },
-      {
-        sKey: 8,
-        name: 'Linux Administration',
-        expLevel: 7,
-        years: 7,
-        groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Webmaster (with development tasks)',
-          },
-        ],
-      },
-      {
-        sKey: 9,
-        name: 'Samba',
-        expLevel: 8,
-        years: 7,
-        groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Webmaster (with development tasks)',
-          },
+          {oKey: 1, origin: 'Senior SAP Developer'},
+          {oKey: 2, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
         ],
       },
     ],
   },
   {
-    head: 'Backend development',
+    head: 'Web / API engineering',
     sgKey: 2,
     skills: [
       {
         sKey: 1,
-        name: 'Node.js',
-        expLevel: 8,
-        years: 5,
+        name: 'JavaScript',
+        expLevel: 9,
+        years: 10,
         groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Software Developer and Linux Administrator',
-          },
-          {
-            oKey: 2,
-            origin: 'SAP Technical Consultant, SAP Full-Stack Development',
-          },
+          {oKey: 1, origin: 'Webmaster / Web Developer'},
+          {oKey: 2, origin: 'Software Developer and Linux Administrator'},
+          {oKey: 3, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
+          {oKey: 4, origin: 'Technical Lead / IT Specialist'},
         ],
       },
       {
         sKey: 2,
-        name: 'Express.js',
+        name: 'TypeScript',
         expLevel: 8,
-        years: 2,
+        years: 5,
         groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Certification of Full-Stack Web Developer',
-          },
-          {
-            oKey: 2,
-            origin: 'private Interest',
-          },
+          {oKey: 1, origin: 'Software Developer and Linux Administrator'},
+          {oKey: 2, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
+          {oKey: 3, origin: 'private Interest'},
         ],
       },
       {
         sKey: 3,
-        name: 'Next.js',
+        name: 'React',
         expLevel: 8,
         years: 5,
         groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Software Developer and Linux Administrator',
-          },
-          {
-            oKey: 2,
-            origin: 'SAP Technical Consultant, SAP Full-Stack Development',
-          },
-          {
-            oKey: 3,
-            origin: 'private Interest',
-          },
+          {oKey: 1, origin: 'Software Developer and Linux Administrator'},
+          {oKey: 2, origin: 'private Interest'},
         ],
       },
       {
         sKey: 4,
-        name: 'PHP',
-        expLevel: 10,
-        years: 8,
+        name: 'Node.js',
+        expLevel: 7,
+        years: 5,
         groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Webmaster (with development tasks)',
-          },
-          {
-            oKey: 2,
-            origin: 'Certification of Full-Stack Web Developer',
-          },
-          {
-            oKey: 3,
-            origin: 'Software Developer and Linux Administrator',
-          },
+          {oKey: 1, origin: 'Software Developer and Linux Administrator'},
+          {oKey: 2, origin: 'private Interest'},
         ],
       },
       {
         sKey: 5,
-        name: 'Dependency management (Composer, NPM)',
+        name: 'REST APIs',
         expLevel: 9,
         years: 7,
         groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Webmaster (with development tasks)',
-          },
-          {
-            oKey: 2,
-            origin: 'Certification of Full-Stack Web Developer',
-          },
-          {
-            oKey: 3,
-            origin: 'Software Developer and Linux Administrator',
-          },
-          {
-            oKey: 4,
-            origin: 'SAP Technical Consultant, SAP Full-Stack Development',
-          },
+          {oKey: 1, origin: 'Software Developer and Linux Administrator'},
+          {oKey: 2, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
+          {oKey: 3, origin: 'Technical Lead / IT Specialist'},
+          {oKey: 4, origin: 'Webmaster / Web Developer'},
         ],
       },
       {
         sKey: 6,
-        name: 'UnitPHP',
-        expLevel: 6,
-        years: 2.5,
+        name: 'Next.js',
+        expLevel: 7,
+        years: 4,
         groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Software Developer and Linux Administrator',
-          },
+          {oKey: 1, origin: 'private Interest'},
         ],
       },
       {
         sKey: 7,
-        name: 'Jest.js',
+        name: 'Express.js',
         expLevel: 6,
-        years: 1,
+        years: 2,
         groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Software Developer and Linux Administrator',
-          },
-          {
-            oKey: 2,
-            origin: 'SAP Technical Consultant, SAP Full-Stack Development',
-          },
+          {oKey: 1, origin: 'Training Full-Stack Web Developer'},
+          {oKey: 2, origin: 'private Interest'},
         ],
       },
       {
         sKey: 8,
-        name: 'Python',
-        expLevel: 4,
-        years: 0.5,
+        name: 'Jest',
+        expLevel: 7,
+        years: 3,
         groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'SAP Technical Consultant, SAP Full-Stack Development',
-          },
-          {
-            oKey: 1,
-            origin: 'private Interest',
-          },
+          {oKey: 1, origin: 'Software Developer and Linux Administrator'},
+          {oKey: 2, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
         ],
       },
     ],
   },
   {
-    head: 'Frontend development',
+    head: 'PHP / Drupal / Platforms',
     sgKey: 3,
     skills: [
       {
         sKey: 1,
-        name: 'HTML / HTML 5',
-        expLevel: 10,
-        years: 20,
+        name: 'PHP',
+        expLevel: 9,
+        years: 15,
         groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Webmaster (with development tasks)',
-          },
-          {
-            oKey: 2,
-            origin: 'Certification of Full-Stack Web Developer',
-          },
-          {
-            oKey: 3,
-            origin: 'Software Developer and Linux Administrator',
-          },
-          {
-            oKey: 4,
-            origin: 'SAP Technical Consultant, SAP Full-Stack Development',
-          },
+          {oKey: 1, origin: 'Webmaster / Web Developer'},
+          {oKey: 2, origin: 'Software Developer and Linux Administrator'},
+          {oKey: 3, origin: 'Training Full-Stack Web Developer'},
+          {oKey: 4, origin: 'Technical Lead / IT Specialist'},
         ],
       },
       {
         sKey: 2,
-        name: 'CSS / CSS 3',
-        expLevel: 10,
-        years: 20,
+        name: 'Drupal',
+        expLevel: 9,
+        years: 15,
         groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Webmaster (with development tasks)',
-          },
-          {
-            oKey: 2,
-            origin: 'Certification of Full-Stack Web Developer',
-          },
-          {
-            oKey: 3,
-            origin: 'Software Developer and Linux Administrator',
-          },
-          {
-            oKey: 4,
-            origin: 'SAP Technical Consultant, SAP Full-Stack Development',
-          },
+          {oKey: 1, origin: 'Webmaster / Web Developer'},
+          {oKey: 2, origin: 'Technical Lead / IT Specialist'},
         ],
       },
       {
         sKey: 3,
-        name: 'Javascript',
-        expLevel: 10,
-        years: 13,
+        name: 'HTML / CSS',
+        expLevel: 9,
+        years: 20,
         groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Webmaster (with development tasks)',
-          },
-          {
-            oKey: 2,
-            origin: 'Certification of Full-Stack Web Developer',
-          },
-          {
-            oKey: 3,
-            origin: 'Software Developer and Linux Administrator',
-          },
-          {
-            oKey: 4,
-            origin: 'SAP Technical Consultant, SAP Full-Stack Development',
-          },
+          {oKey: 1, origin: 'Webmaster / Web Developer'},
+          {oKey: 2, origin: 'Training Full-Stack Web Developer'},
         ],
       },
       {
         sKey: 4,
-        name: 'Typescript',
+        name: 'Composer / NPM',
         expLevel: 8,
-        years: 3.5,
+        years: 7,
         groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Software Developer and Linux Administrator',
-          },
-          {
-            oKey: 2,
-            origin: 'SAP Technical Consultant, SAP Full-Stack Development',
-          },
-          {
-            oKey: 3,
-            origin: 'private Interest',
-          },
+          {oKey: 1, origin: 'Webmaster / Web Developer'},
+          {oKey: 2, origin: 'Software Developer and Linux Administrator'},
+          {oKey: 3, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
+          {oKey: 4, origin: 'Technical Lead / IT Specialist'},
+        ],
+      },
+      {
+        sKey: 5,
+        name: 'MySQL / MariaDB / PostgreSQL',
+        expLevel: 8,
+        years: 8,
+        groupOfOrigin: [
+          {oKey: 1, origin: 'Software Developer and Linux Administrator'},
+          {oKey: 2, origin: 'Webmaster / Web Developer'},
+          {oKey: 3, origin: 'Technical Lead / IT Specialist'},
+        ],
+      },
+      {
+        sKey: 6,
+        name: 'Linux Administration',
+        expLevel: 8,
+        years: 8,
+        groupOfOrigin: [
+          {oKey: 1, origin: 'Webmaster / Web Developer'},
+          {oKey: 2, origin: 'Software Developer and Linux Administrator'},
+          {oKey: 3, origin: 'Technical Lead / IT Specialist'},
+        ],
+      },
+      {
+        sKey: 7,
+        name: 'Apache / LAMP',
+        expLevel: 8,
+        years: 8,
+        groupOfOrigin: [
+          {oKey: 1, origin: 'Webmaster / Web Developer'},
+          {oKey: 2, origin: 'Software Developer and Linux Administrator'},
+        ],
+      },
+      {
+        sKey: 8,
+        name: 'Cloud infrastructure',
+        expLevel: 7,
+        years: 2,
+        groupOfOrigin: [
+          {oKey: 1, origin: 'Technical Lead / IT Specialist'},
+          {oKey: 2, origin: 'private Interest'},
         ],
       },
     ],
   },
   {
-    head: 'Frameworks / CMS',
+    head: 'Methods / Quality',
     sgKey: 4,
     skills: [
       {
         sKey: 1,
-        name: 'React Framework',
-        expLevel: 7,
-        years: 3.5,
+        name: 'Clean Code',
+        expLevel: 9,
+        years: 6,
         groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Software Developer and Linux Administrator',
-          },
-          {
-            oKey: 2,
-            origin: 'private Interest',
-          },
+          {oKey: 1, origin: 'Software Developer and Linux Administrator'},
+          {oKey: 2, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
+          {oKey: 3, origin: 'Senior SAP Developer'},
         ],
       },
       {
         sKey: 2,
-        name: 'TailwindCSS',
-        expLevel: 7,
-        years: 1,
+        name: 'SOLID principles',
+        expLevel: 8,
+        years: 6,
         groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'private Interest',
-          },
+          {oKey: 1, origin: 'Software Developer and Linux Administrator'},
+          {oKey: 2, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
+          {oKey: 3, origin: 'Senior SAP Developer'},
         ],
       },
       {
         sKey: 3,
-        name: 'Bootstrap',
+        name: 'Refactoring',
+        expLevel: 9,
+        years: 8,
+        groupOfOrigin: [
+          {oKey: 1, origin: 'Webmaster / Web Developer'},
+          {oKey: 2, origin: 'Software Developer and Linux Administrator'},
+          {oKey: 3, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
+          {oKey: 4, origin: 'Senior SAP Developer'},
+        ],
+      },
+      {
+        sKey: 4,
+        name: 'Code Reviews',
+        expLevel: 7,
+        years: 4,
+        groupOfOrigin: [
+          {oKey: 1, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
+          {oKey: 2, origin: 'Senior SAP Developer'},
+        ],
+      },
+      {
+        sKey: 5,
+        name: 'Git / Gitflow',
+        expLevel: 9,
+        years: 11,
+        groupOfOrigin: [
+          {oKey: 1, origin: 'Webmaster / Web Developer'},
+          {oKey: 2, origin: 'Software Developer and Linux Administrator'},
+          {oKey: 3, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
+          {oKey: 4, origin: 'Technical Lead / IT Specialist'},
+        ],
+      },
+      {
+        sKey: 6,
+        name: 'Jira / OpenProject',
+        expLevel: 8,
+        years: 11,
+        groupOfOrigin: [
+          {oKey: 1, origin: 'Webmaster / Web Developer'},
+          {oKey: 2, origin: 'Software Developer and Linux Administrator'},
+          {oKey: 3, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
+          {oKey: 4, origin: 'Technical Lead / IT Specialist'},
+        ],
+      },
+      {
+        sKey: 7,
+        name: 'Scrum / Agile collaboration',
         expLevel: 7,
         years: 5,
         groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Webmaster (with development tasks)',
-          },
-        ],
-      },
-      {
-        sKey: 4,
-        name: 'Material Design',
-        expLevel: 7,
-        years: 2.5,
-        groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Software Developer and Linux Administrator',
-          },
-        ],
-      },
-      {
-        sKey: 5,
-        name: 'Drupal',
-        expLevel: 9,
-        years: 7,
-        groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Webmaster (with development tasks)',
-          },
-          {
-            oKey: 2,
-            origin: 'Software Developer and Linux Administrator',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    head: 'Database modelling',
-    sgKey: 5,
-    skills: [
-      {
-        sKey: 5,
-        name: 'MySql',
-        expLevel: 8,
-        years: 7,
-        groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Webmaster (with development tasks)',
-          },
-          {
-            oKey: 2,
-            origin: 'Software Developer and Linux Administrator',
-          },
-        ],
-      },
-      {
-        sKey: 6,
-        name: 'MariaDB',
-        expLevel: 8,
-        years: 1,
-        groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Software Developer and Linux Administrator',
-          },
-          {
-            oKey: 2,
-            origin: 'private Interest',
-          },
-        ],
-      },
-      {
-        sKey: 7,
-        name: 'PostgreSQL',
-        expLevel: 7,
-        years: 1,
-        groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Software Developer and Linux Administrator',
-          },
-        ],
-      },
-      {
-        sKey: 8,
-        name: 'ABAP SQL',
-        expLevel: 2.5,
-        groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'SAP Technical Consultant, SAP Full-Stack Development',
-          },
-        ],
-      },
-      {
-        sKey: 9,
-        name: 'MongoDB',
-        expLevel: 5,
-        years: 0.5,
-        groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'private Interest',
-          },
-        ],
-      },
-      {
-        sKey: 10,
-        name: 'SQLite',
-        expLevel: 6,
-        years: 0.5,
-        groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'Certification of Full-Stack Web Developer',
-          },
-          {
-            oKey: 2,
-            origin: 'private Interest',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    head: 'SAP Technologies',
-    sgKey: 6,
-    skills: [
-      {
-        sKey: 1,
-        name: 'SAP ABAP (Modern, Clean Core)',
-        expLevel: 7,
-        years: 2.5,
-        groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'SAP Technical Consultant, SAP Full-Stack Development',
-          },
-        ],
-      },
-      {
-        sKey: 2,
-        name: 'SAP MII',
-        expLevel: 7,
-        years: 2.5,
-        groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'SAP Technical Consultant, SAP Full-Stack Development',
-          },
-        ],
-      },
-      {
-        sKey: 3,
-        name: 'SAP UI5 Freestyle (JS-Framework)',
-        expLevel: 8,
-        years: 2.5,
-        groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'SAP Technical Consultant, SAP Full-Stack Development',
-          },
-        ],
-      },
-      {
-        sKey: 4,
-        name: 'SAP Fiori Elements',
-        expLevel: 7,
-        years: 2.5,
-        groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'SAP Technical Consultant, SAP Full-Stack Development',
-          },
-        ],
-      },
-      {
-        sKey: 5,
-        name: 'SAP S/4Hana Cloud - Public Edition Extensions',
-        expLevel: 6,
-        years: 2.5,
-        groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'SAP Technical Consultant, SAP Full-Stack Development',
-          },
-        ],
-      },
-      {
-        sKey: 6,
-        name: 'S4/Hana Cloud - Public Edition: Side-By-Side Extension',
-        expLevel: 6,
-        years: 2.5,
-        groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'SAP Technical Consultant, SAP Full-Stack Development',
-          },
-        ],
-      },
-      {
-        sKey: 7,
-        name: 'S4/Hana Cloud - Public Edition: Developer Extension',
-        expLevel: 6,
-        years: 2.5,
-        groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'SAP Technical Consultant, SAP Full-Stack Development',
-          },
-        ],
-      },
-      {
-        sKey: 8,
-        name: 'SAP BTP',
-        expLevel: 5,
-        years: 2.5,
-        groupOfOrigin: [
-          {
-            oKey: 1,
-            origin: 'SAP Technical Consultant, SAP Full-Stack Development',
-          },
+          {oKey: 1, origin: 'Scrum Master PSMI'},
+          {oKey: 2, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
+          {oKey: 3, origin: 'Senior SAP Developer'},
         ],
       },
     ],
