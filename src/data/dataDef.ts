@@ -82,8 +82,9 @@ export interface TimelineItem {
   about: string;
   content: JSX.Element;
   experiences: expItem[];
-  reference: HeroActionItem[];
+  reference?: HeroActionItem[];   // <-- key point
 }
+
 export interface expItem {
   eiKey: number;
   text: string;

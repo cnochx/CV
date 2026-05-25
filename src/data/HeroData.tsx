@@ -13,15 +13,15 @@ import {
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
-  title: `Call Rudra - `,
+  title: `Senior Full-Stack Engineer - `,
   subTitle: `Martin Grellmann.`,
-  name: 'call_rudra',
+  name: 'martin_grellmann',
   descrList: [
     {
       hdlKey: 1,
       listElement: (
         <>
-          <span>Innovative, certified Full-stack web developer and Full-stack software engineer.</span>
+          <span>S/4HANA Development, SAP BTP, enterprise APIs and clean-core aligned full-stack engineering.</span>
         </>
       ),
     },
@@ -29,7 +29,7 @@ export const heroData: Hero = {
       hdlKey: 2,
       listElement: (
         <>
-          <span>20+ years in full-stack web development.</span>
+          <span>20+ years in software engineering with recent specialization in modern SAP full-stack development.</span>
         </>
       ),
     },
@@ -37,7 +37,7 @@ export const heroData: Hero = {
       hdlKey: 3,
       listElement: (
         <>
-          <span className="block pl-8 sm:pl-12">HTML, CSS, JS, PHP, MySQL and Drupal.</span>
+          <span className="block pl-8 sm:pl-12">ABAP, CDS, OData, RAP, CAP, Fiori / UI5, SAP BTP and S/4HANA modernization.</span>
         </>
       ),
     },
@@ -45,7 +45,7 @@ export const heroData: Hero = {
       hdlKey: 4,
       listElement: (
         <>
-         <span>3.5 years in business software development.</span>
+          <span>Strong additional background in JavaScript, TypeScript, React, Node.js, PHP, Drupal and REST integration.</span>
         </>
       ),
     },
@@ -53,25 +53,7 @@ export const heroData: Hero = {
       hdlKey: 5,
       listElement: (
         <>
-          <span className="block pl-8 sm:pl-12">
-            PHP, MariaDB Node.js, Javascript, React, Samba.
-          </span>
-        </>
-      ),
-    },
-    {
-      hdlKey: 6,
-      listElement: (
-        <>
-          <span>2.5 years of experience in SAP technology.</span>
-        </>
-      ),
-    },
-    {
-      hdlKey: 7,
-      listElement: (
-        <>
-          <span className="block pl-8 sm:pl-12">ABAP, Fiori / UI5, Side-by-Side and Developer Extension.</span>
+          <span className="block pl-8 sm:pl-12">Focused on scalable business applications, maintainability, clean code and sustainable architecture.</span>
         </>
       ),
     },

@@ -4,18 +4,17 @@ import {HomePageMeta} from './homepageDataDef';
  * Page meta data
  */
 export const homePageMeta: HomePageMeta = {
-  title: 'Full-stack software engineer  Martin (Rudra) Grellmann',
-  description: 'CV of Martin (Rudra) Grellmann, full-stack software engineer, with knowledge as an SAP technical consultant for business software development and Industry 4.0 applications, who is committed to continuous learning and innovation.',
+  title: 'Martin Grellmann | Senior Full-Stack Engineer | SAP BTP | S/4HANA | Enterprise APIs',
+  description: 'Online CV of Martin Grellmann, Senior Full-Stack Engineer with 20+ years of experience in software engineering and a strong focus on SAP BTP, S/4HANA modernization, ABAP, CDS, OData, Fiori/UI5, enterprise API integration and clean-core aligned development.',
   image: 'https://www.grellmann.app/images/profilepic.jpg',
   url: 'https://www.grellmann.app',
   ogImg: 'https://www.grellmann.app/images/profilepic_og.jpg',
   ogImgType: 'image/jpeg',
   ogImgWidth: '1200',
   ogImgHeight: '630',
-  ogImgAlt: 'Martin Grellmann, Full-stack software engineer',
+  ogImgAlt: 'Martin Grellmann, Senior Full-Stack Engineer',
   ogType: 'profile',
-  ogLinkPreView: 'CV Martin Grellmann',
+  ogLinkPreView: 'Martin Grellmann CV',
   twitterCardType: 'summary_large',
   twitterCreator: '@martinRudra',
 };
-
