@@ -7,17 +7,21 @@ export interface SubHeader {
   showSpacer: boolean;
 }
 
-
-type OriginType =
+export type OriginType =
   | 'private Interest'
   | 'Webmaster (with development tasks)'
+  | 'Webmaster / Web Developer'
   | 'Software Developer and Linux Administrator'
   | 'SAP Technical Consultant, SAP Full-Stack Development'
+  | 'Senior SAP Developer'
+  | 'Technical Lead / IT Specialist'
   | 'Certification of Full-Stack Web Developer'
+  | 'Training Full-Stack Web Developer'
+  | 'Software Architect'
   | 'Scrum Master PSMI';
 
 export interface Origin {
-  oKey: number
+  oKey: number;
   origin: OriginType;
 }
 

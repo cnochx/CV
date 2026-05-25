@@ -41,7 +41,7 @@ const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
       <div className="flex flex-col space-y-4"></div>
       <aside>
         <div className="flex flex-col gap-y-4">
-          {reference.map(({href, text, primary, Icon}) => (
+          {reference?.map(({href, text, primary, Icon}) => (
             <a
               className={classNames(
                 'flex gap-x-4 rounded-full border-2 bg-none px-4 py-2 text-sm font-medium ring-offset-gray-700/80 hover:bg-gray-700/80 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-base',
