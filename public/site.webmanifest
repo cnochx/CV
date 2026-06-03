@@ -1,18 +1,19 @@
 {
-  "name": "CV Martin (Rudra) Grellmann",
-  "short_name": "cv_martin_grellmann",
+  "name": "CV Martin Grellmann",
+  "short_name": "cv_martin grellmann",
   "icons": [
-        {
-            "src": "/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/android-chrome-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ],vicon1024.ico", "type": "image/png", "sizes": "1024x1024"}
+    {
+      "src": "/web-app-manifest-192x192.png?v=20260603",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png?v=20260603",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
   ],
   "theme_color": "#E2B5B2",
   "background_color": "#1C202C",

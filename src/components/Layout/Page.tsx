@@ -18,7 +18,7 @@ const Page: NextPage<PropsWithChildren<HomePageMeta>> = memo(({children, title, 
         <link href={urlPath} key="canonical" rel="canonical" />
 
         <link href="/favicon.ico" rel="icon" sizes="any" />
-        <link href="/icon.svg" rel="icon" type="image/svg+xml" />
+        <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
         <link href="/apple-touch-icon.png" rel="apple-touch-icon" />
         <link href="/site.webmanifest" rel="manifest" />
 
