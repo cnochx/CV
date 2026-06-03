@@ -4,23 +4,7 @@ import {FC, ForwardRefExoticComponent, SVGProps} from 'react';
 import {IconProps} from '../components/Icon/Icon';
 import {HeroActionItem} from './HeroDataDef';
 
-/**
- * About section
- */
-export interface About {
-  header: string;
-  profileImageSrc?: string;
-  description: string;
-  aboutItems: AboutItem[];
-  imagePublicURL?: string;
-  imagePublicAlt: string;
-}
 
-export interface AboutItem {
-  label: string;
-  text: string;
-  Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
-}
 
 /**
  * Stat section
