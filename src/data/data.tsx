@@ -1,11 +1,5 @@
 import {
-  AcademicCapIcon,
   ArrowDownTrayIcon,
-  BuildingOffice2Icon,
-  CalendarIcon,
-  FlagIcon,
-  MapIcon,
-  SparklesIcon,
 } from '@heroicons/react/24/outline';
 
 import GithubIcon from '../components/Icon/GithubIcon';
@@ -28,10 +22,8 @@ import porfolioImage15 from '../images/portfolio/portfolio-15.jpg';
 import porfolioImage16 from '../images/portfolio/portfolio-16.jpg';
 import porfolioImage17 from '../images/portfolio/portfolio-17.jpg';
 import porfolioImage18 from '../images/portfolio/portfolio-18.jpg';
-import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
 import {
-  About,
   ContactSection,
   ContactType,
   CVSubHeader,
@@ -62,26 +54,7 @@ export const SectionId = {
 
 export type SectionId = (typeof SectionId)[keyof typeof SectionId];
 
-/**
- * About section
- */
-export const aboutData: About = {
-  header: 'About me',
-  profileImageSrc: profilepic,
-  description: `German citizen with unrestricted work and residence permit in Brazil. Senior software engineer with 20+ years of experience in full-stack web development and recent specialization in modern SAP full-stack development, including SAP BTP, S/4HANA modernization, ABAP, CDS, OData, Fiori/UI5 and API integration.`,
-  aboutItems: [
-    {label: 'Location', text: 'Goiás, Brazil and Leipzig, Germany', Icon: MapIcon},
-    {label: 'Nationality', text: 'German citizen / unrestricted work and residence permit in Brazil', Icon: FlagIcon},
-    {label: 'Specialization', text: 'Senior Full-Stack Engineer, SAP BTP, S/4HANA, enterprise APIs, clean core', Icon: BuildingOffice2Icon},
-    {label: 'Experience', text: '20+ years software engineering and full-stack development', Icon: CalendarIcon},
-    {label: 'Architecture', text: 'iSAQB CPSA-F Foundation Level training completed, exam planned for Q3 2026', Icon: AcademicCapIcon},
-    {label: 'Certifications', text: 'Scrum Master PSMI, Full-Stack Web Developer certification', Icon: AcademicCapIcon},
-    {label: 'Methods', text: 'Clean Code, SOLID, refactoring, code reviews, sustainable architecture', Icon: SparklesIcon},
-    {label: 'Education', text: 'Industrial Clerk (2002 - 2004)', Icon: BuildingOffice2Icon},
-  ],
-  imagePublicURL: 'https://grellmann.app/images/profilepic.jpg',
-  imagePublicAlt: 'Martin Grellmann, Senior Full-Stack Engineer'
-};
+
 
 export const sumHeader: CVSubHeader = {
   title: 'Summary',
