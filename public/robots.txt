@@ -8,7 +8,7 @@ Disallow: /404
 Disallow: /500
 
 # Host
-Host: grellmann.app
+Host: https://www.grellmann.app
 
 # Sitemaps
-Sitemap: grellmann.app/sitemap.xml
+Sitemap: https://www.grellmann.app/sitemap.xml

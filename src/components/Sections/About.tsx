@@ -2,7 +2,8 @@ import classNames from 'classnames';
 import Image from 'next/image';
 import {FC, memo} from 'react';
 
-import {aboutData, SectionId} from '../../data/data';
+import {aboutData} from '../../data/about';
+import {SectionId} from '../../data/data';
 import Section from '../Layout/Section';
 
 const About: FC = memo(() => {
@@ -13,7 +14,14 @@ const About: FC = memo(() => {
         {!!profileImageSrc && (
           <div className="col-span-1 flex justify-center md:justify-start">
             <div className="relative h-24 w-24 overflow-hidden rounded-xl md:h-32 md:w-32">
-              <a href={imagePublicURL} rel="noopener noreferrer" target="_blank"><Image alt={imagePublicAlt} className="h-full w-full object-cover" src={profileImageSrc} /></a>
+              <a href={imagePublicURL} rel="noopener noreferrer" target="_blank">
+                <Image
+                  alt={imagePublicAlt}
+                  className="h-full w-full object-cover"
+                  height={128}
+                  src={profileImageSrc}
+                  width={128} />
+              </a>
             </div>
           </div>
         )}

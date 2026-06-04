@@ -9,11 +9,12 @@ export const SkillGroup: FC<{skillGroup: SkillGroupType}> = memo(({skillGroup}) 
   const [isContainerOpen, setIsContainerOpen] = useState(false);
 
   const toggleContainer = () => {
-    setIsContainerOpen((prev) => !prev);
- };
+    setIsContainerOpen(prev => !prev);
+  };
 
   return (
-    <div className={`flex flex-col gap-4 mb-4 border rounded-2xl p-4 ${isContainerOpen ? 'border-amber-500 hover:bg-gray-100' : 'border-neutral-300'}`}>
+    <div
+      className={`flex flex-col gap-4 mb-4 border rounded-2xl p-4 ${isContainerOpen ? 'border-amber-500 hover:bg-gray-100' : 'border-neutral-300'}`}>
       <div className="flex items-center justify-between cursor-pointer" onClick={toggleContainer}>
         <h3 className="w-full text-center text-lg font-bold">{head}</h3>
         {isContainerOpen ? (

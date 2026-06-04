@@ -7,9 +7,8 @@ export interface SubHeader {
   showSpacer: boolean;
 }
 
-  export interface SubSkillTexts {
-    experiencePre: string;
-    experiencePost: string;
-    roleText: string;
-
+export interface SubSkillTexts {
+  experiencePre: string;
+  experiencePost: string;
+  roleText: string;
 }

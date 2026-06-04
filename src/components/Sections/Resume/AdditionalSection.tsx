@@ -1,6 +1,5 @@
 import {FC, memo, PropsWithChildren} from 'react';
 
-
 const AdditionalSection: FC<PropsWithChildren<{title: string}>> = memo(({title, children}) => {
   return (
     <section className="grid grid-cols-1 gap-y-4 py-8 first:pt-0 last:pb-0  md:grid-cols-4">

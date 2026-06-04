@@ -3,12 +3,9 @@ import {FC, memo} from 'react';
 import {ProjectItem} from '../../../data/dataDef';
 
 const ProjectItem: FC<{item: ProjectItem}> = memo(({item}) => {
-
-
-  const {piKey, title,stack ,role, content} = item;
+  const {piKey, title, stack, role, content} = item;
   return (
-    <div className="flex flex-col space-y-2 pb-8 text-center last:pb-0 md:text-left"
-         key={piKey}>
+    <div className="flex flex-col space-y-2 pb-8 text-center last:pb-0 md:text-left" key={piKey}>
       <div className="flex flex-col pb-4">
         <h2 className="text-xl font-bold">{title}</h2>
         <div className="flex items-center justify-center gap-x-2 md:justify-start">
@@ -24,8 +21,6 @@ const ProjectItem: FC<{item: ProjectItem}> = memo(({item}) => {
         <br />
       </div>
     </div>
-
-
   );
 });
 

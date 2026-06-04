@@ -5,24 +5,6 @@ import {IconProps} from '../components/Icon/Icon';
 import {HeroActionItem} from './HeroDataDef';
 
 /**
- * About section
- */
-export interface About {
-  header: string;
-  profileImageSrc?: string;
-  description: string;
-  aboutItems: AboutItem[];
-  imagePublicURL?: string;
-  imagePublicAlt: string;
-}
-
-export interface AboutItem {
-  label: string;
-  text: string;
-  Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
-}
-
-/**
  * Stat section
  */
 export interface Stat {
@@ -70,7 +52,7 @@ export interface SummaryItem {
   date: string;
   location: string;
   title: string;
-  content:JSX.Element;
+  content: JSX.Element;
   experiences: expItem[];
 }
 
@@ -82,7 +64,7 @@ export interface TimelineItem {
   about: string;
   content: JSX.Element;
   experiences: expItem[];
-  reference?: HeroActionItem[];   // <-- key point
+  reference?: HeroActionItem[]; // <-- key point
 }
 
 export interface expItem {
@@ -179,4 +161,3 @@ export interface Social {
   Icon: FC<IconProps>;
   href: string;
 }
-

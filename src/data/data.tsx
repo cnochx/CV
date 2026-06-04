@@ -1,12 +1,4 @@
-import {
-  AcademicCapIcon,
-  ArrowDownTrayIcon,
-  BuildingOffice2Icon,
-  CalendarIcon,
-  FlagIcon,
-  MapIcon,
-  SparklesIcon,
-} from '@heroicons/react/24/outline';
+import {ArrowDownTrayIcon} from '@heroicons/react/24/outline';
 
 import GithubIcon from '../components/Icon/GithubIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
@@ -28,10 +20,8 @@ import porfolioImage15 from '../images/portfolio/portfolio-15.jpg';
 import porfolioImage16 from '../images/portfolio/portfolio-16.jpg';
 import porfolioImage17 from '../images/portfolio/portfolio-17.jpg';
 import porfolioImage18 from '../images/portfolio/portfolio-18.jpg';
-import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
 import {
-  About,
   ContactSection,
   ContactType,
   CVSubHeader,
@@ -62,36 +52,22 @@ export const SectionId = {
 
 export type SectionId = (typeof SectionId)[keyof typeof SectionId];
 
-/**
- * About section
- */
-export const aboutData: About = {
-  header: 'About me',
-  profileImageSrc: profilepic,
-  description: `German citizen with unrestricted work and residence permit in Brazil. Senior software engineer with 20+ years of experience in full-stack web development and recent specialization in modern SAP full-stack development, including SAP BTP, S/4HANA modernization, ABAP, CDS, OData, Fiori/UI5 and API integration.`,
-  aboutItems: [
-    {label: 'Location', text: 'Goiás, Brazil and Leipzig, Germany', Icon: MapIcon},
-    {label: 'Nationality', text: 'German citizen / unrestricted work and residence permit in Brazil', Icon: FlagIcon},
-    {label: 'Specialization', text: 'Senior Full-Stack Engineer, SAP BTP, S/4HANA, enterprise APIs, clean core', Icon: BuildingOffice2Icon},
-    {label: 'Experience', text: '20+ years software engineering and full-stack development', Icon: CalendarIcon},
-    {label: 'Architecture', text: 'iSAQB CPSA-F Foundation Level training completed, exam planned for Q3 2026', Icon: AcademicCapIcon},
-    {label: 'Certifications', text: 'Scrum Master PSMI, Full-Stack Web Developer certification', Icon: AcademicCapIcon},
-    {label: 'Methods', text: 'Clean Code, SOLID, refactoring, code reviews, sustainable architecture', Icon: SparklesIcon},
-    {label: 'Education', text: 'Industrial Clerk (2002 - 2004)', Icon: BuildingOffice2Icon},
-  ],
-  imagePublicURL: 'https://grellmann.app/images/profilepic.jpg',
-  imagePublicAlt: 'Martin Grellmann, Senior Full-Stack Engineer'
-};
-
 export const sumHeader: CVSubHeader = {
   title: 'Summary',
   content: (
     <>
-      <p className="pb-8">Senior Full-Stack Developer with 20+ years of experience in software engineering and focused modern specialization in SAP full-stack development across SAP BTP, S/4HANA, ABAP, CDS, OData and Fiori/UI5.</p>
-      <p>Early adopter of modern SAP technologies including RAP, CAP, ABAP Cloud and SAP BTP. Strong conceptual understanding, hands-on experimentation and extensive experience in enterprise software architecture, API integration and clean, maintainable application development.</p>
+      <p className="pb-8">
+        Senior Full-Stack Developer with 20+ years of experience in software engineering and focused modern
+        specialization in SAP full-stack development across SAP BTP, S/4HANA, ABAP, CDS, OData and Fiori/UI5.
+      </p>
+      <p>
+        Early adopter of modern SAP technologies including RAP, CAP, ABAP Cloud and SAP BTP. Strong conceptual
+        understanding, hands-on experimentation and extensive experience in enterprise software architecture, API
+        integration and clean, maintainable application development.
+      </p>
     </>
   ),
-  showSpacer: false
+  showSpacer: false,
 };
 
 export const summaryItems: SummaryItem[] = [
@@ -103,10 +79,15 @@ export const summaryItems: SummaryItem[] = [
     content: (
       <>
         <p>Contract-based SAP development role focused on modernization and integration in S/4HANA-related projects.</p>
-        <p>Improved backend API interfaces in an S/4HANA project to increase integration readiness and maintainability, supported productive web services during hypercare in the FI environment and refactored a SAP Business Suite Dynpro application into object-oriented ABAP for better maintainability and future S/4HANA compatibility in an IS-U context.</p>
+        <p>
+          Improved backend API interfaces in an S/4HANA project to increase integration readiness and maintainability,
+          supported productive web services during hypercare in the FI environment and refactored a SAP Business Suite
+          Dynpro application into object-oriented ABAP for better maintainability and future S/4HANA compatibility in an
+          IS-U context.
+        </p>
       </>
     ),
-    experiences: []
+    experiences: [],
   },
   {
     siKey: 2,
@@ -115,11 +96,18 @@ export const summaryItems: SummaryItem[] = [
     title: 'Technical Lead / IT Specialist',
     content: (
       <>
-        <p>Lead technical modernization and digital transformation of a multi-site vacation rental platform based on Drupal.</p>
-        <p>Designed and implemented a cloud-based infrastructure strategy, created a modernization roadmap for the legacy platform architecture, developed API-driven integrations and supported digitalization initiatives across booking, content and operational workflows.</p>
+        <p>
+          Lead technical modernization and digital transformation of a multi-site vacation rental platform based on
+          Drupal.
+        </p>
+        <p>
+          Designed and implemented a cloud-based infrastructure strategy, created a modernization roadmap for the legacy
+          platform architecture, developed API-driven integrations and supported digitalization initiatives across
+          booking, content and operational workflows.
+        </p>
       </>
     ),
-    experiences: []
+    experiences: [],
   },
   {
     siKey: 3,
@@ -128,11 +116,17 @@ export const summaryItems: SummaryItem[] = [
     title: 'SAP Technical Consultant, SAP Full-Stack Development',
     content: (
       <>
-        <p>SAP consulting and development with focus on ABAP, UI5, Fiori, S/4HANA, SAP BTP and modern extension models.</p>
-        <p>Developed and enhanced SAP applications using ABAP, CDS, OData and UI5, contributed to ERP-to-S/4HANA migration projects, refactored existing applications and worked on side-by-side and developer extensibility scenarios in S/4HANA Public Cloud.</p>
+        <p>
+          SAP consulting and development with focus on ABAP, UI5, Fiori, S/4HANA, SAP BTP and modern extension models.
+        </p>
+        <p>
+          Developed and enhanced SAP applications using ABAP, CDS, OData and UI5, contributed to ERP-to-S/4HANA
+          migration projects, refactored existing applications and worked on side-by-side and developer extensibility
+          scenarios in S/4HANA Public Cloud.
+        </p>
       </>
     ),
-    experiences: []
+    experiences: [],
   },
   {
     siKey: 4,
@@ -141,11 +135,17 @@ export const summaryItems: SummaryItem[] = [
     title: 'Software Developer and Linux Administrator',
     content: (
       <>
-        <p>Full-stack development in an Industry 4.0 environment with React frontends, PHP backends, API integration and Linux-based infrastructure.</p>
-        <p>Successfully converted an outdated PHP web application to a modern PHP REST backend and connected it to a newly created React web frontend including database modelling.</p>
+        <p>
+          Full-stack development in an Industry 4.0 environment with React frontends, PHP backends, API integration and
+          Linux-based infrastructure.
+        </p>
+        <p>
+          Successfully converted an outdated PHP web application to a modern PHP REST backend and connected it to a
+          newly created React web frontend including database modelling.
+        </p>
       </>
     ),
-    experiences: []
+    experiences: [],
   },
   {
     siKey: 5,
@@ -155,10 +155,14 @@ export const summaryItems: SummaryItem[] = [
     content: (
       <>
         <p>Long-term responsibility for web development, operations, optimization and technical infrastructure.</p>
-        <p>Developed and maintained websites and web applications with PHP, Drupal, HTML and CSS, managed Linux and network environments and improved traffic, performance and usability through technical SEO and usability-focused optimization.</p>
+        <p>
+          Developed and maintained websites and web applications with PHP, Drupal, HTML and CSS, managed Linux and
+          network environments and improved traffic, performance and usability through technical SEO and
+          usability-focused optimization.
+        </p>
       </>
     ),
-    experiences: []
+    experiences: [],
   },
 ];
 
@@ -177,10 +181,18 @@ export const experience: TimelineItem[] = [
     about: 'Modernization and integration in S/4HANA-related projects.',
     content: (
       <>
-        <p>Improved backend API interfaces in an S/4HANA project to increase integration readiness and maintainability.</p>
+        <p>
+          Improved backend API interfaces in an S/4HANA project to increase integration readiness and maintainability.
+        </p>
         <p>Supported productive web services and API interfaces during hypercare in the FI environment.</p>
-        <p>Refactored a SAP Business Suite Dynpro application into object-oriented ABAP for better maintainability and future S/4HANA compatibility in an IS-U context.</p>
-        <p>Worked closely with business stakeholders, solution managers and developers to align implementation with functional requirements.</p>
+        <p>
+          Refactored a SAP Business Suite Dynpro application into object-oriented ABAP for better maintainability and
+          future S/4HANA compatibility in an IS-U context.
+        </p>
+        <p>
+          Worked closely with business stakeholders, solution managers and developers to align implementation with
+          functional requirements.
+        </p>
       </>
     ),
     experiences: [
@@ -211,8 +223,13 @@ export const experience: TimelineItem[] = [
     about: 'Modernization and digital transformation of a multi-site vacation rental platform.',
     content: (
       <>
-        <p>Designed and implemented a cloud-based infrastructure strategy to improve scalability and maintainability.</p>
-        <p>Designed a modernization roadmap for a legacy Drupal platform architecture, including API-driven integrations and service-oriented design.</p>
+        <p>
+          Designed and implemented a cloud-based infrastructure strategy to improve scalability and maintainability.
+        </p>
+        <p>
+          Designed a modernization roadmap for a legacy Drupal platform architecture, including API-driven integrations
+          and service-oriented design.
+        </p>
         <p>Developed and integrated enterprise APIs connecting business services with Drupal CMS.</p>
         <p>Drove digitalization initiatives across booking, content and operational workflows.</p>
       </>
@@ -245,7 +262,10 @@ export const experience: TimelineItem[] = [
         <p>Developed and enhanced SAP applications using ABAP, CDS, OData and UI5.</p>
         <p>Contributed to ERP-to-S/4HANA migration projects and MII-related work.</p>
         <p>Refactored existing applications to improve maintainability, future readiness and architectural quality.</p>
-        <p>Built UI5 Freestyle and Fiori Elements applications and contributed to initiatives involving SAP BTP, RAP and CAP.</p>
+        <p>
+          Built UI5 Freestyle and Fiori Elements applications and contributed to initiatives involving SAP BTP, RAP and
+          CAP.
+        </p>
       </>
     ),
     experiences: [
@@ -281,7 +301,10 @@ export const experience: TimelineItem[] = [
       <>
         <p>Developed React-based web frontends and refactored and modernized existing PHP applications.</p>
         <p>Built and integrated REST-based APIs with PHP and modelled databases with MySQL, MariaDB and PostgreSQL.</p>
-        <p>Performed testing with PHPUnit and Jest and installed, configured and administered Linux and LAMP environments.</p>
+        <p>
+          Performed testing with PHPUnit and Jest and installed, configured and administered Linux and LAMP
+          environments.
+        </p>
       </>
     ),
     experiences: [
@@ -316,8 +339,14 @@ export const experience: TimelineItem[] = [
     content: (
       <>
         <p>Developed and maintained websites and web applications with PHP, Drupal, HTML and CSS.</p>
-        <p>Customized and extended Drupal modules, managed Linux, Samba and network environments and used Git and Jira in development workflows.</p>
-        <p>Successfully increased organic traffic through targeted technical SEO strategies and enhanced website performance and user experience through usability improvements.</p>
+        <p>
+          Customized and extended Drupal modules, managed Linux, Samba and network environments and used Git and Jira in
+          development workflows.
+        </p>
+        <p>
+          Successfully increased organic traffic through targeted technical SEO strategies and enhanced website
+          performance and user experience through usability improvements.
+        </p>
       </>
     ),
     experiences: [
@@ -385,7 +414,10 @@ export const education: TimelineItem[] = [
     about: 'Full-Stack Web Developer certification.',
     content: (
       <>
-        <p>Training covered modern web development, JavaScript, PHP, MySQL, Linux administration, content management and related best practices.</p>
+        <p>
+          Training covered modern web development, JavaScript, PHP, MySQL, Linux administration, content management and
+          related best practices.
+        </p>
       </>
     ),
     experiences: [],
@@ -418,17 +450,17 @@ export const additionalInterests: LifeItem[] = [
     liKey: 1,
     relationshipStatus: '',
     familyStatus: '',
-    privateInterests: 'Focused on durable engineering quality, maintainability, architecture, refactoring and scalable business applications.',
+    privateInterests:
+      'Focused on durable engineering quality, maintainability, architecture, refactoring and scalable business applications.',
     location: 'Available across Germany and Brazil; listed locations are Goiás, Brazil and Leipzig, Germany.',
-    legal: 'German citizen with unrestricted work and residence permit in Brazil. Languages: German (native), English (professional working proficiency).',
+    legal:
+      'German citizen with unrestricted work and residence permit in Brazil. Languages: German (native), English (professional working proficiency).',
   },
 ];
 
 export const proHeader: SubHeader = {
   title: 'Projects',
-  content: (
-    <p>Selected project examples and technology areas from SAP, web engineering and platform modernization.</p>
-  ),
+  content: <p>Selected project examples and technology areas from SAP, web engineering and platform modernization.</p>,
   showSpacer: true,
 };
 
@@ -440,7 +472,10 @@ export const projectItem: ProjectItem[] = [
     role: 'Senior SAP Developer',
     content: (
       <>
-        <p>Improved backend API interfaces in an S/4HANA project to increase integration readiness and maintainability while supporting productive web services during hypercare in the FI environment.</p>
+        <p>
+          Improved backend API interfaces in an S/4HANA project to increase integration readiness and maintainability
+          while supporting productive web services during hypercare in the FI environment.
+        </p>
       </>
     ),
   },
@@ -451,7 +486,10 @@ export const projectItem: ProjectItem[] = [
     role: 'Senior SAP Developer',
     content: (
       <>
-        <p>Refactored a legacy SAP Business Suite Dynpro application into object-oriented ABAP to improve maintainability and future S/4HANA compatibility.</p>
+        <p>
+          Refactored a legacy SAP Business Suite Dynpro application into object-oriented ABAP to improve maintainability
+          and future S/4HANA compatibility.
+        </p>
       </>
     ),
   },
@@ -462,7 +500,10 @@ export const projectItem: ProjectItem[] = [
     role: 'Technical Lead / IT Specialist',
     content: (
       <>
-        <p>Designed a modernization roadmap for a legacy multi-site vacation rental platform, including API-driven integrations, service-oriented architecture and digitalization of operational workflows.</p>
+        <p>
+          Designed a modernization roadmap for a legacy multi-site vacation rental platform, including API-driven
+          integrations, service-oriented architecture and digitalization of operational workflows.
+        </p>
       </>
     ),
   },
@@ -473,7 +514,10 @@ export const projectItem: ProjectItem[] = [
     role: 'SAP Technical Consultant',
     content: (
       <>
-        <p>Built UI5 Freestyle and Fiori Elements applications and contributed to side-by-side and developer extensibility scenarios in S/4HANA Public Cloud.</p>
+        <p>
+          Built UI5 Freestyle and Fiori Elements applications and contributed to side-by-side and developer
+          extensibility scenarios in S/4HANA Public Cloud.
+        </p>
       </>
     ),
   },
@@ -484,7 +528,10 @@ export const projectItem: ProjectItem[] = [
     role: 'Software Developer and Linux Administrator',
     content: (
       <>
-        <p>Converted an outdated PHP application into a modern PHP REST backend and connected it to a newly developed React frontend including database modelling.</p>
+        <p>
+          Converted an outdated PHP application into a modern PHP REST backend and connected it to a newly developed
+          React frontend including database modelling.
+        </p>
       </>
     ),
   },
@@ -495,7 +542,10 @@ export const projectItem: ProjectItem[] = [
     role: 'Webmaster / Web Developer',
     content: (
       <>
-        <p>Maintained and optimized a long-running web platform, improved traffic through technical SEO and strengthened performance and user experience through usability-oriented improvements.</p>
+        <p>
+          Maintained and optimized a long-running web platform, improved traffic through technical SEO and strengthened
+          performance and user experience through usability-oriented improvements.
+        </p>
       </>
     ),
   },
@@ -508,24 +558,69 @@ export const ptfHeader: SubHeader = {
 };
 
 export const portfolioItems: PortfolioItem[] = [
-  {title: 'HTML5', description: 'HTML5', url: 'https://developer.mozilla.org/en-US/docs/Web/HTML', image: porfolioImage1},
+  {
+    title: 'HTML5',
+    description: 'HTML5',
+    url: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
+    image: porfolioImage1,
+  },
   {title: 'CSS3', description: 'CSS3', url: 'https://developer.mozilla.org/en-US/docs/Web/CSS', image: porfolioImage2},
-  {title: 'JavaScript', description: 'JavaScript', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript', image: porfolioImage3},
-  {title: 'Linux', description: 'Linux systems and administration', url: 'https://ubuntu.com/server', image: porfolioImage4},
+  {
+    title: 'JavaScript',
+    description: 'JavaScript',
+    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+    image: porfolioImage3,
+  },
+  {
+    title: 'Linux',
+    description: 'Linux systems and administration',
+    url: 'https://ubuntu.com/server',
+    image: porfolioImage4,
+  },
   {title: 'PHP', description: 'PHP', url: 'https://www.php.net', image: porfolioImage5},
   {title: 'Drupal', description: 'Drupal CMS', url: 'https://www.drupal.org', image: porfolioImage6},
   {title: 'MySQL', description: 'MySQL', url: 'https://www.mysql.com', image: porfolioImage7},
-  {title: 'Scrum Master PSMI', description: 'Professional Scrum Master I', url: 'https://www.scrum.org/assessments/professional-scrum-master-i-certification', image: porfolioImage8},
+  {
+    title: 'Scrum Master PSMI',
+    description: 'Professional Scrum Master I',
+    url: 'https://www.scrum.org/assessments/professional-scrum-master-i-certification',
+    image: porfolioImage8,
+  },
   {title: 'PostgreSQL', description: 'PostgreSQL', url: 'https://www.postgresql.org', image: porfolioImage9},
-  {title: 'Cloud Infrastructure', description: 'Cloud-oriented infrastructure thinking', url: 'https://cloud.google.com/learn/what-is-cloud-infrastructure', image: porfolioImage10},
+  {
+    title: 'Cloud Infrastructure',
+    description: 'Cloud-oriented infrastructure thinking',
+    url: 'https://cloud.google.com/learn/what-is-cloud-infrastructure',
+    image: porfolioImage10,
+  },
   {title: 'Node.js', description: 'Node.js', url: 'https://nodejs.org/en', image: porfolioImage11},
   {title: 'React', description: 'React', url: 'https://react.dev', image: porfolioImage12},
   {title: 'TypeScript', description: 'TypeScript', url: 'https://www.typescriptlang.org', image: porfolioImage13},
   {title: 'SAP UI5', description: 'SAP UI5', url: 'https://sapui5.hana.ondemand.com/sdk/', image: porfolioImage14},
-  {title: 'Fiori Elements', description: 'Fiori Elements', url: 'https://experience.sap.com/fiori-design-web/', image: porfolioImage15},
-  {title: 'ABAP', description: 'ABAP', url: 'https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en-US/index.htm', image: porfolioImage16},
-  {title: 'SAP BTP', description: 'SAP Business Technology Platform', url: 'https://www.sap.com/products/technology-platform.html', image: porfolioImage17},
-  {title: 'S/4HANA Extensibility', description: 'S/4HANA Public Cloud extensibility', url: 'https://community.sap.com/t5/enterprise-resource-planning-blogs-by-sap/sap-s-4hana-extensibility-simplified-guide-for-beginners/ba-p/13548988', image: porfolioImage18},
+  {
+    title: 'Fiori Elements',
+    description: 'Fiori Elements',
+    url: 'https://experience.sap.com/fiori-design-web/',
+    image: porfolioImage15,
+  },
+  {
+    title: 'ABAP',
+    description: 'ABAP',
+    url: 'https://help.sap.com/doc/abapdocu_latest_index_htm/latest/en-US/index.htm',
+    image: porfolioImage16,
+  },
+  {
+    title: 'SAP BTP',
+    description: 'SAP Business Technology Platform',
+    url: 'https://www.sap.com/products/technology-platform.html',
+    image: porfolioImage17,
+  },
+  {
+    title: 'S/4HANA Extensibility',
+    description: 'S/4HANA Public Cloud extensibility',
+    url: 'https://community.sap.com/t5/enterprise-resource-planning-blogs-by-sap/sap-s-4hana-extensibility-simplified-guide-for-beginners/ba-p/13548988',
+    image: porfolioImage18,
+  },
 ];
 
 export const testimonial: TestimonialSection = {

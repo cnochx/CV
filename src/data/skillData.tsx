@@ -40,9 +40,7 @@ export const skills: SkillGroup[] = [
         name: 'SAP UI5 / Fiori',
         expLevel: 8,
         years: 4,
-        groupOfOrigin: [
-          {oKey: 1, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
-        ],
+        groupOfOrigin: [{oKey: 1, origin: 'SAP Technical Consultant, SAP Full-Stack Development'}],
       },
       {
         sKey: 5,
@@ -59,9 +57,7 @@ export const skills: SkillGroup[] = [
         name: 'RAP / CAP',
         expLevel: 7,
         years: 2.5,
-        groupOfOrigin: [
-          {oKey: 1, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
-        ],
+        groupOfOrigin: [{oKey: 1, origin: 'SAP Technical Consultant, SAP Full-Stack Development'}],
       },
       {
         sKey: 7,
@@ -149,9 +145,7 @@ export const skills: SkillGroup[] = [
         name: 'Next.js',
         expLevel: 7,
         years: 4,
-        groupOfOrigin: [
-          {oKey: 1, origin: 'private Interest'},
-        ],
+        groupOfOrigin: [{oKey: 1, origin: 'private Interest'}],
       },
       {
         sKey: 7,
