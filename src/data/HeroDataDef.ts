@@ -23,5 +23,3 @@ export interface HeroDescList {
   hdlKey: number;
   listElement: JSX.Element;
 }
-
-

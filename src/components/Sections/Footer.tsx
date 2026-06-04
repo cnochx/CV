@@ -26,7 +26,6 @@ const Footer: FC = memo(() => {
         </div>
         <section className="flex flex-col items-center gap-y-6">
           <Imprint />
-
         </section>
         <aside className="flex flex-col justify-center items-center">
           <div className="my-4" />
@@ -39,11 +38,13 @@ const Footer: FC = memo(() => {
             {Icon && <Icon className="h-5 w-5 text-yellow" />}
           </a>
           <div className="my-4" />
-          <span className="text-sm text-neutral-700">{currentYear} {copyrightText}</span>
+          <span className="text-sm text-neutral-700">
+            {currentYear} {copyrightText}
+          </span>
         </aside>
       </div>
     </footer>
-  )
+  );
 });
 
 Footer.displayName = 'Footer';

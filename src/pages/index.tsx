@@ -16,21 +16,36 @@ import {homePageMeta} from '../data/homepageData';
 const Header = dynamic(() => import('../components/Sections/Header'), {ssr: false});
 
 const Home: FC = memo(() => {
-  const {title, description, image, url, ogImg, ogImgType, ogImgWidth, ogImgHeight, ogImgAlt, ogType, ogLinkPreView, twitterCardType, twitterCreator} = homePageMeta;
+  const {
+    title,
+    description,
+    image,
+    url,
+    ogImg,
+    ogImgType,
+    ogImgWidth,
+    ogImgHeight,
+    ogImgAlt,
+    ogType,
+    ogLinkPreView,
+    twitterCardType,
+    twitterCreator,
+  } = homePageMeta;
   return (
-    <Page description={description}
-          image={image}
-          ogImg={ogImg}
-          ogImgAlt={ogImgAlt}
-          ogImgHeight={ogImgHeight}
-          ogImgType={ogImgType}
-          ogImgWidth={ogImgWidth}
-          ogLinkPreView={ogLinkPreView}
-          ogType={ogType}
-          title={title}
-          twitterCardType={twitterCardType}
-          twitterCreator={twitterCreator}
-          url={url}>
+    <Page
+      description={description}
+      image={image}
+      ogImg={ogImg}
+      ogImgAlt={ogImgAlt}
+      ogImgHeight={ogImgHeight}
+      ogImgType={ogImgType}
+      ogImgWidth={ogImgWidth}
+      ogLinkPreView={ogLinkPreView}
+      ogType={ogType}
+      title={title}
+      twitterCardType={twitterCardType}
+      twitterCreator={twitterCreator}
+      url={url}>
       <Header />
       <Hero />
       <About />

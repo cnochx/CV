@@ -1,12 +1,8 @@
-import {
-  ArrowDownTrayIcon,
-} from '@heroicons/react/24/outline';
+import {ArrowDownTrayIcon} from '@heroicons/react/24/outline';
 
 import heroImage from '../images/hero_background.webp';
 import {SectionId} from './data';
-import {
-  Hero,
-} from './HeroDataDef';
+import {Hero} from './HeroDataDef';
 
 /**
  * Hero section
@@ -29,7 +25,9 @@ export const heroData: Hero = {
       hdlKey: 2,
       listElement: (
         <>
-          <span>20+ years in software engineering with recent specialization in modern SAP full-stack development.</span>
+          <span>
+            20+ years in software engineering with recent specialization in modern SAP full-stack development.
+          </span>
         </>
       ),
     },
@@ -37,7 +35,9 @@ export const heroData: Hero = {
       hdlKey: 3,
       listElement: (
         <>
-          <span className="block pl-8 sm:pl-12">ABAP, CDS, OData, RAP, CAP, Fiori / UI5, SAP BTP and S/4HANA modernization.</span>
+          <span className="block pl-8 sm:pl-12">
+            ABAP, CDS, OData, RAP, CAP, Fiori / UI5, SAP BTP and S/4HANA modernization.
+          </span>
         </>
       ),
     },
@@ -45,7 +45,9 @@ export const heroData: Hero = {
       hdlKey: 4,
       listElement: (
         <>
-          <span>Strong additional background in JavaScript, TypeScript, React, Node.js, PHP, Drupal and REST integration.</span>
+          <span>
+            Strong additional background in JavaScript, TypeScript, React, Node.js, PHP, Drupal and REST integration.
+          </span>
         </>
       ),
     },
@@ -53,7 +55,9 @@ export const heroData: Hero = {
       hdlKey: 5,
       listElement: (
         <>
-          <span className="block pl-8 sm:pl-12">Focused on scalable business applications, maintainability, clean code and sustainable architecture.</span>
+          <span className="block pl-8 sm:pl-12">
+            Focused on scalable business applications, maintainability, clean code and sustainable architecture.
+          </span>
         </>
       ),
     },

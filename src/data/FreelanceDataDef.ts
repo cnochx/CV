@@ -1,4 +1,3 @@
-
 export interface FrlHeader {
   title: string;
   content: JSX.Element;

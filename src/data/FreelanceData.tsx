@@ -1,8 +1,4 @@
-import {
-  Freelance,
-  FrlHeader,
-} from './FreelanceDataDef';
-
+import {Freelance, FrlHeader} from './FreelanceDataDef';
 
 /**
  * Freelance Section
@@ -15,12 +11,17 @@ export const frlHeader: FrlHeader = {
     </>
   ),
   showSpacer: true,
-}
+};
 
 export const freelance: Freelance = {
   content: (
     <>
-      <p className="prose prose-sm text-gray-300 sm:prose-base">I've extensive experience and skills in responsive web design, full-stack development, JavaScript backend development, database modelling, PHP development, SAP UI5 Freestyle development, ABAP development, S/4 HANA Cloud - Public Edition Extensions, and BTP - Node development, making me a strong candidate for various freelance opportunities.</p>
+      <p className="prose prose-sm text-gray-300 sm:prose-base">
+        I've extensive experience and skills in responsive web design, full-stack development, JavaScript backend
+        development, database modelling, PHP development, SAP UI5 Freestyle development, ABAP development, S/4 HANA
+        Cloud - Public Edition Extensions, and BTP - Node development, making me a strong candidate for various
+        freelance opportunities.
+      </p>
     </>
   ),
   highlight: 'Regular communication is important, feel free to stay in touch',
@@ -109,5 +110,5 @@ export const freelance: Freelance = {
       iKey: 21,
       text: 'SAP BTP Side-By-Side Extension',
     },
-  ]
+  ],
 };

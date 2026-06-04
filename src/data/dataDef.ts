@@ -4,8 +4,6 @@ import {FC, ForwardRefExoticComponent, SVGProps} from 'react';
 import {IconProps} from '../components/Icon/Icon';
 import {HeroActionItem} from './HeroDataDef';
 
-
-
 /**
  * Stat section
  */
@@ -54,7 +52,7 @@ export interface SummaryItem {
   date: string;
   location: string;
   title: string;
-  content:JSX.Element;
+  content: JSX.Element;
   experiences: expItem[];
 }
 
@@ -66,7 +64,7 @@ export interface TimelineItem {
   about: string;
   content: JSX.Element;
   experiences: expItem[];
-  reference?: HeroActionItem[];   // <-- key point
+  reference?: HeroActionItem[]; // <-- key point
 }
 
 export interface expItem {
@@ -163,4 +161,3 @@ export interface Social {
   Icon: FC<IconProps>;
   href: string;
 }
-

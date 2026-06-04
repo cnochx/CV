@@ -5,8 +5,7 @@ import {SummaryItem} from '../../../data/dataDef';
 const SummaryItem: FC<{item: SummaryItem}> = memo(({item}) => {
   const {siKey, title, date, location, content, experiences} = item;
   return (
-    <div className="flex flex-col space-y-2 pb-8 text-center last:pb-0 md:text-left"
-         key={siKey}>
+    <div className="flex flex-col space-y-2 pb-8 text-center last:pb-0 md:text-left" key={siKey}>
       <header className="flex flex-col">
         <h2 className="text-xl font-bold">{title}</h2>
         <div className="flex items-center justify-center gap-x-2 md:justify-start">
@@ -16,20 +15,14 @@ const SummaryItem: FC<{item: SummaryItem}> = memo(({item}) => {
         </div>
       </header>
       <section>
-        {content && (
-          <div>{content}</div>
-        )}
-      {experiences && experiences.length > 0 && (
+        {content && <div>{content}</div>}
+        {experiences && experiences.length > 0 && (
           <ul className="list-inside list-disc">
             {experiences.map(({eiKey, text}) => {
-              return (
-                <li key={eiKey}>
-                  {text}
-                </li>
-              );
+              return <li key={eiKey}>{text}</li>;
             })}
           </ul>
-      )}
+        )}
       </section>
     </div>
   );
