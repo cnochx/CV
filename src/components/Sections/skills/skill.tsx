@@ -10,11 +10,12 @@ export const Skill: FC<{skill: SkillType}> = memo(({skill}) => {
   const percentage = useMemo(() => Math.round((expLevel / max) * 100), [expLevel, max]);
 
   const toggleAccordion = () => {
-    setIsOpen((prev) => !prev);
- };
+    setIsOpen(prev => !prev);
+  };
 
   return (
-    <div className={`flex flex-col w-96 h-auto border rounded-2xl p-4 ${isOpen ? 'border-amber-500' : 'border-neutral-300'} ${isOpen ? 'hover:bg-gray-100' : ''}`}>
+    <div
+      className={`flex flex-col w-96 h-auto border rounded-2xl p-4 ${isOpen ? 'border-amber-500' : 'border-neutral-300'} ${isOpen ? 'hover:bg-gray-100' : ''}`}>
       <div className="flex items-center justify-between cursor-pointer" onClick={toggleAccordion}>
         <h4 className="ml-2 text-sm font-medium">
           <strong>{name}</strong>
@@ -30,14 +31,18 @@ export const Skill: FC<{skill: SkillType}> = memo(({skill}) => {
       </div>
       {isOpen && (
         <div className="ml-2 mt-2 text-sm text-neutral-600">
-          {years ? <p>{subSkillTexts.experiencePre} {years} {subSkillTexts.experiencePost}</p> : null}
+          {years ? (
+            <p>
+              {subSkillTexts.experiencePre} {years} {subSkillTexts.experiencePost}
+            </p>
+          ) : null}
           {groupOfOrigin && groupOfOrigin.length > 0 && (
             <>
               <p>
                 <em className="italic">{subSkillTexts.roleText}</em>
               </p>
               <ul className="list-disc pl-4">
-                {groupOfOrigin.map((origin) => (
+                {groupOfOrigin.map(origin => (
                   <li className="mr-2" key={origin.oKey}>
                     {origin.origin}
                   </li>

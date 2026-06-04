@@ -4,12 +4,9 @@ import {FC, memo} from 'react';
 import {TimelineItem} from '../../../data/dataDef';
 
 const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
-
-
   const {tlKey, title, date, location, content, about, experiences, reference} = item;
   return (
-    <div className="flex flex-col space-y-2 pb-8 text-center last:pb-0 md:text-left"
-         key={tlKey}>
+    <div className="flex flex-col space-y-2 pb-8 text-center last:pb-0 md:text-left" key={tlKey}>
       <header className="flex flex-col pb-4">
         <h2 className="text-xl font-bold">{title}</h2>
         <div className="flex items-center justify-center gap-x-2 md:justify-start">
@@ -19,9 +16,7 @@ const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
         </div>
         <h3 className="font-bold text-lg">{about}</h3>
       </header>
-      <section>
-        {content}
-      </section>
+      <section>{content}</section>
       {experiences && experiences.length > 0 && (
         <>
           <header>
@@ -29,11 +24,7 @@ const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
           </header>
           <ul className="list-inside list-disc">
             {experiences.map(({eiKey, text}) => {
-              return (
-                <li key={eiKey}>
-                  {text}
-                </li>
-              );
+              return <li key={eiKey}>{text}</li>;
             })}
           </ul>
         </>
@@ -50,8 +41,7 @@ const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
               href={href}
               key={text}
               rel="noopener noreferrer"
-              target="_blank"
-            >
+              target="_blank">
               {text}
               {Icon && <Icon className="h-5 w-5 sm:h-6 sm:w-6" />}
             </a>
@@ -60,8 +50,6 @@ const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
       </aside>
       <div className="flex flex-col space-y-32"></div>
     </div>
-
-
   );
 });
 
