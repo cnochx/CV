@@ -1,12 +1,12 @@
-import {ChevronDownIcon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import Image from 'next/image';
 import {FC, memo} from 'react';
 
-import {SectionId} from '../../data/data';
-import {heroData} from '../../data/HeroData';
-import Section from '../Layout/Section';
-import Socials from '../Socials';
+import {heroData} from '../../../data/HeroData';
+import {SectionId} from '../../../data/sectionIdData';
+import Section from '../../Layout/Section';
+import Nav from '../../Navigation/Nav';
+import Socials from '../../Socials';
 
 const Hero: FC = memo(() => {
   const {name, imageSrc, title, subTitle, descrList, actions} = heroData;
@@ -17,22 +17,25 @@ const Hero: FC = memo(() => {
         <Image
           alt={`${name}-image`}
           className="absolute z-0 h-full w-full object-cover"
+          decoding="async"
           placeholder="blur"
-          priority
+          priority={true}
           src={imageSrc}
         />
         <div className="z-10  max-w-screen-lg px-4 lg:px-0">
           <article className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/40 p-6 text-center shadow-lg backdrop-blur-sm">
             <header>
-              <h1 className="text-4xl font-bold text-stone-300 sm:text-5xl lg:text-7xl">{title}</h1>
-              <h2 className="text-3xl font-bold text-stone-100 sm:text-3xl lg:text-5xl">{subTitle}</h2>
+              <h1 className="text-4xl font-bold text-stone-300 sm:text-5xl lg:text-7xl"
+                  id={SectionId.Hero}>{title}</h1>
+              <h2 className="text-3xl font-bold text-stone-100 sm:text-3xl lg:text-5xl"
+                  id={SectionId.Hero}>{subTitle}</h2>
             </header>
 
             <ul className="list-inside list-none text-left pl-6">
               {descrList.map(({hdlKey, listElement}) => {
                 return (
                   <li className="prose-sm text-stone-200 sm:prose-base lg:prose-lg" key={hdlKey}>
-                    <strong className="text-stone-100">{listElement}</strong>
+                    <strong className="text-stone-100"><span>{listElement}</span></strong>
                   </li>
                 );
               })}
@@ -56,15 +59,9 @@ const Hero: FC = memo(() => {
             </div>
           </article>
         </div>
-        <div className="absolute inset-x-0 bottom-6 flex justify-center">
-          <nav>
-            <a
-              className="rounded-full bg-white p-1 ring-white ring-offset-2 ring-offset-gray-700/80 focus:outline-none focus:ring-2 sm:p-2"
-              href={`/#${SectionId.About}`}>
-              <ChevronDownIcon className="h-5 w-5 bg-transparent sm:h-6 sm:w-6" />
-            </a>
-          </nav>
-        </div>
+        <Nav
+          jumpSectionId={SectionId.About}
+        />
       </div>
     </Section>
   );

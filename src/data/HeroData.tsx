@@ -5,7 +5,7 @@ import {Hero} from './HeroDataDef';
 import {SectionId} from './sectionIdData';
 
 /**
- * Hero section
+ * HeroPre section
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
@@ -65,13 +65,13 @@ export const heroData: Hero = {
   actions: [
     {
       href: '/assets/cv_martin_grellmann.pdf',
-      text: 'CV',
+      text: 'CV (employee)',
       primary: true,
       Icon: ArrowDownTrayIcon,
     },
     {
       href: '/assets/cv_martin_grellmann-ext.pdf',
-      text: 'CV in detail',
+      text: 'CV (contractor)',
       primary: true,
       Icon: ArrowDownTrayIcon,
     },
