@@ -1,18 +1,24 @@
 import {ForwardRefExoticComponent, SVGProps} from 'react';
 
 /**
- * About section
+ * ApoutPre section
  */
-export interface about {
+
+export interface AbtHeader {
+  title: string;
+  description: JSX.Element;
+}
+
+export interface About {
   header: string;
   profileImageSrc?: string;
   description: string;
-  aboutItems: aboutItem[];
+  aboutItems: AboutItem[];
   imagePublicURL?: string;
   imagePublicAlt: string;
 }
 
-export interface aboutItem {
+export interface AboutItem {
   label: string;
   text: string;
   Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;

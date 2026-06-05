@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic';
 import {FC, memo} from 'react';
 
 import Page from '../components/Layout/Page';
-import About from '../components/Sections/About';
+import Apout from '../components/Sections/About';
 import Contact from '../components/Sections/Contact';
 import Footer from '../components/Sections/Footer';
 import Freelance from '../components/Sections/Freelance';
@@ -48,7 +48,7 @@ const Home: FC = memo(() => {
       url={url}>
       <Header />
       <Hero />
-      <About />
+      <Apout />
       <Resume />
       <Freelance />
       <Portfolio />

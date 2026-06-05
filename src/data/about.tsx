@@ -1,20 +1,40 @@
 import {AcademicCapIcon, CalendarIcon, FlagIcon, SparklesIcon} from '@heroicons/react/20/solid';
 import {BuildingOffice2Icon, MapIcon} from '@heroicons/react/24/outline';
 
-import {about} from './aboutDef';
+import {About, AbtHeader} from './aboutDef';
 
 const mainImage = '/images/martin_grellmann.jpg';
 
 /**
- * About section
+ * ApoutPre section
  */
-export const aboutData: about = {
-  header: 'About me',
+
+const AbtHeader: AbtHeader = {
+  title: `About Martin Grellmann, Senior Full-Stack Engineer`,
+  description: (
+    <>
+      <p>Who I am – German citizen with unrestricted work and residence permit in Brazil. Architect, Modernizer,
+      Consultant - Senior software engineer with 20+ years of experience in full-stack web development and recent specialization
+      in modern SAP full-stack development, including SAP BTP, S/4HANA modernization, ABAP, CDS, OData, Fiori/UI5 and API integration.</p>
+
+      <p>On the web side, I’ve spent many years building and running Drupal sites, handling migrations, performance tuning
+        and technical SEO/GEO to keep organic traffic and conversions stable during change.</p>
+    </>
+  )
+};
+export default AbtHeader;
+
+export const AboutData: About = {
+  header: '',
   profileImageSrc: mainImage,
-  description: `German citizen with unrestricted work and residence permit in Brazil. Senior software engineer with 20+ years of experience in full-stack web development and recent specialization in modern SAP full-stack development, including SAP BTP, S/4HANA modernization, ABAP, CDS, OData, Fiori/UI5 and API integration.`,
+  description: ``,
   aboutItems: [
-    {label: 'Location', text: 'Goiás, Brazil and Leipzig, Germany', Icon: MapIcon},
-    {label: 'Nationality', text: 'German citizen / unrestricted work and residence permit in Brazil', Icon: FlagIcon},
+    {label: 'Location',
+      text: 'Goiás, Brazil and Leipzig, Germany',
+      Icon: MapIcon},
+    {label: 'Nationality',
+      text: 'German citizen / unrestricted work and residence permit in Brazil',
+      Icon: FlagIcon},
     {
       label: 'Specialization',
       text: 'Senior Full-Stack Engineer, SAP BTP, S/4HANA, enterprise APIs, clean core',
@@ -33,10 +53,12 @@ export const aboutData: about = {
     {label: 'Certifications', text: 'Scrum Master PSMI, Full-Stack Web Developer certification', Icon: AcademicCapIcon},
     {
       label: 'Methods',
-      text: 'Clean Code, SOLID, refactoring, code reviews, sustainable architecture',
+      text: 'Clean Code, SOLID, refactoring, code reviews, sustainable architecture, problem solving',
       Icon: SparklesIcon,
     },
-    {label: 'Education', text: 'Industrial Clerk', Icon: BuildingOffice2Icon},
+    {label: 'Education',
+      text: 'Industrial Clerk',
+      Icon: BuildingOffice2Icon},
   ],
   imagePublicURL: '/images/martin_grellmann.jpg',
   imagePublicAlt: 'Martin Grellmann, Senior Full-Stack Engineer',
