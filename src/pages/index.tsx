@@ -13,7 +13,7 @@ import Testimonials from '../components/Sections/Testimonials';
 import {homePageMeta} from '../data/homepageData';
 
 // eslint-disable-next-line react-memo/require-memo
-const Header = dynamic(() => import('../components/Sections/Header'), {ssr: false});
+const Header = dynamic(() => import('../components/Navigation/Header'), {ssr: false});
 
 const Home: FC = memo(() => {
   const {

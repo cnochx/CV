@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import {FC, Fragment, memo, useCallback, useMemo, useState} from 'react';
 
-import {SectionId} from '../../data/data';
+import {SectionId} from '../../data/sectionIdData';
 import {useNavObserver} from '../../hooks/useNavObserver';
 
 export const headerID = 'headerNav';
@@ -134,7 +134,7 @@ const NavItem: FC<{
   return (
     <Link
       className={classNames(current ? activeClass : inactiveClass)}
-      href={`/#${section}`}
+      href={`/public#${section}`}
       key={section}
       onClick={onClick}>
       {section}
