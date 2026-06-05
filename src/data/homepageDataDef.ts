@@ -13,7 +13,7 @@ export interface HomePageMeta {
   ogImgWidth?: string;
   ogImgHeight?: string;
   ogImgAlt?: string;
-  twitterCardType?: 'summary' | 'summary_large';
+  twitterCardType?: 'summary' | 'summary_large_image';
   twitterTitle?: string;
   twitterSite?: string;
   twitterCreator?: string;
@@ -21,4 +21,6 @@ export interface HomePageMeta {
   twitterUrl?: string;
   twitterDescription?: string;
   twitterImageUrl?: string;
+
+  structuredData?: Record<string, unknown>;
 }
