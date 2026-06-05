@@ -5,9 +5,14 @@ import {SectionId} from '../../data/sectionIdData';
 
 const Section: FC<
   PropsWithChildren<{sectionId: SectionId; sectionTitle?: string; noPadding?: boolean; className?: string}>
-> = memo(({children, sectionId, noPadding = false, className}) => {
+> = memo(({children, sectionId, noPadding = false, className, sectionTitle}) => {
+  const headingId = sectionTitle ? `${sectionId}-heading` : undefined;
   return (
-    <section className={classNames(className, {'px-4 py-16 md:py-24 lg:px-8': !noPadding})} id={sectionId}>
+    <section
+      aria-labelledby={headingId}
+      className={classNames(className, {'px-4 py-16 md:py-24 lg:px-8': !noPadding})}
+      id={sectionId}
+    >
       <div className={classNames({'mx-auto max-w-screen-lg': !noPadding})}>{children}</div>
     </section>
   );
