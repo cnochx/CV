@@ -2,8 +2,8 @@ import {ChevronUpIcon} from '@heroicons/react/24/solid';
 import classNames from 'classnames';
 import {FC, memo} from 'react';
 
-import {SectionId} from '../../data/data';
 import {footerItems} from '../../data/FooterData';
+import {SectionId} from '../../data/sectionIdData';
 import Imprint from '../Imprint';
 import Socials from '../Socials';
 

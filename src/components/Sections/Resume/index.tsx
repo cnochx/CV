@@ -7,11 +7,11 @@ import {
   eduHeader,
   experience,
   expHeader,
-  SectionId,
   sumHeader,
   summaryItems,
 } from '../../../data/data';
 import {skillSubHeader} from '../../../data/generalData';
+import {SectionId, SectionSubId} from '../../../data/sectionIdData';
 import {skills} from '../../../data/skillData';
 import Section from '../../Layout/Section';
 import {SkillGroup} from '../skills/skillGroup';

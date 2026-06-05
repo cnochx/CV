@@ -3,7 +3,7 @@ import Image from 'next/image';
 import {FC, memo} from 'react';
 
 import {aboutData} from '../../data/about';
-import {SectionId} from '../../data/data';
+import {SectionId} from '../../data/sectionIdData';
 import Section from '../Layout/Section';
 
 const About: FC = memo(() => {

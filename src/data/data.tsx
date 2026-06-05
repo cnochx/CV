@@ -36,22 +36,8 @@ import {
 } from './dataDef';
 
 /**
- * Section definition
+ * CV Header
  */
-export const SectionId = {
-  Hero: 'hero',
-  About: 'about',
-  Contact: 'contact',
-  Portfolio: 'stack',
-  Resume: 'CV',
-  Freelance: 'Freelance',
-  Skills: 'skills',
-  Stats: 'stats',
-  Testimonials: 'foresight',
-} as const;
-
-export type SectionId = (typeof SectionId)[keyof typeof SectionId];
-
 export const sumHeader: CVSubHeader = {
   title: 'Summary',
   content: (

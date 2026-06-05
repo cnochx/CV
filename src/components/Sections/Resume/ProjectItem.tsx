@@ -1,6 +1,7 @@
 import {FC, memo} from 'react';
 
 import {ProjectItem} from '../../../data/dataDef';
+import {SectionId} from '../../../data/sectionIdData';
 
 const ProjectItem: FC<{item: ProjectItem}> = memo(({item}) => {
   const {piKey, title, stack, role, content} = item;

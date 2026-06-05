@@ -1,7 +1,7 @@
 import {FC, memo} from 'react';
 
-import {SectionId} from '../../data/data';
 import {freelance, frlHeader} from '../../data/FreelanceData';
+import {SectionId} from '../../data/sectionIdData';
 import Section from '../Layout/Section';
 
 const Freelance: FC = memo(() => {

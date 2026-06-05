@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import {FC, memo} from 'react';
 
 import {TimelineItem} from '../../../data/dataDef';
+import {SectionId} from '../../../data/sectionIdData';
 
 const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
   const {tlKey, title, date, location, content, about, experiences, reference} = item;

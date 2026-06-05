@@ -1,4 +1,5 @@
 import {FC, memo, PropsWithChildren} from 'react';
+import {SectionId} from '../../../data/sectionIdData';
 
 const AdditionalSection: FC<PropsWithChildren<{title: string}>> = memo(({title, children}) => {
   return (
