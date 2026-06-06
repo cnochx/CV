@@ -14,8 +14,8 @@ const Header: FC = memo(() => {
   const navSections = useMemo(
     () => [
       SectionId.About,
+      SectionId.Contractor,
       SectionId.Resume,
-      SectionId.Freelance,
       SectionId.Portfolio,
       SectionId.Testimonials,
       SectionId.Contact,

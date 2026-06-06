@@ -6,11 +6,11 @@ export const SectionId = {
   About: 'about',
   Contact: 'contact',
   Portfolio: 'stack',
-  Resume: 'cv',
-  Freelance: 'freelance',
+  Resume: 'CV',
   Skills: 'skills',
   Stats: 'stats',
   Testimonials: 'foresight',
+  Contractor: 'contractor',
 } as const;
 
 export type SectionId = (typeof SectionId)[keyof typeof SectionId];
@@ -26,6 +26,9 @@ export const SectionSubId = {
   education: 'education',
   additional: 'additional',
   freelance: 'summary',
+  Solve: 'solve',
+  Focus: 'focus',
+  Different: 'different',
 } as const;
 
 export type SectionSubId = (typeof SectionSubId)[keyof typeof SectionSubId];
