@@ -1,41 +1,33 @@
 /**
  * Skills section
  */
-export interface SubHeader {
-  title: string;
-  content: JSX.Element;
-  showSpacer: boolean;
+export interface SkillsCollection {
+  head: string;
+  sgKey: number;
+  skills: SkillItem[];
 }
 
-export type OriginType =
-  | 'private Interest'
-  | 'Webmaster (with development tasks)'
-  | 'Webmaster / Web Developer'
-  | 'Software Developer and Linux Administrator'
-  | 'SAP Technical Consultant, SAP Full-Stack Development'
-  | 'Senior SAP Developer'
-  | 'Technical Lead / IT Specialist'
-  | 'Certification of Full-Stack Web Developer'
-  | 'Training Full-Stack Web Developer'
-  | 'Software Architect'
-  | 'Scrum Master PSMI';
-
-export interface Origin {
-  oKey: number;
-  origin: OriginType;
-}
-
-export interface Skill {
+export interface SkillItem {
   sKey: number;
   name: string;
   expLevel: number;
   max?: number;
   years?: number;
-  groupOfOrigin: Origin[];
+  groupOfOrigin: SkillOrigin[];
 }
 
-export interface SkillGroup {
-  head: string;
-  sgKey: number;
-  skills: Skill[];
+export interface SkillOrigin {
+  oKey: number;
+  origin: OriginType;
 }
+
+export type OriginType =
+  | 'private Interest'
+  | 'Senior SAP Developer'
+  | 'Technical Lead / IT Specialist'
+  | 'SAP Technical Consultant, SAP Full-Stack Development'
+  | 'Software Developer and Linux Administrator'
+  | 'Webmaster / Web Developer'
+  | 'Certification of Full-Stack Web Developer'
+  | 'Software Architect'
+  | 'Scrum Master PSMI';

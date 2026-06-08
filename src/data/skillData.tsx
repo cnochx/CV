@@ -1,6 +1,9 @@
-import {SkillGroup} from './skillDataDef';
+/**
+ * Skills section
+ */
+import {SkillsCollection} from './skillDataDef';
 
-export const skills: SkillGroup[] = [
+const SkillsCollectionData: SkillsCollection[] = [
   {
     head: 'SAP development / Architecture',
     sgKey: 1,
@@ -11,72 +14,102 @@ export const skills: SkillGroup[] = [
         expLevel: 8,
         years: 4.5,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Senior SAP Developer'},
-          {oKey: 2, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
+          {oKey: 1,
+            origin: 'Senior SAP Developer'},
+          {oKey: 2,
+            origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
         ],
       },
       {
         sKey: 2,
         name: 'ABAP CDS',
         expLevel: 8,
-        years: 4,
+        years: 4.5,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Senior SAP Developer'},
-          {oKey: 2, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
+          {oKey: 1,
+            origin: 'Senior SAP Developer'},
+          {oKey: 2,
+            origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
         ],
       },
       {
         sKey: 3,
         name: 'OData v2 / v4',
         expLevel: 8,
-        years: 4,
+        years: 3,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Senior SAP Developer'},
-          {oKey: 2, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
-        ],
+          {
+            oKey: 1,
+            origin: 'Senior SAP Developer'
+          },
+          {
+            oKey: 2,
+            origin: 'SAP Technical Consultant, SAP Full-Stack Development'
+          }],
       },
       {
         sKey: 4,
         name: 'SAP UI5 / Fiori',
         expLevel: 8,
-        years: 4,
-        groupOfOrigin: [{oKey: 1, origin: 'SAP Technical Consultant, SAP Full-Stack Development'}],
+        years: 3,
+        groupOfOrigin: [
+          {
+            oKey: 1,
+            origin: 'SAP Technical Consultant, SAP Full-Stack Development'
+          }],
       },
       {
         sKey: 5,
         name: 'SAP BTP',
         expLevel: 7,
-        years: 3,
+        years: 4.5,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Senior SAP Developer'},
-          {oKey: 2, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
-        ],
+          {
+            oKey: 1,
+            origin: 'Senior SAP Developer'
+          },
+          {
+            oKey: 2,
+            origin: 'SAP Technical Consultant, SAP Full-Stack Development'
+          }],
       },
       {
         sKey: 6,
         name: 'RAP / CAP',
         expLevel: 7,
         years: 2.5,
-        groupOfOrigin: [{oKey: 1, origin: 'SAP Technical Consultant, SAP Full-Stack Development'}],
+        groupOfOrigin: [
+          {
+            oKey: 1,
+            origin: 'SAP Technical Consultant, SAP Full-Stack Development'
+          }],
       },
       {
         sKey: 7,
         name: 'S/4HANA modernization',
         expLevel: 8,
-        years: 3,
+        years: 4.5,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Senior SAP Developer'},
-          {oKey: 2, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
+          {
+            oKey: 1,
+            origin: 'Senior SAP Developer'},
+          {
+            oKey: 2,
+            origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
         ],
       },
       {
         sKey: 8,
         name: 'Clean Core',
         expLevel: 8,
-        years: 2.5,
+        years: 4.5,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Senior SAP Developer'},
-          {oKey: 2, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
+          {
+            oKey: 1,
+            origin: 'Senior SAP Developer'},
+          {
+            oKey: 2,
+            origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
         ],
       },
     ],
@@ -89,12 +122,23 @@ export const skills: SkillGroup[] = [
         sKey: 1,
         name: 'JavaScript',
         expLevel: 9,
-        years: 10,
+        years: 12,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Webmaster / Web Developer'},
-          {oKey: 2, origin: 'Software Developer and Linux Administrator'},
-          {oKey: 3, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
-          {oKey: 4, origin: 'Technical Lead / IT Specialist'},
+          {
+            oKey: 1,
+            origin: 'Webmaster / Web Developer'},
+          {
+            oKey: 2,
+            origin: 'Software Developer and Linux Administrator'},
+          {
+            oKey: 3,
+            origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
+          {
+            oKey: 4,
+            origin: 'Technical Lead / IT Specialist'},
+          {
+            oKey: 5,
+            origin: 'private Interest'}
         ],
       },
       {
@@ -103,10 +147,16 @@ export const skills: SkillGroup[] = [
         expLevel: 8,
         years: 5,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Software Developer and Linux Administrator'},
-          {oKey: 2, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
-          {oKey: 3, origin: 'private Interest'},
-        ],
+          {
+            oKey: 1,
+            origin: 'Software Developer and Linux Administrator'},
+          {
+            oKey: 2,
+            origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
+          {
+            oKey: 3,
+            origin: 'private Interest'
+          }],
       },
       {
         sKey: 3,
@@ -114,9 +164,14 @@ export const skills: SkillGroup[] = [
         expLevel: 8,
         years: 5,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Software Developer and Linux Administrator'},
-          {oKey: 2, origin: 'private Interest'},
-        ],
+          {
+            oKey: 1,
+            origin: 'Software Developer and Linux Administrator'
+          },
+          {
+            oKey: 2,
+            origin: 'private Interest'
+          }],
       },
       {
         sKey: 4,
@@ -124,9 +179,14 @@ export const skills: SkillGroup[] = [
         expLevel: 7,
         years: 5,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Software Developer and Linux Administrator'},
-          {oKey: 2, origin: 'private Interest'},
-        ],
+          {
+            oKey: 1,
+            origin: 'Software Developer and Linux Administrator'
+          },
+          {
+            oKey: 2,
+            origin: 'private Interest'
+          }],
       },
       {
         sKey: 5,
@@ -134,10 +194,22 @@ export const skills: SkillGroup[] = [
         expLevel: 9,
         years: 7,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Software Developer and Linux Administrator'},
-          {oKey: 2, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
-          {oKey: 3, origin: 'Technical Lead / IT Specialist'},
-          {oKey: 4, origin: 'Webmaster / Web Developer'},
+          {
+            oKey: 1,
+            origin: 'Software Developer and Linux Administrator'
+          },
+          {
+            oKey: 2,
+            origin: 'SAP Technical Consultant, SAP Full-Stack Development'
+          },
+          {
+            oKey: 3,
+            origin: 'Technical Lead / IT Specialist'
+          },
+          {
+            oKey: 4,
+            origin: 'Webmaster / Web Developer'
+          },
         ],
       },
       {
@@ -145,7 +217,15 @@ export const skills: SkillGroup[] = [
         name: 'Next.js',
         expLevel: 7,
         years: 4,
-        groupOfOrigin: [{oKey: 1, origin: 'private Interest'}],
+        groupOfOrigin: [
+          {
+            oKey: 1,
+            origin: 'Certification of Full-Stack Web Developer'
+          },
+          {
+            oKey: 2,
+            origin: 'private Interest'
+          }],
       },
       {
         sKey: 7,
@@ -153,9 +233,14 @@ export const skills: SkillGroup[] = [
         expLevel: 6,
         years: 2,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Training Full-Stack Web Developer'},
-          {oKey: 2, origin: 'private Interest'},
-        ],
+          {
+            oKey: 1,
+            origin: 'Certification of Full-Stack Web Developer'
+          },
+          {
+            oKey: 2,
+            origin: 'private Interest'
+          }],
       },
       {
         sKey: 8,
@@ -163,8 +248,12 @@ export const skills: SkillGroup[] = [
         expLevel: 7,
         years: 3,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Software Developer and Linux Administrator'},
-          {oKey: 2, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
+          {
+            oKey: 1,
+            origin: 'Software Developer and Linux Administrator'},
+          {
+            oKey: 2,
+            origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
         ],
       },
     ],
@@ -179,11 +268,20 @@ export const skills: SkillGroup[] = [
         expLevel: 9,
         years: 15,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Webmaster / Web Developer'},
-          {oKey: 2, origin: 'Software Developer and Linux Administrator'},
-          {oKey: 3, origin: 'Training Full-Stack Web Developer'},
-          {oKey: 4, origin: 'Technical Lead / IT Specialist'},
-        ],
+          {
+            oKey: 1,
+            origin: 'Webmaster / Web Developer'},
+          {
+            oKey: 2,
+            origin: 'Software Developer and Linux Administrator'},
+          {
+            oKey: 3,
+            origin: 'Certification of Full-Stack Web Developer'
+          },
+          {
+            oKey: 4,
+            origin: 'Technical Lead / IT Specialist'
+          }],
       },
       {
         sKey: 2,
@@ -191,9 +289,13 @@ export const skills: SkillGroup[] = [
         expLevel: 9,
         years: 15,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Webmaster / Web Developer'},
-          {oKey: 2, origin: 'Technical Lead / IT Specialist'},
-        ],
+          {
+            oKey: 1,
+            origin: 'Webmaster / Web Developer'},
+          {
+            oKey: 2,
+            origin: 'Technical Lead / IT Specialist'
+          }],
       },
       {
         sKey: 3,
@@ -201,21 +303,36 @@ export const skills: SkillGroup[] = [
         expLevel: 9,
         years: 20,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Webmaster / Web Developer'},
-          {oKey: 2, origin: 'Training Full-Stack Web Developer'},
-        ],
+          {
+            oKey: 1,
+            origin: 'Webmaster / Web Developer'
+          },
+          {
+            oKey: 2,
+            origin: 'Certification of Full-Stack Web Developer'
+          }],
       },
       {
         sKey: 4,
-        name: 'Composer / NPM',
+        name: 'Composer / NPM / Yarn',
         expLevel: 8,
         years: 7,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Webmaster / Web Developer'},
-          {oKey: 2, origin: 'Software Developer and Linux Administrator'},
-          {oKey: 3, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
-          {oKey: 4, origin: 'Technical Lead / IT Specialist'},
-        ],
+          {
+            oKey: 1,
+            origin: 'Webmaster / Web Developer'
+          },
+          {
+            oKey: 2,
+            origin: 'Software Developer and Linux Administrator'
+          },
+          {
+            oKey: 3,
+            origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
+          {
+            oKey: 4,
+            origin: 'Technical Lead / IT Specialist'
+          }],
       },
       {
         sKey: 5,
@@ -223,21 +340,37 @@ export const skills: SkillGroup[] = [
         expLevel: 8,
         years: 8,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Software Developer and Linux Administrator'},
-          {oKey: 2, origin: 'Webmaster / Web Developer'},
-          {oKey: 3, origin: 'Technical Lead / IT Specialist'},
-        ],
+          {
+            oKey: 1,
+            origin: 'Software Developer and Linux Administrator'
+          },
+          {
+            oKey: 2,
+            origin: 'Webmaster / Web Developer'
+          },
+          {
+            oKey: 3,
+            origin: 'Technical Lead / IT Specialist'
+          }],
       },
       {
         sKey: 6,
         name: 'Linux Administration',
-        expLevel: 8,
-        years: 8,
+        expLevel: 7,
+        years: 9,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Webmaster / Web Developer'},
-          {oKey: 2, origin: 'Software Developer and Linux Administrator'},
-          {oKey: 3, origin: 'Technical Lead / IT Specialist'},
-        ],
+          {
+            oKey: 1,
+            origin: 'Webmaster / Web Developer'
+          },
+          {
+            oKey: 2,
+            origin: 'Software Developer and Linux Administrator'
+          },
+          {
+            oKey: 3,
+            origin: 'Technical Lead / IT Specialist'
+          }],
       },
       {
         sKey: 7,
@@ -245,9 +378,14 @@ export const skills: SkillGroup[] = [
         expLevel: 8,
         years: 8,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Webmaster / Web Developer'},
-          {oKey: 2, origin: 'Software Developer and Linux Administrator'},
-        ],
+          {
+            oKey: 1,
+            origin: 'Webmaster / Web Developer'
+          },
+          {
+            oKey: 2,
+            origin: 'Software Developer and Linux Administrator'
+          }],
       },
       {
         sKey: 8,
@@ -255,9 +393,10 @@ export const skills: SkillGroup[] = [
         expLevel: 7,
         years: 2,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Technical Lead / IT Specialist'},
-          {oKey: 2, origin: 'private Interest'},
-        ],
+          {
+            oKey: 1,
+            origin: 'Technical Lead / IT Specialist'
+          }],
       },
     ],
   },
@@ -271,10 +410,18 @@ export const skills: SkillGroup[] = [
         expLevel: 9,
         years: 6,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Software Developer and Linux Administrator'},
-          {oKey: 2, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
-          {oKey: 3, origin: 'Senior SAP Developer'},
-        ],
+          {
+            oKey: 1,
+            origin: 'Software Developer and Linux Administrator'
+          },
+          {
+            oKey: 2,
+            origin: 'SAP Technical Consultant, SAP Full-Stack Development'
+          },
+          {
+            oKey: 3,
+            origin: 'Senior SAP Developer'
+          }],
       },
       {
         sKey: 2,
@@ -282,10 +429,18 @@ export const skills: SkillGroup[] = [
         expLevel: 8,
         years: 6,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Software Developer and Linux Administrator'},
-          {oKey: 2, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
-          {oKey: 3, origin: 'Senior SAP Developer'},
-        ],
+          {
+            oKey: 1,
+            origin: 'Software Developer and Linux Administrator'
+          },
+          {
+            oKey: 2,
+            origin: 'SAP Technical Consultant, SAP Full-Stack Development'
+          },
+          {
+            oKey: 3,
+            origin: 'Senior SAP Developer'
+          }],
       },
       {
         sKey: 3,
@@ -293,11 +448,22 @@ export const skills: SkillGroup[] = [
         expLevel: 9,
         years: 8,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Webmaster / Web Developer'},
-          {oKey: 2, origin: 'Software Developer and Linux Administrator'},
-          {oKey: 3, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
-          {oKey: 4, origin: 'Senior SAP Developer'},
-        ],
+          {
+            oKey: 1,
+            origin: 'Webmaster / Web Developer'
+          },
+          {
+            oKey: 2,
+            origin: 'Software Developer and Linux Administrator'
+          },
+          {
+            oKey: 3,
+            origin: 'SAP Technical Consultant, SAP Full-Stack Development'
+          },
+          {
+            oKey: 4,
+            origin: 'Senior SAP Developer'
+          }],
       },
       {
         sKey: 4,
@@ -305,21 +471,37 @@ export const skills: SkillGroup[] = [
         expLevel: 7,
         years: 4,
         groupOfOrigin: [
-          {oKey: 1, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
-          {oKey: 2, origin: 'Senior SAP Developer'},
-        ],
+          {
+            oKey: 1,
+            origin: 'SAP Technical Consultant, SAP Full-Stack Development'
+          },
+          {
+            oKey: 2,
+            origin: 'Senior SAP Developer'
+          }],
       },
       {
         sKey: 5,
         name: 'Git / Gitflow',
         expLevel: 9,
-        years: 11,
+        years: 13,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Webmaster / Web Developer'},
-          {oKey: 2, origin: 'Software Developer and Linux Administrator'},
-          {oKey: 3, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
-          {oKey: 4, origin: 'Technical Lead / IT Specialist'},
-        ],
+          {
+            oKey: 1,
+            origin: 'Webmaster / Web Developer'
+          },
+          {
+            oKey: 2,
+            origin: 'Software Developer and Linux Administrator'
+          },
+          {
+            oKey: 3,
+            origin: 'SAP Technical Consultant, SAP Full-Stack Development'
+          },
+          {
+            oKey: 4,
+            origin: 'Technical Lead / IT Specialist'
+          }],
       },
       {
         sKey: 6,
@@ -327,11 +509,22 @@ export const skills: SkillGroup[] = [
         expLevel: 8,
         years: 11,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Webmaster / Web Developer'},
-          {oKey: 2, origin: 'Software Developer and Linux Administrator'},
-          {oKey: 3, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
-          {oKey: 4, origin: 'Technical Lead / IT Specialist'},
-        ],
+          {
+            oKey: 1,
+            origin: 'Webmaster / Web Developer'
+          },
+          {
+            oKey: 2,
+            origin: 'Software Developer and Linux Administrator'
+          },
+          {
+            oKey: 3,
+            origin: 'SAP Technical Consultant, SAP Full-Stack Development'
+          },
+          {
+            oKey: 4,
+            origin: 'Technical Lead / IT Specialist'
+          }],
       },
       {
         sKey: 7,
@@ -339,11 +532,20 @@ export const skills: SkillGroup[] = [
         expLevel: 7,
         years: 5,
         groupOfOrigin: [
-          {oKey: 1, origin: 'Scrum Master PSMI'},
-          {oKey: 2, origin: 'SAP Technical Consultant, SAP Full-Stack Development'},
-          {oKey: 3, origin: 'Senior SAP Developer'},
-        ],
+          {
+            oKey: 1,
+            origin: 'Scrum Master PSMI'
+          },
+          {
+            oKey: 2,
+            origin: 'SAP Technical Consultant, SAP Full-Stack Development'
+          },
+          {
+            oKey: 3,
+            origin: 'Senior SAP Developer'
+          }],
       },
     ],
   },
 ];
+export default SkillsCollectionData;
