@@ -1,77 +1,91 @@
-import type {ThemeVariant} from '../data/HeaderDataDef';
-import {ColorVariant, setBorder} from '../data/LayoutDef';
+import {
+  BackgroundColor,
+  ColorVariant,
+  SetBackgroundColor,
+  SetBorder,
+  SetFontColor,
+} from '../data/LayoutDef';
 
 /**
- * Shared padding classes used by standard content sections.
+ * Shared helper functions for resolving semantic layout variants
+ * to Tailwind CSS utility classes.
  *
- * @constant {string}
+ * Operations:
+ * - Maps semantic background variants to Tailwind background classes.
+ * - Maps semantic color variants to Tailwind text color classes.
+ * - Maps semantic border variants to Tailwind border classes.
+ * - Resolves optional spacing classes for vertically stacked layouts.
  */
-const SECTION_BASE_CLASS = 'px-4 py-16 md:py-24 lg:px-8';
 
 /**
- * Maps supported top-level section variants to their Tailwind background
- * and spacing classes.
+ * Maps normalized background color variants to their Tailwind background classes.
  *
- * @constant {Readonly<Record<'dark' | 'bright', string>>}
+ * @constant {Readonly<Record<SetBackgroundColor, string>>}
  */
-const SECTION_VARIANT_CLASS_MAP: Readonly<Record<'dark' | 'bright', string>> = {
-  dark: `bg-neutral-800 ${SECTION_BASE_CLASS}`,
-  bright: `bg-neutral-100 ${SECTION_BASE_CLASS}`,
+const BACKGROUND_COLOR_CLASS_MAP: Readonly<Record<SetBackgroundColor, string>> = {
+  dark: 'bg-neutral-800',
+  bright: 'bg-neutral-50',
+  medium: 'bg-neutral-700',
 };
 
 /**
- * Returns the Tailwind class string for a section wrapper based on the
- * provided theme variant.
+ * Resolves the Tailwind background class for a semantic background variant.
  *
- * Variants related to `dark` return the dark section styling, variants
- * related to `bright` return the bright section styling, and unsupported
- * or missing variants fall back to the shared base spacing classes.
+ * Operations:
+ * - Maps dark-related variants to the shared dark background class.
+ * - Maps bright-related variants to the shared bright background class.
+ * - Maps `medium-contrast` to the shared medium background class.
+ * - Falls back to the dark background class for unsupported or missing values.
  *
- * @param {ThemeVariant | undefined} variant - Theme variant used to resolve the section wrapper styling.
- * @returns {string} Tailwind class string for the resolved section variant.
+ * @param {BackgroundColor} variant - Semantic background variant to resolve.
+ * @returns {string} Tailwind CSS class for the resolved background color.
  */
-export function getSectionVariantClass(
-  variant: ThemeVariant | undefined
+export function getBackGroundColorClass(
+  variant: BackgroundColor
 ): string {
   switch (variant) {
     case 'dark':
     case 'dark-pill':
     case 'dark-pill-bg':
-      return SECTION_VARIANT_CLASS_MAP.dark;
+      return BACKGROUND_COLOR_CLASS_MAP.dark;
 
     case 'bright':
     case 'bright-pill':
     case 'bright-pill-bg':
-      return SECTION_VARIANT_CLASS_MAP.bright;
+      return BACKGROUND_COLOR_CLASS_MAP.bright;
+
+    case 'medium-contrast':
+      return BACKGROUND_COLOR_CLASS_MAP.medium;
 
     default:
-      return SECTION_BASE_CLASS;
+      return BACKGROUND_COLOR_CLASS_MAP.dark;
   }
 }
 
 /**
- * Maps supported theme groups to their Tailwind font color classes.
+ * Maps normalized font color variants to their Tailwind text color classes.
  *
- * @constant {Readonly<Record<'bright' | 'dark' | 'default' | 'contrast' | 'contrast-alt', string>>}
+ * @constant {Readonly<Record<SetFontColor, string>>}
  */
-const FONT_COLOR_CLASS_MAP: Readonly<Record<'bright' | 'dark' | 'default' | 'contrast' | 'contrast_alt', string>> = {
-  dark: `text-black`,
-  bright: `text-white`,
-  contrast: `text-fuchsia-400`,
-  contrast_alt: `text-cyan-500`,
-  default: `text-neutral-500`,
+const FONT_COLOR_CLASS_MAP: Readonly<Record<SetFontColor, string>> = {
+  dark: 'text-neutral-900',
+  bright: 'text-neutral-50',
+  contrast: 'text-fuchsia-400',
+  contrastAlt: 'text-cyan-500',
+  default: 'text-neutral-500',
 };
 
 /**
- * Returns the Tailwind class string for the font color based on the
- * provided theme variant.
+ * Resolves the Tailwind text color class for a semantic color variant.
  *
- * Variants related to `dark` return a bright font color for contrast,
- * variants related to `bright` return a dark font color, and unsupported
- * or missing variants fall back to the default font color.
+ * Operations:
+ * - Maps dark-related variants to a bright text color for contrast.
+ * - Maps bright-related variants to a dark text color for contrast.
+ * - Maps contrast variants to their dedicated accent colors.
+ * - Falls back to the default text color for unsupported or missing values.
  *
- * @param {ThemeVariant | undefined} variant - Theme variant used to resolve the font color class.
- * @returns {string} Tailwind class string for the resolved font color.
+ * @param {ColorVariant} variant - Semantic color variant to resolve.
+ * @returns {string} Tailwind CSS class for the resolved font color.
  */
 export function getFontColorClass(
   variant: ColorVariant
@@ -89,8 +103,9 @@ export function getFontColorClass(
 
     case 'contrast':
       return FONT_COLOR_CLASS_MAP.contrast;
+
     case 'contrast_alt':
-        return FONT_COLOR_CLASS_MAP.contrast_alt;
+      return FONT_COLOR_CLASS_MAP.contrastAlt;
 
     default:
       return FONT_COLOR_CLASS_MAP.default;
@@ -98,28 +113,30 @@ export function getFontColorClass(
 }
 
 /**
- * Maps supported border types to their Tailwind border color classes.
+ * Maps semantic border variants to their Tailwind border classes.
  *
- * @constant {Readonly<Record<'primary' | 'secondary' | 'default', string>>}
+ * @constant {Readonly<Record<SetBorder, string>>}
  */
-const BORDER_COLOR_CLASS_MAP: Readonly<Record<setBorder, string>> = {
-  primary: `border-fuchsia-400`,
-  secondary: `border-cyan-500`,
-  default: `border-fuchsia-500`,
-  none: `border-none`,
+const BORDER_COLOR_CLASS_MAP: Readonly<Record<SetBorder, string>> = {
+  primary: 'border-fuchsia-400',
+  secondary: 'border-cyan-500',
+  default: 'border-fuchsia-500',
+  none: 'border-none',
 };
 
 /**
- * Returns the Tailwind class string for a border color based on the
- * provided border type.
+ * Resolves the Tailwind border class for a semantic border variant.
  *
- * Unsupported or missing values fall back to the default border color.
+ * Operations:
+ * - Maps primary and secondary variants to their dedicated accent border classes.
+ * - Maps `none` to a border reset class.
+ * - Falls back to the default border class for unsupported values.
  *
- * @param {'primary' | 'secondary' | 'default' | undefined} type - Border type used to resolve the border color class.
- * @returns {string} Tailwind class string for the resolved border color.
+ * @param {SetBorder} type - Semantic border variant to resolve.
+ * @returns {string} Tailwind CSS class for the resolved border color.
  */
 export function getBorderColorClass(
-  type: setBorder
+  type: SetBorder
 ): string {
   switch (type) {
     case 'primary':
@@ -128,33 +145,37 @@ export function getBorderColorClass(
     case 'secondary':
       return BORDER_COLOR_CLASS_MAP.secondary;
 
+    case 'none':
+      return BORDER_COLOR_CLASS_MAP.none;
+
     default:
       return BORDER_COLOR_CLASS_MAP.default;
   }
 }
 
 /**
- * Shared vertical layout classes for stacked section content.
+ * Base Tailwind classes for vertically stacked layout sections.
  *
  * @constant {string}
  */
 const SPACER_BASE_CLASS = 'flex flex-col space-y-32';
 
 /**
- * Optional top margin class used to add extra visual separation.
+ * Additional Tailwind margin class applied when extra top spacing is required.
  *
  * @constant {string}
  */
 const SPACER_MARGIN_CLASS = 'mt-8';
 
 /**
- * Returns the Tailwind class string for stacked content spacing.
+ * Resolves the Tailwind spacing classes for vertically stacked content.
  *
- * Adds an extra top margin when `showSpacer` is enabled; otherwise,
- * returns the shared stacked layout classes only.
+ * Operations:
+ * - Returns the shared base stack classes by default.
+ * - Appends an additional top margin when `showSpacer` is enabled.
  *
- * @param {boolean | undefined} showSpacer - Controls whether an additional top margin is included.
- * @returns {string} Tailwind class string for stacked content spacing.
+ * @param {boolean | undefined} showSpacer - Whether to include additional top spacing.
+ * @returns {string} Tailwind CSS class string for the resolved spacing setup.
  */
 export function getSpacerClass(
   showSpacer: boolean | undefined
