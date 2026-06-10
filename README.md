@@ -1,6 +1,10 @@
-# React JS Resume Website Template
+# Martin Grellmann CV 
 
 ![ReactJS Resume Website Template](resume-screenshot.jpg?raw=true 'ReactJS Resume Website Template')
+
+based React JS Resume Website Template.
+
+This customised and extended Version of that amazing ! add also some JSDoc. See: ./JSDOC_STYLE.md for explain meaning, behavior, and intent.
 
 <div align="center">
 
