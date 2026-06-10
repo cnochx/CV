@@ -1,5 +1,5 @@
 import type {ThemeVariant} from '../data/HeaderDataDef';
-import {setBorder} from '../data/LayoutDef';
+import {ColorVariant, setBorder} from '../data/LayoutDef';
 
 /**
  * Shared padding classes used by standard content sections.
@@ -52,11 +52,13 @@ export function getSectionVariantClass(
 /**
  * Maps supported theme groups to their Tailwind font color classes.
  *
- * @constant {Readonly<Record<'bright' | 'dark' | 'default', string>>}
+ * @constant {Readonly<Record<'bright' | 'dark' | 'default' | 'contrast' | 'contrast-alt', string>>}
  */
-const FONT_COLOR_CLASS_MAP: Readonly<Record<'bright' | 'dark' | 'default', string>> = {
+const FONT_COLOR_CLASS_MAP: Readonly<Record<'bright' | 'dark' | 'default' | 'contrast' | 'contrast_alt', string>> = {
   dark: `text-black`,
   bright: `text-white`,
+  contrast: `text-fuchsia-400`,
+  contrast_alt: `text-cyan-500`,
   default: `text-neutral-500`,
 };
 
@@ -72,7 +74,7 @@ const FONT_COLOR_CLASS_MAP: Readonly<Record<'bright' | 'dark' | 'default', strin
  * @returns {string} Tailwind class string for the resolved font color.
  */
 export function getFontColorClass(
-  variant: ThemeVariant | undefined
+  variant: ColorVariant
 ): string {
   switch (variant) {
     case 'dark':
@@ -84,6 +86,11 @@ export function getFontColorClass(
     case 'bright-pill':
     case 'bright-pill-bg':
       return FONT_COLOR_CLASS_MAP.dark;
+
+    case 'contrast':
+      return FONT_COLOR_CLASS_MAP.contrast;
+    case 'contrast_alt':
+        return FONT_COLOR_CLASS_MAP.contrast_alt;
 
     default:
       return FONT_COLOR_CLASS_MAP.default;
