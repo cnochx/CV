@@ -3,8 +3,8 @@ import {FC, memo} from 'react';
 import AdditionalElements from '../../../data/AdditionalText';
 import HeaderData from '../../../data/HeaderData';
 import {SectionId} from '../../../data/sectionIdData';
-import SkillsCollectionData from '../../../data/skillCollection';
-import {SkillsCollection} from '../../../data/skillCollectionDef';
+import SkillsCollectionData from '../../../data/SkillCollection';
+import {SkillsCollection} from '../../../data/SkillCollectionDef';
 import {
   getBackGroundColorClass,
   getBorderColorClass,

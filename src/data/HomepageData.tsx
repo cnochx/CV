@@ -1,4 +1,4 @@
-import {HomePageMeta} from './homepageDataDef';
+import {HomePageMeta} from './HomepageDataDef';
 
 export const homePageMeta: HomePageMeta = {
   title: 'Martin Grellmann | Senior Full-Stack Engineer | SAP BTP | S/4HANA | Enterprise APIs',

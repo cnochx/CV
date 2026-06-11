@@ -2,7 +2,7 @@ import {ChevronDownIcon, ChevronUpIcon} from '@heroicons/react/24/solid';
 import {FC, memo, MouseEvent, PropsWithChildren, useMemo} from 'react';
 
 import AdditionalElements from '../../../data/AdditionalText';
-import {SkillItem} from '../../../data/skillCollectionDef';
+import {SkillItem} from '../../../data/SkillCollectionDef';
 import {getBackGroundColorClass, getBorderColorClass, getFontColorClass} from '../../../utils/SectionHelper';
 import useAccordion from '../../../utils/useAccordion';
 import HeaderLayout from '../../Layout/HeaderLayout';

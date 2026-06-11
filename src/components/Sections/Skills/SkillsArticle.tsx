@@ -1,7 +1,7 @@
 import {ChevronDownIcon, ChevronUpIcon} from '@heroicons/react/24/solid';
 import {FC, memo, PropsWithChildren} from 'react';
 
-import {SkillItem, SkillsCollection} from '../../../data/skillCollectionDef';
+import {SkillItem, SkillsCollection} from '../../../data/SkillCollectionDef';
 import {
   getBackGroundColorClass,
   getBorderColorClass,

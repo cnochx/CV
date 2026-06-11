@@ -1,4 +1,5 @@
-import {SkillsCollection} from './skillCollectionDef';
+import {SkillsCollection} from './SkillCollectionDef';
+
 
 /**
  * Structured skill collection data used to render the skills section.

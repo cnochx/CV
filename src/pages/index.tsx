@@ -11,7 +11,7 @@ import Portfolio from '../components/Sections/Portfolio';
 import Resume from '../components/Sections/Resume';
 import Skills from '../components/Sections/Skills';
 import Testimonials from '../components/Sections/Testimonials';
-import {homePageMeta} from '../data/homepageData';
+import {homePageMeta} from '../data/HomepageData';
 
 // eslint-disable-next-line react-memo/require-memo
 const Header = dynamic(() => import('../components/Navigation/Header'), {ssr: false});
