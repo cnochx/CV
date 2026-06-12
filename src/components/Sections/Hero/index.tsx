@@ -4,7 +4,7 @@ import {FC, memo} from 'react';
 
 import {heroData} from '../../../data/HeroData';
 import {SectionId} from '../../../data/sectionIdData';
-import Section from '../../Layout/Section';
+import SectionLayout from '../../Layout/SectionLayout';
 import Nav from '../../Navigation/Nav';
 import Socials from '../../Socials';
 
@@ -12,7 +12,7 @@ const Hero: FC = memo(() => {
   const {name, imageSrc, title, subTitle, descrList, actions} = heroData;
 
   return (
-    <Section noPadding sectionId={SectionId.Hero}>
+    <SectionLayout noPadding sectionId={SectionId.Hero}>
       <div className="relative flex h-screen w-full items-center justify-center">
         <Image
           alt={`${name}-image`}
@@ -63,7 +63,7 @@ const Hero: FC = memo(() => {
           jumpSectionId={SectionId.About}
         />
       </div>
-    </Section>
+    </SectionLayout>
   );
 });
 

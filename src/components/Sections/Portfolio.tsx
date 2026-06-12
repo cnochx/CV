@@ -8,13 +8,14 @@ import {portfolioItems, ptfHeader} from '../../data/data';
 import {PortfolioItem} from '../../data/dataDef';
 import {SectionId} from '../../data/sectionIdData';
 import useDetectOutsideClick from '../../hooks/useDetectOutsideClick';
-import Section from '../Layout/Section';
+import SectionLayout from '../Layout/SectionLayout';
 
 const Portfolio: FC = memo(() => {
   return (
-    <Section className="bg-neutral-800" sectionId={SectionId.Portfolio}>
+    <SectionLayout className="bg-neutral-800" sectionId={SectionId.Portfolio}>
       <div className="flex flex-col gap-y-8">
-        <h2 className="self-center text-xl font-bold text-white">{ptfHeader.title}</h2>
+        <h2 className="self-center text-xl font-bold text-white"
+            id={SectionId.Portfolio}>{ptfHeader.title}</h2>
         <article className=" w-full columns-2 md:columns-3 lg:columns-4">
           {portfolioItems.map((item, index) => {
             const {title, image} = item;
@@ -32,7 +33,7 @@ const Portfolio: FC = memo(() => {
           })}
         </article>
       </div>
-    </Section>
+    </SectionLayout>
   );
 });
 

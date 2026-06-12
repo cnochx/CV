@@ -2,7 +2,7 @@ import {FC, memo, useMemo} from 'react';
 
 import {ContractorContData, ContractorData} from '../../../data/ContractorData';
 import {SectionId, SectionSubId} from '../../../data/sectionIdData';
-import Section from '../../Layout/Section';
+import SectionLayout from '../../Layout/SectionLayout';
 import CntrctrArticle from './CntrctrArticle';
 
 const Contractor: FC = memo(() => {
@@ -17,7 +17,7 @@ const Contractor: FC = memo(() => {
   const TitleId = `${SectionId.Contractor}-title`;
 
   return (
-    <Section className="bg-neutral-100" sectionId={SectionId.Contractor}>
+    <SectionLayout className="bg-neutral-100" sectionId={SectionId.Contractor}>
       <div className="flex flex-col gap-y-12">
 
         <div className="relative overflow-hidden rounded-2xl bg-cover bg-center"
@@ -69,7 +69,7 @@ const Contractor: FC = memo(() => {
 
       <hr className="mt-8 border-0 border-b-2 border-fuchsia-400" />
 
-    </Section>
+    </SectionLayout>
   );
 });
 

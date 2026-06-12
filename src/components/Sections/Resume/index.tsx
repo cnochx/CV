@@ -13,8 +13,8 @@ import {
 import {skillSubHeader} from '../../../data/generalData';
 import {SectionId, SectionSubId} from '../../../data/sectionIdData';
 import {skills} from '../../../data/skillData';
-import Section from '../../Layout/Section';
 import {SkillGroup} from '../skills/skillGroup';
+import SectionLayout from '../../Layout/SectionLayout';
 import AdditionalInterests from './AdditionalInterests';
 import AdditionalSection from './AdditionalSection';
 import ResumeSection from './ResumeSection';
@@ -23,9 +23,12 @@ import TimelineItem from './TimelineItem';
 
 const Resume: FC = memo(() => {
   return (
-    <Section className="bg-neutral-100" sectionId={SectionId.Resume}>
-      <div className="flex flex-col divide-y-2 divide-neutral-300">
-        <ResumeSection title={sumHeader.title}>
+    <SectionLayout className="bg-neutral-100" sectionId={SectionId.Resume}>
+      <div className="flex flex-col divide-y-2 divide-neutral-300 CVindex">
+        <ResumeSection
+          sectionId={SectionSubId.summary}
+          title={sumHeader.title}
+        >
           {sumHeader.content}
           <div className="flex flex-col space-y-4">{sumHeader.showSpacer && <br />}</div>
           {summaryItems.length >= 1
@@ -63,7 +66,7 @@ const Resume: FC = memo(() => {
           ))}
         </AdditionalSection>
       </div>
-    </Section>
+    </SectionLayout>
   );
 });
 

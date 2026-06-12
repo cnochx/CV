@@ -12,7 +12,7 @@ import {
   getSpacerClass,
 } from '../../../utils/SectionHelper';
 import HeaderLayout from '../../Layout/HeaderLayout';
-import Section from '../../Layout/Section';
+import SectionLayout from '../../Layout/SectionLayout';
 import CallToAction from '../../Navigation/CallToAction';
 import SkillsArticle from './SkillsArticle';
 
@@ -57,15 +57,15 @@ const Skills: FC = memo(() => {
   const TitleId: string = `${SectionId.Skills}-title`;
 
   return (
-    <Section
-      className={`px-4 py-16 md:py-24 lg:px-8 ${backgroundColor}`}
+    <SectionLayout
+      className={`px-4 py-16 md:py-24 lg:px-8 ${backgroundDark}`}
       sectionId={SectionId.Skills}
     >
       <div className="mx-auto max-w-screen-lg">
         <HeaderLayout
           ClassName="flex flex-col gap-y-2"
-          SetBorder="primary"
-          Variant={Variant}
+          SetBorder="highlight"
+          Variant="bright"
         >
           <h2 className="text-2xl font-bold" id={TitleId}>
             {Title}
@@ -96,8 +96,8 @@ const Skills: FC = memo(() => {
         </div>
       </div>
 
-      <hr className={`mt-8 border-0 border-b-2 ${borderColor}`} />
-    </Section>
+      <hr className={`mt-8 border-0 border-b-2 ${borderHighlight}`} />
+    </SectionLayout>
   );
 });
 

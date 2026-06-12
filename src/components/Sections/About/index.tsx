@@ -3,7 +3,7 @@ import {FC, memo} from 'react';
 
 import AbtHeader, {AboutData} from '../../../data/about';
 import {SectionId} from '../../../data/sectionIdData';
-import Section from '../../Layout/Section';
+import SectionLayout from '../../Layout/SectionLayout';
 
 
 const About: FC = memo(() => {
@@ -19,8 +19,8 @@ const About: FC = memo(() => {
   const TitleId = `${SectionId.About}-title`;
 
   return (
-    <Section className="bg-neutral-800 px-4 py-16 md:py-24 lg:px-8"
-             sectionId={SectionId.About}>
+    <SectionLayout className="bg-neutral-800 px-4 py-16 md:py-24 lg:px-8"
+                   sectionId={SectionId.About}>
 
       <div className="mx-auto max-w-screen-lg">
         <article className="grid grid-cols-1 gap-y-4 md:grid-cols-4">
@@ -76,7 +76,7 @@ const About: FC = memo(() => {
 
       <hr className="mt-8 border-0 border-b-2 border-fuchsia-400" />
 
-    </Section>
+    </SectionLayout>
   );
 });
 

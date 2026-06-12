@@ -8,7 +8,7 @@ import {HiOutlineEnvelope} from 'react-icons/hi2';
  * a stable DOM id for the rendered call-to-action block.
  */
 type CallToActionProps = {
-  /** Section identifier used as the base for the generated aside id. */
+  /** SectionLayout identifier used as the base for the generated aside id. */
   SectionId: string;
 };
 
@@ -26,7 +26,7 @@ type CallToActionProps = {
  * - Opens the user's default mail client through a `mailto:` link.
  *
  * @param {CallToActionProps} props - Component props for the call-to-action block.
- * @param {string} props.SectionId - Section identifier used to generate a unique DOM id.
+ * @param {string} props.SectionId - SectionLayout identifier used to generate a unique DOM id.
  * @returns {JSX.Element} Contact call-to-action block with a mail link.
  */
 const CallToAction = memo(({SectionId}: CallToActionProps) => {

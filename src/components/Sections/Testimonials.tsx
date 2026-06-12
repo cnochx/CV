@@ -8,7 +8,7 @@ import {SectionId} from '../../data/sectionIdData'
 import useInterval from '../../hooks/useInterval';
 import useWindow from '../../hooks/useWindow';
 import QuoteIcon from '../Icon/QuoteIcon';
-import Section from '../Layout/Section';
+import SectionLayout from '../Layout/SectionLayout';
 
 const Testimonials: FC = memo(() => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -71,7 +71,7 @@ const Testimonials: FC = memo(() => {
   }
 
   return (
-    <Section noPadding sectionId={SectionId.Testimonials}>
+    <SectionLayout noPadding sectionId={SectionId.Testimonials}>
       <div
         className={classNames(
           'flex w-full items-center justify-center bg-cover bg-center px-4 py-16 md:py-24 lg:px-8',
@@ -110,7 +110,7 @@ const Testimonials: FC = memo(() => {
           </div>
         </div>
       </div>
-    </Section>
+    </SectionLayout>
   );
 });
 
