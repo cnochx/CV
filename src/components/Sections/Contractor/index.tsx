@@ -1,7 +1,7 @@
 import {FC, memo, useMemo} from 'react';
 
 import AdditionalElements from '../../../data/AdditionalText';
-import {ContractorContData, ContractorData} from '../../../data/ContractorData';
+import {ContractorContData, ContractorData} from '../../../data/Contractor/ContractorData';
 import {SectionId, SectionSubId} from '../../../data/sectionIdData';
 import SectionLayout from '../../Layout/SectionLayout';
 import CntrctrArticle from './CntrctrArticle';

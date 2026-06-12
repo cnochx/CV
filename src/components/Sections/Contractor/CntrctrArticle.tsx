@@ -1,6 +1,6 @@
 import {FC, memo, PropsWithChildren} from 'react';
 
-import {CntrctrMain as CntrctrHeaderType} from '../../../data/ContractorDataDef';
+import {CntrctrMain as CntrctrHeaderType} from '../../../data/Contractor/ContractorDataDef';
 import CntrctrHeader from './CntrctrHeader';
 import CntrctrSection from './CntrctrSection';
 

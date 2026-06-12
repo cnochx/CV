@@ -1,6 +1,6 @@
 import {FC, memo, PropsWithChildren} from 'react';
 
-import {CntrctrMain as CntrctrSectorType} from '../../../data/ContractorDataDef';
+import {CntrctrMain as CntrctrSectorType} from '../../../data/Contractor/ContractorDataDef';
 import CallToAction from '../../Navigation/CallToAction';
 
 type CntrctrSectorProps = PropsWithChildren<{

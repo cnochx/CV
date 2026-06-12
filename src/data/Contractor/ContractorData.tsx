@@ -1,4 +1,4 @@
-import WoodImage from '../images/wood.webp';
+import WoodImage from '../../images/wood.webp';
 import {Contractor, ContractorCont} from './ContractorDataDef';
 
 

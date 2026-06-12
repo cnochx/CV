@@ -1,6 +1,6 @@
 import {FC, memo, PropsWithChildren} from 'react';
 
-import {CntrctrMain as CntrctrMainType} from '../../../data/ContractorDataDef';
+import {CntrctrMain as CntrctrMainType} from '../../../data/Contractor/ContractorDataDef';
 
 type CntrctrArticleProps = PropsWithChildren<{
   Item: CntrctrMainType;
