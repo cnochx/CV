@@ -1,5 +1,5 @@
 /**
- * Section definition
+ * SectionLayout definition
  */
 export const SectionId = {
   Hero: 'hero',
@@ -16,7 +16,7 @@ export const SectionId = {
 export type SectionId = (typeof SectionId)[keyof typeof SectionId];
 
 /**
- * Section definition
+ * SectionLayout definition
  */
 export const SectionSubId = {
   summary: 'summary',
