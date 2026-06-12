@@ -1,158 +1,100 @@
-import {
-  BackgroundColor,
-  ColorVariant,
-  SetBackgroundColor,
-  SetBorder,
-  SetFontColor,
-} from '../data/LayoutDef';
+import {ThemeVariant} from '../data/HeaderDataDef';
+import {SetColor, Tailwind} from '../data/SectionHelperDef';
 import {StaticImageData} from 'next/image';
 
 /**
- * Shared helper functions for resolving semantic layout variants
- * to Tailwind CSS utility classes.
+ * Maps semantic color tokens to Tailwind color values.
  *
  * Operations:
- * - Maps semantic background variants to Tailwind background classes.
- * - Maps semantic color variants to Tailwind text color classes.
- * - Maps semantic border variants to Tailwind border classes.
- * - Resolves optional spacing classes for vertically stacked layouts.
+ * - Provides shared color values for background, text, border, ring, and stroke helpers.
+ * - Uses empty strings for tokens that should not resolve to a color utility.
  */
-
-/**
- * Maps normalized background color variants to their Tailwind background classes.
- *
- * @constant {Readonly<Record<SetBackgroundColor, string>>}
- */
-const BACKGROUND_COLOR_CLASS_MAP: Readonly<Record<SetBackgroundColor, string>> = {
-  dark: 'bg-neutral-800',
-  bright: 'bg-neutral-50',
-  medium: 'bg-neutral-700',
+const COLOR_MAP: Readonly<Record<SetColor, string>> = {
+  bright: 'neutral-100',
+  dark: 'neutral-800',
+  mediumDark: 'neutral-700',
+  mediumBright: 'gray-800',
+  highlight: 'fuchsia-400',
+  highlightAlt: 'cyan-500',
+  purpleDef: 'purple-500',
+  purplePale: 'purple-200',
+  purpleDark: 'purple-800',
+  pinkDef: 'pink-500',
+  stoneBright: 'stone-100',
+  stoneMediumBright: 'stone-200',
+  stoneDef: 'stone-300',
+  default: '',
+  none: '',
 };
 
 /**
- * Resolves the Tailwind background class for a semantic background variant.
+ * Resolves a Tailwind color utility class for a semantic color token.
  *
  * Operations:
- * - Maps dark-related variants to the shared dark background class.
- * - Maps bright-related variants to the shared bright background class.
- * - Maps `medium-contrast` to the shared medium background class.
- * - Falls back to the dark background class for unsupported or missing values.
+ * - Combines the provided utility prefix with the mapped color value.
+ * - Appends an opacity modifier when `opacity` is provided.
+ * - Returns an empty string when the color token does not map to a color value.
  *
- * @param {BackgroundColor} variant - Semantic background variant to resolve.
- * @returns {string} Tailwind CSS class for the resolved background color.
+ * @param {Tailwind} utility - Tailwind utility prefix such as `bg`, `text`, `border`, `ring`, or `stroke`.
+ * @param {SetColor} type - Semantic color token to resolve.
+ * @param {'10' | '20' | '50' | '75' | '90'} [opacity] - Optional opacity modifier appended to the color value.
+ * @returns {string} Tailwind CSS class for the resolved color utility.
  */
-export function getBackGroundColorClass(
-  variant: BackgroundColor
-): string {
+export const getColorOpacityClassMap = (
+  utility: Tailwind,
+  type: SetColor,
+  opacity?: '10' | '20' | '50' | '75' | '90'
+): string => {
+  const color = COLOR_MAP[type];
+  if (!color) return '';
+
+  return opacity ? `${utility}-${color}/${opacity}` : `${utility}-${color}`;
+};
+
+/**
+ * Resolves a semantic color token from a theme variant.
+ *
+ * Operations:
+ * - Reverses dark and bright variants when `rev` is enabled.
+ * - Maps all other variants to the configured highlight token.
+ *
+ * @param {ThemeVariant} variant - Theme variant to normalize.
+ * @param {boolean} rev - Whether dark and bright variants should be inverted.
+ * @returns {string} Resolved semantic color token.
+ */
+export const mapVariantTypeRev = (variant: ThemeVariant, rev: boolean): SetColor => {
+  if (rev) {
+    switch (variant) {
+      case 'dark':
+      case 'dark-pill':
+      case 'dark-pill-bg':
+        return 'bright';
+
+      case 'bright':
+      case 'bright-pill':
+      case 'bright-pill-bg':
+        return 'dark';
+
+      default:
+        return 'highlightAlt';
+    }
+  }
+
   switch (variant) {
     case 'dark':
     case 'dark-pill':
     case 'dark-pill-bg':
-      return BACKGROUND_COLOR_CLASS_MAP.dark;
+      return 'dark';
 
     case 'bright':
     case 'bright-pill':
     case 'bright-pill-bg':
-      return BACKGROUND_COLOR_CLASS_MAP.bright;
-
-    case 'medium-contrast':
-      return BACKGROUND_COLOR_CLASS_MAP.medium;
+      return 'bright';
 
     default:
-      return BACKGROUND_COLOR_CLASS_MAP.dark;
+      return 'highlight';
   }
-}
-
-/**
- * Maps normalized font color variants to their Tailwind text color classes.
- *
- * @constant {Readonly<Record<SetFontColor, string>>}
- */
-const FONT_COLOR_CLASS_MAP: Readonly<Record<SetFontColor, string>> = {
-  dark: 'text-neutral-900',
-  bright: 'text-neutral-50',
-  contrast: 'text-fuchsia-400',
-  contrastAlt: 'text-cyan-500',
-  default: 'text-neutral-500',
 };
-
-/**
- * Resolves the Tailwind text color class for a semantic color variant.
- *
- * Operations:
- * - Maps dark-related variants to a bright text color for contrast.
- * - Maps bright-related variants to a dark text color for contrast.
- * - Maps contrast variants to their dedicated accent colors.
- * - Falls back to the default text color for unsupported or missing values.
- *
- * @param {ColorVariant} variant - Semantic color variant to resolve.
- * @returns {string} Tailwind CSS class for the resolved font color.
- */
-export function getFontColorClass(
-  variant: ColorVariant
-): string {
-  switch (variant) {
-    case 'dark':
-    case 'dark-pill':
-    case 'dark-pill-bg':
-      return FONT_COLOR_CLASS_MAP.bright;
-
-    case 'bright':
-    case 'bright-pill':
-    case 'bright-pill-bg':
-      return FONT_COLOR_CLASS_MAP.dark;
-
-    case 'contrast':
-      return FONT_COLOR_CLASS_MAP.contrast;
-
-    case 'contrast_alt':
-      return FONT_COLOR_CLASS_MAP.contrastAlt;
-
-    default:
-      return FONT_COLOR_CLASS_MAP.default;
-  }
-}
-
-/**
- * Maps semantic border variants to their Tailwind border classes.
- *
- * @constant {Readonly<Record<SetBorder, string>>}
- */
-const BORDER_COLOR_CLASS_MAP: Readonly<Record<SetBorder, string>> = {
-  primary: 'border-fuchsia-400',
-  secondary: 'border-cyan-500',
-  default: 'border-fuchsia-500',
-  none: 'border-none',
-};
-
-/**
- * Resolves the Tailwind border class for a semantic border variant.
- *
- * Operations:
- * - Maps primary and secondary variants to their dedicated accent border classes.
- * - Maps `none` to a border reset class.
- * - Falls back to the default border class for unsupported values.
- *
- * @param {SetBorder} type - Semantic border variant to resolve.
- * @returns {string} Tailwind CSS class for the resolved border color.
- */
-export function getBorderColorClass(
-  type: SetBorder
-): string {
-  switch (type) {
-    case 'primary':
-      return BORDER_COLOR_CLASS_MAP.primary;
-
-    case 'secondary':
-      return BORDER_COLOR_CLASS_MAP.secondary;
-
-    case 'none':
-      return BORDER_COLOR_CLASS_MAP.none;
-
-    default:
-      return BORDER_COLOR_CLASS_MAP.default;
-  }
-}
 
 /**
  * Base Tailwind classes for vertically stacked layout sections.
@@ -172,19 +114,17 @@ const SPACER_MARGIN_CLASS = 'mt-8';
  * Resolves the Tailwind spacing classes for vertically stacked content.
  *
  * Operations:
- * - Returns the shared base stack classes by default.
+ * - Returns the shared vertical stack classes by default.
  * - Appends an additional top margin when `showSpacer` is enabled.
  *
  * @param {boolean | undefined} showSpacer - Whether to include additional top spacing.
  * @returns {string} Tailwind CSS class string for the resolved spacing setup.
  */
-export function getSpacerClass(
-  showSpacer: boolean | undefined
-): string {
+export function getSpacerClass(showSpacer: boolean | undefined): string {
   return showSpacer
     ? `${SPACER_BASE_CLASS} ${SPACER_MARGIN_CLASS}`
     : SPACER_BASE_CLASS;
-}}
+}
 
 
 /**
