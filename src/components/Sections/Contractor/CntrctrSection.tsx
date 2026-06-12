@@ -14,7 +14,7 @@ const CntrctrSection : FC<CntrctrSectorProps> = memo(({Item,
                                                     SectionSubId}) => {
   const {Description, Detail, ShowSpacer} = Item;
 
-  const ItemId = `${ParentSectionId}-${SectionSubId}-callToAction`;
+  const SectionId = `${ParentSectionId}-${SectionSubId}`;
 
   const spacerClass = ShowSpacer ? 'flex flex-col space-y-32 mt-8' : 'flex flex-col space-y-32';
 
@@ -39,7 +39,7 @@ const CntrctrSection : FC<CntrctrSectorProps> = memo(({Item,
       </ul>
 
       <div className={spacerClass}>
-        <CallToAction SectionId={ItemId} />
+        <CallToAction SectionId={SectionId} />
       </div>
 
     </section>
