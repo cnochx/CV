@@ -1,5 +1,6 @@
 import {FC, memo, useMemo} from 'react';
 
+import AdditionalElements from '../../../data/AdditionalText';
 import {ContractorContData, ContractorData} from '../../../data/ContractorData';
 import {SectionId, SectionSubId} from '../../../data/sectionIdData';
 import SectionLayout from '../../Layout/SectionLayout';
@@ -7,14 +8,19 @@ import CntrctrArticle from './CntrctrArticle';
 
 const Contractor: FC = memo(() => {
   const {Solve, Focus, Different} = ContractorData;
-  const {ImageSrc, Title, Suffix, Prefix} = ContractorContData;
+  const {ImageSrc, Title} = ContractorContData;
 
   const resolveSrc = useMemo(() => {
     if (!ImageSrc) return undefined;
     return typeof ImageSrc === 'string' ? ImageSrc : ImageSrc.src;
   }, [ImageSrc]);
 
+  // Get Prefix / Suffix elements
+  const {ContractorMain: {Prefix, Suffix}} = AdditionalElements;
+
   const TitleId = `${SectionId.Contractor}-title`;
+
+
 
   return (
     <SectionLayout className="bg-neutral-100" sectionId={SectionId.Contractor}>
@@ -22,7 +28,7 @@ const Contractor: FC = memo(() => {
 
         <div className="relative overflow-hidden rounded-2xl bg-cover bg-center"
              style={ImageSrc ? {backgroundImage: `url(${resolveSrc}`} : undefined}>
-          <div className="absolute inset-0 bg-stone-600/40" />
+          <div className="absolute inset-0 bg-gray-800/60" />
           <header className="relative z-10 flex flex-col gap-y-3 px-6 py-10 text-white sm:px-8 sm:py-12">
             <div className="relative h-max">
               <h2 className="text-2xl font-bold sm:text-3xl" id={TitleId}>
@@ -58,7 +64,7 @@ const Contractor: FC = memo(() => {
 
         <div className="relative overflow-hidden rounded-2xl bg-cover bg-center"
              style={ImageSrc ? {backgroundImage: `url(${resolveSrc}`} : undefined}>
-          <div className="absolute inset-0 bg-stone-600/40" />
+          <div className="absolute inset-0 bg-gray-800/50" />
           <footer className="relative z-10 px-6 py-8 text-white sm:px-8 sm:py-10">
             <div className="space-y-4 text-sm leading-7 text-white/90 sm:text-base">
               {Suffix}
