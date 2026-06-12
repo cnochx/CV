@@ -35,15 +35,17 @@ const HeaderData: HeaderDataDef = {
     ShowSpacer: false,
   }],
   AboutMain: [{
-    Variant: 'dark-pill-bg',
-    Title: '',
-    SubTitle: '',
+    Title: 'About Martin Grellmann, Senior Full-Stack Engineer',
     Description: (
       <>
+        <p>Who I am – German citizen with unrestricted work and residence permit in Brazil. Architect, Modernizer,
+          Consultant - Senior software engineer with 20+ years of experience in full-stack web development and recent specialization
+          in modern SAP full-stack development, including SAP BTP, S/4HANA modernization, ABAP, CDS, OData, Fiori/UI5 and API integration.</p>
+
+        <p>On the web side, I’ve spent many years building and running Drupal sites, handling migrations, performance tuning
+          and technical SEO/GEO to keep organic traffic and conversions stable during change.</p>
       </>
     ),
-    ImageSrc: '',
-    ShowSpacer: false,
   }],
   ContractorMain: [{
     Variant: null,

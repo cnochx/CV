@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import {FC, memo} from 'react';
 
-import AbtHeader, {AboutData} from '../../../data/About/about';
+import {AboutData} from '../../../data/About/about';
 import {SectionId} from '../../../data/sectionIdData';
 import SectionLayout from '../../Layout/SectionLayout';
+import HeaderData from '../../../data/HeaderData';
 
 
 const About: FC = memo(() => {
@@ -14,7 +15,10 @@ const About: FC = memo(() => {
     imagePublicAlt,
   } = AboutData;
 
-  const {title, description,} = AbtHeader;
+  const {
+    AboutMain: [{Title, Description}],
+  } = HeaderData;
+
 
   const TitleId = `${SectionId.About}-title`;
 
@@ -47,14 +51,14 @@ const About: FC = memo(() => {
 
             <header className="flex flex-col gap-y-2">
               <h2 className="text-2xl font-bold text-white"
-                  id={TitleId}>{title}</h2>
+                  id={TitleId}>{Title}</h2>
               <span className="absolute inset-x-0 -bottom-1 border-b-2 border-fuchsia-400" />
             </header>
 
             <section className="col-span-1 flex flex-col gap-y-6 md:col-span-3">
 
               <div className="prose prose-sm text-gray-300 sm:prose-base">
-                {description}
+                {Description}
               </div>
 
               <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">

@@ -9,7 +9,7 @@ export interface AbtHeader {
   description: JSX.Element;
 }
 
-export interface About {
+export interface AboutDataDef {
   header: string;
   profileImageSrc?: string;
   description: string;
