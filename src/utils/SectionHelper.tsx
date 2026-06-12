@@ -5,6 +5,7 @@ import {
   SetBorder,
   SetFontColor,
 } from '../data/LayoutDef';
+import {StaticImageData} from 'next/image';
 
 /**
  * Shared helper functions for resolving semantic layout variants
@@ -183,4 +184,21 @@ export function getSpacerClass(
   return showSpacer
     ? `${SPACER_BASE_CLASS} ${SPACER_MARGIN_CLASS}`
     : SPACER_BASE_CLASS;
-}
+}}
+
+
+/**
+ * Resolves a usable image source string from either a plain URL or a Next.js static image object.
+ *
+ * Returns `undefined` when no image source is provided.
+ *
+ * @param imageSrc - Optional image source value as a string URL or `StaticImageData`.
+ * @returns A normalized image source string, or `undefined` if no image source exists.
+ */
+export const resolveImageSrc = (
+  imageSrc?: string | StaticImageData
+): string | undefined => {
+  if (!imageSrc) return undefined;
+
+  return typeof imageSrc === 'string' ? imageSrc : imageSrc.src;
+};

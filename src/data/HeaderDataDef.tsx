@@ -8,7 +8,7 @@ import {StaticImageData} from 'next/image';
  * - Stores one or more `HeaderItem` entries for each page section.
  * - Provides an optional configuration for the project section.
  */
-interface HeaderData {
+interface HeaderDataDef {
   /** Header configuration for the hero section. */
   HeroMain: HeaderItem[];
 
@@ -48,7 +48,7 @@ interface HeaderData {
   /** Header configuration for the CV introduction section. */
   CvIs: HeaderItem[];
 
-  /** Header configuration for the Finca Ferien section in the CV. */
+  /** Header configuration for the Fincaferien section in the CV. */
   CvFinca: HeaderItem[];
 
   /** Header configuration for the BA section in the CV. */
@@ -81,7 +81,7 @@ interface HeaderData {
   /** Optional header configuration for the project section. */
   ProjectMain?: HeaderItem[];
 }
-export default HeaderData;
+export default HeaderDataDef;
 
 /**
  * Defines one reusable header content item for a section.
@@ -93,7 +93,7 @@ export default HeaderData;
  */
 export interface HeaderItem {
   /** Theme variant used to resolve section styling. */
-  Variant: ThemeVariant;
+  Variant?: ThemeVariant;
 
   /** Main title displayed in the section header. */
   Title: string;
@@ -111,7 +111,7 @@ export interface HeaderItem {
   ImageSrc?: string | StaticImageData;
 
   /** Controls whether additional spacing should be rendered below the section. */
-  ShowSpacer: boolean;
+  ShowSpacer?: boolean;
 }
 
 /**

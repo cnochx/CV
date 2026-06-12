@@ -3,90 +3,77 @@ import {FC, memo, MouseEvent, PropsWithChildren, useMemo} from 'react';
 
 import AdditionalElements from '../../../data/AdditionalText';
 import {SkillItem} from '../../../data/SkillCollectionDef';
-import {getBackGroundColorClass, getBorderColorClass, getFontColorClass} from '../../../utils/SectionHelper';
-import useAccordion from '../../../utils/useAccordion';
+import {SKILLS_SURFACE_TOKENS} from '../../../Utils/Skills/surfaceTokens';
+import useAccordion from '../../../Utils/useAccordion';
 import HeaderLayout from '../../Layout/HeaderLayout';
 
+/**
+ * Props for the `SkillsSection` component.
+ *
+ * Defines the data and DOM id context required to render one nested
+ * skill card inside a parent `SkillsArticle` accordion.
+ */
 type SkillsProps = PropsWithChildren<{
+  /** Skill entry rendered by this nested accordion card. */
   SkillItem: SkillItem;
+
+  /** Parent skills collection id used to build stable DOM ids. */
   Id: string;
+
+  /** Parent accordion section id used to keep nested ids unique. */
   ParentSectionId: string;
-  Key: number;
 }>;
 
 /**
- * Renders one nested skills accordion item inside a parent skills article.
+ * Renders one nested accordion card for a single skill entry.
  *
  * Dependencies:
- * - Uses `useAccordion` for reusable accordion open and hover logic.
- * - Uses `AdditionalElements` for shared text fragments.
- * - Uses Hero icons (`ChevronDownIcon`, `ChevronUpIcon`) to indicate open and closed state.
- * - Uses React `useMemo` to memoize the percentage calculation for the progress bar.
+ * - Uses `useAccordion` to manage nested open, hover, click, and keyboard interaction state.
+ * - Uses `AdditionalElements` to resolve shared experience and role text fragments.
+ * - Uses `SKILLS_SURFACE_TOKENS` to apply the shared surface, overlay, rim, and active ring styles.
+ * - Uses `HeaderLayout` to render the nested card heading with shared layout behavior.
+ * - Uses Hero icons to indicate expanded and collapsed state.
  *
  * Operations:
- * - Builds unique DOM ids for the nested accordion wrapper and title.
- * - Calculates the experience percentage based on `ExpLevel` and `Max`.
- * - Applies hover-based visual styling to the full nested accordion.
- * - Toggles the nested accordion when the user clicks inside the child container.
- * - Prevents click events from bubbling to the parent accordion.
- * - Renders additional detail content only when the nested accordion is open.
+ * - Builds stable DOM ids for the nested section, title, and expandable content region.
+ * - Computes the progress bar percentage from `ExpLevel`.
+ * - Applies active and inactive visual styling for border, icon, progress bar, and ring state.
+ * - Prevents click and keyboard events from bubbling to the parent accordion.
+ * - Renders experience and origin details only while the nested accordion is expanded.
  *
  * Accessibility:
- * - The outer section behaves like a button via `role="button"`.
- * - `aria-expanded` reflects whether the nested accordion is open.
- * - `aria-controls` connects the clickable wrapper to the content element.
+ * - Exposes accordion state through `aria-expanded` and `aria-controls`.
+ * - Connects the expandable region to its heading through `aria-labelledby`.
  *
- * @param {SkillsProps} props - Component props containing skill data and identifiers.
- * @param {SkillItem} props.SkillItem - List of skill props.
- * @param {string} props.Id - Parent skill collection id.
- * @param {string} props.ParentSectionId - Parent DOM section id.
- * @param {number} props.Key - React key value passed to the component.
- * @param {React.ReactNode} [props.children] - Optional nested React content passed through the props type.
- * @returns {JSX.Element} Rendered nested accordion item with progress bar and optional detail content.
+ * @param {SkillsProps} props - Component props for the nested skill card.
+ * @param {SkillItem} props.SkillItem - Skill entry containing title, ids, experience level, and detail content.
+ * @param {string} props.Id - Parent skills collection id used in generated DOM ids.
+ * @param {string} props.ParentSectionId - Parent section id used to scope nested DOM ids.
+ * @param {React.ReactNode} [props.children] - Optional nested React content passed through `PropsWithChildren`.
+ * @returns {JSX.Element} Nested interactive accordion card for a single skill item.
  */
 const SkillsSection: FC<SkillsProps> = memo(
   ({
      SkillItem,
      Id,
      ParentSectionId,
-     Key,
    }) => {
-    // set component vars
     const {SKey, Name, IdSub, ExpLevel, Years, GroupOfOrigin} = SkillItem;
     const Max = 10;
 
-    // Set Background colors
-    const backgroundColorDark:string = getBackGroundColorClass('medium-contrast');
-    const backgroundColorBright:string = getBackGroundColorClass('bright');
-
-    // Set Font colors
-    const fontColorDark:string = getFontColorClass('bright');
-    const fontColorBright:string = getFontColorClass('dark');
-    const fontColorContrast:string = getFontColorClass('contrast');
-    const fontColorContrastAlt:string = getFontColorClass('contrast_alt');
-
-    // Set Border colors
-    const borderColorPrimary = getBorderColorClass('primary');
-    const borderColorSecondary = getBorderColorClass('secondary');
-
-    // set Id's
-    const IdPrefix  = `${ParentSectionId}-${Id}-${SKey}-${IdSub}`;
-
+    const IdPrefix = `${ParentSectionId}-${Id}-${SKey}-${IdSub}`;
     const SectionId = `${IdPrefix}-section`;
-    const TitleId   = `${IdPrefix}-title`;
+    const TitleId = `${IdPrefix}-title`;
     const ContentId = `${IdPrefix}-content`;
 
-    // set additional Elements
     const {
       SkillsItem: {ExperiencePrefix, ExperienceSuffix, RoleText},
     } = AdditionalElements;
 
-    // set percentage
     const percentage = useMemo(() => {
       return Math.round((ExpLevel / Max) * 100);
     }, [ExpLevel, Max]);
 
-    // Set Accordion Logic
     const {
       isOpen,
       isHovered,
@@ -96,31 +83,30 @@ const SkillsSection: FC<SkillsProps> = memo(
       handleKeyDown,
     } = useAccordion();
 
-    const isActiveVisual = isHovered;
+    const isActiveVisual = isHovered || isOpen;
 
-    // Set CSS Classes
     const sectionClassName = isActiveVisual
-      ? `flex h-auto w-96 flex-col rounded-2xl border ${borderColorPrimary} ${backgroundColorBright} p-4 ${fontColorDark} transition-colors duration-200`
-      : `flex h-auto w-96 flex-col rounded-2xl border ${borderColorSecondary} ${backgroundColorDark} p-4 ${fontColorBright} transition-colors duration-200`;
+      ? `${SKILLS_SURFACE_TOKENS.containerBase} ${SKILLS_SURFACE_TOKENS.sectionSpacing} ${SKILLS_SURFACE_TOKENS.borderActive} ${SKILLS_SURFACE_TOKENS.activeRingInner}`
+      : `${SKILLS_SURFACE_TOKENS.containerBase} ${SKILLS_SURFACE_TOKENS.sectionSpacing} ${SKILLS_SURFACE_TOKENS.borderInactive}`;
 
-    const titleClassName = isActiveVisual
-      ? `ml-2 text-sm font-medium ${fontColorDark}`
-      : `ml-2 text-sm font-medium ${fontColorBright}`;
+    const titleClassName = 'ml-2 text-sm font-medium text-neutral-100';
 
     const iconClassName = isActiveVisual
-      ? `h-5 w-5 ${fontColorContrast} transition-colors duration-200`
-      : `h-5 w-5 ${fontColorContrastAlt} transition-colors duration-200`;
+      ? `h-6 w-6 transition-colors duration-200 ${SKILLS_SURFACE_TOKENS.iconActive}`
+      : `h-6 w-6 transition-colors duration-200 ${SKILLS_SURFACE_TOKENS.iconInactive}`;
 
-    const detailTextClassName = isActiveVisual
-      ? `ml-2 mt-2 text-sm {fontColorContrast}`
-      : `ml-2 mt-2 text-sm ${fontColorBright}`;
+    const detailTextClassName = 'ml-2 mt-2 text-sm text-neutral-100';
+
+    const progressBarClassName = isActiveVisual
+      ? `h-full rounded-full transition-colors duration-200 ${SKILLS_SURFACE_TOKENS.progressActive}`
+      : `h-full rounded-full transition-colors duration-200 ${SKILLS_SURFACE_TOKENS.progressInactive}`;
 
     /**
-     * Toggles the nested accordion and prevents the click from bubbling
-     * up to the parent accordion container.
+     * Toggles the nested accordion and prevents the interaction
+     * from bubbling to the parent accordion container.
      *
-     * @param {MouseEvent<HTMLElement>} event - Mouse event triggered on the nested accordion.
-     * @returns {void} Does not return a value; stops propagation and toggles the nested accordion.
+     * @param {MouseEvent<HTMLElement>} event - Click event triggered on the nested section wrapper.
+     * @returns {void} Does not return a value.
      */
     const handleSectionClick = (event: MouseEvent<HTMLElement>): void => {
       event.stopPropagation();
@@ -131,9 +117,8 @@ const SkillsSection: FC<SkillsProps> = memo(
       <section
         aria-controls={ContentId}
         aria-expanded={isOpen}
-        className={`${sectionClassName} cursor-pointer`}
+        className={sectionClassName}
         id={SectionId}
-        key={Key}
         onClick={handleSectionClick}
         onKeyDown={(event) => {
           event.stopPropagation();
@@ -144,61 +129,66 @@ const SkillsSection: FC<SkillsProps> = memo(
         role="button"
         tabIndex={0}
       >
-        <div className="mb-4 flex items-center justify-between">
-          <HeaderLayout
-            ClassName={null}
-            SetBorder="none"
-            UseFontColor={false}
-            Variant={null}
-          >
-          <h4 className={titleClassName} id={TitleId}>
-            <strong>{Name}</strong>
-          </h4>
-          </HeaderLayout>
+        <div className={SKILLS_SURFACE_TOKENS.overlayInner} />
+        <div className={SKILLS_SURFACE_TOKENS.rimInner} />
 
-          {isOpen ? (
-            <ChevronUpIcon className={iconClassName} />
-          ) : (
-            <ChevronDownIcon className={iconClassName} />
-          )}
-        </div>
+        <div className={SKILLS_SURFACE_TOKENS.contentLayer}>
+          <div className="mb-4 flex items-center justify-between">
+            <HeaderLayout
+              ClassName={null}
+              SetBorder={null}
+              UseFontColor={false}
+              Variant={null}
+            >
+              <h4 className={titleClassName} id={TitleId}>
+                <strong>{Name}</strong>
+              </h4>
+            </HeaderLayout>
 
-        <div className="mb-2 h-5 w-full overflow-hidden rounded-full bg-neutral-300">
-          <div
-            className="h-full rounded-full bg-fuchsia-400"
-            style={{width: `${percentage}%`}}
-          />
-        </div>
-
-        {isOpen && (
-          <div
-            aria-labelledby={TitleId}
-            className={detailTextClassName}
-            id={ContentId}
-          >
-            {Years ? (
-              <p>
-                {ExperiencePrefix} {Years} {ExperienceSuffix}
-              </p>
-            ) : null}
-
-            {GroupOfOrigin && GroupOfOrigin.length > 0 && (
-              <>
-                <p>
-                  <em className="italic">{RoleText}</em>
-                </p>
-
-                <ul className="list-disc pl-4">
-                  {GroupOfOrigin.map((Origin) => (
-                    <li className="mr-2" key={Origin.OKey}>
-                      {Origin.Origin}
-                    </li>
-                  ))}
-                </ul>
-              </>
+            {isOpen ? (
+              <ChevronUpIcon className={iconClassName} />
+            ) : (
+              <ChevronDownIcon className={iconClassName} />
             )}
           </div>
-        )}
+
+          <div className="mb-2 h-5 w-full overflow-hidden rounded-full bg-neutral-100/40">
+            <div
+              className={progressBarClassName}
+              style={{width: `${percentage}%`}}
+            />
+          </div>
+
+          {isOpen && (
+            <div
+              aria-labelledby={TitleId}
+              className={detailTextClassName}
+              id={ContentId}
+            >
+              {Years ? (
+                <p>
+                  {ExperiencePrefix} {Years} {ExperienceSuffix}
+                </p>
+              ) : null}
+
+              {GroupOfOrigin && GroupOfOrigin.length > 0 && (
+                <>
+                  <p>
+                    <em className="italic">{RoleText}</em>
+                  </p>
+
+                  <ul className="list-disc pl-4">
+                    {GroupOfOrigin.map((Origin) => (
+                      <li className="mr-2" key={Origin.OKey}>
+                        {Origin.Origin}
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
+            </div>
+          )}
+        </div>
       </section>
     );
   }
