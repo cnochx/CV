@@ -1,4 +1,6 @@
-import {DevicePhoneMobileIcon, EnvelopeIcon, MapPinIcon} from '@heroicons/react/24/outline';
+import {DevicePhoneMobileIcon,
+        EnvelopeIcon,
+        MapPinIcon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import {FC, memo} from 'react';
 
@@ -30,7 +32,8 @@ const Contact: FC = memo(() => {
       <div className="flex flex-col gap-y-6">
         <div className="flex flex-col gap-6 md:flex-row md:items-center">
           <EnvelopeIcon className="hidden h-16 w-16 text-white md:block" />
-          <h2 className="text-2xl font-bold text-white">{headerText}</h2>
+          <h2 className="text-2xl font-bold text-white"
+              id={SectionId.Contact}>{headerText}</h2>
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <p className="prose leading-6 text-neutral-300">{description}</p>
@@ -82,5 +85,5 @@ const Contact: FC = memo(() => {
   );
 });
 
-Contact.displayName = 'About';
+Contact.displayName = 'Contact';
 export default Contact;
