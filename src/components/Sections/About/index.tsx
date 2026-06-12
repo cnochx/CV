@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import {FC, memo} from 'react';
 
-import AbtHeader, {AboutData} from '../../../data/about';
+import AbtHeader, {AboutData} from '../../../data/About/about';
 import {SectionId} from '../../../data/sectionIdData';
 import SectionLayout from '../../Layout/SectionLayout';
 
