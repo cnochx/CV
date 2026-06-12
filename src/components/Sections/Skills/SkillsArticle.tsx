@@ -2,7 +2,7 @@ import {ChevronDownIcon, ChevronUpIcon} from '@heroicons/react/24/solid';
 import {StaticImageData} from 'next/image';
 import {FC, memo, PropsWithChildren} from 'react';
 
-import {SkillItem, SkillsCollection} from '../../../data/SkillCollectionDef';
+import {SkillItem, SkillsCollection} from '../../../data/Skills/SkillCollectionDef';
 import {resolveImageSrc} from '../../../Utils/SectionHelper';
 import {SKILLS_SURFACE_TOKENS} from '../../../Utils/Skills/surfaceTokens';
 import useAccordion from '../../../Utils/useAccordion';

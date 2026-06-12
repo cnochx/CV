@@ -2,7 +2,7 @@ import {ChevronDownIcon, ChevronUpIcon} from '@heroicons/react/24/solid';
 import {FC, memo, MouseEvent, PropsWithChildren, useMemo} from 'react';
 
 import AdditionalElements from '../../../data/AdditionalText';
-import {SkillItem} from '../../../data/SkillCollectionDef';
+import {SkillItem} from '../../../data/Skills/SkillCollectionDef';
 import {SKILLS_SURFACE_TOKENS} from '../../../Utils/Skills/surfaceTokens';
 import useAccordion from '../../../Utils/useAccordion';
 import HeaderLayout from '../../Layout/HeaderLayout';
