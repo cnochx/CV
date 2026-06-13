@@ -70,7 +70,7 @@ export function getHeaderClass(
  */
 export function getHeaderBorder(
   setBorder: keyof typeof ICON_BUTTON_COLOR_MAP | null | undefined,
-): { borderRender: boolean; borderClass: string } {
+) {
 
   const resolvedColor: keyof typeof ICON_BUTTON_COLOR_MAP =
     setBorder ?? 'bright';
@@ -83,20 +83,9 @@ export function getHeaderBorder(
     setBorder === 'highlight' ||
     setBorder === 'highlightAlt';
 
-    let borderClass = "";
-    if (borderRender) {
-      borderClass = [
-        'absolute',
-        'inset-x-0',
-        '-bottom-1',
-        'border-b-2',
-        c.border,
-      ].join(' ')
-    }
-
   return {
-    borderRender,
-    borderClass: borderClass
+    borderRender: borderRender,
+    borderColorClass: c.border
   };
 }
 

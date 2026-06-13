@@ -1,30 +1,24 @@
+import classNames from 'classnames';
 import {FC, memo} from 'react';
 
 import {HeaderLayoutProps} from '../../data/Layout/LayoutTypeDef';
 import getHeaderBorder, {getHeaderClass} from '../../Utils/Layout/HeaderLayoutSub';
 
 /**
- * Renders a reusable header wrapper with optional semantic font color,
- * hover styling, and decorative bottom border.
+ * Renders a shared header wrapper with optional semantic styling and bottom border decoration.
  *
  * Dependencies:
- * - Uses `getHeaderClass` to resolve semantic font and hover classes.
- * - Uses `getHeaderBorder` to resolve border visibility and border styling.
- * - Uses `memo` to avoid unnecessary re-renders when props remain unchanged.
+ * - Uses `getHeaderClass` to resolve the wrapper classes from the variant, hover setting, and font color flag.
+ * - Uses `getHeaderBorder` to resolve whether a decorative bottom border should be rendered.
  *
  * Operations:
- * - Resolves the header `className` from the theme variant, hover setting, and additional class names.
- * - Resolves an optional bottom border based on the configured border variant.
- * - Renders a decorative bottom border only when the border variant is supported.
+ * - Renders nested header content inside a relative inner wrapper.
+ * - Adds a decorative bottom border only when the configured border variant is supported.
+ * - Renders optional prefix content after the main header content.
  *
- * @param {HeaderLayoutProps} props - Component props used to configure the header wrapper.
- * @param {React.ReactNode} props.children - Nested header content rendered inside the wrapper.
- * @param {string | null} props.ClassName - Additional class names applied to the header element.
- * @param {ThemeVariant} props.Variant - Theme variant used to resolve semantic font styling.
- * @param {SetColor} props.SetBorder - Border variant used to control bottom border rendering.
- * @param {SetHover} [props.SetHover] - Optional hover class applied to the header element.
- * @param {boolean} [props.UseFontColor=true] - Controls whether the semantic font color class is applied.
- * @returns {JSX.Element} Reusable header wrapper with optional semantic styling and border decoration.
+ * @param {HeaderLayoutProps} props - Component props.
+ * @param {React.ReactNode} props.children - Nested header content.
+ * @returns {JSX.Element} Rendered header wrapper.
  */
 const HeaderLayout: FC<HeaderLayoutProps> = memo(
   ({
@@ -34,20 +28,35 @@ const HeaderLayout: FC<HeaderLayoutProps> = memo(
      SetHover,
      Variant,
      UseFontColor = true,
+     PrefixClassName,
+     Prefix
    }) => {
-
     const headerClass = getHeaderClass(Variant, UseFontColor, ClassName, SetHover);
-    const {borderRender, borderClass} = getHeaderBorder(SetBorder);
+    const {borderRender, borderColorClass} = getHeaderBorder(SetBorder);
 
     return (
       <header className={headerClass || undefined}>
         <div className="relative h-max">
-        {children}
-        {borderRender ? <span className={borderClass} /> : null}
+          {children}
+
+          {borderRender
+            ? <span
+              className={classNames(
+                'absolute inset-x-0 -bottom-1 border-b-2',
+                borderColorClass,
+              )}
+            />
+            : null}
+        </div>
+
+        {Prefix ? (
+          <div className={PrefixClassName}>
+            {Prefix}
           </div>
+        ) : null}
       </header>
     );
-  }
+  },
 );
 
 HeaderLayout.displayName = 'HeaderLayout';

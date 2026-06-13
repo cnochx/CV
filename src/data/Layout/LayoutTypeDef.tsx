@@ -5,59 +5,76 @@ import {SetHover} from '../SectionHelperDef';
 /**
  * Props for the SectionLayout component.
  *
- * Defines the semantic section wrapper, spacing behavior, and optional custom classes.
+ * Defines the semantic section wrapper and its optional layout modifiers.
  */
 export type SectionLayoutProps = PropsWithChildren<{
-  /** Unique section identifier used for the `id` and `aria-labelledby` attributes. */
+  /** Section identifier applied to the `id` attribute. */
   sectionId: string;
-  /** Optional section title identifier or heading id associated with this section. */
+
+  /** Heading identifier referenced by `aria-labelledby` when available. */
   sectionTitle?: string;
-  /** Disables default padding and max-width constraints when set to true. */
+
+  /** Disables the default inner spacing and width constraints. */
   noPadding?: boolean;
-  /** Optional additional class names applied to the outer section element. */
+
+  /** Optional additional class names applied to the section element. */
   className?: string;
 }>;
 
 /**
- * Props for the `HeaderLayout` component.
+ * Props for the HeaderLayout component.
  *
- * Defines the wrapper styling, visual variant, optional hover behavior,
- * and border rendering for shared header content.
+ * Defines the shared header wrapper styling, variant mapping, and optional prefix content.
  */
 export type HeaderLayoutProps = PropsWithChildren<{
   /** Optional additional class names applied to the header wrapper. */
   ClassName: string | null;
 
-  /** Theme variant used to resolve the semantic font color. */
+  /** Semantic variant used to resolve the header styling. */
   Variant: HeaderClassVariantSub;
 
-  /** Border variant used to resolve the optional bottom border style. */
+  /** Border variant used to resolve the optional divider styling. */
   SetBorder: HeaderClassVariantSub;
 
-  /** Optional hover class applied to the header wrapper. */
+  /** Optional hover behavior applied to the header wrapper. */
   SetHover?: SetHover;
 
-  /** Controls whether the semantic font color should be applied automatically. */
+  /** Enables automatic semantic font color resolution when set. */
   UseFontColor?: boolean;
+
+  /** Optional class names applied to the prefix wrapper. */
+  PrefixClassName?: string | undefined;
+
+  /** Optional element rendered before the header content. */
+  Prefix?: JSX.Element | undefined;
 }>;
 
 /**
  * Props for the IconButtonLayout component.
  *
- * Defines the visual configuration and link target for a reusable icon button wrapper.
+ * Defines the link target, accessible label, and visual styling for the icon button wrapper.
  */
 export type IconButtonLayoutProps = PropsWithChildren<{
-  /** Link target rendered by the wrapper anchor element. */
+  /** Link target rendered by the anchor element. */
   href: string;
 
-  /** Accessible label used for the icon-only link. */
+  /** Accessible label for the icon-only action. */
   label: string;
 
-  /** Semantic color variant used to resolve button styling. */
+  /** Semantic color variant used to resolve the button styling. */
   color?: 'bright' | 'dark' | 'highlight' | 'highlightAlt';
 
   /** Optional additional class names applied to the anchor element. */
   className?: string;
 }>;
 
-export type HeaderClassVariantSub = 'bright' | 'dark' | 'highlight' | 'highlightAlt' | null | undefined;
+/**
+ * Allowed semantic variants used by shared header and button layout helpers.
+ */
+export type HeaderClassVariantSub =
+  | 'bright'
+  | 'dark'
+  | 'highlight'
+  | 'highlightAlt'
+  | null
+  | undefined;
