@@ -60,16 +60,17 @@ const Skills: FC = memo(() => {
   return (
     <SectionLayout
       className="md:py-24 lg:px-8 bg-neutral-800 px-4 py-16"
-      sectionId={SectionId.Skills}
-    >
+      sectionId={SectionId.Skills}>
       <div className="mx-auto max-w-screen-lg">
+
         <HeaderLayout
           ClassName="flex flex-col gap-y-2"
           SetBorder="highlight"
-          Variant="bright"
-        >
+          Variant="bright">
+
           <h2 className="text-2xl font-bold" id={TitleId}>
             {Title}
+
           </h2>
         </HeaderLayout>
 
@@ -79,6 +80,7 @@ const Skills: FC = memo(() => {
 
         <div className="mt-10 rounded-3xl bg-neutral-800 p-6">
           <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2">
+
             {SkillsCollectionData.map(
               (skillsCollection: SkillsCollection, index: number) => (
                 <SkillsArticle
@@ -95,6 +97,7 @@ const Skills: FC = memo(() => {
                 />
               )
             )}
+
           </div>
         </div>
 
@@ -105,9 +108,11 @@ const Skills: FC = memo(() => {
         <div className="flex flex-col space-y-32 mt-8">
           <CallToAction SectionId={SectionId.Skills} />
         </div>
+
       </div>
 
       <hr className="mt-8 border-0 border-b-2 border-fuchsia-400" />
+      
     </SectionLayout>
   );
 });
