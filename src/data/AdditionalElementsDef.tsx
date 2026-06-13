@@ -6,7 +6,7 @@
  * - Provides optional prefix/suffix content for standard sections.
  * - Provides reusable skill-related helper texts for the skills section.
  */
-interface AdditionalElements {
+interface AdditionalElementsDef {
   /** Additional text configuration for the contractor main section. */
   ContractorMain: AdditionalTextItemDefault;
 
@@ -15,8 +15,10 @@ interface AdditionalElements {
 
   /** Shared helper texts used for skill experience and role labels. */
   SkillsItem: AdditionalTextItemSkill;
+
+  CVMain: AdditionalTextItemDefault;
 }
-export default AdditionalElements;
+export default AdditionalElementsDef;
 
 /**
  * Defines optional prefix and suffix content for a section.

@@ -1,10 +1,11 @@
-import AdditionalElements from './AdditionalTextDef';
+import AdditionalElementsDef from './AdditionalElementsDef';
+
 
 /**
  * Shared additional text configuration for selected sections.
  *
  * Dependencies:
- * - Uses the `AdditionalElements` interface from `AdditionalTextDef`
+ * - Uses the `AdditionalElementsDef ` interface from `AdditionalTextDef`
  *   as the structural contract for all configured sections.
  *
  * Operations:
@@ -20,7 +21,7 @@ import AdditionalElements from './AdditionalTextDef';
  *
  * @constant {AdditionalElements}
  */
-const AdditionalElements: AdditionalElements = {
+const AdditionalElements: AdditionalElementsDef = {
   ContractorMain: {
     Prefix: (
       <>
@@ -55,6 +56,26 @@ const AdditionalElements: AdditionalElements = {
     ExperiencePrefix: 'Experience',
     ExperienceSuffix: 'years',
     RoleText: 'Applied mainly in the role of:',
+  },
+  CVMain: {
+    Prefix: (
+      <>
+        <p>I’m an SAP engineer and architect who enjoys untangling heavily customized landscapes and turning them into
+          clean‑core, upgradeable systems.</p>
+        <p>I work where ABAP, architecture and integration meet: clarifying the real problems, designing a realistic
+          target picture, and then modernizing code, interfaces and UIs step by step so S/4HANA becomes something your
+          teams can actually live with, not just survive.</p>
+      </>
+    ),
+    Suffix: (
+      <>
+        <p>I’m direct, transparent, and used to speaking with both C‑level and developers. My goal is not to sell the
+          biggest project, but helping to make your SAP landscape simpler, safer and easier to evolve.</p>
+        <p>In my experience, a quick-and-dirty implementation may resolve the issue quickly, but it ultimately requires
+          more effort overall. Therefore, I generally recommend a high-quality implementation — it may require more effort
+          initially, but it ensures that the technical details are implemented properly.</p>
+      </>
+    ),
   },
 };
 

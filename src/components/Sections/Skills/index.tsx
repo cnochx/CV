@@ -1,6 +1,6 @@
 import {FC, memo} from 'react';
 
-import AdditionalElements from '../../../data/AdditionalText';
+import AdditionalElements from '../../../data/AdditionalElements';
 import HeaderData from '../../../data/HeaderData';
 import {SectionId} from '../../../data/sectionIdData';
 import SkillsCollectionData from '../../../data/Skills/SkillCollection';
