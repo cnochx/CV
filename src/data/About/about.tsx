@@ -1,7 +1,7 @@
 import {AcademicCapIcon, CalendarIcon, FlagIcon, SparklesIcon} from '@heroicons/react/20/solid';
 import {BuildingOffice2Icon, MapIcon} from '@heroicons/react/24/outline';
 
-import {About, AbtHeader} from './aboutDef';
+import {AboutDataDef} from './aboutDef';
 
 const mainImage = '/images/martin_grellmann.jpg';
 
@@ -10,7 +10,7 @@ const mainImage = '/images/martin_grellmann.jpg';
  */
 
 
-export const AboutData: AboutDef = {
+export const AboutData: AboutDataDef = {
   header: '',
   profileImageSrc: mainImage,
   description: ``,
