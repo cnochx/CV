@@ -1,11 +1,11 @@
 import {ArrowDownTrayIcon} from '@heroicons/react/24/outline';
 
 import heroImage from '../images/hero_background.webp';
-import {SectionId} from './data';
 import {Hero} from './HeroDataDef';
+import {SectionId} from './SectionIdData';
 
 /**
- * Hero section
+ * HeroPre section
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
@@ -65,13 +65,13 @@ export const heroData: Hero = {
   actions: [
     {
       href: '/assets/cv_martin_grellmann.pdf',
-      text: 'CV',
+      text: 'CV (employee)',
       primary: true,
       Icon: ArrowDownTrayIcon,
     },
     {
       href: '/assets/cv_martin_grellmann-ext.pdf',
-      text: 'CV in detail',
+      text: 'CV (contractor)',
       primary: true,
       Icon: ArrowDownTrayIcon,
     },

@@ -1,7 +1,7 @@
 import {ForwardRefExoticComponent, SVGProps} from 'react';
 
 /**
- * Hero section
+ * HeroPre section
  */
 export interface Hero {
   imageSrc: string;

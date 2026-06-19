@@ -1,60 +1,61 @@
 import {useEffect} from 'react';
 
-import {headerID} from '../components/Sections/Header';
-import {SectionId} from '../data/data';
+import {SectionId} from '../data/SectionIdData';
 
-export const useNavObserver = (selectors: string, handler: (section: SectionId | null) => void) => {
+/**
+ * Observes visible sections and reports the currently active section identifier.
+ *
+ * Operations:
+ * - Resolves section DOM elements from the provided section identifiers.
+ * - Detects the section intersecting the navigation offset area near the top of the viewport.
+ * - Recomputes the active section on intersection, scroll, and resize events.
+ *
+ * @param {SectionId[]} sections - Ordered section identifiers used to resolve observed DOM elements.
+ * @param {(section: SectionId | null) => void} handler - Callback invoked with the active section identifier.
+ * @returns {void} Does not return a value.
+ */
+export const useNavObserver = (
+  sections: SectionId[],
+  handler: (section: SectionId | null) => void,
+): void => {
   useEffect(() => {
-    // Get all sections
-    const headings = document.querySelectorAll(selectors);
-    const headingsArray = Array.from(headings);
-    const headerWrapper = document.getElementById(headerID);
+    const elements = sections
+      .map(section => document.getElementById(section))
+      .filter((element): element is HTMLElement => Boolean(element));
 
-    // Create the IntersectionObserver API
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          const currentY = entry.boundingClientRect.y;
-          const id = entry.target.getAttribute('id');
-          if (headerWrapper) {
-            // Create a decision object
-            const decision = {
-              id,
-              currentIndex: headingsArray.findIndex(heading => heading.getAttribute('id') === id),
-              isIntersecting: entry.isIntersecting,
-              currentRatio: entry.intersectionRatio,
-              aboveToc: currentY < headerWrapper.getBoundingClientRect().y,
-              belowToc: !(currentY < headerWrapper.getBoundingClientRect().y),
-            };
-            if (decision.isIntersecting) {
-              // Header at 30% from the top, update to current header
-              handler(decision.id as SectionId);
-            } else if (
-              !decision.isIntersecting &&
-              decision.currentRatio < 1 &&
-              decision.currentRatio > 0 &&
-              decision.belowToc
-            ) {
-              const currentVisible = headingsArray[decision.currentIndex - 1]?.getAttribute('id');
-              handler(currentVisible as SectionId);
-            }
-          }
-        });
-      },
-      {
-        root: null,
-        threshold: 0.1,
-        rootMargin: '0px 0px -70% 0px',
-      },
-    );
-    // Observe all the Sections
-    headings.forEach(section => {
-      observer.observe(section);
+    if (!elements.length) return;
+
+    const updateActiveSection = () => {
+      const current = elements
+        .map(element => ({
+          id: element.id as SectionId,
+          top: element.getBoundingClientRect().top,
+          bottom: element.getBoundingClientRect().bottom,
+        }))
+        .filter(({top, bottom}) => top <= 120 && bottom >= 120)
+        .sort((a, b) => Math.abs(a.top - 120) - Math.abs(b.top - 120))[0];
+
+      if (current) {
+        handler(current.id);
+      }
+    };
+
+    updateActiveSection();
+
+    const observer = new IntersectionObserver(updateActiveSection, {
+      root: null,
+      threshold: [0, 0.1, 0.25, 0.5, 0.75, 1],
+      rootMargin: '-120px 0px -60% 0px',
     });
-    // Cleanup
+
+    elements.forEach(element => observer.observe(element));
+    window.addEventListener('scroll', updateActiveSection, {passive: true});
+    window.addEventListener('resize', updateActiveSection);
+
     return () => {
       observer.disconnect();
+      window.removeEventListener('scroll', updateActiveSection);
+      window.removeEventListener('resize', updateActiveSection);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // Dependency here is the post content.
+  }, [sections, handler]);
 };
