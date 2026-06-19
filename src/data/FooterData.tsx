@@ -8,7 +8,7 @@ export const footerItems: FooterItems = {
   textContent: (
     <>
       <span>
-        Fork of <span className="text-white">React</span>
+        <span className="text-neutral-100">Fork of React</span>
         <span className="italic text-yellow">Resume</span>
       </span>
     </>

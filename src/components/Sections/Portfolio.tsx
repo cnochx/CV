@@ -8,11 +8,15 @@ import {portfolioItems, ptfHeader} from '../../data/data';
 import {PortfolioItem} from '../../data/dataDef';
 import {SectionId} from '../../data/sectionIdData';
 import useDetectOutsideClick from '../../hooks/useDetectOutsideClick';
-import SectionLayout from '../Layout/SectionLayout';
+import SectionLayout from '../Layout/DarkSpecial/SectionLayout';
 
 const Portfolio: FC = memo(() => {
   return (
-    <SectionLayout className="bg-neutral-800" sectionId={SectionId.Portfolio}>
+    <SectionLayout
+      IsMain={true}
+      className="bg-neutral-800 scroll-mt-24"
+      sectionId={SectionId.Portfolio}>
+
       <div className="flex flex-col gap-y-8">
         <h2 className="self-center text-xl font-bold text-white"
             id={SectionId.Portfolio}>{ptfHeader.title}</h2>

@@ -3,7 +3,7 @@ import {FC, memo} from 'react';
 
 import {AboutData} from '../../../data/About/about';
 import {SectionId} from '../../../data/sectionIdData';
-import SectionLayout from '../../Layout/SectionLayout';
+import SectionLayout from '../../Layout/DarkSpecial/SectionLayout';
 import HeaderData from '../../../data/HeaderData';
 
 
@@ -23,8 +23,10 @@ const About: FC = memo(() => {
   const TitleId = `${SectionId.About}-title`;
 
   return (
-    <SectionLayout className="bg-neutral-800 px-4 py-16 md:py-24 lg:px-8"
-                   sectionId={SectionId.About}>
+    <SectionLayout
+        IsMain={true}
+        className="bg-neutral-800 px-4 py-16 md:py-24 lg:px-8 scroll-mt-24"
+        sectionId={SectionId.About}>
 
       <div className="mx-auto max-w-screen-lg">
         <article className="grid grid-cols-1 gap-y-4 md:grid-cols-4">
@@ -50,7 +52,7 @@ const About: FC = memo(() => {
           <div className="col-span-1 flex flex-col gap-y-6 md:col-span-3">
 
             <header className="flex flex-col gap-y-2">
-              <h2 className="text-2xl font-bold text-white"
+              <h2 className="text-2xl font-bold text-neutral-100"
                   id={TitleId}>{Title}</h2>
               <span className="absolute inset-x-0 -bottom-1 border-b-2 border-fuchsia-400" />
             </header>
@@ -65,7 +67,7 @@ const About: FC = memo(() => {
                 {aboutItems.map(({label, text, Icon}, idx) => (
                   <li className="col-span-1 flex  items-start gap-x-2" key={idx}>
                     {Icon && <Icon className="h-5 w-5 text-fuchsia-400" />}
-                    <span className="text-sm font-bold text-white">{label}:</span>
+                    <span className="text-sm font-bold text-neutral-100">{label}:</span>
                     <span className=" text-sm text-gray-300">{text}</span>
                   </li>
                 ))}

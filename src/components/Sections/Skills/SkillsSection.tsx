@@ -1,28 +1,13 @@
 import {ChevronDownIcon, ChevronUpIcon} from '@heroicons/react/24/solid';
-import {FC, memo, MouseEvent, PropsWithChildren, useMemo} from 'react';
+import {FC, memo, MouseEvent, useMemo} from 'react';
 
 import AdditionalElements from '../../../data/AdditionalElements';
-import {SkillItem} from '../../../data/Skills/SkillCollectionDef';
-import {SKILLS_SURFACE_TOKENS} from '../../../Utils/Skills/surfaceTokens';
-import useAccordion from '../../../Utils/useAccordion';
-import HeaderLayout from '../../Layout/HeaderLayout';
+import {SkillsProps} from '../../../data/Utils/UtilImportPropsDef';
+import {SKILLS_SURFACE_TOKENS} from '../../../utils/Skills/SurfaceTokens';
+import useAccordion from '../../../utils/useAccordion';
+import HeaderLayout from '../../Layout/DarkSpecial/HeaderLayout';
 
-/**
- * Props for the `SkillsSection` component.
- *
- * Defines the data and DOM id context required to render one nested
- * skill card inside a parent `SkillsArticle` accordion.
- */
-type SkillsProps = PropsWithChildren<{
-  /** Skill entry rendered by this nested accordion card. */
-  SkillItem: SkillItem;
 
-  /** Parent skills collection id used to build stable DOM ids. */
-  Id: string;
-
-  /** Parent accordion section id used to keep nested ids unique. */
-  ParentSectionId: string;
-}>;
 
 /**
  * Renders one nested accordion card for a single skill entry.
@@ -137,8 +122,8 @@ const SkillsSection: FC<SkillsProps> = memo(
             <HeaderLayout
               ClassName={null}
               SetBorder={null}
-              UseFontColor={false}
-              Variant={null}
+              UseVariantBg={null}
+              UseVariantText={null}
             >
               <h4 className={titleClassName} id={TitleId}>
                 <strong>{Name}</strong>

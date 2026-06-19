@@ -12,7 +12,7 @@ import GithubIcon from '../../Icon/GithubIcon';
 import InstagramIcon from '../../Icon/InstagramIcon';
 import LinkedInIcon from '../../Icon/LinkedInIcon';
 import TwitterIcon from '../../Icon/TwitterIcon';
-import SectionLayout from '../../Layout/SectionLayout';
+import SectionLayout from '../../Layout/DarkSpecial/SectionLayout';
 
 const ContactValueMap: Record<ContactType, ContactValue> = {
   [ContactType.Email]: {Icon: EnvelopeIcon, srLabel: 'Email'},
@@ -28,7 +28,10 @@ const ContactValueMap: Record<ContactType, ContactValue> = {
 const Contact: FC = memo(() => {
   const {headerText, description, items} = contact;
   return (
-    <SectionLayout className="bg-neutral-800" sectionId={SectionId.Contact}>
+    <SectionLayout
+        IsMain={true}
+        className="bg-neutral-800 scroll-mt-24"
+        sectionId={SectionId.Contact}>
       <div className="flex flex-col gap-y-6">
         <div className="flex flex-col gap-6 md:flex-row md:items-center">
           <EnvelopeIcon className="hidden h-16 w-16 text-white md:block" />
@@ -47,7 +50,7 @@ const Contact: FC = memo(() => {
                     <dd className="flex items-center">
                       <a
                         className={classNames(
-                          '-m-2 flex rounded-md p-2 text-neutral-300 hover:text-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500',
+                          '-m-2 flex rounded-md p-2 text-neutral-100 hover:text-fuchsia-400 focus:outline-none focus:ring-2 focus:ring-fuchsia-400',
                           {'hover:text-white': href},
                         )}
                         href={href}

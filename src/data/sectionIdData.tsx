@@ -1,22 +1,25 @@
 /**
- * SectionLayout definition
+ * Provides the stable section identifiers used for main page navigation and anchors.
  */
 export const SectionId = {
-  Hero: 'hero',
+  Hero: 'home',
   About: 'about',
-  Contact: 'contact',
-  Portfolio: 'stack',
-  Resume: 'CV',
-  Skills: 'skills',
-  Stats: 'stats',
-  Testimonials: 'foresight',
   Contractor: 'contractor',
+  Skills: 'skills',
+  CV: 'cv',
+  Education: 'education',
+  Portfolio: 'stack',
+  Testimonials: 'foresight',
+  Contact: 'contact',
 } as const;
 
+/**
+ * Defines the allowed main section identifier values.
+ */
 export type SectionId = (typeof SectionId)[keyof typeof SectionId];
 
 /**
- * SectionLayout definition
+ * Provides the stable subsection identifiers used for nested navigation and section anchors.
  */
 export const SectionSubId = {
   summary: 'summary',
@@ -31,4 +34,7 @@ export const SectionSubId = {
   Different: 'different',
 } as const;
 
+/**
+ * Defines the allowed subsection identifier values.
+ */
 export type SectionSubId = (typeof SectionSubId)[keyof typeof SectionSubId];

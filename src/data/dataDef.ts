@@ -1,19 +1,7 @@
 import {StaticImageData} from 'next/image';
-import {FC, ForwardRefExoticComponent, SVGProps} from 'react';
+import {FC, ForwardRefExoticComponent, ReactNode, SVGProps} from 'react';
 
 import {IconProps} from '../components/Icon/Icon';
-import {HeroActionItem} from './HeroDataDef';
-
-/**
- * Stat section
- */
-export interface Stat {
-  title: string;
-  value: number;
-  Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
-}
-
-
 
 /**
  * Portfolio section
@@ -25,72 +13,10 @@ export interface PortfolioItem {
   image: string | StaticImageData;
 }
 
-/**
- * CV section
- */
-
-export interface CVSubHeader {
-  title: string;
-  content: JSX.Element;
-  showSpacer: boolean;
-}
-export interface SummaryItem {
-  siKey: number;
-  date: string;
-  location: string;
-  title: string;
-  content: JSX.Element;
-  experiences: expItem[];
-}
-
-export interface TimelineItem {
-  tlKey: number;
-  date: string;
-  location: string;
-  title: string;
-  about: string;
-  content: JSX.Element;
-  experiences: expItem[];
-  reference?: HeroActionItem[]; // <-- key point
-}
-
-export interface expItem {
-  eiKey: number;
-  text: string;
-}
-export interface LifeItem {
-  liKey: number;
-  relationshipStatus: string;
-  familyStatus: string;
-  privateInterests: string;
-  location: string;
-  legal: string;
-}
-
 export interface SubHeader {
   title: string;
-  content: JSX.Element;
+  content: ReactNode;
   showSpacer: boolean;
-}
-
-export interface ProjectItem {
-  piKey: number;
-  title: string;
-  stack: string;
-  role: string;
-  content: JSX.Element;
-}
-
-export interface FrlSubHeader {
-  title: string;
-  content: JSX.Element;
-  showSpacer: boolean;
-}
-
-export interface Freelance {
-  title: string;
-  stack: expItem[];
-  content: JSX.Element;
 }
 
 /**
@@ -135,11 +61,6 @@ export interface ContactItem {
   href?: string;
 }
 
-export interface ContactValue {
-  Icon: FC<IconProps> | ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
-  srLabel: string;
-}
-
 /**
  * Social items
  */
@@ -147,4 +68,9 @@ export interface Social {
   label: string;
   Icon: FC<IconProps>;
   href: string;
+}
+
+export interface ContactValue {
+  Icon: FC<IconProps> | ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
+  srLabel: string;
 }

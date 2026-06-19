@@ -4,7 +4,7 @@ import {FC, memo} from 'react';
 
 import {heroData} from '../../../data/HeroData';
 import {SectionId} from '../../../data/sectionIdData';
-import SectionLayout from '../../Layout/SectionLayout';
+import SectionLayout from '../../Layout/DarkSpecial/SectionLayout';
 import Nav from '../../Navigation/Nav';
 import Socials from '../../Socials';
 
@@ -12,7 +12,10 @@ const Hero: FC = memo(() => {
   const {name, imageSrc, title, subTitle, descrList, actions} = heroData;
 
   return (
-    <SectionLayout noPadding sectionId={SectionId.Hero}>
+    <SectionLayout
+      IsMain={true}
+      noPadding={true}
+      sectionId={SectionId.Hero}>
       <div className="relative flex h-screen w-full items-center justify-center">
         <Image
           alt={`${name}-image`}
@@ -47,13 +50,13 @@ const Hero: FC = memo(() => {
               {actions.map(({href, text, primary, Icon}) => (
                 <a
                   className={classNames(
-                    'flex gap-x-2 rounded-full border-2 bg-none px-4 py-2 text-sm font-medium text-white ring-offset-gray-700/80 hover:bg-gray-700/80 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-base',
-                    primary ? 'border-orange-500 ring-orange-500' : 'border-white ring-white',
+                    'flex gap-x-2 rounded-full border-2 bg-none px-4 py-2 text-sm font-medium text-neutral-100 ring-offset-gray-700/80 hover:bg-gray-700/80 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-base',
+                    primary ? 'border-fuchsia-400 ring-fuchsia-400' : 'border-neutral-100 ring-neutral-100',
                   )}
                   href={href}
                   key={text}>
                   {text}
-                  {Icon && <Icon className="h-5 w-5 text-white sm:h-6 sm:w-6" />}
+                  {Icon && <Icon className="h-5 w-5 text-neutral-100 sm:h-6 sm:w-6" />}
                 </a>
               ))}
             </div>

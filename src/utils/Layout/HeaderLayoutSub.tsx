@@ -1,5 +1,8 @@
 import {SetHover} from '../../data/SectionHelperDef';
 
+/**
+ * Provides semantic border and text class mappings for shared icon button helpers.
+ */
 const ICON_BUTTON_COLOR_MAP = {
   bright: {
     border: 'border-neutral-100',
@@ -23,25 +26,25 @@ const ICON_BUTTON_COLOR_MAP = {
  * Resolves header text and hover classes for a semantic color variant.
  *
  * Operations:
- * - Falls back to the `bright` color variant when `colorVar` is `null` or `undefined`.
+ * - Falls back to the `bright` color variant when no variant is provided.
  * - Applies the semantic text color class when `useFontColor` is enabled.
- * - Applies an optional hover class when provided and not equal to `none`.
- * - Merges the resolved classes with any additional header class names.
+ * - Appends the hover class when provided and not equal to `none`.
+ * - Merges resolved classes with any additional class names.
  *
- * @param {keyof typeof ICON_BUTTON_COLOR_MAP | null | undefined} colorVar - Semantic color variant used to resolve text styling.
+ * @param {keyof typeof ICON_BUTTON_COLOR_MAP | null | undefined} useVariantText - Semantic color variant used to resolve text styling.
  * @param {boolean} [useFontColor=true] - Controls whether the semantic font color should be applied automatically.
- * @param {string | null} className - Optional additional class names applied to the header wrapper.
- * @param {SetHover} [setHover] - Optional hover class applied to the header wrapper.
+ * @param {string | null} className - Optional additional class names applied to the header element.
+ * @param {SetHover} [setHover] - Optional hover class applied to the header element.
  * @returns {string} Space-separated Tailwind class string for the header element.
  */
 export function getHeaderClass(
-  colorVar: keyof typeof ICON_BUTTON_COLOR_MAP | null | undefined,
+  useVariantText: keyof typeof ICON_BUTTON_COLOR_MAP | null | undefined,
   useFontColor: boolean = true,
-  className: string | null,
+  className: string | null | undefined,
   setHover?: SetHover
 ): string {
   const resolvedColor: keyof typeof ICON_BUTTON_COLOR_MAP =
-    colorVar ?? 'bright';
+    useVariantText ?? 'bright';
 
   const c = ICON_BUTTON_COLOR_MAP[resolvedColor];
   const fontColorClass = useFontColor ? c.text : '';
@@ -60,18 +63,16 @@ export function getHeaderClass(
  * Resolves decorative header border settings for a semantic color variant.
  *
  * Operations:
- * - Returns no border when `colorVar` is `null` or `undefined`.
- * - Determines whether a bottom border should be rendered based on the border token.
- * - Maps the selected color variant to a semantic border color class.
- * - Returns both a render flag and a composed Tailwind class string for the border.
- *tic color variant used to resolve border styling.
- * @param {SetColor} setBorder - Border variant used to control whether the border is rendered.
- * @returns {{ borderRender: boolean; borderClass: string }} Border render flag and Tailwind class string.
+ * - Falls back to the `bright` color variant when no variant is provided.
+ * - Enables border rendering only for supported semantic border variants.
+ * - Maps the resolved variant to the matching semantic border color class.
+ *
+ * @param {keyof typeof ICON_BUTTON_COLOR_MAP | null | undefined} setBorder - Semantic color variant used to resolve border styling.
+ * @returns {{ borderRender: boolean; borderColorClass: string }} Border render flag and semantic Tailwind border class.
  */
 export function getHeaderBorder(
   setBorder: keyof typeof ICON_BUTTON_COLOR_MAP | null | undefined,
-) {
-
+): { borderRender: boolean; borderColorClass: string; } {
   const resolvedColor: keyof typeof ICON_BUTTON_COLOR_MAP =
     setBorder ?? 'bright';
 

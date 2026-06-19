@@ -1,14 +1,9 @@
 import {StaticImageData} from 'next/image';
 
 /**
- * Defines the full header data structure used across the application.
- *
- * Operations:
- * - Groups all section-specific header configurations by section key.
- * - Stores one or more `HeaderItem` entries for each page section.
- * - Provides an optional configuration for the project section.
+ * Defines the shared header configuration structure used across portfolio sections.
  */
-interface HeaderDataDef {
+export interface HeaderDataDef {
   /** Header configuration for the hero section. */
   HeroMain: HeaderItem[];
 
@@ -43,22 +38,22 @@ interface HeaderDataDef {
   SkillsMethods: HeaderItem[];
 
   /** Header configuration for the main CV section. */
-  CvMain: HeaderItem[];
+  CVMain: HeaderItem[];
 
   /** Header configuration for the CV introduction section. */
-  CvIs: HeaderItem[];
+  CVIs: HeaderItem[];
 
   /** Header configuration for the Fincaferien section in the CV. */
-  CvFinca: HeaderItem[];
+  CVFinca: HeaderItem[];
 
   /** Header configuration for the BA section in the CV. */
-  CvBa: HeaderItem[];
+  CVBa: HeaderItem[];
 
   /** Header configuration for the SC section in the CV. */
-  CvSc: HeaderItem[];
+  CVSc: HeaderItem[];
 
   /** Header configuration for the FF section in the CV. */
-  CvFf: HeaderItem[];
+  CVFf: HeaderItem[];
 
   /** Header configuration for the main education section. */
   EducationMain: HeaderItem[];
@@ -81,15 +76,11 @@ interface HeaderDataDef {
   /** Optional header configuration for the project section. */
   ProjectMain?: HeaderItem[];
 }
+
 export default HeaderDataDef;
 
 /**
- * Defines one reusable header content item for a section.
- *
- * Operations:
- * - Stores the visual theme variant for the section header.
- * - Provides title, subtitle, descriptive content, and optional media.
- * - Controls whether additional spacer styling should be applied.
+ * Defines one reusable header content entry for a section.
  */
 export interface HeaderItem {
   /** Theme variant used to resolve section styling. */
@@ -107,7 +98,7 @@ export interface HeaderItem {
   /** Main descriptive content rendered inside the section header. */
   Description: JSX.Element;
 
-  /** Optional image source used in the header. */
+  /** Optional image source rendered with the section header. */
   ImageSrc?: string | StaticImageData;
 
   /** Controls whether additional spacing should be rendered below the section. */
@@ -115,12 +106,7 @@ export interface HeaderItem {
 }
 
 /**
- * Defines the supported theme variants used across section headers.
- *
- * Operations:
- * - Supports standard dark and bright themes.
- * - Supports pill-based theme variants.
- * - Allows `null` as an optional fallback or uninitialized state.
+ * Defines the allowed theme variants used across section headers.
  */
 export type ThemeVariant =
   | 'dark'

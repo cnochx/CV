@@ -1,13 +1,15 @@
-import {FC, memo} from 'react';
+import React, {FC, memo, useMemo} from 'react';
+import {HiOutlineEnvelope} from 'react-icons/hi2';
 
 import AdditionalElements from '../../../data/AdditionalElements';
 import HeaderData from '../../../data/HeaderData';
 import {SectionId} from '../../../data/sectionIdData';
 import SkillsCollectionData from '../../../data/Skills/SkillCollection';
 import {SkillsCollection} from '../../../data/Skills/SkillCollectionDef';
-import HeaderLayout from '../../Layout/HeaderLayout';
-import SectionLayout from '../../Layout/SectionLayout';
-import CallToAction from '../../Navigation/CallToAction';
+import {ExtCallToActionDef} from '../../../data/Utils/GeneralDef';
+import AsideLyt from '../../Layout/AsideLyt';
+import HeaderLayout from '../../Layout/DarkSpecial/HeaderLayout';
+import SectionLayout from '../../Layout/DarkSpecial/SectionLayout';
 import SkillsArticle from './SkillsArticle';
 
 /**
@@ -55,18 +57,36 @@ const Skills: FC = memo(() => {
     SkillsMain: {Suffix},
   } = AdditionalElements;
 
+  const callToActionItems = useMemo(
+    (): ExtCallToActionDef => ({
+      AeiCallToActionItems: [
+        {
+          CtaKey: 1,
+          CtaId: 'calltoAction',
+          CtaType: 'contact',
+          CtaHref: 'mailto:martin@grellmann.eu?subject=Send from grellmann.app CV',
+          CtaText: "Let's talk ... send me an email",
+          CtaIcon: HiOutlineEnvelope,
+        },
+      ],
+      AeiEnableCallToAction: false,
+    }),
+    [],
+  );
+
   const TitleId: string = `${SectionId.Skills}-title`;
 
   return (
     <SectionLayout
-      className="md:py-24 lg:px-8 bg-neutral-800 px-4 py-16"
+      IsMain={true}
+      className="md:py-24 lg:px-8 bg-neutral-800 px-4 py-16 scroll-mt-24"
       sectionId={SectionId.Skills}>
       <div className="mx-auto max-w-screen-lg">
 
         <HeaderLayout
           ClassName="flex flex-col gap-y-2"
           SetBorder="highlight"
-          Variant="bright">
+          UseVariantText="bright">
 
           <h2 className="text-2xl font-bold" id={TitleId}>
             {Title}
@@ -105,13 +125,12 @@ const Skills: FC = memo(() => {
           {Suffix}
         </div>
 
-        <div className="flex flex-col space-y-32 mt-8">
-          <CallToAction SectionId={SectionId.Skills} />
-        </div>
+        <AsideLyt
+          CallToActionItem={callToActionItems}
+          SectionId={SectionId.Skills}
+        />
 
       </div>
-
-      <hr className="mt-8 border-0 border-b-2 border-fuchsia-400" />
       
     </SectionLayout>
   );
