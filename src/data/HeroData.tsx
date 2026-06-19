@@ -1,6 +1,6 @@
 import {ArrowDownTrayIcon} from '@heroicons/react/24/outline';
 
-import heroImage from '../images/hero_background.webp';
+import home from '../images/home.webp';
 import {Hero} from './HeroDataDef';
 import {SectionId} from './SectionIdData';
 
@@ -8,7 +8,7 @@ import {SectionId} from './SectionIdData';
  * HeroPre section
  */
 export const heroData: Hero = {
-  imageSrc: heroImage,
+  imageSrc: home,
   title: `Senior Full-Stack Engineer - `,
   subTitle: `Martin Grellmann.`,
   name: 'martin_grellmann',

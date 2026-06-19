@@ -33,7 +33,7 @@ const HeaderData: HeaderDataDef = {
           in modern SAP full-stack development, including SAP BTP, S/4HANA modernization, ABAP, CDS, OData, Fiori/UI5
           and API integration.</p>
 
-        <p>On the web side, I’ve spent many years building and running Drupal sites, handling migrations, performance
+        <p>On the 'web side': I’ve spent many years building and running Drupal sites, handling migrations, performance
           tuning
           and technical SEO/GEO to keep organic traffic and conversions stable during change.</p>
       </>
