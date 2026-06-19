@@ -1,4 +1,4 @@
-import { KeyboardEvent, useState } from 'react';
+import {KeyboardEvent, useState} from 'react';
 
 type UseAccordionReturn = {
   /**

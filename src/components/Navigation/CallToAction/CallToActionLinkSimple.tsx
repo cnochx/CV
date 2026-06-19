@@ -1,10 +1,10 @@
-import { FC, memo } from 'react';
+import {FC, memo} from 'react';
 
-import { CallToActionProps } from '../../../data/Utils/UtilImportPropsDef';
+import {CallToActionProps} from '../../../data/Utils/UtilImportPropsDef';
 
-const CallToAction: FC<CallToActionProps> = memo(({ CallToActionItem }) => {
-  const { CtaHref, CtaIcon, CtaPre, CtaText } = CallToActionItem;
-  const Icon = CtaIcon;
+const CallToAction: FC<CallToActionProps> = memo(({CallToActionItem}) => {
+  const {CtaHref, CtaIcon, CtaPre, CtaText} = CallToActionItem;
+
 
   return (
     <div className="mx-auto max-w-screen-lg">
@@ -19,8 +19,8 @@ const CallToAction: FC<CallToActionProps> = memo(({ CallToActionItem }) => {
           className="inline-flex items-center gap-x-2 font-semibold text-cyan-500 underline decoration-cyan-400/70 decoration-2 underline-offset-4 transition-colors hover:text-fuchsia-300 hover:decoration-fuchsia-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900"
           href={CtaHref}
         >
-          {Icon ? (
-            <Icon aria-hidden="true" className="h-5 w-5 shrink-0" />
+          {CtaIcon ? (
+            <CtaIcon aria-hidden="true" className="h-5 w-5 shrink-0" />
           ) : null}
           <span>{CtaText}</span>
         </a>

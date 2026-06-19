@@ -5,9 +5,10 @@ import {SkillItem} from '../../../data/Skills/SkillCollectionDef';
 import {SkillsArticleProps} from '../../../data/Utils/UtilImportPropsDef';
 import {resolveImageSrc} from '../../../UtilComp/SectionHelper';
 import {SKILLS_SURFACE_TOKENS} from '../../../UtilComp/Skills/SurfaceTokens';
-import useAccordion from '../../../UtilComp/UseAccordion';
+import UseAccordion from '../../../UtilComp/UseAccordion';
 import HeaderLayout from '../../Layout/DarkSpecial/HeaderLayout';
 import SkillsSection from './SkillsSection';
+
 
 const SkillsArticle: FC<SkillsArticleProps> = memo(
   ({
@@ -31,7 +32,7 @@ const SkillsArticle: FC<SkillsArticleProps> = memo(
       handleMouseEnter,
       handleMouseLeave,
       handleKeyDown,
-    } = useAccordion();
+    } = UseAccordion();
 
     const isActiveVisual = isHovered;
 
