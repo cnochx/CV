@@ -18,7 +18,7 @@ const Imprint: FC = memo(() => {
     <section className="flex gap-x-4 items-start">
       <article className="order-1 flex-col w-1/2 gap-y-4 md:order-2 flex">
         <header>
-          <h3 className="font-bold text-xl text-white">{header}</h3>
+          <h2 className="font-bold text-xl text-neutral-100">{header}</h2>
         </header>
         <section className="w-1/2">
           {adressheader && <h4 className="font-bold text-white">{adressheader}</h4>}
@@ -52,7 +52,7 @@ const Imprint: FC = memo(() => {
                 <ul>
                   {addressBrazil.map(({aiKey, text}) => {
                     return (
-                      <li className="text-neutral-200" key={aiKey}>
+                      <li className="text-neutral-100" key={aiKey}>
                         {text}
                       </li>
                     );
@@ -72,7 +72,7 @@ const Imprint: FC = memo(() => {
                         <span className="text-neutral-400">{linkLabel}</span>
                         <a
                           className={classNames(
-                            '-m-2 flex rounded-md p-2 text-neutral-300 hover:text-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500',
+                            '-m-2 flex rounded-md p-2 text-neutral-100 hover:text-fuchsia-400 focus:outline-none focus:ring-2 focus:ring-fuchsia-400',
                             {'hover:text-white': href},
                           )}
                           href={href}
@@ -90,7 +90,7 @@ const Imprint: FC = memo(() => {
       </article>
       <article className="order-3 flex flex-col w-1/2 gap-y-4">
         <header>
-          <h3 className="font-bold text-xl text-white">{headerLegal}</h3>
+          <h2 className="font-bold text-xl text-neutral-100">{headerLegal}</h2>
         </header>
         {legalContent && <section>{legalContent}</section>}
       </article>

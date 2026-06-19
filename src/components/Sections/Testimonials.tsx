@@ -2,12 +2,13 @@ import classNames from 'classnames';
 import {FC, memo, UIEventHandler, useCallback, useEffect, useMemo, useRef, useState} from 'react';
 
 import {isApple, isMobile} from '../../config';
-import {SectionId, testimonial} from '../../data/data';
+import {testimonial} from '../../data/data';
 import {Testimonial} from '../../data/dataDef';
+import {SectionId} from '../../data/SectionIdData'
 import useInterval from '../../hooks/useInterval';
 import useWindow from '../../hooks/useWindow';
 import QuoteIcon from '../Icon/QuoteIcon';
-import Section from '../Layout/Section';
+import SectionLayout from '../Layout/DarkSpecial/SectionLayout';
 
 const Testimonials: FC = memo(() => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -70,7 +71,10 @@ const Testimonials: FC = memo(() => {
   }
 
   return (
-    <Section noPadding sectionId={SectionId.Testimonials}>
+    <SectionLayout
+        IsMain={true}
+        noPadding
+        sectionId={SectionId.Testimonials}>
       <div
         className={classNames(
           'flex w-full items-center justify-center bg-cover bg-center px-4 py-16 md:py-24 lg:px-8',
@@ -109,7 +113,7 @@ const Testimonials: FC = memo(() => {
           </div>
         </div>
       </div>
-    </Section>
+    </SectionLayout>
   );
 });
 

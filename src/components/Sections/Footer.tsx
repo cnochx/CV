@@ -2,8 +2,8 @@ import {ChevronUpIcon} from '@heroicons/react/24/solid';
 import classNames from 'classnames';
 import {FC, memo} from 'react';
 
-import {SectionId} from '../../data/data';
 import {footerItems} from '../../data/FooterData';
+import {SectionId} from '../../data/SectionIdData';
 import Imprint from '../Imprint';
 import Socials from '../Socials';
 
@@ -12,7 +12,7 @@ const currentYear = new Date().getFullYear();
 const Footer: FC = memo(() => {
   const {link, Icon, textContent, copyrightText} = footerItems;
   return (
-    <footer className="relative bg-neutral-900 px-4 pb-6 pt-12 sm:px-16 sm:pb-8 sm:pt-14">
+    <footer className="relative bg-neutral-800 px-4 pb-6 pt-12 sm:px-16 sm:pb-8 sm:pt-14 scroll-mt-24">
       <div className="absolute inset-x-0 -top-4 flex justify-center sm:-top-6">
         <a
           className="rounded-full bg-neutral-100 p-1 ring-white ring-offset-2 ring-offset-gray-700/80 focus:outline-none focus:ring-2 sm:p-2"
@@ -38,7 +38,7 @@ const Footer: FC = memo(() => {
             {Icon && <Icon className="h-5 w-5 text-yellow" />}
           </a>
           <div className="my-4" />
-          <span className="text-sm text-neutral-700">
+          <span className="text-sm text-neutral-100">
             {currentYear} {copyrightText}
           </span>
         </aside>
