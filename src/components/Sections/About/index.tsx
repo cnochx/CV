@@ -2,9 +2,9 @@ import Image from 'next/image';
 import {FC, memo} from 'react';
 
 import {AboutData} from '../../../data/About/about';
-import {SectionId} from '../../../data/sectionIdData';
-import SectionLayout from '../../Layout/DarkSpecial/SectionLayout';
 import HeaderData from '../../../data/HeaderData';
+import {SectionId} from '../../../data/SectionIdData';
+import SectionLayout from '../../Layout/DarkSpecial/SectionLayout';
 
 
 const About: FC = memo(() => {

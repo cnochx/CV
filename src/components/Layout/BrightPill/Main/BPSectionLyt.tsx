@@ -1,12 +1,12 @@
 import React, {FC, memo, useCallback, useState} from 'react';
 
 import {ContentSectionLytProps} from '../../../../data/Utils/UtilImportPropsDef';
+import {getContentIds} from '../../../../UtilComp/SectionHelper';
 import AsideLyt from '../../AsideLyt';
-import BrightPillArtDescriptionLyt from '../Extension/BrightPillArtDescriptionLyt';
-import BrightPillArtSkillsLyt from '../Extension/BrightPillArtSkillsLyt';
-import {getContentIds} from '../../../../utils/SectionHelper';
+import BPArtDescriptionLyt from '../Extension/BPArtDescriptionLyt';
+import BPArtSkillsLyt from '../Extension/BPArtSkillsLyt';
 
-const BrightPillSectionLyt: FC<ContentSectionLytProps> = memo(({
+const BPSectionLyt: FC<ContentSectionLytProps> = memo(({
                                                                  AlContent,
                                                                  SectionId,
                                                                  ArticleTitleTag,
@@ -89,7 +89,7 @@ const BrightPillSectionLyt: FC<ContentSectionLytProps> = memo(({
         </div>
       ) : null}
 
-      <BrightPillArtDescriptionLyt
+      <BPArtDescriptionLyt
         AlDescription={AlDescription1}
         ArticleTitleTag={ArticleTitleTag}
         IsOpen={openMap.description1}
@@ -97,7 +97,7 @@ const BrightPillSectionLyt: FC<ContentSectionLytProps> = memo(({
         SectionId={SectionId}
       />
 
-      <BrightPillArtDescriptionLyt
+      <BPArtDescriptionLyt
         AlDescription={AlDescription2}
         ArticleTitleTag={ArticleTitleTag}
         IsOpen={openMap.description2}
@@ -105,7 +105,7 @@ const BrightPillSectionLyt: FC<ContentSectionLytProps> = memo(({
         SectionId={SectionId}
       />
 
-      <BrightPillArtDescriptionLyt
+      <BPArtDescriptionLyt
         AlDescription={AlDescription3}
         ArticleTitleTag={ArticleTitleTag}
         IsOpen={openMap.description3}
@@ -115,7 +115,7 @@ const BrightPillSectionLyt: FC<ContentSectionLytProps> = memo(({
 
       {AlSkills && AlSkills.SeiEnableSkills ? (
         <div className="md:col-span-2 md:col-start-2">
-          <BrightPillArtSkillsLyt
+          <BPArtSkillsLyt
             AlSkills={AlSkills}
             ArticleTitleTag={ArticleTitleTag}
             SectionId={sectionIds.idSkills}
@@ -147,5 +147,5 @@ const BrightPillSectionLyt: FC<ContentSectionLytProps> = memo(({
   );
 });
 
-BrightPillSectionLyt.displayName = 'CVSection';
-export default BrightPillSectionLyt;
+BPSectionLyt.displayName = 'CVSection';
+export default BPSectionLyt;

@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import {FC, Fragment, memo, useCallback, useMemo, useState} from 'react';
 
-import {SectionId} from '../../data/sectionIdData';
+import {SectionId} from '../../data/SectionIdData';
 import {NavItemProps, NavProps} from '../../data/Utils/UtilImportPropsDef';
 import {useNavObserver} from '../../hooks/useNavObserver';
 

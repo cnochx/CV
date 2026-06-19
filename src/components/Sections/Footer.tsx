@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import {FC, memo} from 'react';
 
 import {footerItems} from '../../data/FooterData';
-import {SectionId} from '../../data/sectionIdData';
+import {SectionId} from '../../data/SectionIdData';
 import Imprint from '../Imprint';
 import Socials from '../Socials';
 

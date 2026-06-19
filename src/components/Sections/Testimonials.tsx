@@ -4,7 +4,7 @@ import {FC, memo, UIEventHandler, useCallback, useEffect, useMemo, useRef, useSt
 import {isApple, isMobile} from '../../config';
 import {testimonial} from '../../data/data';
 import {Testimonial} from '../../data/dataDef';
-import {SectionId} from '../../data/sectionIdData'
+import {SectionId} from '../../data/SectionIdData'
 import useInterval from '../../hooks/useInterval';
 import useWindow from '../../hooks/useWindow';
 import QuoteIcon from '../Icon/QuoteIcon';

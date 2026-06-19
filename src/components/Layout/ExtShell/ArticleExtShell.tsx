@@ -1,5 +1,5 @@
 // components/Layout/BrightPill/Main/BrightPillArticleShell.tsx
-import { FC, memo } from 'react';
+import {FC, memo} from 'react';
 
 import {ArticleExtShelProps} from '../../../data/Utils/UtilImportPropsDef';
 

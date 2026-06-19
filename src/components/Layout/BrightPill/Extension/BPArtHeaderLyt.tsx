@@ -1,7 +1,7 @@
 import {memo} from 'react';
 
 import {HeaderLytProps} from '../../../../data/Utils/UtilImportPropsDef';
-import {getHeaderIds} from '../../../../utils/SectionHelper';
+import {getHeaderIds} from '../../../../UtilComp/SectionHelper';
 
 
 /**
@@ -24,7 +24,7 @@ import {getHeaderIds} from '../../../../utils/SectionHelper';
  * @param string | undefined props.SectionId - Base identifier used to derive stable ids for the suffix section and its children.
  * @returns JSX.Element Header layout wrapper with an optional underline and suffix section.
  */
-const BrightPillArtHeaderLyt = memo(({children,
+const BPArtHeaderLyt = memo(({children,
                           HeaderClassName,
                           SetUnderline,
                           UnderlineClassName,
@@ -74,5 +74,5 @@ const BrightPillArtHeaderLyt = memo(({children,
   );
 });
 
-BrightPillArtHeaderLyt.displayName = 'BrightPillArtHeaderLyt';
-export default BrightPillArtHeaderLyt;
+BPArtHeaderLyt.displayName = 'BPArtHeaderLyt';
+export default BPArtHeaderLyt;

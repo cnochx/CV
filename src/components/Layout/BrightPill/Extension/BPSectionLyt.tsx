@@ -5,7 +5,7 @@ import {SectionLytProps} from '../../../../data/Utils/UtilImportPropsDef';
 
 
 
-const BrightPillSectionLyt: FC<SectionLytProps> = memo(
+const BPSectionLyt: FC<SectionLytProps> = memo(
   ({
      children,
      SectionId,
@@ -37,5 +37,5 @@ const BrightPillSectionLyt: FC<SectionLytProps> = memo(
   },
 );
 
-BrightPillSectionLyt.displayName = 'BrightPillSectionLyt';
-export default BrightPillSectionLyt;
+BPSectionLyt.displayName = 'BPSectionLyt';
+export default BPSectionLyt;

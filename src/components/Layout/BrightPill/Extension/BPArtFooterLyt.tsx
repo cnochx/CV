@@ -22,7 +22,7 @@ import {ArticleFooterLytProps} from '../../../../data/Utils/UtilImportPropsDef';
  * @param {HeadingTag} [props.FooterTitleTag] - Optional heading tag applied to the suffix title.
  * @returns {JSX.Element} Rendered article footer layout.
  */
-const BrightPillArtFooterLyt: FC<ArticleFooterLytProps> = memo(({children,
+const BPArtFooterLyt: FC<ArticleFooterLytProps> = memo(({children,
                                                             footerClassName,
                                                             BottomSuffix,
                                                             SectionId}) => {
@@ -54,5 +54,5 @@ const BrightPillArtFooterLyt: FC<ArticleFooterLytProps> = memo(({children,
   },
 );
 
-BrightPillArtFooterLyt.displayName = 'BrightPillArtFooterLyt';
-export default BrightPillArtFooterLyt;
+BPArtFooterLyt.displayName = 'BPArtFooterLyt';
+export default BPArtFooterLyt;

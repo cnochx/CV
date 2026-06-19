@@ -3,7 +3,7 @@ import React, {FC, memo} from 'react';
 
 import {ArtDescriptionLyt} from '../../../../data/Utils/UtilImportPropsDef';
 
-const BrightPillArtDescriptionLyt: FC<ArtDescriptionLyt> = memo(({
+const BPArtDescriptionLyt: FC<ArtDescriptionLyt> = memo(({
                                                                    AlDescription,
                                                                    SectionId,
                                                                    ArticleTitleTag,
@@ -58,5 +58,5 @@ const BrightPillArtDescriptionLyt: FC<ArtDescriptionLyt> = memo(({
   );
 });
 
-BrightPillArtDescriptionLyt.displayName = 'BrightPillArtDescriptionLyt';
-export default BrightPillArtDescriptionLyt;
+BPArtDescriptionLyt.displayName = 'BPArtDescriptionLyt';
+export default BPArtDescriptionLyt;

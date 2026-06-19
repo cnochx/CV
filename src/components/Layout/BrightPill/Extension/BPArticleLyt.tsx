@@ -3,7 +3,7 @@ import {FC, memo} from 'react';
 import {BrightPillArticleLytProps} from '../../../../data/Utils/UtilImportPropsDef';
 
 
-const BrightPillArticleLyt: FC<BrightPillArticleLytProps> = memo(
+const BPArticleLyt: FC<BrightPillArticleLytProps> = memo(
   ({
      children,
      ArticleId,
@@ -28,5 +28,5 @@ const BrightPillArticleLyt: FC<BrightPillArticleLytProps> = memo(
   },
 );
 
-BrightPillArticleLyt.displayName = 'BrightPillArticleLyt';
-export default BrightPillArticleLyt;
+BPArticleLyt.displayName = 'BPArticleLyt';
+export default BPArticleLyt;

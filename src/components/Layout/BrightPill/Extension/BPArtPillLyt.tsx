@@ -2,11 +2,11 @@
 import {CSSProperties, FC, memo} from 'react';
 
 import {PillLayoutProps} from '../../../../data/Utils/UtilImportPropsDef';
-import {resolveImageSrc} from '../../../../utils/SectionHelper';
+import {resolveImageSrc} from '../../../../UtilComp/SectionHelper';
 
 
 
-const BrightPillArtPillLyt: FC<PillLayoutProps> = memo(
+const BPArtPillLyt: FC<PillLayoutProps> = memo(
   ({children, ClassNameParent, ClassNameOverlay, ImgSrc}) => {
     const resolvedImgSrc = resolveImageSrc(ImgSrc)
 
@@ -26,5 +26,5 @@ const BrightPillArtPillLyt: FC<PillLayoutProps> = memo(
   },
 );
 
-BrightPillArtPillLyt.displayName = 'BrightPillArtPillLyt';
-export default BrightPillArtPillLyt;
+BPArtPillLyt.displayName = 'BPArtPillLyt';
+export default BPArtPillLyt;

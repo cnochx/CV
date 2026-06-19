@@ -1,16 +1,16 @@
-// components/Layout/BrightPill/Main/BrightPillArticleLyt.tsx
+// components/Layout/BrightPill/Main/BPArticleLyt.tsx
 import React, {FC, memo} from 'react';
 
 import {HeadingTag} from '../../../../data/Layout/LayoutTypeDef';
 import {BaseAlContentDef} from '../../../../data/Utils/GeneralDef';
 import {ContentArticleLytProps} from '../../../../data/Utils/UtilImportPropsDef';
+import {customAlContent} from '../../../../UtilComp/Layout/CustomAlContent';
+import {getArticleIds} from '../../../../UtilComp/SectionHelper';
 import ArticleExtShell from '../../ExtShell/ArticleExtShell';
-import BrightPillArtHeaderLyt from '../Extension/BrightPillArtHeaderLyt';
-import BrightPillSectionLyt from './BrightPillSectionLyt';
-import {customAlContent} from '../../../../utils/Layout/CustomAlContent';
-import {getArticleIds} from '../../../../utils/SectionHelper';
+import BPArtHeaderLyt from '../Extension/BPArtHeaderLyt';
+import BPSectionLyt from './BPSectionLyt';
 
-const BrightPillArticleLyt: FC<ContentArticleLytProps> = memo(
+const BPArticleLyt: FC<ContentArticleLytProps> = memo(
   ({AlContent, SectionId, ArticleTitleTag}) => {
     if (!AlContent || AlContent.length === 0) {
       return null;
@@ -37,7 +37,7 @@ const BrightPillArticleLyt: FC<ContentArticleLytProps> = memo(
               LabelledBy={articleIds.articleLabelBy}
               key={ContentItem.AlId ?? articleIds.idArticle}
             >
-              <BrightPillArtHeaderLyt
+              <BPArtHeaderLyt
                 AlDateCustomVal={AlItem.AlDateCustomVal}
                 ArticleId={articleIds.idArticle}
                 HeaderClassName="flex flex-col"
@@ -60,9 +60,9 @@ const BrightPillArticleLyt: FC<ContentArticleLytProps> = memo(
                     {AlHeaderItem.HdrSubTitle}
                   </ArticleTitleTagSub>
                 ) : null}
-              </BrightPillArtHeaderLyt>
+              </BPArtHeaderLyt>
 
-              <BrightPillSectionLyt
+              <BPSectionLyt
                 AlContent={ContentItem}
                 ArticleTitleTag={ArticleTitleTagContentSub}
                 SectionId={articleIds.idArticle}
@@ -75,5 +75,5 @@ const BrightPillArticleLyt: FC<ContentArticleLytProps> = memo(
   },
 );
 
-BrightPillArticleLyt.displayName = 'BrightPillArticleLyt';
-export default BrightPillArticleLyt;
+BPArticleLyt.displayName = 'BPArticleLyt';
+export default BPArticleLyt;

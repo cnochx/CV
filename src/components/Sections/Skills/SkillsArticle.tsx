@@ -3,11 +3,11 @@ import {FC, memo} from 'react';
 
 import {SkillItem} from '../../../data/Skills/SkillCollectionDef';
 import {SkillsArticleProps} from '../../../data/Utils/UtilImportPropsDef';
-import {SKILLS_SURFACE_TOKENS} from '../../../utils/Skills/SurfaceTokens';
-import useAccordion from '../../../utils/useAccordion';
+import {resolveImageSrc} from '../../../UtilComp/SectionHelper';
+import {SKILLS_SURFACE_TOKENS} from '../../../UtilComp/Skills/SurfaceTokens';
+import useAccordion from '../../../UtilComp/UseAccordion';
 import HeaderLayout from '../../Layout/DarkSpecial/HeaderLayout';
 import SkillsSection from './SkillsSection';
-import {resolveImageSrc} from '../../../utils/SectionHelper';
 
 const SkillsArticle: FC<SkillsArticleProps> = memo(
   ({

@@ -3,7 +3,7 @@ import React, {FC, memo} from 'react';
 import {BaseAlSkills} from '../../../../data/Utils/GeneralDef';
 import {ArtSkillsLytProps} from '../../../../data/Utils/UtilImportPropsDef';
 
-const BrightPillArtSkillsLyt: FC<ArtSkillsLytProps> = memo(({
+const BPArtSkillsLyt: FC<ArtSkillsLytProps> = memo(({
                                                     AlSkills,
                                                     SectionId,
                                                     ArticleTitleTag,
@@ -56,5 +56,5 @@ const BrightPillArtSkillsLyt: FC<ArtSkillsLytProps> = memo(({
   );
 });
 
-BrightPillArtSkillsLyt.displayName = 'BrightPillArtSkillsLyt';
-export default BrightPillArtSkillsLyt;
+BPArtSkillsLyt.displayName = 'BPArtSkillsLyt';
+export default BPArtSkillsLyt;

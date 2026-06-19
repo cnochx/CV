@@ -1,14 +1,14 @@
 import {FC, memo} from 'react';
 
 import ContractorSectionData from '../../../data/Contractor/ContractorSectionData';
-import {SectionId} from '../../../data/sectionIdData';
-import BrightPillIndexLyt from '../../Layout/BrightPill/Main/BrightPillIndexLyt';
+import {SectionId} from '../../../data/SectionIdData';
+import PBIndexLyt from '../../Layout/BrightPill/Main/PBIndexLyt';
 
 
 
 const Contractor: FC = memo(() => {
   return (
-    <BrightPillIndexLyt
+    <PBIndexLyt
       IdxContent={ContractorSectionData}
       MainSectionId={SectionId.Contractor}
     />

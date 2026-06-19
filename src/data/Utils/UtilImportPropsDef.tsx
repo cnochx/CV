@@ -2,7 +2,7 @@ import {PropsWithChildren, ReactNode} from 'react';
 
 import {HdrVariantStyleType, HeadingTag, ImgSrcType, StrngUndfndType} from '../Layout/LayoutTypeDef';
 import {SetHover} from '../SectionHelperDef';
-import {SectionId} from '../sectionIdData';
+import {SectionId} from '../SectionIdData';
 import {SkillItem, SkillsCollection} from '../Skills/SkillCollectionDef';
 import {
   BaseAlContentDef, BaseCalToActionItemDef, BaseDescriptionDef, BaseHeaderItemDef,
@@ -53,7 +53,7 @@ export type SkillsProps = PropsWithChildren<{
 }>;
 
 /**
- * Props for the BrightPillIndexLyt component. Defines the structured content model
+ * Props for the PBIndexLyt component. Defines the structured content model
  * rendered by the contractor index layout.[file:1]
  */
 export type ContentIndexLytProps = PropsWithChildren<{
@@ -145,7 +145,7 @@ export type HeaderLayoutProps = PropsWithChildren<{
 }>;
 
 /**
- * Props for the BrightPillArtHeaderLyt component. Defines the visual configuration and optional suffix section for the header wrapper.
+ * Props for the BPArtHeaderLyt component. Defines the visual configuration and optional suffix section for the header wrapper.
  */
 export type HeaderLytProps = PropsWithChildren<{
 

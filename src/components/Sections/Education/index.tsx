@@ -1,14 +1,14 @@
 import React, {FC, memo} from 'react';
 
 import {EducationSectionData} from '../../../data/Education/EducationSectionData';
-import {SectionId} from '../../../data/sectionIdData';
-import BrightPillIndexLyt from '../../Layout/BrightPill/Main/BrightPillIndexLyt';
+import {SectionId} from '../../../data/SectionIdData';
+import PBIndexLyt from '../../Layout/BrightPill/Main/PBIndexLyt';
 
 
 const Education: FC = memo(() => {
 
   return (
-    <BrightPillIndexLyt
+    <PBIndexLyt
       IdxContent={EducationSectionData}
       MainSectionId={SectionId.Education}
     />

@@ -6,7 +6,7 @@ import {FC, memo} from 'react';
 
 import {contact} from '../../../data/data';
 import {ContactType, ContactValue} from '../../../data/dataDef';
-import {SectionId} from '../../../data/sectionIdData'
+import {SectionId} from '../../../data/SectionIdData'
 import FacebookIcon from '../../Icon/FacebookIcon';
 import GithubIcon from '../../Icon/GithubIcon';
 import InstagramIcon from '../../Icon/InstagramIcon';

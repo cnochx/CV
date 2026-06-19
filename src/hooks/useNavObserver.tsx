@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 
-import {SectionId} from '../data/sectionIdData';
+import {SectionId} from '../data/SectionIdData';
 
 /**
  * Observes visible sections and reports the currently active section identifier.

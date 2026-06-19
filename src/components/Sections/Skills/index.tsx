@@ -3,7 +3,7 @@ import {HiOutlineEnvelope} from 'react-icons/hi2';
 
 import AdditionalElements from '../../../data/AdditionalElements';
 import HeaderData from '../../../data/HeaderData';
-import {SectionId} from '../../../data/sectionIdData';
+import {SectionId} from '../../../data/SectionIdData';
 import SkillsCollectionData from '../../../data/Skills/SkillCollection';
 import {SkillsCollection} from '../../../data/Skills/SkillCollectionDef';
 import {ExtCallToActionDef} from '../../../data/Utils/GeneralDef';

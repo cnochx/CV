@@ -3,7 +3,7 @@ import Image from 'next/image';
 import {FC, memo} from 'react';
 
 import {heroData} from '../../../data/HeroData';
-import {SectionId} from '../../../data/sectionIdData';
+import {SectionId} from '../../../data/SectionIdData';
 import SectionLayout from '../../Layout/DarkSpecial/SectionLayout';
 import Nav from '../../Navigation/Nav';
 import Socials from '../../Socials';

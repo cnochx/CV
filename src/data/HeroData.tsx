@@ -2,7 +2,7 @@ import {ArrowDownTrayIcon} from '@heroicons/react/24/outline';
 
 import heroImage from '../images/hero_background.webp';
 import {Hero} from './HeroDataDef';
-import {SectionId} from './sectionIdData';
+import {SectionId} from './SectionIdData';
 
 /**
  * HeroPre section

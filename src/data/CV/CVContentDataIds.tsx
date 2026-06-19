@@ -2,7 +2,7 @@
 
 import {LinkIcon} from '@heroicons/react/24/outline';
 
-import {SectionId} from '../sectionIdData';
+import {SectionId} from '../SectionIdData';
 import {BaseAlContentDef} from '../Utils/GeneralDef';
 
 export const CVContentDataIds: BaseAlContentDef = {
