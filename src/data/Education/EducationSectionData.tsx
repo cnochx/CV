@@ -1,7 +1,7 @@
 // src/data/Education/EducationSection.ts
 
 import WoodImage from '../../images/wood.webp';
-import {BaseIndexContentDef} from '../Utils/GeneralDef';
+import {BaseIndexContentDef} from '../utilComp/GeneralDef';
 import {EductionContentDataApIds} from './EductionContentDataApIds';
 import {EductionContentDataIcDaa} from './EductionContentDataIcDaa';
 import {EductionContentDataSaIs} from './EductionContentDataSaIs';

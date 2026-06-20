@@ -1,7 +1,7 @@
 import {ChevronDownIcon, ChevronUpIcon} from '@heroicons/react/24/solid';
 import React, {FC, memo} from 'react';
 
-import {ArtDescriptionLyt} from '../../../../data/Utils/UtilImportPropsDef';
+import {ArtDescriptionLyt} from '../../../../data/utilComp/UtilImportPropsDef';
 
 const BPArtDescriptionLyt: FC<ArtDescriptionLyt> = memo(({
                                                                    AlDescription,

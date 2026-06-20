@@ -1,7 +1,7 @@
 import {FC, memo} from 'react';
 
 import {IconDef} from '../../../data/Layout/LayoutTypeDef';
-import {CallToActionProps} from '../../../data/Utils/UtilImportPropsDef';
+import {CallToActionProps} from '../../../data/utilComp/UtilImportPropsDef';
 
 
 const CallToAction: FC<CallToActionProps> = memo(

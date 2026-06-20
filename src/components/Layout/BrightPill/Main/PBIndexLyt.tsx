@@ -2,7 +2,7 @@ import React, {FC, memo} from 'react';
 
 import {HeadingTag, StrngUndfndType} from '../../../../data/Layout/LayoutTypeDef';
 import {SectionId} from '../../../../data/SectionIdData';
-import {ContentIndexLytProps} from '../../../../data/Utils/UtilImportPropsDef';
+import {ContentIndexLytProps} from '../../../../data/utilComp/UtilImportPropsDef';
 import {getId} from '../../../../utilComp/SectionHelper';
 import AsideLyt from '../../AsideLyt';
 import BPArtFooterLyt from '../Extension/BPArtFooterLyt';

@@ -1,6 +1,6 @@
 import {FC, memo} from 'react';
 
-import {CallToActionProps} from '../../../data/Utils/UtilImportPropsDef';
+import {CallToActionProps} from '../../../data/utilComp/UtilImportPropsDef';
 
 const CallToAction: FC<CallToActionProps> = memo(({CallToActionItem}) => {
   const {CtaHref, CtaIcon, CtaPre, CtaText} = CallToActionItem;

@@ -1,6 +1,6 @@
 // hooks/UseHeaderItemProbs.ts
 
-import {BaseAlContentDef} from '../../data/Utils/GeneralDef';
+import {BaseAlContentDef} from '../../data/utilComp/GeneralDef';
 import {getCurrentMonthYear} from '../SectionHelper';
 
 export const customAlContent = (

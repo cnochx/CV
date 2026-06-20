@@ -1,6 +1,6 @@
 // data/cv/items/ebmaster / Web Developer | Full-stack Development, Ferienhaus-Vermittlung fincaferien.de GmbH
 
-import {BaseAlContentDef} from '../Utils/GeneralDef';
+import {BaseAlContentDef} from '../utilComp/GeneralDef';
 
 export const CVContentDataFf: BaseAlContentDef = {
   AlCompany: 'Ferienhaus-Vermittlung fincaferien.de GmbH',

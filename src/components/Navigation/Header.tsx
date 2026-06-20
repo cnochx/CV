@@ -5,7 +5,7 @@ import Link from 'next/link';
 import {FC, Fragment, memo, useCallback, useMemo, useState} from 'react';
 
 import {SectionId} from '../../data/SectionIdData';
-import {NavItemProps, NavProps} from '../../data/Utils/UtilImportPropsDef';
+import {NavItemProps, NavProps} from '../../data/utilComp/UtilImportPropsDef';
 import {useNavObserver} from '../../hooks/useNavObserver';
 
 export const headerID = 'headerNav';

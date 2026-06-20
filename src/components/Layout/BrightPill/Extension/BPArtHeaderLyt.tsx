@@ -1,6 +1,6 @@
 import {memo} from 'react';
 
-import {HeaderLytProps} from '../../../../data/Utils/UtilImportPropsDef';
+import {HeaderLytProps} from '../../../../data/utilComp/UtilImportPropsDef';
 import {getHeaderIds} from '../../../../utilComp/SectionHelper';
 
 

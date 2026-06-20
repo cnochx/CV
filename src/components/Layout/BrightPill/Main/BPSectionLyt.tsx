@@ -1,6 +1,6 @@
 import React, {FC, memo, useCallback, useState} from 'react';
 
-import {ContentSectionLytProps} from '../../../../data/Utils/UtilImportPropsDef';
+import {ContentSectionLytProps} from '../../../../data/utilComp/UtilImportPropsDef';
 import {getContentIds} from '../../../../utilComp/SectionHelper';
 import AsideLyt from '../../AsideLyt';
 import BPArtDescriptionLyt from '../Extension/BPArtDescriptionLyt';

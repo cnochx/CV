@@ -1,6 +1,6 @@
 import {FC, memo} from 'react';
 
-import {ArticleFooterLytProps} from '../../../../data/Utils/UtilImportPropsDef';
+import {ArticleFooterLytProps} from '../../../../data/utilComp/UtilImportPropsDef';
 
 
 /**

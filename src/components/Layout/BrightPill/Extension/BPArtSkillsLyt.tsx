@@ -1,7 +1,7 @@
 import React, {FC, memo} from 'react';
 
-import {BaseAlSkills} from '../../../../data/Utils/GeneralDef';
-import {ArtSkillsLytProps} from '../../../../data/Utils/UtilImportPropsDef';
+import {BaseAlSkills} from '../../../../data/utilComp/GeneralDef';
+import {ArtSkillsLytProps} from '../../../../data/utilComp/UtilImportPropsDef';
 
 const BPArtSkillsLyt: FC<ArtSkillsLytProps> = memo(({
                                                     AlSkills,

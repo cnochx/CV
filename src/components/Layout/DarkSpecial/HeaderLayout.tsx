@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import {FC, memo} from 'react';
 
-import {HeaderLayoutProps} from '../../../data/Utils/UtilImportPropsDef';
+import {HeaderLayoutProps} from '../../../data/utilComp/UtilImportPropsDef';
 import {getHeaderBorder, getHeaderClass} from '../../../utilComp/Layout/HeaderLayoutSub';
 
 

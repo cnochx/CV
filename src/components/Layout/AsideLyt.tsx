@@ -1,7 +1,7 @@
 import React, {FC, memo} from 'react';
 
-import {BaseCalToActionItemDef} from '../../data/Utils/GeneralDef';
-import {AsideLytProps} from '../../data/Utils/UtilImportPropsDef';
+import {BaseCalToActionItemDef} from '../../data/utilComp/GeneralDef';
+import {AsideLytProps} from '../../data/utilComp/UtilImportPropsDef';
 import CallToAction from '../Navigation/CallToAction/CallToAction';
 
 

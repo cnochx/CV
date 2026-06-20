@@ -2,8 +2,8 @@
 import React, {FC, memo} from 'react';
 
 import {HeadingTag} from '../../../../data/Layout/LayoutTypeDef';
-import {BaseAlContentDef} from '../../../../data/Utils/GeneralDef';
-import {ContentArticleLytProps} from '../../../../data/Utils/UtilImportPropsDef';
+import {BaseAlContentDef} from '../../../../data/utilComp/GeneralDef';
+import {ContentArticleLytProps} from '../../../../data/utilComp/UtilImportPropsDef';
 import {customAlContent} from '../../../../utilComp/Layout/CustomAlContent';
 import {getArticleIds} from '../../../../utilComp/SectionHelper';
 import ArticleExtShell from '../../ExtShell/ArticleExtShell';

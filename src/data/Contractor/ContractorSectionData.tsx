@@ -1,7 +1,7 @@
 import {HiOutlineEnvelope} from 'react-icons/hi2';
 
 import WoodImage from '../../images/wood.webp';
-import {BaseIndexContentDef} from '../Utils/GeneralDef';
+import {BaseIndexContentDef} from '../utilComp/GeneralDef';
 import ContractorContentDataDifferent from './ContractorContentDataDifferent';
 import ContractorContentDataFocus from './ContractorContentDataFocus';
 import ContractorContentDataSolve from './ContractorContentDataSolve';

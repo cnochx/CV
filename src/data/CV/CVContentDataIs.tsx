@@ -1,6 +1,6 @@
 // data/cv/items/Senior SAP Developer, Intecsoft GmbH & Co
 
-import {BaseAlContentDef} from '../Utils/GeneralDef';
+import {BaseAlContentDef} from '../utilComp/GeneralDef';
 
 export const CVContentDataIs: BaseAlContentDef = {
   AlCompany: 'Intecsoft GmbH & Co',
