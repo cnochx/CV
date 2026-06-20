@@ -1,7 +1,7 @@
 
 import {ReactNode} from 'react';
 
-import {CallToActionType, DateType, IconDef, ImgSrcType, RoleType, StrngUndfndType} from '../Layout/LayoutTypeDef';
+import {CallToActionType, DateType, IconDef, ImgSrcType, RoleType, StrngUndfndType} from './LayoutTypeDef';
 
 /**
  * Defines the top-level content model rendered for one index section.
