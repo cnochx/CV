@@ -5,7 +5,6 @@ import Head from 'next/head';
 import {useRouter} from 'next/router';
 import {memo, PropsWithChildren, useMemo} from 'react';
 
-
 import {HomepageMetaDataDef} from '../../data/Homepage/HomepageMetaDataDef';
 
 const Page: NextPage<PropsWithChildren<HomepageMetaDataDef>> = memo(
