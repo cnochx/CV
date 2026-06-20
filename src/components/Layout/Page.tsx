@@ -3,11 +3,12 @@ import {SpeedInsights} from '@vercel/speed-insights/next';
 import {NextPage} from 'next';
 import Head from 'next/head';
 import {useRouter} from 'next/router';
-import {memo, PropsWithChildren} from 'react';
+import {memo, PropsWithChildren, useMemo} from 'react';
 
-import {HomePageMeta} from '../../data/HomepageDataDef';
 
-const Page: NextPage<PropsWithChildren<HomePageMeta>> = memo(
+import {HomepageMetaDataDef} from '../../data/Homepage/HomepageMetaDataDef';
+
+const Page: NextPage<PropsWithChildren<HomepageMetaDataDef>> = memo(
   ({
      children,
      title,
@@ -27,6 +28,14 @@ const Page: NextPage<PropsWithChildren<HomePageMeta>> = memo(
    }) => {
     const {asPath: pathname} = useRouter();
     const urlPath = `${url}${pathname}`;
+
+    const structuredDataInnerHtml = useMemo(
+      () =>
+        structuredData
+          ? {__html: JSON.stringify(structuredData).replace(/</g, '\\u003c')}
+          : undefined,
+      [structuredData],
+    );
 
     return (
       <>
@@ -56,16 +65,15 @@ const Page: NextPage<PropsWithChildren<HomePageMeta>> = memo(
           <meta content={title} name="twitter:title" />
           <meta content={description} name="twitter:description" />
           <meta content={ogImg || image} name="twitter:image" />
-
-          {structuredData && (
-            <script
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify(structuredData),
-              }}
-              type="application/ld+json"
-            />
-          )}
         </Head>
+
+        {structuredDataInnerHtml && (
+          <script
+            dangerouslySetInnerHTML={structuredDataInnerHtml}
+            type="application/ld+json"
+          />
+        )}
+
         {children}
         <Analytics />
         <SpeedInsights />
