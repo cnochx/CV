@@ -6,7 +6,7 @@ export const CVContentDataIs: BaseAlContentDef = {
   AlCompany: 'Intecsoft GmbH & Co',
   AlCountry: 'Germany',
   AlDateEnd: 'Present',
-  AlDateStrt: '01/205',
+  AlDateStrt: '01/2025',
   AlDateCustom: true,
   AlDescription1: {
     DnHead: 'Modernization and integration in S/4HANA-related projects.',
