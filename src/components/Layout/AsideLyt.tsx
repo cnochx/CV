@@ -1,6 +1,6 @@
 import React, {FC, memo} from 'react';
 
-import {BaseCalToActionItemDef} from '../../data/utilComp/GeneralDef';
+import {BaseCallToActionItemDef} from '../../data/utilComp/GeneralDef';
 import {AsideLytProps} from '../../data/utilComp/UtilImportPropsDef';
 import CallToAction from '../Navigation/CallToAction/CallToAction';
 
@@ -36,7 +36,7 @@ const AsideLyt: FC<AsideLytProps> = memo(({children, SectionId, CallToActionItem
 
           {CallToActionItem?.AeiCallToActionItems.length ? (
             <>
-              {CallToActionItem?.AeiCallToActionItems.map((CallToActionItem: BaseCalToActionItemDef) => (
+              {CallToActionItem?.AeiCallToActionItems.map((CallToActionItem: BaseCallToActionItemDef) => (
                 <CallToAction
                   CallToActionItem={CallToActionItem}
                   key={CallToActionItem.CtaKey}

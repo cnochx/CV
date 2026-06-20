@@ -170,7 +170,7 @@ export interface ImgItem {
  */
 export interface ExtCallToActionDef {
 
-  AeiCallToActionItems: BaseCalToActionItemDef[];
+  AeiCallToActionItems: BaseCallToActionItemDef[];
 
   AeiEnableCallToAction: boolean;
 }
@@ -178,7 +178,7 @@ export interface ExtCallToActionDef {
 /**
  * Defines one call-to-action entry rendered inside a section or timeline item.
  */
-export interface BaseCalToActionItemDef {
+export interface BaseCallToActionItemDef {
   /** Optional DOM-friendly identifier used for the CTA element. */
   CtaId?: 'calltoaction' | string;
 

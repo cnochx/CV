@@ -4,7 +4,7 @@ import {SetHover} from '../SectionHelperDef';
 import {SectionId} from '../SectionIdData';
 import {SkillItem, SkillsCollection} from '../Skills/SkillCollectionDef';
 import {
-  BaseAlContentDef, BaseCalToActionItemDef, BaseDescriptionDef, BaseHeaderItemDef,
+  BaseAlContentDef, BaseCallToActionItemDef, BaseDescriptionDef, BaseHeaderItemDef,
   BaseIndexContentDef,
   BaseSuffixDef,
   ExtAlSkills,
@@ -201,7 +201,7 @@ export type SectionLytProps = PropsWithChildren<{
 }>;
 
 export type CallToActionProps = {
-  CallToActionItem: BaseCalToActionItemDef;
+  CallToActionItem: BaseCallToActionItemDef;
 };
 
 export type NavProps = {
