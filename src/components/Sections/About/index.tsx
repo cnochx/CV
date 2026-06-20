@@ -59,16 +59,24 @@ const About: FC = memo(() => {
 
             <section className="col-span-1 flex flex-col gap-y-6 md:col-span-3">
 
-              <div className="prose prose-sm text-gray-300 sm:prose-base">
+              <div className="prose prose-sm text-neutral-200 sm:prose-base">
                 {Description}
               </div>
 
               <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {aboutItems.map(({label, text, Icon}, idx) => (
-                  <li className="col-span-1 flex  items-start gap-x-2" key={idx}>
-                    {Icon && <Icon className="h-5 w-5 text-fuchsia-400" />}
-                    <span className="text-sm font-bold text-neutral-100">{label}:</span>
-                    <span className=" text-sm text-gray-300">{text}</span>
+
+
+                  <li className="col-span-1 flex items-start gap-x-3" key={idx}>
+                    {Icon && (
+                      <span className="mt-0.5 flex w-7 shrink-0 justify-center">
+                        <Icon className="h-6 w-6 text-fuchsia-400" />
+                      </span>
+                    )}
+                    <div>
+                      <span className="text-sm font-bold text-neutral-100">{label}:</span>{' '}
+                      <span className="text-sm text-neutral-200">{text}</span>
+                    </div>
                   </li>
                 ))}
               </ul>
