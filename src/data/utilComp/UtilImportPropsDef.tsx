@@ -1,6 +1,5 @@
 import {PropsWithChildren, ReactNode} from 'react';
 
-import {HdrVariantStyleType, HeadingTag, ImgSrcType, StrngUndfndType} from './generalTypeDef';
 import {SetHover} from '../SectionHelperDef';
 import {SectionId} from '../SectionIdData';
 import {SkillItem, SkillsCollection} from '../Skills/SkillCollectionDef';
@@ -11,6 +10,7 @@ import {
   ExtAlSkills,
   ExtCallToActionDef,
 } from './GeneralDef';
+import {HdrVariantStyleType, HeadingTag, ImgSrcType, StrngUndfndType} from './generalTypeDef';
 
 /**
  * Props for the `SkillsArticle` component.

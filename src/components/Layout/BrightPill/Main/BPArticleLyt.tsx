@@ -1,8 +1,8 @@
 // components/Layout/BrightPill/Main/BPArticleLyt.tsx
 import React, {FC, memo} from 'react';
 
-import {HeadingTag} from '../../../../data/utilComp/generalTypeDef';
 import {BaseAlContentDef} from '../../../../data/utilComp/GeneralDef';
+import {HeadingTag} from '../../../../data/utilComp/generalTypeDef';
 import {ContentArticleLytProps} from '../../../../data/utilComp/UtilImportPropsDef';
 import {customAlContent} from '../../../../utilComp/Layout/CustomAlContent';
 import {getArticleIds} from '../../../../utilComp/SectionHelper';
