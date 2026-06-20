@@ -34,6 +34,12 @@ export type ImgSrcType =
   | StaticImageData
   | undefined;
 
+export type BgImageSrc =
+  | string
+  | StaticImageData
+  | ImgItem
+  | undefined;
+
 /**
  * Defines the allowed semantic header and layout style variants.
  */
