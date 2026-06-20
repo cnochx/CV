@@ -1,6 +1,6 @@
 import {PropsWithChildren, ReactNode} from 'react';
 
-import {HdrVariantStyleType, HeadingTag, ImgSrcType, StrngUndfndType} from './LayoutTypeDef';
+import {HdrVariantStyleType, HeadingTag, ImgSrcType, StrngUndfndType} from './generalTypeDef';
 import {SetHover} from '../SectionHelperDef';
 import {SectionId} from '../SectionIdData';
 import {SkillItem, SkillsCollection} from '../Skills/SkillCollectionDef';

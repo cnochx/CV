@@ -1,6 +1,6 @@
 import {FC, memo} from 'react';
 
-import {IconButtonLayoutProps} from '../../data/utilComp/LayoutTypeDef';
+import {IconButtonLayoutProps} from '../../data/utilComp/generalTypeDef';
 import {getIconButtonLayoutClass} from '../../utilComp/Layout/IconButtonLayoutSub';
 
 /**

@@ -1,6 +1,6 @@
 import {FC, memo} from 'react';
 
-import {IconDef} from '../../../data/utilComp/LayoutTypeDef';
+import {IconDef} from '../../../data/utilComp/generalTypeDef';
 import {CallToActionProps} from '../../../data/utilComp/UtilImportPropsDef';
 
 

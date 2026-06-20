@@ -1,7 +1,7 @@
 import {StaticImageData} from 'next/image';
 
 import {ThemeVariant} from '../data/HeaderDataDef';
-import {StrngUndfndType} from '../data/utilComp/LayoutTypeDef';
+import {StrngUndfndType} from '../data/utilComp/generalTypeDef';
 import {SetColor, Tailwind} from '../data/SectionHelperDef';
 import {BaseAlContentDef, BaseHeaderItemDef} from '../data/utilComp/GeneralDef';
 import {ContentIdsType, HeaderIdsType, SectionIdsType} from '../data/utilComp/UtilImportPropsDef';

@@ -1,6 +1,6 @@
 import React, {FC, memo} from 'react';
 
-import {HeadingTag, StrngUndfndType} from '../../../../data/utilComp/LayoutTypeDef';
+import {HeadingTag, StrngUndfndType} from '../../../../data/utilComp/generalTypeDef';
 import {SectionId} from '../../../../data/SectionIdData';
 import {ContentIndexLytProps} from '../../../../data/utilComp/UtilImportPropsDef';
 import {getId} from '../../../../utilComp/SectionHelper';
