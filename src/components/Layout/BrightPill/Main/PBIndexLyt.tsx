@@ -3,7 +3,7 @@ import React, {FC, memo} from 'react';
 import {HeadingTag, StrngUndfndType} from '../../../../data/Layout/LayoutTypeDef';
 import {SectionId} from '../../../../data/SectionIdData';
 import {ContentIndexLytProps} from '../../../../data/Utils/UtilImportPropsDef';
-import {getId} from '../../../../UtilComp/SectionHelper';
+import {getId} from '../../../../utilComp/SectionHelper';
 import AsideLyt from '../../AsideLyt';
 import BPArtFooterLyt from '../Extension/BPArtFooterLyt';
 import BPArtHeaderLyt from '../Extension/BPArtHeaderLyt';
@@ -103,7 +103,7 @@ const PBIndexLyt: FC<ContentIndexLytProps> = memo(({IdxContent, MainSectionId}) 
         </BPArtPillLyt>
 
         {IxDescription && (
-          <>
+          <section>
             {IxDescription.DnHead ? (
               <p
                 className="text-2xl font-bold sm:text-2xl"
@@ -115,7 +115,7 @@ const PBIndexLyt: FC<ContentIndexLytProps> = memo(({IdxContent, MainSectionId}) 
             <div className="mt-8 max-w text-neutral-100">
               {IxDescription.DnHead}
             </div>
-          </>
+          </section>
         )}
 
         {IdxContent.IxContent && (<BPArticleLyt

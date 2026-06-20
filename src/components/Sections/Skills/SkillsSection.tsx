@@ -3,8 +3,8 @@ import {FC, memo, MouseEvent, useMemo} from 'react';
 
 import AdditionalElements from '../../../data/AdditionalElements';
 import {SkillsProps} from '../../../data/Utils/UtilImportPropsDef';
-import {SKILLS_SURFACE_TOKENS} from '../../../UtilComp/Skills/SurfaceTokens';
-import useAccordion from '../../../UtilComp/UseAccordion';
+import {SKILLS_SURFACE_TOKENS} from '../../../utilComp/Skills/SurfaceTokens';
+import useAccordion from '../../../utilComp/UseAccordion';
 import HeaderLayout from '../../Layout/DarkSpecial/HeaderLayout';
 
 

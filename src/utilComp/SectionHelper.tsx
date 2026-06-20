@@ -178,6 +178,10 @@ export const getId = ((SectionId: StrngUndfndType,
               : undefined;
 });
 
+
+
+
+
 /**
  * Resolves the article-related DOM ids for one aligned content entry.
  *

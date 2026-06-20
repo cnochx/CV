@@ -2,7 +2,7 @@
 import {CSSProperties, FC, memo} from 'react';
 
 import {PillLayoutProps} from '../../../../data/Utils/UtilImportPropsDef';
-import {resolveImageSrc} from '../../../../UtilComp/SectionHelper';
+import {resolveImageSrc} from '../../../../utilComp/SectionHelper';
 
 
 
