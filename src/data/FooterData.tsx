@@ -32,7 +32,7 @@ export const imprintItems: ImprintItems = {
   addressBrazil: [
     {
       aiKey: 0,
-      text: 'Goiás, Brazil',
+      text: 'Alto Paraíso de Goiás, Goiás, Brazil',
     },
   ],
   onlineAddress: [

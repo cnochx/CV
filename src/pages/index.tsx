@@ -11,7 +11,7 @@ import Footer from '../components/Sections/Footer';
 import Hero from '../components/Sections/Hero';
 import Skills from '../components/Sections/Skills';
 import Testimonials from '../components/Sections/Testimonials';
-import {homePageMeta} from '../data/HomepageData';
+import {HomePageMetaData} from '../data/Homepage/HomepageMetaData';
 
 
 // eslint-disable-next-line react-memo/require-memo
@@ -47,7 +47,8 @@ const Home: FC = memo(() => {
     ogLinkPreView,
     twitterCardType,
     twitterCreator,
-  } = homePageMeta;
+    structuredData
+  } = HomePageMetaData;
 
   return (
     <Page
@@ -60,6 +61,7 @@ const Home: FC = memo(() => {
       ogImgWidth={ogImgWidth}
       ogLinkPreView={ogLinkPreView}
       ogType={ogType}
+      structuredData={structuredData}
       title={title}
       twitterCardType={twitterCardType}
       twitterCreator={twitterCreator}
