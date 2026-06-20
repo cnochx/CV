@@ -1,4 +1,6 @@
-export interface HomePageMeta {
+import {Graph} from 'schema-dts';
+
+export interface HomepageMetaDataDef {
   title: string;
   description: string;
   image?: string;
@@ -22,5 +24,5 @@ export interface HomePageMeta {
   twitterDescription?: string;
   twitterImageUrl?: string;
 
-  structuredData?: Record<string, unknown>;
+  structuredData?: Graph;
 }
