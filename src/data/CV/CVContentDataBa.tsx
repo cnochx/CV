@@ -1,6 +1,6 @@
 // data/cv/items/SAP Technical Consultant | SAP Full-Stack Development, BA Business Advice GmbH
 
-import {BaseAlContentDef} from '../Utils/GeneralDef';
+import {BaseAlContentDef} from '../utilComp/GeneralDef';
 
 export const CVContentDataBa: BaseAlContentDef = {
   AlCompany: 'BA Business Advice GmbH',

@@ -29,7 +29,13 @@ module.exports = {
         },
       },
       screens: {
-        touch: {raw: 'only screen and (pointer: coarse)'},
+        touch: {
+          raw: 'only screen and (pointer: coarse)'
+        },
+        // Set a breakpoint at 790, call it with: 'hidden tall-nav'
+        'tall-nav': {
+          'raw': '(min-height: 790px)'
+        },
       },
     },
   },

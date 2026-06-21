@@ -1,7 +1,7 @@
 import {HiOutlineEnvelope} from 'react-icons/hi2';
 
 import WoodImage from '../../images/wood.webp';
-import {BaseIndexContentDef} from '../Utils/GeneralDef';
+import {BaseIndexContentDef} from '../utilComp/GeneralDef';
 import ContractorContentDataDifferent from './ContractorContentDataDifferent';
 import ContractorContentDataFocus from './ContractorContentDataFocus';
 import ContractorContentDataSolve from './ContractorContentDataSolve';
@@ -28,20 +28,22 @@ export const ContractorSectionData:BaseIndexContentDef = {
   }},
   IxMainImg: {
     ImgKey: 1,
-    ImgId: '',
+    ImgId: 'img_main',
     ImgSrc: WoodImage,
-    ImgAlt: ''
+    ImgType: 'main'
   },
   IxImages: [
     {
       ImgKey: 1,
-      ImgId: 'top',
+      ImgId: 'img_top',
       ImgSrc: WoodImage,
+      ImgType: 'top'
     },
     {
       ImgKey: 1,
-      ImgId: 'bottom',
+      ImgId: 'img_bottom',
       ImgSrc: WoodImage,
+      ImgType: 'bottom'
     }
   ],
   IxContent: [

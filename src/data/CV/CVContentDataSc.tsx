@@ -1,6 +1,6 @@
 // data/cv/items/Software Developer and Linux Administrator | Full-Stack Development, Sengicon GmbH
 
-import {BaseAlContentDef} from '../Utils/GeneralDef';
+import {BaseAlContentDef} from '../utilComp/GeneralDef';
 
 export const CVContentDataSc: BaseAlContentDef = {
   AlCompany: 'Sengicon GmbH',

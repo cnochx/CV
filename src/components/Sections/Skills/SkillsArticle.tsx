@@ -2,10 +2,10 @@ import {ChevronDownIcon, ChevronUpIcon} from '@heroicons/react/24/solid';
 import {FC, memo} from 'react';
 
 import {SkillItem} from '../../../data/Skills/SkillCollectionDef';
-import {SkillsArticleProps} from '../../../data/Utils/UtilImportPropsDef';
-import {resolveImageSrc} from '../../../UtilComp/SectionHelper';
-import {SKILLS_SURFACE_TOKENS} from '../../../UtilComp/Skills/SurfaceTokens';
-import UseAccordion from '../../../UtilComp/UseAccordion';
+import {SkillsArticleProps} from '../../../data/utilComp/UtilImportPropsDef';
+import {resolveImageSrc} from '../../../utilComp/SectionHelper';
+import {SKILLS_SURFACE_TOKENS} from '../../../utilComp/Skills/SurfaceTokens';
+import UseAccordion from '../../../utilComp/UseAccordion';
 import HeaderLayout from '../../Layout/DarkSpecial/HeaderLayout';
 import SkillsSection from './SkillsSection';
 

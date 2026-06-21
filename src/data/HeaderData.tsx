@@ -29,13 +29,13 @@ const HeaderData: HeaderDataDef = {
       <>
         <p>Who I am – German citizen with unrestricted work and residence permit in Brazil. Architect, Modernizer,
           Consultant - Senior software engineer with 20+ years of experience in full-stack web development and recent
-          specialization
-          in modern SAP full-stack development, including SAP BTP, S/4HANA modernization, ABAP, CDS, OData, Fiori/UI5
-          and API integration.</p>
+          specialization in modern SAP full-stack development, including SAP BTP, S/4HANA modernization, ABAP, CDS,
+          OData, Fiori/UI5 and API integration. Based in Brazil with family, <br /><span className="font-bold">available
+            internationally for remote-first consulting and project work.</span></p>
 
-        <p>On the 'web side': I’ve spent many years building and running Drupal sites, handling migrations, performance
-          tuning
-          and technical SEO/GEO to keep organic traffic and conversions stable during change.</p>
+        <p>On the 'web side': I’ve spent many years building and running Drupal sites, React Web applications,
+          handling migrations, performance tuning and technical SEO/GEO to keep organic traffic and conversions stable
+          during change.</p>
       </>
     ),
   }],

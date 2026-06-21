@@ -2,7 +2,7 @@
 
 import {
   BaseAlContentDef
-} from '../Utils/GeneralDef';
+} from '../utilComp/GeneralDef';
 
 export const CVContentDataFfx: BaseAlContentDef = {
   AlCompany: 'Ferienhaus-Vermittlung fincaferien',

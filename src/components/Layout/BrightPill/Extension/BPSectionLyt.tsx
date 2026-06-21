@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import {FC, memo} from 'react';
 
-import {SectionLytProps} from '../../../../data/Utils/UtilImportPropsDef';
+import {SectionLytProps} from '../../../../data/utilComp/UtilImportPropsDef';
 
 
 
