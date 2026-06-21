@@ -1,7 +1,9 @@
-
+import {StaticImageData} from 'next/dist/shared/lib/get-img-props';
 import {ReactNode} from 'react';
 
 import {CallToActionType, DateType, IconDef, ImgSrcType, RoleType, StrngUndfndType} from './generalTypeDef';
+  ImagesType,
+  ImgSrcType,
 
 /**
  * Defines the top-level content model rendered for one index section.
@@ -146,7 +148,10 @@ export interface BaseHeaderItemDef {
 }
 
 /**
- * Defines one image source entry used by section and content models.
+ * Structured image source entry.
+ *
+ * Defines image metadata, source variants, optional actions,
+ * and semantic image typing used across section and content models.
  */
 export interface ImgItem {
   /** Alternative text describing the image content. */
@@ -155,14 +160,20 @@ export interface ImgItem {
   /** Optional call-to-action associated with the image. */
   ImgCallToAction?: ExtCallToActionDef | undefined;
 
-  /** Optional DOM-friendly identifier used for image-specific markup or lookup behavior. */
+  /** Optional identifier used for image-related markup or lookup logic. */
   ImgId?: StrngUndfndType;
 
   /** Stable numeric key used for list rendering. */
   ImgKey?: number;
 
-  /** Image source consumed by Next.js image rendering or static asset imports. */
-  ImgSrc: ImgSrcType;
+  /** Image source consumed by Next.js image rendering or CSS helpers. */
+  ImgSrc?: ImgSrcType;
+
+  /** Optional static image import resolved by Next.js. */
+  ImgStatic?: StaticImageData;
+
+  /** Semantic image type such as screen, mobile, or other supported variants. */
+  ImgType: ImagesType;
 }
 
 /**

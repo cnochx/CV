@@ -9,6 +9,7 @@ import {
   BaseSuffixDef,
   ExtAlSkills,
   ExtCallToActionDef,
+  ImgItem,
 } from './GeneralDef';
 import {HdrVariantStyleType, HeadingTag, ImgSrcType, StrngUndfndType} from './generalTypeDef';
 

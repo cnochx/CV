@@ -29,11 +29,12 @@ export type IconDef =
   | ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>
   | undefined;
 
+/** Supported image source types for direct image rendering. */
 export type ImgSrcType =
   | string
-  | StaticImageData
-  | undefined;
+  | StaticImageData;
 
+/** Supported image source types for flexible image resolution helpers. */
 export type BgImageSrc =
   | string
   | StaticImageData
