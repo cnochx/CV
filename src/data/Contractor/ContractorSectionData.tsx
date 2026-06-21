@@ -28,20 +28,22 @@ export const ContractorSectionData:BaseIndexContentDef = {
   }},
   IxMainImg: {
     ImgKey: 1,
-    ImgId: '',
+    ImgId: 'img_main',
     ImgSrc: WoodImage,
-    ImgAlt: ''
+    ImgType: 'main'
   },
   IxImages: [
     {
       ImgKey: 1,
-      ImgId: 'top',
+      ImgId: 'img_top',
       ImgSrc: WoodImage,
+      ImgType: 'top'
     },
     {
       ImgKey: 1,
-      ImgId: 'bottom',
+      ImgId: 'img_bottom',
       ImgSrc: WoodImage,
+      ImgType: 'bottom'
     }
   ],
   IxContent: [

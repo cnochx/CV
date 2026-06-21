@@ -35,6 +35,7 @@ export const CVSectionData:BaseIndexContentDef = {
   IxMainImg: {
     ImgKey: 1,
     ImgSrc: WoodImage,
+    ImgType: 'main'
   },
   IxContent: [
     CVContentDataFfx,

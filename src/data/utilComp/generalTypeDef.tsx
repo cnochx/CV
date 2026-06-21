@@ -1,29 +1,40 @@
 import {StaticImageData} from 'next/image';
-import React, {ForwardRefExoticComponent, PropsWithChildren, SVGProps} from 'react';
+import React, {ForwardRefExoticComponent, PropsWithChildren, ReactNode, SVGProps} from 'react';
 import {IconType} from 'react-icons';
+
+import {
+  BaseAlContentDef,
+  BaseAlSkills,
+  BaseDescriptionDef,
+  BaseHeaderItemDef,
+  BaseIndexContentDef,
+  BaseSuffixDef,
+  ExtAlSkills,
+  ExtCallToActionDef,
+  ImgItem,
+} from './GeneralDef';
 
 /**
  * Props for the `IconButtonLayout` component.
  *
- * Defines the link target, accessible label, and semantic styling for the icon button wrapper.
+ * Defines the target, accessible label, and optional styling variant
+ * for the icon button wrapper.
  */
 export type IconButtonLayoutProps = PropsWithChildren<{
   /** Link target rendered by the anchor element. */
   href: string;
 
-  /** Accessible label used for the icon-only action. */
+  /** Accessible label for the icon-only action. */
   label: string;
 
-  /** Semantic color variant used to resolve the button styling. */
+  /** Optional semantic color variant. */
   color?: 'bright' | 'dark' | 'highlight' | 'highlightAlt';
 
-  /** Optional additional class names applied to the anchor element. */
+  /** Optional additional class names. */
   className?: string;
 }>;
 
-/**
- * Defines the supported icon component shapes accepted by shared icon helpers.
- */
+/** Supported icon component shapes accepted by shared icon helpers. */
 export type IconDef =
   | IconType
   | ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>
@@ -41,9 +52,7 @@ export type BgImageSrc =
   | ImgItem
   | undefined;
 
-/**
- * Defines the allowed semantic header and layout style variants.
- */
+/** Supported semantic header and layout style variants. */
 export type HdrVariantStyleType =
   | 'bright'
   | 'dark'
@@ -51,22 +60,20 @@ export type HdrVariantStyleType =
   | 'highlightAlt'
   | null;
 
-/**
- * Defines one date range label used by timeline items.
- */
+/** Date label type used by timeline and article entries. */
 export type DateType = string;
 
-/**
- * Defines the supported call-to-action interaction variants.
- */
+/** Supported call-to-action behavior variants. */
 export type CallToActionType =
   | 'contact'
   | 'jump'
   | 'linkPill'
   | 'linkSimple';
 
+/** Shared helper type for optional string values. */
 export type StrngUndfndType = string | undefined;
 
+/** Supported role labels used by content entries. */
 export type RoleType =
   | 'Contract-based'
   | 'Project-based'
@@ -79,3 +86,14 @@ export type RoleType =
   | undefined;
 
 export type HeadingTag = keyof React.JSX.IntrinsicElements;
+
+
+
+/** Supported semantic image type variants. */
+export type ImagesType =
+  | 'mobile'
+  | 'screen'
+  | 'undefined'
+  | 'top'
+  | 'bottom'
+  | 'main';

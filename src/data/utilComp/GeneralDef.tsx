@@ -1,146 +1,190 @@
 import {StaticImageData} from 'next/dist/shared/lib/get-img-props';
 import {ReactNode} from 'react';
 
-import {CallToActionType, DateType, IconDef, ImgSrcType, RoleType, StrngUndfndType} from './generalTypeDef';
+import {
+  CallToActionType,
+  DateType,
+  IconDef,
   ImagesType,
   ImgSrcType,
+  RoleType,
+  StrngUndfndType,
+} from './generalTypeDef';
 
 /**
- * Defines the top-level content model rendered for one index section.
+ * Top-level structured content model for one index-based section.
+ *
+ * This interface groups the complete content required to render one main
+ * section, including header, descriptions, content articles, call-to-action
+ * items, footer suffix content, and related image assets.
  */
 export interface BaseIndexContentDef {
-  /** Main article entries rendered inside the contractor content section. */
+  /** Main article entries rendered inside the section body. */
   IxContent: BaseAlContentDef[];
 
-  /** Optional suffix content rendered in the footer area below the main section content. */
+  /** Optional suffix content rendered below the main section content. */
   IxBottomSuffix?: BaseSuffixDef | undefined;
 
-  /** Optional call-to-action group rendered in the footer section. */
+  /** Optional call-to-action group rendered near the section footer. */
   IxCallToAction?: ExtCallToActionDef | undefined;
 
-  /** Optional description block rendered below the hero header. */
+  /** Optional description block rendered below the section header. */
   IxDescription?: BaseDescriptionDef | undefined;
 
-  /** Header content rendered at the top of the index section. */
+  /** Header content rendered at the top of the section. */
   IxHeader: BaseHeaderItemDef;
 
-  /** Optional additional images associated with the section content. */
+  /** Optional additional images associated with the section. */
   IxImages?: ImgItem[] | undefined;
 
-  /** Optional primary image rendered in the hero and footer pill layouts. */
+  /** Optional primary image rendered by hero, pill, or footer layouts. */
   IxMainImg?: ImgItem | undefined;
 }
 
 /**
- * Defines one aligned timeline or CV content entry.
+ * Structured content model for one aligned article, timeline, or CV entry.
+ *
+ * This interface represents one reusable content item containing header data,
+ * descriptions, metadata, images, skill groups, and optional call-to-action content.
  */
 export interface BaseAlContentDef {
-  /** Optional suffix content rendered below the main section content. */
+  /** Optional suffix content rendered below the entry content. */
   AlBottomSuffix?: BaseSuffixDef;
 
   /** Optional country label rendered for the entry. */
   AlCountry?: StrngUndfndType;
 
-  /** Optional call-to-action items rendered for the article entry. */
+  /** Optional call-to-action group rendered for the entry. */
   AlCallToAction?: ExtCallToActionDef | undefined;
 
+  /** Optional end date for the entry. */
   AlDateEnd?: DateType;
 
+  /** Optional start date for the entry. */
   AlDateStrt?: DateType;
 
-  AlDateCustom: boolean;
+  /** Marks the date display as custom when set. */
+  AlDateCustom?: boolean;
 
+  /** Optional custom date node rendered instead of a computed date range. */
   AlDateCustomVal?: ReactNode;
 
+  /** Optional first description block rendered for the entry. */
   AlDescription1?: BaseDescriptionDef | undefined;
 
+  /** Optional second description block rendered for the entry. */
   AlDescription2?: BaseDescriptionDef | undefined;
 
+  /** Optional third description block rendered for the entry. */
   AlDescription3?: BaseDescriptionDef | undefined;
 
-  AlDivide: boolean;
+  /** Enables a visual divider for the entry when set. */
+  AlDivide?: boolean;
 
-  /** Header content rendered at the top of the section. */
-  AlHeaderItem: BaseHeaderItemDef;
+  /** Header content rendered at the top of the entry. */
+  AlHeaderItem?: BaseHeaderItemDef;
 
-  AlId?: StrngUndfndType;
+  /** Stable string identifier used for the content item. */
+  AlId: StrngUndfndType;
 
-  /** Optional additional image sources rendered for the entry. */
+  /** Optional additional image entries associated with the content item. */
   AlImages?: ImgItem[];
 
+  /** Stable numeric key used for list rendering. */
   AlKey: number;
 
-  AlCompany?: StrngUndfndType
+  /** Optional company label rendered for the entry. */
+  AlCompany?: StrngUndfndType;
 
   /** Optional location label rendered for the entry. */
   AlLocation?: StrngUndfndType;
 
-  /** Optional primary image source rendered for the entry. */
+  /** Optional primary image rendered for the entry. */
   AlMainImg?: ImgItem | undefined;
 
   /** Optional role label rendered for the entry. */
   AlRole?: RoleType;
 
+  /** Optional grouped skills configuration rendered for the entry. */
   AlSkills?: ExtAlSkills | undefined;
 }
 
 /**
- * Defines one grouped skill configuration rendered for a CV entry.
+ * Grouped skills model rendered inside a content entry.
+ *
+ * Defines whether the skills section is enabled, the section identifier,
+ * the optional heading, and the list of skill items.
  */
 export interface ExtAlSkills {
-
+  /** Enables rendering of the skills section when true. */
   SeiEnableSkills: boolean;
 
+  /** Identifier used for the skills section. */
   SeiId: 'skills' | StrngUndfndType;
 
+  /** Skill items rendered by the section. */
   SeiSkillsItems: BaseAlSkills[] | undefined;
 
+  /** Optional heading displayed above the skills list. */
   SeiSkillsHead?: StrngUndfndType;
 }
 
 /**
- * Defines one skill entry rendered inside a grouped skills list.
+ * Single skill item rendered inside a grouped skill collection.
+ *
+ * Defines the display name, description, stable identifiers,
+ * and initial open state of the skill item.
  */
 export interface BaseAlSkills {
+  /** Optional description block rendered for the skill item. */
   AlsDescription?: BaseDescriptionDef | undefined;
 
+  /** Stable identifier used for the skill item. */
   AlsId: StrngUndfndType;
 
-  /** Stable numeric identifier for the skill entry. */
+  /** Stable numeric key used for list rendering. */
   AlsKey: number;
 
-  /** Visible display name of the skill entry. */
+  /** Visible display name of the skill item. */
   AlsName?: StrngUndfndType;
 
-  /** Controls whether the skill entry is initially expanded. */
+  /** Controls whether the skill item is initially expanded. */
   AlsOpen: boolean;
 }
 
 /**
- * Defines one structured description block with heading, identifier, and content.
+ * Structured description block.
+ *
+ * Defines a description heading, identifier, and rich content node.
  */
 export interface BaseDescriptionDef {
+  /** Visible heading rendered for the description block. */
   DnHead: string;
 
+  /** Identifier used for description-specific DOM ids or lookup logic. */
   DnId: 'Description1' | 'Description2' | 'Description3' | StrngUndfndType;
 
+  /** Rich description content rendered inside the description block. */
   DnText: ReactNode;
 }
 
 /**
- * Defines one header content entry rendered in a section header.
+ * Structured header content model for a section or article header.
+ *
+ * Defines the main title, optional subtitle, optional suffix content,
+ * and header-related identifiers.
  */
 export interface BaseHeaderItemDef {
-  /** Stable identifier used for the header entry. */
+  /** Stable identifier used for the header item. */
   HdrId: 'title' | StrngUndfndType;
 
-  /** Optional secondary identifier used by subtitle-related markup or lookup logic. */
+  /** Optional secondary identifier used for subtitle markup or lookup logic. */
   HdrSubId?: StrngUndfndType;
 
-  /** Optional subtitle displayed with the main title. */
+  /** Optional subtitle displayed below or beside the main title. */
   HdrSubTitle?: StrngUndfndType;
 
-  /** Main title displayed in the section header. */
+  /** Main title displayed in the header. */
   HdrTitle: string;
 
   /** Optional suffix content rendered with the title block. */
@@ -177,59 +221,69 @@ export interface ImgItem {
 }
 
 /**
- * Defines one call-to-action group with enable state and CTA entries.
+ * Grouped call-to-action model.
+ *
+ * Defines whether CTA rendering is enabled and provides the CTA item collection.
  */
 export interface ExtCallToActionDef {
-
+  /** CTA items rendered by the group. */
   AeiCallToActionItems: BaseCallToActionItemDef[];
 
+  /** Enables rendering of the CTA group when true. */
   AeiEnableCallToAction: boolean;
 }
 
 /**
- * Defines one call-to-action entry rendered inside a section or timeline item.
+ * Single call-to-action entry.
+ *
+ * Defines the label, action type, optional icon, target, and presentation flags
+ * for one CTA rendered in a section or content item.
  */
 export interface BaseCallToActionItemDef {
-  /** Optional DOM-friendly identifier used for the CTA element. */
+  /** Optional identifier used for CTA-specific markup or lookup logic. */
   CtaId?: 'calltoaction' | string;
 
   /** Optional icon rendered with the CTA label. */
   CtaIcon?: IconDef;
 
-  /** Optional target used for link, jump, or mail actions. */
+  /** Optional target used for mail, link, download, or jump actions. */
   CtaHref?: 'mailto:martin@grellmann.eu?subject=Send from grellmann.app CV' | string | undefined;
 
-  /** Stable numeric identifier for the call-to-action entry. */
+  /** Stable numeric key used for list rendering. */
   CtaKey: number;
 
-  /** Optional internal or display name used for the CTA entry. */
+  /** Optional internal or display name for the CTA item. */
   CtaName?: string;
 
-  /** Optional prefix content rendered before the CTA label. */
+  /** Optional prefix text rendered before the CTA label. */
   CtaPre?: string | undefined;
 
   /** Marks the CTA as the primary action when set. */
   CtaPrimary?: boolean;
 
-  /** Visible label rendered for the CTA. */
+  /** Visible text label rendered for the CTA. */
   CtaText?: string | 'Let\'s talk ... send me an email' | undefined;
 
-  /** Action type used to resolve the CTA behavior. */
+  /** Semantic action type used to resolve CTA behavior. */
   CtaType: CallToActionType;
 }
 
 /**
- * Defines optional suffix content rendered below a content section.
+ * Optional suffix content block.
+ *
+ * Defines the identifier, optional title, and rendered suffix node
+ * displayed below a content or section area.
  */
 export interface BaseSuffixDef {
-  /** Optional DOM-friendly identifier used for the content suffix wrapper. */
+  /** Identifier used for the suffix wrapper. */
   SxId: 'title-suffix' | StrngUndfndType;
 
+  /** Optional stable numeric key used for list rendering. */
   SxKey?: number;
 
-  /** Suffix content rendered inside the content suffix area. */
+  /** Content rendered inside the suffix area. */
   SxSuffix: ReactNode | undefined;
 
-  /** Optional title displayed above the suffix content. */
+  /** Optional title rendered above the suffix content. */
   SxTitle?: StrngUndfndType;
 }
