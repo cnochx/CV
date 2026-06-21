@@ -1,7 +1,7 @@
 import {FC, memo} from 'react';
 
-import {IconButtonLayoutProps} from '../../data/Layout/LayoutTypeDef';
-import {getIconButtonLayoutClass} from '../../UtilComp/Layout/IconButtonLayoutSub';
+import {IconButtonLayoutProps} from '../../data/utilComp/generalTypeDef';
+import {getIconButtonLayoutClass} from '../../utilComp/Layout/IconButtonLayoutSub';
 
 /**
  * Renders a reusable icon-only link button with semantic Tailwind styling.

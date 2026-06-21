@@ -1,12 +1,12 @@
 // data/cv/items/Senior SAP Developer, Intecsoft GmbH & Co
 
-import {BaseAlContentDef} from '../Utils/GeneralDef';
+import {BaseAlContentDef} from '../utilComp/GeneralDef';
 
 export const CVContentDataIs: BaseAlContentDef = {
   AlCompany: 'Intecsoft GmbH & Co',
   AlCountry: 'Germany',
   AlDateEnd: 'Present',
-  AlDateStrt: '01/205',
+  AlDateStrt: '01/2025',
   AlDateCustom: true,
   AlDescription1: {
     DnHead: 'Modernization and integration in S/4HANA-related projects.',

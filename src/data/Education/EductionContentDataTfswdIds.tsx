@@ -1,6 +1,6 @@
 // Training Full-Stack Web Developer – Indisoft GmbH
 
-import {BaseAlContentDef} from '../Utils/GeneralDef';
+import {BaseAlContentDef} from '../utilComp/GeneralDef';
 
 export const EductionContentDataTfswdIds: BaseAlContentDef = {
   AlKey: 3,

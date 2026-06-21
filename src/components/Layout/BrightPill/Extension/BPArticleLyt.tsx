@@ -1,6 +1,6 @@
 import {FC, memo} from 'react';
 
-import {BrightPillArticleLytProps} from '../../../../data/Utils/UtilImportPropsDef';
+import {BrightPillArticleLytProps} from '../../../../data/utilComp/UtilImportPropsDef';
 
 
 const BPArticleLyt: FC<BrightPillArticleLytProps> = memo(

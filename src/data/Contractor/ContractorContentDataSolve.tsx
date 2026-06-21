@@ -1,7 +1,7 @@
 // data/cv/items/jobSAP.ts
 
 
-import {BaseAlContentDef} from '../Utils/GeneralDef';
+import {BaseAlContentDef} from '../utilComp/GeneralDef';
 
 export const ContractorContentDataSolve: BaseAlContentDef = {
   AlKey: 2,

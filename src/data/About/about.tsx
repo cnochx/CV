@@ -1,5 +1,12 @@
-import {AcademicCapIcon, CalendarIcon, FlagIcon, SparklesIcon} from '@heroicons/react/20/solid';
-import {BuildingOffice2Icon, MapIcon} from '@heroicons/react/24/outline';
+
+import {
+  AcademicCapIcon,
+  BuildingOffice2Icon,
+  CalendarIcon,
+  FlagIcon,
+  MapIcon,
+  SparklesIcon,
+} from '@heroicons/react/24/outline';
 
 import {AboutDataDef} from './aboutDef';
 

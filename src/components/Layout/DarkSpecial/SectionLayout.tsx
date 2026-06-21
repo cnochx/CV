@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import {FC, memo} from 'react';
 
-import {SectionLayoutProps} from '../../../data/Utils/UtilImportPropsDef';
+import {SectionLayoutProps} from '../../../data/utilComp/UtilImportPropsDef';
 
 const SectionLayout: FC<SectionLayoutProps> = memo(
   ({children, sectionId, noPadding = false, className, IsMain}) => {

@@ -1,6 +1,6 @@
 import {FC, memo} from 'react';
 
-import {CallToActionProps} from '../../../data/Utils/UtilImportPropsDef';
+import {CallToActionProps} from '../../../data/utilComp/UtilImportPropsDef';
 import CallToActionEmail from './CallToActionEmail';
 import CallToActionJump from './CallToActionJump';
 import CallToActionLink from './CallToActionLinkPill';

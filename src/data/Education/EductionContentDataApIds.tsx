@@ -1,6 +1,6 @@
 // Agile Project Management – Indisoft GmbH
 
-import {BaseAlContentDef} from '../Utils/GeneralDef';
+import {BaseAlContentDef} from '../utilComp/GeneralDef';
 
 export const EductionContentDataApIds: BaseAlContentDef = {
   AlKey: 2,

@@ -1,6 +1,6 @@
 import {FC, memo} from 'react';
 
-import {ArticleFooterLytProps} from '../../../../data/Utils/UtilImportPropsDef';
+import {ArticleFooterLytProps} from '../../../../data/utilComp/UtilImportPropsDef';
 
 
 /**
@@ -18,7 +18,7 @@ import {ArticleFooterLytProps} from '../../../../data/Utils/UtilImportPropsDef';
  * @param {React.ReactNode} [props.children] - Optional footer content rendered before the suffix and CTAs.
  * @param {string} [props.footerClassName] - Tailwind class string applied to the footer wrapper.
  * @param {import('../../data/Content/LayoutTypeDef').CallToActionItemDef[]} [props.CallToActions] - Optional call-to-action entries rendered in the footer.
- * @param {import('../../../../data/Layout/LayoutTypeDef').CntSuffixDef} [props.BottomSuffix] - Optional suffix block with title and content rendered above the CTAs.
+ * @param {import('../../../../data/utilComp/generalTypeDef').CntSuffixDef} [props.BottomSuffix] - Optional suffix block with title and content rendered above the CTAs.
  * @param {HeadingTag} [props.FooterTitleTag] - Optional heading tag applied to the suffix title.
  * @returns {JSX.Element} Rendered article footer layout.
  */

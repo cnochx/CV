@@ -2,7 +2,7 @@
 import {HiOutlineEnvelope} from 'react-icons/hi2';
 
 import WoodImage from '../../images/wood.webp';
-import {BaseIndexContentDef} from '../Utils/GeneralDef';
+import {BaseIndexContentDef} from '../utilComp/GeneralDef';
 import {CVContentDataBa} from './CVContentDataBa';
 import {CVContentDataFf} from './CVContentDataFf';
 import {CVContentDataFfx} from './CVContentDataFfx';
@@ -35,6 +35,7 @@ export const CVSectionData:BaseIndexContentDef = {
   IxMainImg: {
     ImgKey: 1,
     ImgSrc: WoodImage,
+    ImgType: 'main'
   },
   IxContent: [
     CVContentDataFfx,

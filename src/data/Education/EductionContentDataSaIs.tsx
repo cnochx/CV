@@ -1,5 +1,5 @@
 
-import {BaseAlContentDef} from '../Utils/GeneralDef';
+import {BaseAlContentDef} from '../utilComp/GeneralDef';
 
 
 export const EductionContentDataSaIs: BaseAlContentDef = {

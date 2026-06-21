@@ -1,7 +1,7 @@
 // src/data/Education/EducationSection.ts
 
 import WoodImage from '../../images/wood.webp';
-import {BaseIndexContentDef} from '../Utils/GeneralDef';
+import {BaseIndexContentDef} from '../utilComp/GeneralDef';
 import {EductionContentDataApIds} from './EductionContentDataApIds';
 import {EductionContentDataIcDaa} from './EductionContentDataIcDaa';
 import {EductionContentDataSaIs} from './EductionContentDataSaIs';
@@ -42,13 +42,15 @@ export const EducationSectionData: BaseIndexContentDef = {
   IxImages: [
     {
       ImgKey: 1,
-      ImgId: 'top',
+      ImgId: 'img_top',
       ImgSrc: WoodImage,
+      ImgType: 'top'
     },
     {
       ImgKey: 1,
-      ImgId: 'bottom',
+      ImgId: 'img_bottom',
       ImgSrc: WoodImage,
+      ImgType: 'bottom'
     }
   ]
 };
