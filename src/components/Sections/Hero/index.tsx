@@ -1,11 +1,13 @@
 import classNames from 'classnames';
+import Image from 'next/image';
 import {FC, memo} from 'react';
 
 import HeroSectionData from '../../../data/Hero/HeroSectionData';
 import {heroData} from '../../../data/HeroData';
 import {SectionId} from '../../../data/SectionIdData';
+import {ImgItem} from '../../../data/utilComp/GeneralDef';
 import {useIsMobile} from '../../../hooks/useIsMobile';
-import ImageElement from '../../Layout/Element/ImageElement';
+import {resolveImgSrc} from '../../../utilComp/ResolveHelper/ResolveImageSrc';
 import SectionExtShell from '../../Layout/ExtShell/SectionExtShell';
 import Nav from '../../Navigation/Nav';
 import Socials from '../../Socials';
@@ -55,7 +57,10 @@ const Hero: FC = memo(() => {
   // Catch mobile picture
   const isMobile = useIsMobile();
   const imgType = isMobile ? 'mobile' : 'screen';
-  const selectedImg = IxImages?.find((imgItem) => imgItem.ImgType === imgType);
+  const selectedImg: ImgItem | undefined = IxImages?.find((imgItem) => imgItem.ImgType === imgType);
+  const resolvedImgSrc: string = resolveImgSrc(selectedImg)
+    ? resolveImgSrc(selectedImg)
+    : '';
 
   return (
     <SectionExtShell
@@ -66,11 +71,14 @@ const Hero: FC = memo(() => {
       Padding={false}
       SectionId={SectionId.Hero}
     >
-      <ImageElement
-        ClassName="absolute inset-0 z-0 object-cover"
-        ImgItem={selectedImg}
-        ImgType={imgType}
-        SectionId={SectionId.Hero}
+      <Image
+        alt={`${SectionId.Hero}-image-${selectedImg?.ImgId}`}
+        className="absolute inset-0 z-0 object-cover"
+        decoding="async"
+        fill
+        id={`${SectionId}-image-${imgType ?? 'default'}`}
+        priority
+        src={resolvedImgSrc}
       />
 
       <div className="px-4 py-16 md:py-24 lg:px-8 scroll-mt-24">

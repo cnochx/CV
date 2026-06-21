@@ -5,6 +5,7 @@ import {AboutData} from '../../../data/About/about';
 import HeaderData from '../../../data/HeaderData';
 import {SectionId} from '../../../data/SectionIdData';
 import SectionLayout from '../../Layout/DarkSpecial/SectionLayout';
+import {resolveImgSrc} from '../../../utilComp/ResolveHelper/ResolveImageSrc';
 
 
 const About: FC = memo(() => {
@@ -18,6 +19,10 @@ const About: FC = memo(() => {
   const {
     AboutMain: [{Title, Description}],
   } = HeaderData;
+
+  const resolvedImgSrc: string = resolveImgSrc(profileImageSrc)
+    ? resolveImgSrc(profileImageSrc)
+    : '';
 
 
   const TitleId = `${SectionId.About}-title`;
@@ -41,7 +46,7 @@ const About: FC = memo(() => {
                     decoding="async"
                     height={128}
                     loading="lazy"
-                    src={profileImageSrc}
+                    src={resolvedImgSrc}
                     width={128}
                   />
                 </a>

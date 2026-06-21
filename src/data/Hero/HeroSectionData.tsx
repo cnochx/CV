@@ -2,15 +2,13 @@
 
 import ChevronDownIcon from '@heroicons/react/24/solid/ChevronDownIcon';
 
-import home from '../../images/home.webp';
-import homeMobile from '../../images/home_mobile.webp';
 import {SectionId} from '../SectionIdData';
 import {BaseIndexContentDef} from '../utilComp/GeneralDef';
 import HeroContentDataHero from './HeroContentDataHero';
 
 
-export const HeroSectionData:BaseIndexContentDef = {
-  IxHeader : {
+export const HeroSectionData: BaseIndexContentDef = {
+  IxHeader: {
     HdrId: 'professional_work',
     HdrTitle: 'Senior Full-Stack Engineer',
     HdrSubTitle: 'Martin Grellmann',
@@ -18,13 +16,13 @@ export const HeroSectionData:BaseIndexContentDef = {
   IxImages: [
     {
       ImgKey: 1,
-      ImgSrc: home,
+      ImgSrc: '/images/home.webp',
       ImgId: 'screen',
-      ImgType: 'screen'
+      ImgType: 'screen',
     },
     {
       ImgKey: 2,
-      ImgSrc: homeMobile,
+      ImgSrc: '/images/home_mobile.webp',
       ImgId: 'mobile',
       ImgType: 'mobile',
     },
@@ -40,9 +38,9 @@ export const HeroSectionData:BaseIndexContentDef = {
         CtaType: 'jump',
         CtaIcon: ChevronDownIcon,
         CtaText: 'Contact',
-        CtaHref: `#${SectionId.About}`
-      }
-    ]
-  }
-}
+        CtaHref: `#${SectionId.About}`,
+      },
+    ],
+  },
+};
 export default HeroSectionData;
