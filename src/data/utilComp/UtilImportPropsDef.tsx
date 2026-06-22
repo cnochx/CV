@@ -118,6 +118,42 @@ export type ArtSkillsLytProps = PropsWithChildren<{
   ArticleTitleTag: HeadingTag;
 }>;
 
+export type SkillsElmntProps = PropsWithChildren<{
+  /** Optional section identifier assigned to the rendered wrapper. */
+  ParentId: string;
+
+  /** Extended skills collection rendered by the layout. */
+  AlSkills: ExtAlSkills | undefined;
+
+  /** Semantic heading tag used for the article title. */
+  ArticleTitleTag?: HeadingTag;
+
+  /** Optional additional class names applied to the list wrapper */
+  UlClassName?: string;
+
+  /** Optional additional class names applied to the list item */
+  LiClassName?: string;
+
+  /** Optional additional class names applied to the Descriotion wrapper. */
+  DescriptionClassName?: string;
+}>;
+
+/**
+ * Props for the `ArtSkillsLyt` component.
+ *
+ * Defines the skill collection rendered in an article-style layout section.
+ */
+export type SkillsLytProps = PropsWithChildren<{
+  /** Optional section identifier assigned to the rendered wrapper. */
+  SectionId: StrngUndfndType;
+
+  /** Extended skills collection rendered by the layout. */
+  AlSkills: ExtAlSkills;
+
+  /** Semantic heading tag used for the article title. */
+  ArticleTitleTag: HeadingTag;
+}>;
+
 /**
  * Props for the `ArtDescriptionLyt` component.
  *
@@ -341,6 +377,9 @@ export type SectionExtShellProps = PropsWithChildren<{
 
   /** When true, suppresses rendering of the default inner wrapper div. */
   HideDiv?: boolean;
+
+  /** Optional label identifier for accessibility purposes. */
+  LabelBy?: string;
 }>;
 
 /**

@@ -51,6 +51,7 @@ const SectionExtShell: FC<SectionExtShellProps> = memo(
      Padding = false,
      SectionId,
      HideDiv = false,
+     LabelBy,
    }) => {
     const sectionClassName = classNames(
       ClassNameSection,
@@ -64,9 +65,9 @@ const SectionExtShell: FC<SectionExtShellProps> = memo(
 
     return (
       <section
-        aria-labelledby={SectionId}
+        aria-labelledby={LabelBy || undefined}
         className={classNames('relative z-10', sectionClassName)}
-        id={SectionId}
+        id={SectionId || undefined}
       >
         {!HideDiv && (
           <div className={subDivClassName}>

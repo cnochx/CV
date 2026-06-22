@@ -1,14 +1,17 @@
 import classNames from 'classnames';
 import Image from 'next/image';
-import {FC, memo} from 'react';
+import React, {FC, memo} from 'react';
 
 import HeroSectionData from '../../../data/Hero/HeroSectionData';
 import {heroData} from '../../../data/HeroData';
 import {SectionId} from '../../../data/SectionIdData';
 import {ImgItem} from '../../../data/utilComp/GeneralDef';
+import {HeadingTag} from '../../../data/utilComp/generalTypeDef';
 import {useIsMobile} from '../../../hooks/useIsMobile';
 import {resolveImgSrc} from '../../../utilComp/ResolveHelper/ResolveImageSrc';
+import SkillsElmnt from '../../Layout/ExtElmnt/SkillsElmnt';
 import ArticleExtShell from '../../Layout/ExtShell/ArticleExtShell';
+import HeaderExtShell from '../../Layout/ExtShell/HeaderExtShell';
 import SectionExtShell from '../../Layout/ExtShell/SectionExtShell';
 import Nav from '../../Navigation/Nav';
 import Socials from '../../Socials';
@@ -52,8 +55,13 @@ import Socials from '../../Socials';
  *   title, description, actions, social links, and jump navigation.
  */
 const Hero: FC = memo(() => {
-  const {title, subTitle, descrList, actions} = heroData;
-  const {IxImages} = HeroSectionData ?? {};
+  const {actions} = heroData;
+
+  const {
+    IxImages,
+    IxHeader,
+    IxContent,
+  } = HeroSectionData ?? {};
 
   // Catch mobile picture
   const isMobile = useIsMobile();
@@ -62,6 +70,12 @@ const Hero: FC = memo(() => {
   const resolvedImgSrc: string = resolveImgSrc(selectedImg)
     ? resolveImgSrc(selectedImg)
     : '';
+
+  // Hero ArticleTags
+  const ArticleTitleTagMain: HeadingTag = 'h2';
+  const ArticleTitleTagSub: HeadingTag = 'h3';
+  const ArticleTitleTagContent: HeadingTag =
+    IxHeader.HdrSubId ? 'h3' : 'h2';
 
   return (
     <SectionExtShell
@@ -81,65 +95,84 @@ const Hero: FC = memo(() => {
         src={resolvedImgSrc}
       />
 
-      <div className="px-4 py-16 md:py-24 lg:px-8 scroll-mt-24">
+      <div className="relative z-10 flex max-h-screen w-full items-center justify-center px-4 py-16 lg:px-8">
         <div className="relative flex h-screen w-full items-center justify-center">
-          <div className="z-10 max-w-screen-lg px-4 lg:px-0">
+          <div className="z-10 max-w-screen-lg max-h-screen px-4 lg:px-0">
 
-          <ArticleExtShell
-            ArticleClassName="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/40 p-6 text-center shadow-lg backdrop-blur-sm"
-            ArticleId={SectionId.Hero}
-            DisplaySubDiv={false}
-            LabelledBy={SectionId.Hero}>
-
-
-
-
-              <header>
-                <h1
-                  className="text-4xl font-bold text-stone-300 sm:text-5xl lg:text-7xl"
-                  id={SectionId.Hero}
+            <ArticleExtShell
+              ArticleClassName="grid w-full max-w-screen-xl grid-cols-3 gap-x-4 gap-y-1 rounded-xl bg-gray-800/40 p-4 text-center shadow-lg backdrop-blur-sm sm:gap-x-6 sm:gap-y-6 sm:p-6 lg:gap-x-8 lg:gap-y-10 lg: p-8
+  "
+              ArticleId={SectionId.Hero}
+              DisplaySubDiv={false}
+              LabelledBy={SectionId.Hero}
+            >
+              <div className="col-span-3">
+                <HeaderExtShell
+                  HeaderClassName="space-y-1 sm:space-y-2 lg:space-y-3"
+                  HeaderId={SectionId.Hero}
+                  HeaderItem={IxHeader}
                 >
-                  {title}
-                </h1>
-                <h2
-                  className="text-3xl font-bold text-stone-100 sm:text-3xl lg:text-5xl"
-                  id={SectionId.Hero}
-                >
-                  {subTitle}
-                </h2>
-              </header>
-
-              <ul className="list-inside list-none pl-6 text-left">
-                {descrList.map(({hdlKey, listElement}) => (
-                  <li className="prose-sm text-stone-200 sm:prose-base lg:prose-lg" key={hdlKey}>
-                    <strong className="text-stone-100">
-                      <span>{listElement}</span>
-                    </strong>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="flex gap-x-4 text-neutral-100">
-                <Socials />
-              </div>
-
-              <div className="flex w-full justify-center gap-x-4">
-                {actions.map(({href, text, primary, Icon}) => (
-                  <a
-                    className={classNames(
-                      'flex gap-x-2 rounded-full border-2 bg-none px-4 py-2 text-sm font-medium text-neutral-100 ring-offset-gray-700/80 hover:bg-gray-700/80 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-base',
-                      primary ? 'border-fuchsia-400 ring-fuchsia-400' : 'border-neutral-100 ring-neutral-100',
-                    )}
-                    href={href}
-                    key={text}
+                  <ArticleTitleTagMain
+                    className="text-2xl font-bold text-stone-300 sm:text-5xl lg:text-6xl"
+                    id={`${SectionId.Hero}-${IxHeader.HdrId}`}
                   >
-                    {text}
-                    {Icon && <Icon className="h-5 w-5 text-neutral-100 sm:h-6 sm:w-6" />}
-                  </a>
-                ))}
+                    {IxHeader.HdrTitle}
+                  </ArticleTitleTagMain>
+
+                  {IxHeader?.HdrSubTitle && (
+                    <ArticleTitleTagSub
+                      className="text-xl font-bold text-stone-100 sm:text-4xl lg:text-5xl"
+                      id={`${SectionId.Hero}-${IxHeader.HdrSubId}`}
+                    >
+                      {IxHeader.HdrSubTitle}
+                    </ArticleTitleTagSub>
+                  )}
+                </HeaderExtShell>
               </div>
 
-          </ArticleExtShell>
+              <SectionExtShell
+                ClassNameSection="col-span-3 w-full min-w-0"
+                IsMain={false}
+                Padding={false}
+                SectionId={`${SectionId.Hero}-content`}
+              >
+                {IxContent?.map((ContentItem) => (
+                  <SkillsElmnt
+                    AlSkills={ContentItem?.AlSkills}
+                    ArticleTitleTag={ArticleTitleTagContent}
+                    DescriptionClassName=""
+                    LiClassName="w-full"
+                    ParentId={`${SectionId.Hero}-content`}
+                    UlClassName="w-full px-2 w-full px-2 w-full px-2 text-stone-300 font-medium  text-xl  sm:space-y-2  lg:space-y-3 sm:text-3xl lg:text-4xl"
+                    key={ContentItem?.AlSkills?.SeiId}
+                  />
+                ))}
+              </SectionExtShell>
+
+              <aside className="col-span-3 flex flex-col items-center gap-y-8 pt-2">
+                <div className="flex justify-center gap-x-4 text-neutral-100">
+                  <Socials />
+                </div>
+
+                <div className="flex w-full flex-wrap justify-center gap-3">
+                  {actions.map(({href, text, primary, Icon}) => (
+                    <a
+                      className={classNames(
+                        'flex gap-x-2 rounded-full border-2 bg-none px-4 py-2 text-sm font-medium text-neutral-100 ring-offset-gray-700/80 hover:bg-gray-700/80 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-base',
+                        primary ? 'border-fuchsia-400 ring-fuchsia-400' : 'border-neutral-100 ring-neutral-100',
+                      )}
+                      href={href}
+                      key={text}
+                    >
+                      {text}
+                      {Icon && <Icon className="h-5 w-5 text-neutral-100 sm:h-6 sm:w-6" />}
+                    </a>
+                  ))}
+                </div>
+              </aside>
+            </ArticleExtShell>
+
+
           </div>
         </div>
 

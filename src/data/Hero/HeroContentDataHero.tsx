@@ -16,40 +16,31 @@ export const HeroContentDataHero: BaseAlContentDef = {
         AlsId: 'architect',
         AlsKey: 1,
         AlsOpen: false,
-        AlsName: 'Architect of modern SAP landscapes: from messy legacy to clean-core.'
-      },
-      {
-        AlsId: 'modernization_specialist',
-        AlsKey: 2,
-        AlsOpen: false,
-        AlsName: 'Modernization specialist: S/4HANA, SAP BTP, enterprise APIs.'
+        AlsName: 'Architect of Drupal and modern SAP landscapes'
       },
       {
         AlsId: 'senior_full_stack_developer',
-        AlsKey: 3,
+        AlsKey: 2,
         AlsOpen: false,
-        AlsName: 'Senior Full-Stack Developer with current SAP full-stack expertise.',
+        AlsName: 'Senior Full-Stack Developer',
       },
       {
         AlsId: 'problem_solver',
+        AlsKey: 3,
+        AlsOpen: false,
+        AlsName: 'Current Drupal, Webapp and SAP full-stack expertise',
+      },
+      {
+        AlsId: 'modernization_specialist',
         AlsKey: 4,
         AlsOpen: false,
-        AlsName: 'API-first problem solver: scalable, maintainable business applications.',
-        AlsDescription: {
-          DnHead: 'Missing Clean-Core Strategy',
-          DnId: 'title',
-          DnText: (
-            <>
-              <p></p>
-            </>
-          )
-        }
+        AlsName: 'Modernization and refactoring specialist'
       },
       {
         AlsId: 'balanced_decisions',
         AlsKey: 5,
         AlsOpen: false,
-        AlsName: 'Balanced decisions, clean design, solid implementation.'
+        AlsName: 'Clean design, solid implementation'
       }
     ]
   },
