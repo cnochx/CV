@@ -202,16 +202,19 @@ export type BrightPillArticleLytProps = PropsWithChildren<{
  */
 export type ArticleExtShelProps = PropsWithChildren<{
   /** Optional article identifier assigned to the rendered article element. */
-  ArticleId?: StrngUndfndType;
+  ArticleId: StrngUndfndType;
 
   /** Required class names applied to the outer div wrapper. */
-  DivClassName: string;
+  DivClassName?: string;
 
   /** Optional accessible label reference assigned to the article. */
-  LabelledBy?: string;
+  LabelledBy: string;
 
   /** Optional additional class names applied to the article element. */
   ArticleClassName?: string;
+
+  /** Optional boolean flag to display a sub-div within the article. */
+  DisplaySubDiv?: boolean;
 }>;
 
 /**
@@ -462,7 +465,7 @@ export type SectionIdsType = {
   idSuffix: StrngUndfndType;
 
   /** `aria-labelledby` reference value for the article element. */
-  articleLabelBy: StrngUndfndType;
+  articleLabelBy: string;
 };
 
 /**

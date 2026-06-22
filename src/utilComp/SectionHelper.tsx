@@ -212,7 +212,7 @@ export const getArticleIds = (
       idHMain: undefined,
       idHSub: undefined,
       idSuffix: undefined,
-      articleLabelBy: undefined,
+      articleLabelBy: "",
     };
   }
 
@@ -241,12 +241,12 @@ export const getArticleIds = (
     AlContent.AlHeaderItem?.HdrTitleSuffix?.SxId,
   );
 
-  const articleLabelBy: StrngUndfndType = [
+  const articleLabelBy: string = [
     idHMain,
     idHSub,
     idSuffix]
     .filter(Boolean)
-    .join(' ') || undefined;
+    .join(' ');
 
   return {
     idMain,
