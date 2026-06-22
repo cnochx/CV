@@ -23,7 +23,7 @@ import {SectionExtShellProps} from '../../../data/utilComp/UtilImportPropsDef';
  *
  * Intended use:
  * - as a base layout primitive for top-level sections like Hero, About, Skills,
- *   where consistent padding, width and scroll behavior are required.
+ *   where consistent padding, width scroll behavior are required.
  *
  * @param {SectionExtShellProps} props Component props.
  * @param {ReactNode} props.children Section content to render.
@@ -53,14 +53,13 @@ const SectionExtShell: FC<SectionExtShellProps> = memo(
      HideDiv = false,
    }) => {
     const sectionClassName = classNames(
-      Padding && 'px-4 py-16 md:py-24 lg:px-8 scroll-mt-24',
-      IsMain && 'scroll-mt-[120px]',
       ClassNameSection,
-    );
+      Padding && 'px-4 py-16 md:py-24 lg:px-8 scroll-mt-24',
+      IsMain && 'scroll-mt-[120px]');
 
     const subDivClassName = classNames(
-      Padding && 'mx-auto max-w-screen-lg',
       ClassNameSubDiv,
+      Padding && 'mx-auto max-w-screen-lg'
     );
 
     return (

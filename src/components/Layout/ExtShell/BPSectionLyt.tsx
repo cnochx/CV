@@ -1,11 +1,11 @@
 import classNames from 'classnames';
 import {FC, memo} from 'react';
 
-import {SectionLytProps} from '../../../../data/utilComp/UtilImportPropsDef';
+import {SectionLytProps} from '../../../data/utilComp/UtilImportPropsDef';
 
 
 
-const BPSectionLyt: FC<SectionLytProps> = memo(
+const SectionExtShell: FC<SectionLytProps> = memo(
   ({
      children,
      SectionId,
@@ -37,5 +37,5 @@ const BPSectionLyt: FC<SectionLytProps> = memo(
   },
 );
 
-BPSectionLyt.displayName = 'BPSectionLyt';
-export default BPSectionLyt;
+SectionExtShell.displayName = 'SectionExtShell';
+export default SectionExtShell;

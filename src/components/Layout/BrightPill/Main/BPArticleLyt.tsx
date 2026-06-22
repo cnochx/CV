@@ -25,15 +25,15 @@ import BPSectionLyt from './BPSectionLyt';
  * - Resolves nested heading levels based on the provided `ArticleTitleTag`
  *   (e.g. `h3` → `h4` / `h5`, `h4` → `h5` / `h6`).
  * - Wraps each article in `ArticleExtShell` and delegates header and body
- *   rendering to `HeaderExtShell` and `BPSectionLyt`.
+ *   rendering to `HeaderExtShell` and `SectionExtShell`.
  *
  * Dependencies:
  * - `ContentArticleLytProps` for the base content model and heading semantics.
  * - `customAlContent` to apply per-article content customization.
  * - `getArticleIds` to generate stable DOM ids and `aria-labelledby` values.
- * - `ArticleExtShell` as structural wrapper with accessibility wiring.
+ * - `ArticleExtShell` as a structural wrapper with accessibility wiring.
  * - `HeaderExtShell` for the visual header section.
- * - `BPSectionLyt` for the article body content layout.
+ * - `SectionExtShell` for the article body content layout.
  *
  * @param {ContentArticleLytProps} props Component props.
  * @param {BaseAlContentDef[]} props.AlContent Article content items to render.

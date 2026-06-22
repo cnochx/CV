@@ -5,10 +5,10 @@ import {HeadingTag, StrngUndfndType} from '../../../../data/utilComp/generalType
 import {ContentIndexLytProps} from '../../../../data/utilComp/UtilImportPropsDef';
 import {getId} from '../../../../utilComp/SectionHelper';
 import AsideLyt from '../../AsideLyt';
+import SectionExtShell from '../../ExtShell/BPSectionLyt';
 import HeaderExtShell from '../../ExtShell/HeaderExtShell';
 import BPArtFooterLyt from '../Extension/BPArtFooterLyt';
 import BPArtPillLyt from '../Extension/BPArtPillLyt';
-import BPSectionLyt from '../Extension/BPSectionLyt';
 import BPArticleLyt from './BPArticleLyt';
 
 /**
@@ -16,7 +16,7 @@ import BPArticleLyt from './BPArticleLyt';
  * and footer content into a single accessible main section.
  *
  * Dependencies
- * - Uses BPSectionLyt as the semantic main section wrapper.
+ * - Uses SectionExtShell as the semantic main section wrapper.
  * - Uses BPArtPillLyt to render background imagery with an overlay.
  * - Uses HeaderExtShell for the hero header area with optional suffix content.
  * - Uses BPArticleLyt to render the main contractor-specific article content.
@@ -69,7 +69,7 @@ const PBIndexLyt: FC<ContentIndexLytProps> = memo(({IdxContent, MainSectionId}) 
 
 
   return (
-    <BPSectionLyt
+    <SectionExtShell
       IsMain={true}
       LabelId={mainSectionLabelBy}
       SectionId={MainSectionId}
@@ -144,7 +144,7 @@ const PBIndexLyt: FC<ContentIndexLytProps> = memo(({IdxContent, MainSectionId}) 
 
 
       </article>
-    </BPSectionLyt>
+    </SectionExtShell>
   );
 });
 
