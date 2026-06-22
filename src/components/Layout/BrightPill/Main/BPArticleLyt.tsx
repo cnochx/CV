@@ -7,7 +7,7 @@ import {ContentArticleLytProps} from '../../../../data/utilComp/UtilImportPropsD
 import {customAlContent} from '../../../../utilComp/Layout/CustomAlContent';
 import {getArticleIds} from '../../../../utilComp/SectionHelper';
 import ArticleExtShell from '../../ExtShell/ArticleExtShell';
-import BPArtHeaderLyt from '../Extension/BPArtHeaderLyt';
+import HeaderExtShell from '../../ExtShell/HeaderExtShell';
 import BPSectionLyt from './BPSectionLyt';
 
 /**
@@ -25,15 +25,15 @@ import BPSectionLyt from './BPSectionLyt';
  * - Resolves nested heading levels based on the provided `ArticleTitleTag`
  *   (e.g. `h3` → `h4` / `h5`, `h4` → `h5` / `h6`).
  * - Wraps each article in `ArticleExtShell` and delegates header and body
- *   rendering to `BPArtHeaderLyt` and `BPSectionLyt`.
+ *   rendering to `HeaderExtShell` and `SectionExtShell`.
  *
  * Dependencies:
  * - `ContentArticleLytProps` for the base content model and heading semantics.
  * - `customAlContent` to apply per-article content customization.
  * - `getArticleIds` to generate stable DOM ids and `aria-labelledby` values.
- * - `ArticleExtShell` as structural wrapper with accessibility wiring.
- * - `BPArtHeaderLyt` for the visual header section.
- * - `BPSectionLyt` for the article body content layout.
+ * - `ArticleExtShell` as a structural wrapper with accessibility wiring.
+ * - `HeaderExtShell` for the visual header section.
+ * - `SectionExtShell` for the article body content layout.
  *
  * @param {ContentArticleLytProps} props Component props.
  * @param {BaseAlContentDef[]} props.AlContent Article content items to render.
@@ -70,10 +70,10 @@ const BPArticleLyt: FC<ContentArticleLytProps> = memo(
               LabelledBy={articleIds.articleLabelBy}
               key={ContentItem.AlId ?? articleIds.idArticle}
             >
-              <BPArtHeaderLyt
+              <HeaderExtShell
                 AlDateCustomVal={AlItem.AlDateCustomVal}
-                ArticleId={articleIds.idArticle}
                 HeaderClassName="flex flex-col"
+                HeaderId={articleIds.idArticle}
                 HeaderItem={AlHeaderItem}
                 SetUnderline={true}
                 UnderlineClassName="mt-1 h-px w-2/3 border-b-2 border-fuchsia-400"
@@ -93,7 +93,7 @@ const BPArticleLyt: FC<ContentArticleLytProps> = memo(
                     {AlHeaderItem?.HdrSubTitle}
                   </ArticleTitleTagSub>
                 ) : null}
-              </BPArtHeaderLyt>
+              </HeaderExtShell>
 
               <BPSectionLyt
                 AlContent={ContentItem}

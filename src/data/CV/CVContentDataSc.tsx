@@ -69,6 +69,7 @@ export const CVContentDataSc: BaseAlContentDef = {
     SeiSkillsHead: 'Technicals',
     SeiId: 'technicals',
     SeiEnableSkills: true,
+    SeiDisplaySkills: 'pills',
     SeiSkillsItems: [
       {
         AlsKey: 1,

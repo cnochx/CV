@@ -72,7 +72,7 @@ export const socialLinks: Social[] = [
   {
     label: 'Github',
     Icon: GithubIcon,
-    href: 'https://github.com/chnochx',
+    href: 'https://github.com/cnochx',
   },
 ];
 

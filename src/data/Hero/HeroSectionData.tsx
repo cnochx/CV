@@ -9,7 +9,8 @@ import HeroContentDataHero from './HeroContentDataHero';
 
 export const HeroSectionData: BaseIndexContentDef = {
   IxHeader: {
-    HdrId: 'professional_work',
+    HdrId: 'main_title',
+    HdrSubId: 'main_sub_title',
     HdrTitle: 'Senior Full-Stack Engineer',
     HdrSubTitle: 'Martin Grellmann',
   },

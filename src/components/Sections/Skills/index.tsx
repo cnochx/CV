@@ -7,9 +7,9 @@ import {SectionId} from '../../../data/SectionIdData';
 import SkillsCollectionData from '../../../data/Skills/SkillCollection';
 import {SkillsCollection} from '../../../data/Skills/SkillCollectionDef';
 import {ExtCallToActionDef} from '../../../data/utilComp/GeneralDef';
-import AsideLyt from '../../Layout/AsideLyt';
 import HeaderLayout from '../../Layout/DarkSpecial/HeaderLayout';
 import SectionLayout from '../../Layout/DarkSpecial/SectionLayout';
+import AsideExtShell from '../../Layout/ExtShell/AsideExtShell';
 import SkillsArticle from './SkillsArticle';
 
 /**
@@ -125,7 +125,7 @@ const Skills: FC = memo(() => {
           {Suffix}
         </div>
 
-        <AsideLyt
+        <AsideExtShell
           CallToActionItem={callToActionItems}
           SectionId={SectionId.Skills}
         />
