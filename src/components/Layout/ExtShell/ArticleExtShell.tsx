@@ -7,6 +7,7 @@ const ArticleExtShell: FC<ArticleExtShelProps> = memo(({ArticleId,
                                                     DivClassName,
                                                     LabelledBy,
                                                     ArticleClassName,
+                                                    DisplaySubDiv = true,
                                                     children}) => {
 
     return (
@@ -15,9 +16,13 @@ const ArticleExtShell: FC<ArticleExtShelProps> = memo(({ArticleId,
         className={ArticleClassName}
         id={ArticleId ?? undefined}
       >
-        <div className={DivClassName}>
-          {children}
-        </div>
+        {DisplaySubDiv
+          ? (<div className={DivClassName}>
+              {children}
+             </div>)
+
+          : children}
+
       </article>
     );
   },

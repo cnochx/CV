@@ -118,6 +118,42 @@ export type ArtSkillsLytProps = PropsWithChildren<{
   ArticleTitleTag: HeadingTag;
 }>;
 
+export type SkillsElmntProps = PropsWithChildren<{
+  /** Optional section identifier assigned to the rendered wrapper. */
+  ParentId: string;
+
+  /** Extended skills collection rendered by the layout. */
+  AlSkills: ExtAlSkills | undefined;
+
+  /** Semantic heading tag used for the article title. */
+  ArticleTitleTag?: HeadingTag;
+
+  /** Optional additional class names applied to the list wrapper */
+  UlClassName?: string;
+
+  /** Optional additional class names applied to the list item */
+  LiClassName?: string;
+
+  /** Optional additional class names applied to the Descriotion wrapper. */
+  DescriptionClassName?: string;
+}>;
+
+/**
+ * Props for the `ArtSkillsLyt` component.
+ *
+ * Defines the skill collection rendered in an article-style layout section.
+ */
+export type SkillsLytProps = PropsWithChildren<{
+  /** Optional section identifier assigned to the rendered wrapper. */
+  SectionId: StrngUndfndType;
+
+  /** Extended skills collection rendered by the layout. */
+  AlSkills: ExtAlSkills;
+
+  /** Semantic heading tag used for the article title. */
+  ArticleTitleTag: HeadingTag;
+}>;
+
 /**
  * Props for the `ArtDescriptionLyt` component.
  *
@@ -142,7 +178,7 @@ export type ArtDescriptionLyt = PropsWithChildren<{
 }>;
 
 /**
- * Props for the `AsideLyt` component.
+ * Props for the `AsideExtShell` component.
  *
  * Defines the aside wrapper, associated action content, and optional divider behavior.
  */
@@ -202,16 +238,19 @@ export type BrightPillArticleLytProps = PropsWithChildren<{
  */
 export type ArticleExtShelProps = PropsWithChildren<{
   /** Optional article identifier assigned to the rendered article element. */
-  ArticleId?: StrngUndfndType;
+  ArticleId: StrngUndfndType;
 
   /** Required class names applied to the outer div wrapper. */
-  DivClassName: string;
+  DivClassName?: string;
 
   /** Optional accessible label reference assigned to the article. */
-  LabelledBy?: string;
+  LabelledBy: string;
 
   /** Optional additional class names applied to the article element. */
   ArticleClassName?: string;
+
+  /** Optional boolean flag to display a sub-div within the article. */
+  DisplaySubDiv?: boolean;
 }>;
 
 /**
@@ -272,7 +311,7 @@ export type HeaderLytProps = PropsWithChildren<{
   AlDateCustomVal?: ReactNode | undefined;
 
   /** Optional base identifier used to derive stable nested header ids. */
-  ArticleId?: StrngUndfndType;
+  HeaderId?: string;
 
   /** Optional semantic heading tag used for the suffix title. */
   SuffixTitleTag?: HeadingTag;
@@ -338,6 +377,9 @@ export type SectionExtShellProps = PropsWithChildren<{
 
   /** When true, suppresses rendering of the default inner wrapper div. */
   HideDiv?: boolean;
+
+  /** Optional label identifier for accessibility purposes. */
+  LabelBy?: string;
 }>;
 
 /**
@@ -462,7 +504,7 @@ export type SectionIdsType = {
   idSuffix: StrngUndfndType;
 
   /** `aria-labelledby` reference value for the article element. */
-  articleLabelBy: StrngUndfndType;
+  articleLabelBy: string;
 };
 
 /**

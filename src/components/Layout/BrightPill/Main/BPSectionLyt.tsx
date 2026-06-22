@@ -2,7 +2,7 @@ import React, {FC, memo, useCallback, useState} from 'react';
 
 import {ContentSectionLytProps} from '../../../../data/utilComp/UtilImportPropsDef';
 import {getContentIds} from '../../../../utilComp/SectionHelper';
-import AsideLyt from '../../AsideLyt';
+import AsideExtShell from '../../ExtShell/AsideExtShell';
 import BPArtDescriptionLyt from '../Extension/BPArtDescriptionLyt';
 import BPArtSkillsLyt from '../Extension/BPArtSkillsLyt';
 
@@ -125,7 +125,7 @@ const BPSectionLyt: FC<ContentSectionLytProps> = memo(({
 
       {AlCallToAction ? (
         <div className="w-full md:col-span-2 md:col-start-2 md:justify-self-center">
-          <AsideLyt
+          <AsideExtShell
             CallToActionItem={AlCallToAction}
             ClassName="mt-4 flex flex-col space-y-4"
             DisplayDivide={false}

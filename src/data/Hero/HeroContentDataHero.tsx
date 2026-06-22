@@ -10,52 +10,37 @@ export const HeroContentDataHero: BaseAlContentDef = {
   AlSkills: {
     SeiEnableSkills: true,
     SeiId: 'highlights',
+    SeiDisplaySkills: 'list',
     SeiSkillsItems: [
       {
         AlsId: 'architect',
         AlsKey: 1,
         AlsOpen: false,
-        AlsName: 'Architect of modern SAP landscapes: from messy legacy to clean-core.'
-      },
-      {
-        AlsId: 'modernization_specialist',
-        AlsKey: 2,
-        AlsOpen: false,
-        AlsName: 'Modernization specialist: S/4HANA, SAP BTP, enterprise APIs.'
+        AlsName: 'Architect of Drupal and modern SAP landscapes'
       },
       {
         AlsId: 'senior_full_stack_developer',
-        AlsKey: 3,
+        AlsKey: 2,
         AlsOpen: false,
-        AlsDescription: {
-          DnHead: 'Integration Spaghetti',
-          DnId: 'title',
-          DnText: (
-            <>
-              <p>Senior Full-Stack Developer with current SAP full-stack expertise.</p>
-            </>
-          )
-        }
+        AlsName: 'Senior Full-Stack Developer',
       },
       {
         AlsId: 'problem_solver',
+        AlsKey: 3,
+        AlsOpen: false,
+        AlsName: 'Current Drupal, Webapp and SAP full-stack expertise',
+      },
+      {
+        AlsId: 'modernization_specialist',
         AlsKey: 4,
         AlsOpen: false,
-        AlsDescription: {
-          DnHead: 'Missing Clean-Core Strategy',
-          DnId: 'title',
-          DnText: (
-            <>
-              <p>API-first problem solver: scalable, maintainable business applications.</p>
-            </>
-          )
-        }
+        AlsName: 'Modernization and refactoring specialist'
       },
       {
         AlsId: 'balanced_decisions',
         AlsKey: 5,
         AlsOpen: false,
-        AlsName: 'Balanced decisions, clean design, solid implementation.'
+        AlsName: 'Clean design, solid implementation'
       }
     ]
   },
