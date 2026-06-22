@@ -86,3 +86,11 @@ export type ImagesType =
   | 'top'
   | 'bottom'
   | 'main';
+
+/** Define the type of Display of skills. */
+export type DisplaySkills =
+  | 'pills'
+  | 'pillsExt'
+  | 'list'
+  | 'onlyDescription'
+  | undefined;

@@ -10,6 +10,7 @@ export const HeroContentDataHero: BaseAlContentDef = {
   AlSkills: {
     SeiEnableSkills: true,
     SeiId: 'highlights',
+    SeiDisplaySkills: 'list',
     SeiSkillsItems: [
       {
         AlsId: 'architect',
@@ -27,26 +28,19 @@ export const HeroContentDataHero: BaseAlContentDef = {
         AlsId: 'senior_full_stack_developer',
         AlsKey: 3,
         AlsOpen: false,
-        AlsDescription: {
-          DnHead: 'Integration Spaghetti',
-          DnId: 'title',
-          DnText: (
-            <>
-              <p>Senior Full-Stack Developer with current SAP full-stack expertise.</p>
-            </>
-          )
-        }
+        AlsName: 'Senior Full-Stack Developer with current SAP full-stack expertise.',
       },
       {
         AlsId: 'problem_solver',
         AlsKey: 4,
         AlsOpen: false,
+        AlsName: 'API-first problem solver: scalable, maintainable business applications.',
         AlsDescription: {
           DnHead: 'Missing Clean-Core Strategy',
           DnId: 'title',
           DnText: (
             <>
-              <p>API-first problem solver: scalable, maintainable business applications.</p>
+              <p></p>
             </>
           )
         }

@@ -30,6 +30,7 @@ export const ContractorContentDataFocus: BaseAlContentDef = {
   AlSkills: {
     SeiEnableSkills: true,
     SeiId: 'details',
+    SeiDisplaySkills: 'onlyDescription',
     SeiSkillsItems: [
       {
         AlsId: 'architecture_clean_core_stategie',

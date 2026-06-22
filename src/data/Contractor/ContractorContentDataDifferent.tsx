@@ -35,6 +35,7 @@ export const ContractorContentDataDifferent: BaseAlContentDef = {
   AlSkills: {
     SeiEnableSkills: true,
     SeiId: 'details',
+    SeiDisplaySkills: 'onlyDescription',
     SeiSkillsItems: [
       {
         AlsId: 'architect',

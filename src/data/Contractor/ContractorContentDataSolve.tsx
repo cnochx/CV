@@ -45,6 +45,7 @@ export const ContractorContentDataSolve: BaseAlContentDef = {
   AlSkills: {
     SeiEnableSkills: true,
     SeiId: 'details',
+    SeiDisplaySkills: 'onlyDescription',
     SeiSkillsItems: [
       {
         AlsId: 'legacy_code_debt',
