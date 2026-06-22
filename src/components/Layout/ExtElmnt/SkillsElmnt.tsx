@@ -1,6 +1,6 @@
+import classNames from 'classnames';
 import React, {FC, memo} from 'react';
 
-import classNames from 'classnames';
 import {BaseAlSkills} from '../../../data/utilComp/GeneralDef';
 import {SkillsElmntProps} from '../../../data/utilComp/UtilImportPropsDef';
 

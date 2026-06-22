@@ -4,7 +4,7 @@ import {SectionId} from '../../../../data/SectionIdData';
 import {HeadingTag, StrngUndfndType} from '../../../../data/utilComp/generalTypeDef';
 import {ContentIndexLytProps} from '../../../../data/utilComp/UtilImportPropsDef';
 import {getId} from '../../../../utilComp/SectionHelper';
-import AsideLyt from '../../AsideLyt';
+import AsideExtShell from '../../ExtShell/AsideExtShell';
 import SectionExtShell from '../../ExtShell/BPSectionLyt';
 import HeaderExtShell from '../../ExtShell/HeaderExtShell';
 import BPArtFooterLyt from '../Extension/BPArtFooterLyt';
@@ -137,7 +137,7 @@ const PBIndexLyt: FC<ContentIndexLytProps> = memo(({IdxContent, MainSectionId}) 
 
         </BPArtPillLyt>
 
-        <AsideLyt
+        <AsideExtShell
           CallToActionItem={IxCallToAction}
           SectionId={MainSectionId}
         />

@@ -178,7 +178,7 @@ export type ArtDescriptionLyt = PropsWithChildren<{
 }>;
 
 /**
- * Props for the `AsideLyt` component.
+ * Props for the `AsideExtShell` component.
  *
  * Defines the aside wrapper, associated action content, and optional divider behavior.
  */
