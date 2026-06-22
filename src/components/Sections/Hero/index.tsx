@@ -143,7 +143,7 @@ const Hero: FC = memo(() => {
                     DescriptionClassName=""
                     LiClassName="w-full"
                     ParentId={`${SectionId.Hero}-content`}
-                    UlClassName="w-full px-2 w-full px-2 w-full px-2 text-stone-300 font-medium  text-xl  sm:space-y-2  lg:space-y-3 sm:text-3xl lg:text-4xl"
+                    UlClassName="w-full px-2 w-full px-2 w-full px-2 text-stone-300 font-medium  text-xl  sm:space-y-2  lg:space-y-3 sm:text-2xl lg:text-3xl"
                     key={ContentItem?.AlSkills?.SeiId}
                   />
                 ))}
