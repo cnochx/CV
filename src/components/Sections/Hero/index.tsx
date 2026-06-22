@@ -8,6 +8,7 @@ import {SectionId} from '../../../data/SectionIdData';
 import {ImgItem} from '../../../data/utilComp/GeneralDef';
 import {useIsMobile} from '../../../hooks/useIsMobile';
 import {resolveImgSrc} from '../../../utilComp/ResolveHelper/ResolveImageSrc';
+import ArticleExtShell from '../../Layout/ExtShell/ArticleExtShell';
 import SectionExtShell from '../../Layout/ExtShell/SectionExtShell';
 import Nav from '../../Navigation/Nav';
 import Socials from '../../Socials';
@@ -65,7 +66,6 @@ const Hero: FC = memo(() => {
   return (
     <SectionExtShell
       ClassNameSection="relative w-full max-h-screen overflow-hidden"
-      ClassNameSubDiv=""
       HideDiv={true}
       IsMain={true}
       Padding={false}
@@ -85,7 +85,14 @@ const Hero: FC = memo(() => {
         <div className="relative flex h-screen w-full items-center justify-center">
           <div className="z-10 max-w-screen-lg px-4 lg:px-0">
 
-            <article className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/40 p-6 text-center shadow-lg backdrop-blur-sm">
+          <ArticleExtShell
+            ArticleClassName="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/40 p-6 text-center shadow-lg backdrop-blur-sm"
+            ArticleId={SectionId.Hero}
+            DisplaySubDiv={false}
+            LabelledBy={SectionId.Hero}>
+
+
+
 
               <header>
                 <h1
@@ -132,7 +139,7 @@ const Hero: FC = memo(() => {
                 ))}
               </div>
 
-            </article>
+          </ArticleExtShell>
           </div>
         </div>
 
