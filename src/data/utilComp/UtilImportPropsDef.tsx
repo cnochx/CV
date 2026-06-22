@@ -275,7 +275,7 @@ export type HeaderLytProps = PropsWithChildren<{
   AlDateCustomVal?: ReactNode | undefined;
 
   /** Optional base identifier used to derive stable nested header ids. */
-  ArticleId?: StrngUndfndType;
+  HeaderId?: string;
 
   /** Optional semantic heading tag used for the suffix title. */
   SuffixTitleTag?: HeadingTag;

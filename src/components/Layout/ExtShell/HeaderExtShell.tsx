@@ -29,11 +29,11 @@ const HeaderExtShell = memo(({children,
                           SetUnderline,
                           UnderlineClassName,
                           HeaderItem,
-                          ArticleId,
+                          HeaderId,
                           SuffixTitleTag}: HeaderLytProps) => {
 
   const headerIds = getHeaderIds(
-    ArticleId,
+    HeaderId,
     HeaderItem);
 
   const setUnderlineClassName =

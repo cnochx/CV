@@ -72,8 +72,8 @@ const BPArticleLyt: FC<ContentArticleLytProps> = memo(
             >
               <HeaderExtShell
                 AlDateCustomVal={AlItem.AlDateCustomVal}
-                ArticleId={articleIds.idArticle}
                 HeaderClassName="flex flex-col"
+                HeaderId={articleIds.idArticle}
                 HeaderItem={AlHeaderItem}
                 SetUnderline={true}
                 UnderlineClassName="mt-1 h-px w-2/3 border-b-2 border-fuchsia-400"

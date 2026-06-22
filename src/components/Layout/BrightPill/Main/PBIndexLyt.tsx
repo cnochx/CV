@@ -82,8 +82,8 @@ const PBIndexLyt: FC<ContentIndexLytProps> = memo(({IdxContent, MainSectionId}) 
           ImgSrc={IdxContent.IxMainImg?.ImgSrc}>
 
           <HeaderExtShell
-            ArticleId={MainSectionId}
             HeaderClassName="relative z-10 flex flex-col gap-y-3 px-6 py-10 text-neutral-100 sm:px-8 sm:py-12"
+            HeaderId={MainSectionId}
             HeaderItem={IxHeader}
             SetUnderline={true}
             SuffixTitleTag={ArticleContentTitleTag}>
