@@ -4,11 +4,11 @@ import {SectionId} from '../../../../data/SectionIdData';
 import {HeadingTag, StrngUndfndType} from '../../../../data/utilComp/generalTypeDef';
 import {ContentIndexLytProps} from '../../../../data/utilComp/UtilImportPropsDef';
 import {getId} from '../../../../utilComp/SectionHelper';
-import AsideLyt from '../../AsideLyt';
+import AsideExtShell from '../../ExtShell/AsideExtShell';
+import SectionExtShell from '../../ExtShell/BPSectionLyt';
+import HeaderExtShell from '../../ExtShell/HeaderExtShell';
 import BPArtFooterLyt from '../Extension/BPArtFooterLyt';
-import BPArtHeaderLyt from '../Extension/BPArtHeaderLyt';
 import BPArtPillLyt from '../Extension/BPArtPillLyt';
-import BPSectionLyt from '../Extension/BPSectionLyt';
 import BPArticleLyt from './BPArticleLyt';
 
 /**
@@ -16,9 +16,9 @@ import BPArticleLyt from './BPArticleLyt';
  * and footer content into a single accessible main section.
  *
  * Dependencies
- * - Uses BPSectionLyt as the semantic main section wrapper.
+ * - Uses SectionExtShell as the semantic main section wrapper.
  * - Uses BPArtPillLyt to render background imagery with an overlay.
- * - Uses BPArtHeaderLyt for the hero header area with optional suffix content.
+ * - Uses HeaderExtShell for the hero header area with optional suffix content.
  * - Uses BPArticleLyt to render the main contractor-specific article content.
  * - Uses BPArtFooterLyt to render call-to-action and bottom suffix content.
  * - Uses getId and SectionId.Contractor to build stable DOM ids for headings and suffixes.
@@ -69,7 +69,7 @@ const PBIndexLyt: FC<ContentIndexLytProps> = memo(({IdxContent, MainSectionId}) 
 
 
   return (
-    <BPSectionLyt
+    <SectionExtShell
       IsMain={true}
       LabelId={mainSectionLabelBy}
       SectionId={MainSectionId}
@@ -81,9 +81,9 @@ const PBIndexLyt: FC<ContentIndexLytProps> = memo(({IdxContent, MainSectionId}) 
           ClassNameParent="relative overflow-hidden rounded-2xl bg-cover bg-center"
           ImgSrc={IdxContent.IxMainImg?.ImgSrc}>
 
-          <BPArtHeaderLyt
-            ArticleId={MainSectionId}
+          <HeaderExtShell
             HeaderClassName="relative z-10 flex flex-col gap-y-3 px-6 py-10 text-neutral-100 sm:px-8 sm:py-12"
+            HeaderId={MainSectionId}
             HeaderItem={IxHeader}
             SetUnderline={true}
             SuffixTitleTag={ArticleContentTitleTag}>
@@ -98,7 +98,7 @@ const PBIndexLyt: FC<ContentIndexLytProps> = memo(({IdxContent, MainSectionId}) 
                 {IxHeader?.HdrSubTitle}
               </ArticleSubTitleTag>
             ) : null}
-          </BPArtHeaderLyt>
+          </HeaderExtShell>
 
         </BPArtPillLyt>
 
@@ -137,14 +137,14 @@ const PBIndexLyt: FC<ContentIndexLytProps> = memo(({IdxContent, MainSectionId}) 
 
         </BPArtPillLyt>
 
-        <AsideLyt
+        <AsideExtShell
           CallToActionItem={IxCallToAction}
           SectionId={MainSectionId}
         />
 
 
       </article>
-    </BPSectionLyt>
+    </SectionExtShell>
   );
 });
 

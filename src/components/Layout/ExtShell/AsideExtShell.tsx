@@ -1,8 +1,8 @@
 import React, {FC, memo} from 'react';
 
-import {BaseCallToActionItemDef} from '../../data/utilComp/GeneralDef';
-import {AsideLytProps} from '../../data/utilComp/UtilImportPropsDef';
-import CallToAction from '../Navigation/CallToAction/CallToAction';
+import {BaseCallToActionItemDef} from '../../../data/utilComp/GeneralDef';
+import {AsideLytProps} from '../../../data/utilComp/UtilImportPropsDef';
+import CallToAction from '../../Navigation/CallToAction/CallToAction';
 
 
 /**
@@ -24,7 +24,7 @@ import CallToAction from '../Navigation/CallToAction/CallToAction';
  * CallToActions] - Optional call-to-action entries rendered inside the aside.
  * @returns {JSX.Element} Rendered aside layout with optional call-to-action content.
  */
-const AsideLyt: FC<AsideLytProps> = memo(({children, SectionId, CallToActionItem, DisplayDivide = true}) => {
+const AsideExtShell: FC<AsideLytProps> = memo(({children, SectionId, CallToActionItem, DisplayDivide = true}) => {
     return (
       <>
         <aside
@@ -58,5 +58,5 @@ const AsideLyt: FC<AsideLytProps> = memo(({children, SectionId, CallToActionItem
   },
 );
 
-AsideLyt.displayName = 'AsideLyt';
-export default AsideLyt;
+AsideExtShell.displayName = 'AsideExtShell';
+export default AsideExtShell;

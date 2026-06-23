@@ -3,7 +3,7 @@ import {ReactNode} from 'react';
 
 import {
   CallToActionType,
-  DateType,
+  DateType, DisplaySkills,
   IconDef,
   ImagesType,
   ImgSrcType,
@@ -127,6 +127,9 @@ export interface ExtAlSkills {
 
   /** Optional heading displayed above the skills list. */
   SeiSkillsHead?: StrngUndfndType;
+
+  /** Defines the display style of the skills section. */
+  SeiDisplaySkills?: DisplaySkills;
 }
 
 /**
