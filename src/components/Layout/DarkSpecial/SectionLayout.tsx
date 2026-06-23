@@ -9,8 +9,8 @@ const SectionLayout: FC<SectionLayoutProps> = memo(
       <section
         aria-labelledby={sectionId}
         className={classNames(className,
-          {'px-4 py-16 md:py-24 lg:px-8 scroll-mt-24': !noPadding},
-          {'scroll-mt-[120px]': IsMain,})}
+          {'px-4 py-16 md:py-24 lg:px-8': !noPadding},
+          {'scroll-mt-14': IsMain,})}
         id={sectionId}>
 
         <div
