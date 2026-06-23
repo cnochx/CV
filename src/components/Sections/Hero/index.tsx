@@ -13,46 +13,39 @@ import SkillsElmnt from '../../Layout/ExtElmnt/SkillsElmnt';
 import ArticleExtShell from '../../Layout/ExtShell/ArticleExtShell';
 import HeaderExtShell from '../../Layout/ExtShell/HeaderExtShell';
 import SectionExtShell from '../../Layout/ExtShell/SectionExtShell';
-import Nav from '../../Navigation/Nav';
+import NavSections from '../../Navigation/NavSections';
 import Socials from '../../Socials';
 
 /**
- * Hero section component.
- *
- * Renders the main landing section of the page, including:
- * - a responsive background image,
- * - the main title and subtitle,
- * - a short highlighted description list,
- * - social profile links,
- * - in-action buttons,
- * - and a fixed jump navigation control to the next section.
+ * Renders the landing hero section with responsive media, profile content,
+ * primary actions, social links, and a jump control to the next section.
  *
  * Dependencies:
- * - Uses `heroData` as the structured content source for text and actions.
- * - Uses `HeroSectionData` as the image source collection for responsive hero media.
- * - Uses `useIsMobile` to resolve whether the mobile or screen image variant
- *   should be displayed.
- * - Uses `SectionExtShell` as the outer semantic section wrapper.
- * - Uses `ImageElement` to render the selected responsive background image.
- * - Uses `Socials` to display social profile links.
- * - Uses `Nav` to render the jump control to the next section.
+ * - Uses `heroData` as the structured content source for action links.
+ * - Uses `HeroSectionData` to provide responsive hero media and header content.
+ * - Uses `useIsMobile` to resolve the active image variant for the current viewport.
+ * - Uses `resolveImgSrc` to transform the selected image item into a renderable source path.
+ * - Uses `SectionExtShell`, `ArticleExtShell`, and `HeaderExtShell` to compose the semantic hero layout.
+ * - Uses `SkillsElmnt` to render the highlighted hero content entries.
+ * - Uses `Socials` to render external profile links.
+ * - Uses `NavSections` to render the next-section jump navigation for the hero context.
  *
  * Operations:
- * - Reads hero text and call-to-action data from `heroData`.
- * - Selects the appropriate hero image variant from `HeroSectionData.IxImages`
- *   based on the current viewport category (`mobile` or `screen`).
- * - Renders the hero content centered inside a full-height viewport container.
- * - Displays the content inside a semi-transparent blurred article panel for contrast.
- * - Renders a jump navigation control linked to the About section.
+ * - Selects the mobile or screen hero image variant based on the current viewport category.
+ * - Resolves heading levels for the hero title, subtitle, and content entries from the available header metadata.
+ * - Renders the background image as an absolutely positioned `next/image` layer behind the hero content.
+ * - Displays the main hero copy inside a semi-transparent blurred article shell for readability over the image.
+ * - Maps configured action items to styled call-to-action links with optional icons.
+ * - Positions the next-section jump control at the bottom center of the hero viewport.
  *
  * Layout notes:
- * - The outer `SectionExtShell` suppresses its default inner wrapper via `HideDiv`
- *   so the hero can control its own full-width and full-height layout.
- * - The background image is rendered as a positioned `next/image` layer through
- *   `ImageElement`, while the content sits above it with higher z-index values.
+ * - The outer `SectionExtShell` suppresses its default inner wrapper through `HideDiv`
+ *   so the hero can manage its own full-width and full-height composition.
+ * - The hero background layer stays behind the content stack through explicit z-index separation.
+ * - The next-section control is rendered in a dedicated absolute wrapper to keep its placement
+ *   independent of the main article layout.
  *
- * @returns {JSX.Element} The rendered hero section with responsive media,
- *   title, description, actions, social links, and jump navigation.
+ * @returns {JSX.Element} Rendered hero section with responsive media and navigation affordances.
  */
 const Hero: FC = memo(() => {
   const {actions} = heroData;
@@ -77,6 +70,9 @@ const Hero: FC = memo(() => {
   const ArticleTitleTagContent: HeadingTag =
     IxHeader.HdrSubId ? 'h3' : 'h2';
 
+
+
+
   return (
     <SectionExtShell
       ClassNameSection="relative w-full max-h-screen overflow-hidden"
@@ -86,7 +82,7 @@ const Hero: FC = memo(() => {
       SectionId={SectionId.Hero}
     >
       <Image
-        alt={`${SectionId.Hero}-image-${selectedImg?.ImgId}`}
+        alt=""
         className="absolute inset-0 z-0 object-cover"
         decoding="async"
         fill
@@ -176,7 +172,10 @@ const Hero: FC = memo(() => {
           </div>
         </div>
 
-        <Nav jumpSectionId={SectionId.About} />
+        <div className="absolute bottom-6 left-1/2 z-20 -translate-x-1/2">
+        <NavSections
+          currentSectionId={SectionId.Hero}/>
+        </div>
 
       </div>
     </SectionExtShell>
