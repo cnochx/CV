@@ -30,7 +30,7 @@ const Contact: FC = memo(() => {
   return (
     <SectionLayout
         IsMain={true}
-        className="bg-neutral-800 scroll-mt-24"
+        className="bg-neutral-800"
         sectionId={SectionId.Contact}>
       <div className="flex flex-col gap-y-6">
         <div className="flex flex-col gap-6 md:flex-row md:items-center">

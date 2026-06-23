@@ -73,7 +73,7 @@ const PBIndexLyt: FC<ContentIndexLytProps> = memo(({IdxContent, MainSectionId}) 
       IsMain={true}
       LabelId={mainSectionLabelBy}
       SectionId={MainSectionId}
-      sectionClassName="bg-neutral-100 scroll-mt-24">
+      sectionClassName="bg-neutral-100">
 
       <article className="flex flex-col gap-y-12">
         <BPArtPillLyt
