@@ -64,13 +64,13 @@ export const heroData: Hero = {
   ],
   actions: [
     {
-      href: '/assets/cv_martin_grellmann.pdf',
+      href: '/assets/cv_martin_grellmann-employee.pdf',
       text: 'CV (employee)',
       primary: true,
       Icon: ArrowDownTrayIcon,
     },
     {
-      href: '/assets/cv_martin_grellmann-ext.pdf',
+      href: '/assets/cv_martin_grellmann-contractor.pdf',
       text: 'CV (contractor)',
       primary: true,
       Icon: ArrowDownTrayIcon,
