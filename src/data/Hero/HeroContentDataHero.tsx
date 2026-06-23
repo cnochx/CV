@@ -58,7 +58,7 @@ export const HeroContentDataHero: BaseAlContentDef = {
         {
           CtaKey: 2,
           CtaType: 'linkPill',
-          CtaHref: '/assets/cv_martin_grellmann-ext.pdf',
+          CtaHref: '/assets/cv_martin_grellmann-contractor.pdf',
           CtaIcon: ArrowDownTrayIcon,
           CtaText: 'CV (contractor)',
           CtaPrimary: true
