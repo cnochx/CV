@@ -34,6 +34,7 @@ export const CVContentDataFf: BaseAlContentDef = {
           <li>Used Git and Jira in development and project workflows to support collaboration, versioning, and issue tracking.</li>
           <li>Performed technical SEO, website audits, and performance optimization to improve search visibility and loading times.</li>
           <li>Analyzed usage data and derived technical improvements to enhance usability, conversion, and user experience</li>
+          <li>Improved user experience and reduced bounce rate through usability methods referenced in the original CV</li>
         </ul>
       </>
     )
