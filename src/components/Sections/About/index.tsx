@@ -30,7 +30,7 @@ const About: FC = memo(() => {
   return (
     <SectionLayout
         IsMain={true}
-        className="bg-neutral-800 px-4 py-16 md:py-24 lg:px-8 scroll-mt-24"
+        className="bg-neutral-800 px-4 py-16 md:py-24 lg:px-8"
         sectionId={SectionId.About}>
 
       <div className="mx-auto max-w-screen-lg">

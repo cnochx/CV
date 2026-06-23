@@ -79,7 +79,7 @@ const Skills: FC = memo(() => {
   return (
     <SectionLayout
       IsMain={true}
-      className="md:py-24 lg:px-8 bg-neutral-800 px-4 py-16 scroll-mt-24"
+      className="md:py-24 lg:px-8 bg-neutral-800 px-4 py-16"
       sectionId={SectionId.Skills}>
       <div className="mx-auto max-w-screen-lg">
 
