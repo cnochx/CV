@@ -63,7 +63,7 @@ export const CVContentDataIs: BaseAlContentDef = {
         <p><span className="mt-4 text-lg font-bold">Professional development</span><br />
           <ul className="list-disc space-y-4 pl-6">
             <li>Successfully completed the iSAQB CPSA‑F Foundation Level training in 2025; certification exam planned for
-          Q3 2026.</li>
+          Q4 2026.</li>
           </ul>
         </p>
       </>
