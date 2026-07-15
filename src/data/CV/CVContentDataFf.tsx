@@ -6,7 +6,7 @@ export const CVContentDataFf: BaseAlContentDef = {
   AlCompany: 'Ferienhaus-Vermittlung fincaferien.de GmbH',
   AlCountry: 'Germany',
   AlDateEnd: '12/2019',
-  AlDateStrt: '04/2024',
+  AlDateStrt: '04/2004',
   AlDateCustom: true,
   AlDescription1: {
     DnHead: 'Web development, operations, optimization and technical infrastructure.',
