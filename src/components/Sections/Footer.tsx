@@ -31,11 +31,11 @@ const Footer: FC = memo(() => {
           <div className="my-4" />
           <a
             className={classNames(
-              '-m-2 flex items-center gap-x-1 rounded-md p-2 ring-yellow focus:outline-none focus:ring-2',
+              '-m-2 flex items-center gap-x-1 rounded-md p-2 ring-fuchsia-400 focus:outline-none focus:ring-2',
             )}
             href={link}>
             {textContent}
-            {Icon && <Icon className="h-5 w-5 text-yellow" />}
+            {Icon && <Icon className="h-5 w-5 text-fuchsia-400" />}
           </a>
           <div className="my-4" />
           <span className="text-sm text-neutral-100">
