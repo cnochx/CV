@@ -1,5 +1,5 @@
 import {ChevronDownIcon, ChevronUpIcon} from '@heroicons/react/24/solid';
-import {FC, memo} from 'react';
+import {FC, memo, MouseEvent, useCallback} from 'react';
 
 import {SkillItem} from '../../../data/Skills/SkillCollectionDef';
 import {SkillsArticleProps} from '../../../data/utilComp/UtilImportPropsDef';
@@ -34,6 +34,14 @@ const SkillsArticle: FC<SkillsArticleProps> = memo(
       handleKeyDown,
     } = UseAccordion();
 
+    const handleTriggerClick = useCallback(
+      (event: MouseEvent<HTMLButtonElement>) => {
+        event.stopPropagation();
+        toggleAccordion();
+      },
+      [toggleAccordion],
+    );
+
     const isActiveVisual = isHovered;
 
     const articleClassName = isActiveVisual
@@ -52,15 +60,11 @@ const SkillsArticle: FC<SkillsArticleProps> = memo(
 
     return (
       <article
-        aria-controls={`${ArticleId}-content`}
-        aria-expanded={isOpen}
         className={articleClassName}
         id={ArticleId}
         onClick={toggleAccordion}
-        onKeyDown={handleKeyDown}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        role="button"
         style={
           resolvedImgSrc
             ? {
@@ -71,7 +75,6 @@ const SkillsArticle: FC<SkillsArticleProps> = memo(
             }
             : undefined
         }
-        tabIndex={0}
       >
         <div className={SKILLS_SURFACE_TOKENS.overlayOuter} />
         <div className={SKILLS_SURFACE_TOKENS.rimOuter} />
@@ -85,7 +88,15 @@ const SkillsArticle: FC<SkillsArticleProps> = memo(
               UseVariantText="dark"
             >
               <h3 className={titleClassName} id={TitleId}>
-                {Head}
+                <button
+                  aria-controls={`${ArticleId}-content`}
+                  aria-expanded={isOpen}
+                  className="w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400"
+                  onClick={handleTriggerClick}
+                  onKeyDown={handleKeyDown}
+                  type="button">
+                  {Head}
+                </button>
               </h3>
             </HeaderLayout>
 

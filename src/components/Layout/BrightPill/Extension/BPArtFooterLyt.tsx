@@ -31,14 +31,14 @@ const BPArtFooterLyt: FC<ArticleFooterLytProps> = memo(({children,
       <>
         <footer
           className={footerClassName}
-          id={`${SectionId}=${BottomSuffix?.SxId}`}>
+          id={`${SectionId}-${BottomSuffix?.SxId}`}>
           {children && children}
 
-          {BottomSuffix && BottomSuffix ? (
+          {BottomSuffix?.SxTitle ? (
             <header>
-              <h6 className="font-bold text-l" id={`${SectionId}=${BottomSuffix.SxId}-title`}>
+              <h4 className="font-bold text-l" id={`${SectionId}-${BottomSuffix.SxId}-title`}>
                 {BottomSuffix.SxTitle}
-              </h6>
+              </h4>
             </header>
           ) : null}
 

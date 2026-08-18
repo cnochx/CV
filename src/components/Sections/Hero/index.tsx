@@ -98,9 +98,9 @@ const Hero: FC = memo(() => {
             <ArticleExtShell
               ArticleClassName="grid w-full max-w-screen-xl grid-cols-3 gap-x-4 gap-y-1 rounded-xl bg-gray-800/40 p-4 text-center shadow-lg backdrop-blur-sm sm:gap-x-6 sm:gap-y-6 sm:p-6 lg:gap-x-8 lg:gap-y-10 lg: p-8
   "
-              ArticleId={SectionId.Hero}
+              ArticleId={`${SectionId.Hero}-intro`}
               DisplaySubDiv={false}
-              LabelledBy={SectionId.Hero}
+              LabelledBy={`${SectionId.Hero}-${IxHeader.HdrId}`}
             >
               <div className="col-span-3">
                 <HeaderExtShell
