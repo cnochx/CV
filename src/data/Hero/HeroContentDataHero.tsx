@@ -1,5 +1,5 @@
 
-import {ArrowDownTrayIcon, ChatBubbleLeftRightIcon} from '@heroicons/react/24/outline';
+import {ArrowDownTrayIcon, ChatBubbleLeftRightIcon, RectangleStackIcon} from '@heroicons/react/24/outline';
 
 import {SectionId} from '../SectionIdData';
 import {BaseAlContentDef} from '../utilComp/GeneralDef';
@@ -16,31 +16,31 @@ export const HeroContentDataHero: BaseAlContentDef = {
         AlsId: 'architect',
         AlsKey: 1,
         AlsOpen: false,
-        AlsName: 'Architect of Drupal and modern SAP landscapes'
+        AlsName: 'Architect of SAP and web landscapes'
       },
       {
         AlsId: 'senior_full_stack_developer',
         AlsKey: 2,
         AlsOpen: false,
-        AlsName: 'Senior Full-Stack Developer',
+        AlsName: 'Senior Full-Stack Developer — SAP and web',
       },
       {
         AlsId: 'problem_solver',
         AlsKey: 3,
         AlsOpen: false,
-        AlsName: 'Current Drupal, Webapp and SAP full-stack expertise',
+        AlsName: 'ABAP, CDS, OData and BTP — React, TypeScript, Node.js and PHP',
       },
       {
         AlsId: 'modernization_specialist',
         AlsKey: 4,
         AlsOpen: false,
-        AlsName: 'Modernization and refactoring specialist'
+        AlsName: 'Modernization, refactoring and AI-assisted legacy analysis'
       },
       {
         AlsId: 'balanced_decisions',
         AlsKey: 5,
         AlsOpen: false,
-        AlsName: 'Clean design, solid implementation'
+        AlsName: 'Clean design, solid implementation, written handover'
       }
     ]
   },
@@ -50,7 +50,7 @@ export const HeroContentDataHero: BaseAlContentDef = {
         {
           CtaKey: 1,
           CtaType: 'linkPill',
-          CtaHref: '/assets/cv_martin_grellmann.pdf',
+          CtaHref: '/assets/cv_martin_grellmann-employee.pdf',
           CtaIcon: ArrowDownTrayIcon,
           CtaText: 'CV (employee)',
           CtaPrimary: true
@@ -64,7 +64,15 @@ export const HeroContentDataHero: BaseAlContentDef = {
           CtaPrimary: true
         },
         {
-          CtaKey: 2,
+          CtaKey: 3,
+          CtaType: 'linkPill',
+          CtaHref: `#${SectionId.Contractor}`,
+          CtaIcon: RectangleStackIcon,
+          CtaText: 'CV by focus area',
+          CtaPrimary: false
+        },
+        {
+          CtaKey: 4,
           CtaType: 'linkPill',
           CtaHref: `#${SectionId.Contact}`,
           CtaIcon: ChatBubbleLeftRightIcon,

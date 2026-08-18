@@ -30,23 +30,23 @@ export const AboutData: AboutDataDef = {
       Icon: FlagIcon},
     {
       label: 'Specialization',
-      text: 'Senior Full-Stack Engineer, SAP BTP, S/4HANA, enterprise APIs, clean core',
+      text: 'SAP S/4HANA & BTP development, ABAP refactoring, AI-assisted legacy modernization, travel platforms, full-stack web',
       Icon: BuildingOffice2Icon,
     },
     {
       label: 'Experience',
-      text: '20+ years software engineering and full-stack development, 5+ years SAP Development',
+      text: '20+ years software engineering and full-stack web development, 4+ years SAP development, 15 years in travel and booking platforms',
       Icon: CalendarIcon,
     },
     {
       label: 'Architecture',
-      text: 'iSAQB CPSA-F Foundation Level training completed, exam planned for Q3 2026',
+      text: 'iSAQB CPSA-F Foundation Level training completed, exam planned for Q4 2026',
       Icon: AcademicCapIcon,
     },
-    {label: 'Certifications', text: 'Scrum Master PSMI, Full-Stack Web Developer certification', Icon: AcademicCapIcon},
+    {label: 'Certifications', text: 'Professional Scrum Master I (Scrum.org), Full-Stack Web Developer certification', Icon: AcademicCapIcon},
     {
       label: 'Methods',
-      text: 'Clean Code, SOLID, refactoring, code reviews, sustainable architecture, problem solving',
+      text: 'Clean Code, SOLID, refactoring, code reviews, sustainable architecture, AI-assisted code analysis with manual verification',
       Icon: SparklesIcon,
     },
     {label: 'Education',

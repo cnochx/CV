@@ -11,7 +11,7 @@ export const HeroSectionData: BaseIndexContentDef = {
   IxHeader: {
     HdrId: 'main_title',
     HdrSubId: 'main_sub_title',
-    HdrTitle: 'Senior Full-Stack Engineer',
+    HdrTitle: 'Senior Full-Stack Engineer — SAP & Web',
     HdrSubTitle: 'Martin Grellmann',
   },
   IxImages: [

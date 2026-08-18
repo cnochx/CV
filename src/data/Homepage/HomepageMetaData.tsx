@@ -13,10 +13,10 @@ const structuredData: Graph = {
       '@type': 'ProfilePage',
       '@id': 'https://www.grellmann.app/#profilepage',
       url: 'https://www.grellmann.app/',
-      name: 'Martin Grellmann — Senior Full-Stack Engineer & SAP Technical Consultant',
+      name: 'Martin Grellmann — Senior Full-Stack Engineer, SAP Developer & Legacy Modernization',
       description:
-        'Online CV of Martin Grellmann, Senior Full-Stack Engineer with 20+ years of experience in software engineering and a strong focus on SAP BTP, S/4HANA modernization, ABAP, CDS, OData, Fiori/UI5, enterprise API integration and clean-core aligned development.',
-      dateModified: '2026-06-20T00:00:00+01:00',
+        'Online CV of Martin Grellmann, Senior Full-Stack Engineer with 20+ years of experience. SAP S/4HANA and BTP development, ABAP custom code refactoring, AI-assisted modernization of legacy applications, travel and booking platforms, and full-stack web development with React, TypeScript, Node.js and PHP.',
+      dateModified: '2026-08-18T00:00:00+02:00',
       inLanguage: 'en',
       isPartOf: {'@id': 'https://www.grellmann.app/#website'},
       mainEntity: {'@id': 'https://www.grellmann.app/#person'},
@@ -29,7 +29,7 @@ const structuredData: Graph = {
       url: 'https://www.grellmann.app/',
       name: 'Martin Grellmann',
       description:
-        'Personal website and online CV of Martin Grellmann, Senior Full-Stack Engineer & SAP Technical Consultant.',
+        'Personal website and online CV of Martin Grellmann, Senior Full-Stack Engineer, SAP Developer and specialist for the modernization of legacy applications.',
       inLanguage: 'en',
       publisher: {'@id': 'https://www.grellmann.app/#person'},
     },
@@ -47,9 +47,9 @@ const structuredData: Graph = {
       alternateName: 'Martin Rudra Grellmann',
       url: 'https://www.grellmann.app/',
       image: {'@id': 'https://www.grellmann.app/#primaryimage'},
-      jobTitle: 'Senior Full-Stack Engineer & SAP Technical Consultant',
+      jobTitle: 'Senior Full-Stack Engineer, SAP Developer & Modernization Architect',
       description:
-        'Senior Full-Stack Engineer and SAP Technical Consultant with 20+ years experience. Expert in SAP BTP, S/4HANA, ABAP, Fiori/UI5, CDS, OData, clean-core. Based in Leipzig, Germany.',
+        'Senior Full-Stack Engineer and SAP Developer with 20+ years experience. SAP S/4HANA and BTP, ABAP Objects, CDS, OData, Fiori/UI5 and Clean Core, custom code refactoring, AI-assisted legacy modernization, travel and booking platforms, React, TypeScript, Node.js and PHP. Based in Goiás, Brazil and Leipzig, Germany.',
       homeLocation: {
         '@type': 'Place',
         name: 'Brazil',
@@ -94,6 +94,13 @@ const structuredData: Graph = {
         'Linux Administration',
         'Agile',
         'Scrum',
+        'Legacy Modernization',
+        'Custom Code Refactoring',
+        'AI-Assisted Code Analysis',
+        'Travel Technology',
+        'Booking Platforms',
+        'Node.js',
+        'REST APIs',
       ],
       hasCredential: [
         {
@@ -128,7 +135,7 @@ const structuredData: Graph = {
       ],
       worksFor: {
         '@type': 'Organization',
-        name: 'intecsoft group',
+        name: 'intecsoft GmbH & Co. KG',
         url: 'https://www.intecsoft.de',
       },
       sameAs: [
@@ -143,9 +150,9 @@ const structuredData: Graph = {
 };
 
 export const HomePageMetaData: HomepageMetaDataDef = {
-  title: 'Martin Grellmann | Senior Full-Stack Engineer | SAP BTP | S/4HANA | Enterprise APIs',
+  title: 'Martin Grellmann | Senior Full-Stack Engineer | SAP S/4HANA & BTP | Legacy Modernization | Web',
   description:
-    'Online CV of Martin Grellmann, Senior Full-Stack Engineer with 20+ years of experience in software engineering and a strong focus on SAP BTP, S/4HANA modernization, ABAP, CDS, OData, Fiori/UI5, enterprise API integration and clean-core aligned development.',
+    'Online CV of Martin Grellmann, Senior Full-Stack Engineer with 20+ years of experience. SAP S/4HANA and BTP development, ABAP custom code refactoring, AI-assisted modernization of legacy applications, travel and booking platforms, and full-stack web development with React, TypeScript, Node.js and PHP.',
   image: 'https://www.grellmann.app/images/profilepic.jpg',
   url: 'https://www.grellmann.app',
   ogImg: 'https://www.grellmann.app/images/profilepic_og.jpg',

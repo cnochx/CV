@@ -9,24 +9,23 @@ export const ContractorContentDataDifferent: BaseAlContentDef = {
     HdrId: 'title',
     HdrTitle: 'Why I’m different',
   },
-  AlDescription1:{
+  AlDescription1: {
     DnId: 'modernizing',
-    DnHead: 'SAP Modernization Architect: Bridging Business, IT, and Custom Code',
+    DnHead: 'Between Business, Enterprise Software and the Open Web',
     DnText: (
       <>
         <p>
-          I think and work like an architect, not just a developer: clear target architecture, step‑by‑step roadmap,
-          and honest trade‑offs instead of “just one more custom enhancement”. I speak the language of both business
-          and IT, and I’m used to turning vague modernization goals into concrete, deliverable work packages.
+          I think and work like an architect, not only like a developer: a clear target picture, a
+          step-by-step roadmap, and honest trade-offs instead of one more quick enhancement. I speak the
+          language of business and of IT, and I am used to turning vague modernization goals into concrete
+          work packages.
         </p>
 
         <p>
-          That means I do not just look at ABAP code in isolation, but at how
-          custom code, extensions, interfaces and platform decisions fit together
-          in a maintainable target architecture.
+          What makes the profile unusual is the combination. There are many strong ABAP developers and many
+          strong web engineers. Few people work in both worlds at the same time, and that is exactly where
+          most modernization projects get stuck.
         </p>
-
-        <p>Here are many strong ABAP developers. What I offer is a specific mix of roles:</p>
       </>
     ),
   },
@@ -46,11 +45,13 @@ export const ContractorContentDataDifferent: BaseAlContentDef = {
           DnId: 'title',
           DnText: (
             <>
-              <p>I create a clear blueprint: where you are, where you want to go, and which steps get you there with
-                acceptable risk and budget. No “magic big bang”, but realistic, incremental modernization.</p>
+              <p>
+                I create a clear blueprint: where you are, where you want to go, and which steps get you
+                there with acceptable risk and budget. No big bang, but realistic, incremental modernization.
+              </p>
             </>
-          )
-        }
+          ),
+        },
       },
       {
         AlsId: 'modernization_expert',
@@ -61,29 +62,87 @@ export const ContractorContentDataDifferent: BaseAlContentDef = {
           DnId: 'title',
           DnText: (
             <>
-              <p>I enjoy working in brownfield landscapes with technical debt. I can read old code, talk to the people
-                who built it, and translate that into cleaner, testable, extensible solutions that respect your existing
-                investments.</p>
+              <p>
+                I enjoy brownfield landscapes with technical debt. I can read old code, talk to the people
+                who built it, and turn that into cleaner, testable solutions that respect what you have
+                already paid for.
+              </p>
             </>
-          )
-        }
+          ),
+        },
+      },
+      {
+        AlsId: 'ai_assisted_with_verification',
+        AlsKey: 3,
+        AlsOpen: false,
+        AlsDescription: {
+          DnHead: 'AI-assisted, but verified',
+          DnId: 'title',
+          DnText: (
+            <>
+              <p>
+                I use AI to read and summarize unknown code, which shortens the analysis phase considerably.
+                I do not use it as a source of truth. Every finding is checked against the running system
+                before it goes into a decision, and I will tell you where the method has limits.
+              </p>
+            </>
+          ),
+        },
+      },
+      {
+        AlsId: 'two_worlds',
+        AlsKey: 4,
+        AlsOpen: false,
+        AlsDescription: {
+          DnHead: 'Two worlds, one method',
+          DnId: 'title',
+          DnText: (
+            <>
+              <p>
+                SAP and the open web. ABAP Objects, CDS and BTP on one side, React, TypeScript, Node.js and
+                PHP on the other. That means I can design an integration end to end instead of handing it
+                over at the system boundary.
+              </p>
+            </>
+          ),
+        },
+      },
+      {
+        AlsId: 'business_domain_knowledge',
+        AlsKey: 5,
+        AlsOpen: false,
+        AlsDescription: {
+          DnHead: 'Domain knowledge, not only code',
+          DnId: 'title',
+          DnText: (
+            <>
+              <p>
+                Fifteen years in a holiday-rental agency and four years in industrial SAP projects. I have
+                sat on the business side of these processes, which shortens a lot of requirement discussions.
+              </p>
+            </>
+          ),
+        },
       },
       {
         AlsId: 'consultant',
-        AlsKey: 3,
+        AlsKey: 6,
         AlsOpen: false,
         AlsDescription: {
           DnHead: 'Consultant',
           DnId: 'title',
           DnText: (
             <>
-              <p>I don’t just deliver code, I explain trade‑offs and options in a way decision‑makers understand: what
-                must stay in the core, what should move to BTP, and what should be retired.</p>
+              <p>
+                I do not only deliver code. I explain options and trade-offs in a way decision-makers
+                understand: what has to stay in the core, what should move out, and what should simply be
+                retired.
+              </p>
             </>
-          )
-        }
+          ),
+        },
       },
-    ]
-  }
-}
-export default ContractorContentDataDifferent
+    ],
+  },
+};
+export default ContractorContentDataDifferent;
