@@ -11,15 +11,23 @@ const linkClass =
 /**
  * Renders the employee and contractor download pair for one focus area.
  */
-const CvPair: FC<{Slug: string; Note: ReactNode}> = memo(({Slug, Note}) => (
+const CvPair: FC<{Slug: string; Area: string; Note: ReactNode}> = memo(({Slug, Area, Note}) => (
   <>
     <p>{Note}</p>
     <p className="mt-1">
-      <a className={linkClass} download href={`/assets/cv_martin_grellmann-${Slug}-employee.pdf`}>
+      <a
+        aria-label={`Download the employee CV for ${Area} as PDF`}
+        className={linkClass}
+        download
+        href={`/assets/cv_martin_grellmann-${Slug}-employee.pdf`}>
         CV employee
       </a>
       <span aria-hidden="true"> · </span>
-      <a className={linkClass} download href={`/assets/cv_martin_grellmann-${Slug}-contractor.pdf`}>
+      <a
+        aria-label={`Download the contractor CV for ${Area} as PDF`}
+        className={linkClass}
+        download
+        href={`/assets/cv_martin_grellmann-${Slug}-contractor.pdf`}>
         CV contractor
       </a>
     </p>
@@ -67,6 +75,7 @@ export const ContractorContentDataCvs: BaseAlContentDef = {
           DnHead: 'SAP development on S/4HANA and BTP',
           DnText: (
             <CvPair
+              Area="SAP development on S/4HANA and BTP"
               Note="ABAP Objects, CDS, OData, RAP, CAP, Fiori and UI5, with the SAP project list included."
               Slug="sap-s4hana-btp"
             />
@@ -82,6 +91,7 @@ export const ContractorContentDataCvs: BaseAlContentDef = {
           DnHead: 'ABAP custom code refactoring',
           DnText: (
             <CvPair
+              Area="ABAP custom code refactoring"
               Note="Grown Z code and Dynpro applications rebuilt in ABAP Objects, R/3 to S/4HANA, Clean Core."
               Slug="abap-refactoring"
             />
@@ -97,6 +107,7 @@ export const ContractorContentDataCvs: BaseAlContentDef = {
           DnHead: 'AI-assisted legacy modernization',
           DnText: (
             <CvPair
+              Area="AI-assisted legacy modernization"
               Note="Undocumented systems in ABAP and PHP, including how the analysis method actually works."
               Slug="legacy-modernization"
             />
@@ -112,6 +123,7 @@ export const ContractorContentDataCvs: BaseAlContentDef = {
           DnHead: 'Travel and booking platforms',
           DnText: (
             <CvPair
+              Area="travel and booking platforms"
               Note="Availability and inventory logic, booking workflows, travel APIs, twenty years in the domain."
               Slug="travel-tech"
             />
@@ -127,6 +139,7 @@ export const ContractorContentDataCvs: BaseAlContentDef = {
           DnHead: 'Full-stack web development',
           DnText: (
             <CvPair
+              Area="full-stack web development"
               Note="React, TypeScript, Node.js, PHP and REST APIs, with enterprise integration from the SAP years."
               Slug="full-stack-web"
             />

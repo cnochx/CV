@@ -39,6 +39,7 @@ const Page: NextPage<PropsWithChildren<HomepageMetaDataDef>> = memo(
     return (
       <>
         <Head>
+          <title>{title}</title>
           <meta content={description} name="description" />
           <link href={urlPath} key="canonical" rel="canonical" />
 

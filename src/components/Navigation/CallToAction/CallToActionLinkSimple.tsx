@@ -16,7 +16,7 @@ const CallToAction: FC<CallToActionProps> = memo(({CallToActionItem}) => {
         ) : null}
 
         <a
-          className="inline-flex items-center gap-x-2 font-semibold text-cyan-500 underline decoration-cyan-400/70 decoration-2 underline-offset-4 transition-colors hover:text-fuchsia-300 hover:decoration-fuchsia-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900"
+          className="inline-flex items-center gap-x-2 font-semibold text-cyan-700 underline decoration-cyan-600/70 decoration-2 underline-offset-4 transition-colors hover:text-fuchsia-700 hover:decoration-fuchsia-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-100"
           href={CtaHref}
         >
           {CtaIcon ? (
