@@ -38,7 +38,7 @@ const structuredData: Graph = {
       '@id': 'https://www.grellmann.app/#primaryimage',
       url: 'https://www.grellmann.app/images/martin_grellmann.jpg',
       contentUrl: 'https://www.grellmann.app/images/martin_grellmann.jpg',
-      caption: 'Martin Grellmann, Senior SAP BTP Developer and Full-Stack Engineer',
+      caption: 'Martin Grellmann, Senior Software Engineer for SAP S/4HANA, legacy modernization and full-stack web',
     },
     {
       '@type': 'Person',
@@ -101,22 +101,19 @@ const structuredData: Graph = {
         'Booking Platforms',
         'Node.js',
         'REST APIs',
+        'S/4HANA Cloud Public Edition',
+        'SAP MII',
+        'Software Architecture',
+        'MariaDB',
+        'PostgreSQL',
       ],
       hasCredential: [
-        {
-          '@type': 'EducationalOccupationalCredential',
-          name: 'iSAQB Certified Professional for Software Architecture (CPSA-F)',
-          credentialCategory: 'Professional Certification',
-          recognizedBy: {
-            '@type': 'Organization',
-            name: 'iSAQB',
-          },
-        },
         {
           '@type': 'EducationalOccupationalCredential',
           name: 'Professional Scrum Master I (PSM I)',
           credentialCategory: 'Professional Certification',
           url: 'https://scrum.org/certificates/542876',
+          dateCreated: '2020-06-08',
           recognizedBy: {
             '@type': 'Organization',
             name: 'Scrum.org',
@@ -127,19 +124,72 @@ const structuredData: Graph = {
           '@type': 'EducationalOccupationalCredential',
           name: 'Full Stack Web Developer',
           credentialCategory: 'Vocational Training Certificate',
+          dateCreated: '2021-08-01',
           recognizedBy: {
             '@type': 'Organization',
             name: 'indisoft GmbH',
           },
         },
       ],
-      worksFor: {
-        '@type': 'Organization',
-        name: 'intecsoft GmbH & Co. KG',
-        url: 'https://www.intecsoft.de',
+      alumniOf: [
+        {
+          '@type': 'EducationalOrganization',
+          name: 'Software Academy by intecsoft',
+          description:
+            'Software architecture programme following the iSAQB CPSA-F Foundation Level curriculum, 2025 to 2026. Foundation Level training completed, certification exam planned for Q4 2026.',
+        },
+        {
+          '@type': 'EducationalOrganization',
+          name: 'indisoft GmbH',
+          description: 'Vocational retraining as Full-Stack Web Developer with agile project management, 2020 to 2021.',
+        },
+        {
+          '@type': 'EducationalOrganization',
+          name: 'DAA Hildesheim',
+          description: 'Apprenticeship as Industrial Clerk (Industriekaufmann), 2002 to 2004.',
+        },
+      ],
+      knowsLanguage: [
+        {
+          '@type': 'Language',
+          name: 'German',
+          alternateName: 'de',
+          description: 'Native speaker',
+        },
+        {
+          '@type': 'Language',
+          name: 'English',
+          alternateName: 'en',
+          description: 'Professional working proficiency',
+        },
+      ],
+      hasOccupation: {
+        '@type': 'Occupation',
+        name: 'Senior Software Engineer',
+        occupationalCategory: '15-1252.00 Software Developers',
+        description:
+          'SAP development on S/4HANA and SAP BTP, ABAP custom code refactoring, AI-assisted modernization of legacy applications, travel and booking platforms, and full-stack web development.',
+        skills:
+          'ABAP Objects, ABAP SQL, CDS Views, OData, RAP, CAP, SAP BTP, SAP UI5, Fiori Elements, Clean Core, ' +
+          'JavaScript, TypeScript, React, Next.js, Node.js, PHP, Drupal, REST APIs, MySQL, MariaDB, PostgreSQL, ' +
+          'Linux administration, Clean Code, SOLID, refactoring, architecture documentation, Scrum.',
       },
+      email: 'martin@grellmann.eu',
+      worksFor: [
+        {
+          '@type': 'Organization',
+          name: 'intecsoft GmbH & Co. KG',
+          url: 'https://www.intecsoft.de',
+        },
+        {
+          '@type': 'Organization',
+          name: 'Ferienhausvermittlung fincaferien',
+          url: 'https://www.fincaferien.de',
+        },
+      ],
       sameAs: [
         'https://www.linkedin.com/in/martingrellmann',
+        'https://github.com/cnochx',
         'https://twitter.com/martinRudra',
         'https://martin-grellmann.de',
       ],

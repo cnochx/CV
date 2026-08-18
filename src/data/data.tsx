@@ -64,8 +64,8 @@ export const contact: ContactSection = {
     },
     {
       type: ContactType.Github,
-      text: 'Martin Grellmann / chnochx',
-      href: 'https://github.com/chnochx',
+      text: 'Martin Grellmann / cnochx',
+      href: 'https://github.com/cnochx',
     },
     {
       type: ContactType.Phone,
