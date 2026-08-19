@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Designsheet v3.3 — grellmann.app · Clean Core (Apple Hybrid)</title>
+<title>Designsheet v3.4 — grellmann.app · Clean Core (Apple Hybrid)</title>
 <!-- No webfonts. v3 is system-stack by decision (§3) — zero font bytes, native rendering on every OS. -->
 <style>
   :root{
@@ -165,9 +165,16 @@
 
   /* Nav sample */
   .nav-demo{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.55rem 1.1rem;border-radius:999px;background:rgba(10,10,12,.62);-webkit-backdrop-filter:blur(var(--blur-nav));backdrop-filter:blur(var(--blur-nav));border:1px solid var(--glass-border)}
-  .nav-demo a{color:var(--ink-400);text-decoration:none;font-size:.85rem;font-weight:500;padding:.35rem .6rem;border-radius:.5rem;transition:color var(--dur-fast)}
-  .nav-demo a:hover{color:var(--frost-100)}
-  .nav-demo a.active{color:var(--accent-400)}
+  .nav-demo a{color:var(--ink-400);text-decoration:none;font-size:.85rem;font-weight:500;padding:.35rem .8rem;border-radius:999px;border:1px solid transparent;transition:color var(--dur-fast),background-color var(--dur-fast),transform var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out)}
+  /* Inactive links hover = the btn-glass response, but with INVISIBLE border:
+     cyan wash + cyan text + lift + glow — no border color ever appears.     */
+  .nav-demo a:not(.nav-cta):not(.active):hover{background:var(--wash-accent);color:var(--accent-300);border-color:transparent;transform:translateY(-3px);box-shadow:var(--glow-shadow-accent)}
+  .nav-demo a:not(.nav-cta):active{transform:translateY(-1px)}
+  /* Active link = the complete btn-primary effect: solid fuchsia pill at rest,
+     full primary hover (300 fill, lift + scale, wide glow).                  */
+  .nav-demo a.active{background:var(--primary-400);border-color:var(--primary-400);color:var(--ink-950);font-weight:600;box-shadow:var(--shadow-1)}
+  .nav-demo a.active:hover{background:var(--primary-300);border-color:var(--primary-300);color:var(--ink-950);transform:translateY(-3px) scale(1.03);box-shadow:var(--shadow-2),var(--glow-hover-primary)}
+  .nav-demo a.active:active{transform:translateY(-1px) scale(1)}
   .nav-cta{display:inline-block;border:1px solid var(--glass-border-strong);background:var(--glass-1);border-radius:999px;padding:.4rem 1.1rem !important;color:var(--frost-100) !important;font-weight:600 !important;transition:background var(--dur-fast),color var(--dur-fast),border-color var(--dur-fast),transform var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out) !important}
   .nav-cta:hover{background:var(--primary-300);border-color:var(--primary-300);color:var(--ink-950) !important;transform:translateY(-3px) scale(1.03);box-shadow:var(--shadow-2),var(--glow-hover-primary)}
   .nav-cta:active{transform:translateY(-1px) scale(1)}
@@ -209,6 +216,21 @@
   .year-demo .year{position:absolute;right:.5rem;top:50%;transform:translateY(-50%);font-size:clamp(5rem,14vw,9rem);font-weight:700;letter-spacing:-.04em;color:var(--ink-700);line-height:1;user-select:none;pointer-events:none;z-index:0}
   .year-demo .fg{position:relative;z-index:1;max-width:26rem}
 
+  /* Etched numeral — invisible structure, readable by light.
+     Fill is transparent; a hairline stroke gives the "invisible" skeleton;
+     a light gradient CLIPPED INTO THE GLYPHS follows the cursor (--mx/--my
+     from the shared .track handler) and makes the number legible only where
+     light passes through it. Indirect readability: contrast without a color. */
+  .year.etch{color:transparent;
+    -webkit-text-stroke:1px rgba(255,255,255,.09);
+    background:radial-gradient(min(38vw,340px) circle at var(--mx,62%) var(--my,45%),
+      rgba(232,121,249,.5),rgba(157,140,245,.28) 42%,rgba(255,255,255,.05) 68%,transparent 82%);
+    -webkit-background-clip:text;background-clip:text;
+    transition:none}
+  @supports not ((-webkit-background-clip:text) or (background-clip:text)){
+    .year.etch{color:var(--ink-700);background:none;-webkit-text-stroke:0}
+  }
+
   /* Form fields */
   .field{display:flex;flex-direction:column;gap:.35rem;min-width:220px;flex:1}
   .field label{font-size:.78rem;font-weight:600;color:var(--ink-400);letter-spacing:.04em}
@@ -235,7 +257,7 @@
   footer.sheet{padding:2.5rem 0 3.5rem;color:var(--ink-500);font-size:.78rem}
 
   @media (prefers-reduced-motion:reduce){
-    .tilt-scene:hover .tilt,.glass:hover,.skill-card:hover,.btn:hover,.nav-cta:hover{transform:none}
+    .tilt-scene:hover .tilt,.glass:hover,.skill-card:hover,.btn:hover,.nav-cta:hover,.nav-demo a:hover{transform:none}
     .reveal{opacity:1;transform:none;transition:none}
     .lit::before{display:none}
     html{scroll-behavior:auto}
@@ -248,7 +270,7 @@
 
 <div class="wrap">
   <header class="sheet">
-    <span class="eyebrow">Designsheet · v3.3 · Refactoring Target · Tier 1–3 Ready</span>
+    <span class="eyebrow">Designsheet · v3.4 · Refactoring Target · Tier 1–3 Ready</span>
     <h1>Clean Core.</h1>
     <p class="sub">The Apple-hybrid evolution of grellmann.app: one near-black world, frosted glass as the only surface, light as the material, system type at full scale. HTML-first by construction — 3D is garnish, never content.</p>
     <p class="meta">Supersedes v2.0 "Warm Glass &amp; Wood" (<code>designsheet-grellmann-app.html</code>): wood, ivory light-world and webfonts are <strong style="color:var(--frost-300)">retired</strong>; the semantic variant enum, Z-layer model, AA receipts and progressive-enhancement ladder <strong style="color:var(--frost-300)">carry over</strong>. Implementation surface: <code>tailwind.config.js</code> · <code>SurfaceTokens.tsx</code> · <code>HeaderLayoutSub.tsx</code> · <code>IconButtonLayoutSub.tsx</code>. Stack: Next.js · TS · Tailwind + Framer Motion + Lenis (+ one R3F island).</p>
@@ -323,11 +345,11 @@
       <tr><td>accent-400 / accent-300 on ink-950</td><td><strong>10.95 / 13.65:1</strong></td><td class="pass">pass</td><td>Links, active labels / hover text</td></tr>
       <tr><td>ink-950 on primary-400 → 300 (hover)</td><td><strong>8.04 → 11.24:1</strong></td><td class="pass">pass</td><td>Primary CTA label — hover <em>gains</em> contrast</td></tr>
       <tr><td>ink-950 on accent-400 → 300 (hover)</td><td><strong>10.95 → 13.65:1</strong></td><td class="pass">pass</td><td>Submit label — hover <em>gains</em> contrast</td></tr>
-      <tr><td>accent-300 on cyan wash ∘ glass-1 ∘ 900</td><td><strong>8.84:1</strong></td><td class="pass">pass</td><td>Glass-pill hover label</td></tr>
+      <tr><td>accent-300 on cyan wash ∘ glass-1 / ∘ nav</td><td><strong>8.84 / 10.61:1</strong></td><td class="pass">pass</td><td>Glass-pill / nav-link hover label</td></tr>
       <tr><td>frost-100 on glass-3 ∘ 950 / nav ∘ 900</td><td><strong>13.62 / 17.91:1</strong></td><td class="pass">pass</td><td>Active pill / nav over content</td></tr>
       <tr><td>accent-400/55 border ∘ ink-900 (UI 3.0)</td><td><strong>3.86:1</strong></td><td class="pass">pass</td><td>Skill-active + pill-hover border</td></tr>
     </table>
-    <p class="src">Full run: <code>node treasures/contrast-test.mjs</code> — 21/21 pairs pass, glass surfaces alpha-composited before measuring, exits non-zero on any failure (CI-ready). Every text token is licensed for its surface family; new combos must be added to the test before use — no "looks fine" exceptions. (Rule kept from v2.)</p>
+    <p class="src">Full run: <code>node treasures/contrast-test.mjs</code> — 22/22 pairs pass, glass surfaces alpha-composited before measuring, exits non-zero on any failure (CI-ready). Every text token is licensed for its surface family; new combos must be added to the test before use — no "looks fine" exceptions. (Rule kept from v2.)</p>
 
     <h3>Migration map — live site (v1) → v3</h3>
     <table>
@@ -358,7 +380,7 @@
     <div class="type-row"><span class="type-spec">body · 1.0625rem · 400<br>lh 1.6 · frost-100 / ink-400</span><span style="font-size:1.0625rem">Architect of Drupal and modern SAP landscapes — refactoring legacy into clean-core.</span></div>
     <div class="type-row"><span class="type-spec">body-s · .875rem<br>cards, lists, dense text</span><span style="font-size:.875rem">React, Node.js, Next.js · ABAP, CDS, RAP/CAP on BTP</span></div>
     <div class="type-row"><span class="type-spec">caption · .75rem (floor)<br>eyebrow: 600 caps +.22em</span><span style="font-size:.75rem;color:var(--ink-400)">01/2025 – 07/2026 · Dresden · Contract-based &nbsp;&nbsp;<span class="eyebrow">Eyebrow Label</span></span></div>
-    <div class="type-row"><span class="type-spec">display numeral (L0 deco)<br>clamp(5→9rem) · 700 · ink-700<br>aria-hidden, parallax layer</span><span style="font-size:clamp(3rem,8vw,5rem);font-weight:700;letter-spacing:-.04em;color:var(--ink-700);line-height:1">2026</span></div>
+    <div class="type-row"><span class="type-spec">display numeral (L0 deco)<br>clamp(5→9rem) · 700<br>solid ink-700 or etched (§6)<br>aria-hidden, parallax layer</span><span style="font-size:clamp(3rem,8vw,5rem);font-weight:700;letter-spacing:-.04em;color:var(--ink-700);line-height:1">2026</span></div>
     <p class="src">Scale: 0.75 / 0.875 / 1.0625 / 1.25 / 1.5 / 2.1 / 3 / 4.25 rem (≈ major third, rounded). 12px stays the hard text floor (P9). Numerals in date columns: <code>font-variant-numeric: tabular-nums</code>. Giant numerals are decoration — always <code>aria-hidden</code>, color ink-700 (non-text contrast, never carries information alone).</p>
   </section>
 
@@ -405,7 +427,7 @@
         <a href="#" class="nav-cta">Contact</a>
         <div style="display:flex;gap:.15rem"><a href="#">Education</a><a href="#">Projects</a><a href="#">Imprint</a></div>
       </div>
-      <p class="capt">Surface <code>ink-950/62 + blur 16</code>, 1px glass border; hairline fades in after 24px scroll. Links split around the centered CTA (grid <code>1fr auto 1fr</code>). Active link = cyan, no underline bar. CTA rests as a glass pill and hovers <strong>exactly like the primary CTA</strong>: fuchsia <code>primary-300</code> fill + ink text (11.24:1), −3px lift + 3% scale, wide fuchsia glow — the nav promise and the hero promise are the same gesture. Mobile: slide-in panel re-surfaces as glass-3 over ink-950; CTA stays beside the burger.</p>
+      <p class="capt">Surface <code>ink-950/62 + blur 16</code>, 1px glass border; hairline fades in after 24px scroll. Links split around the centered CTA (grid <code>1fr auto 1fr</code>). <strong>Inactive links</strong> hover with the <strong>glass-pill response</strong>: cyan wash <code>accent-400/14</code>, text <code>accent-300</code>, −3px lift + cyan glow — but with an <strong>invisible border</strong> (transparent at rest <em>and</em> on hover), so the pill materializes purely from wash + glow. <strong>Active link = the complete primary-CTA effect</strong>: solid <code>primary-400</code> pill with ink text (8.04:1) at rest, hovering to 300 + lift/scale + wide fuchsia glow — the current section carries the identity color as a "you are here" statement, while cyan stays the response (hover/focus). CTA rests as a glass pill and hovers <strong>exactly like the primary CTA</strong>: fuchsia <code>primary-300</code> fill + ink text (11.24:1), −3px lift + 3% scale, wide fuchsia glow — the nav promise and the hero promise are the same gesture. Mobile: slide-in panel re-surfaces as glass-3 over ink-950; CTA stays beside the burger.</p>
     </div>
 
     <h3>CTA family</h3>
@@ -439,15 +461,15 @@
 
     <h3>Glass feature card + parallax numeral (replaces v2's wooden plinth)</h3>
     <div class="stage glowbed" style="display:block">
-      <div class="year-demo">
-        <span class="year" aria-hidden="true">2026</span>
+      <div class="year-demo track">
+        <span class="year etch" aria-hidden="true">2026</span>
         <div class="glass lit fg" style="padding:1.4rem">
           <h4 style="margin:0 0 .4rem;font-size:1rem;font-weight:600">Clean-core refactoring</h4>
           <p style="margin:0;font-size:.875rem;color:var(--ink-400)">Legacy ABAP to upgrade-stable extensions — measured, testable, documented.</p>
         </div>
       </div>
     </div>
-    <p class="capt">The signature v3 composition: glow blobs (L0) + giant <code>ink-700</code> numeral (L0, <code>aria-hidden</code>, parallaxes slower than content) + frosted card (L1) that lifts and catches light (L2). This replaces the wood texture as the "grounding" element — the ground is now light and depth.</p>
+    <p class="capt">The signature v3 composition, now with the <strong>etched numeral</strong> (move your cursor across the stage): the year has <strong>no fill color at all</strong> — only a 1px <code>white/9</code> hairline stroke as invisible skeleton. A fuchsia→violet light gradient is <strong>clipped into the glyphs</strong> (<code>background-clip:text</code>) and follows the cursor, so the number becomes legible only where light passes through it. <em>Indirect readability: contrast without a color.</em> It stays pure decoration (<code>aria-hidden</code>, no information carried) — screen readers and reduced-motion users lose nothing; without pointer tracking the light rests at a fixed position so the numeral stays faintly present. No-support fallback: solid <code>ink-700</code>. In prod the light position maps to scroll/pointer via Framer Motion; the numeral additionally parallaxes at 0.3× (L0).</p>
 
     <h3>Tilt — Tier-1 CSS demo (hover; Framer Motion springs in prod)</h3>
     <div class="stage">
@@ -620,7 +642,29 @@
  after:mt-2 after:block after:h-0.5 after:w-2/3 after:rounded after:bg-aurora"
 
 // Sticky nav shell
-"sticky top-0 z-50 border-b border-white/10 bg-ink-950/[.62] backdrop-blur-lg"</code></pre>
+"sticky top-0 z-50 border-b border-white/10 bg-ink-950/[.62] backdrop-blur-lg"
+
+/* Etched numeral (CSS, not Tailwind — lives in globalStyles.scss):
+   invisible structure, readable by light. Decoration only: aria-hidden. */
+.numeral-etch{color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.09);
+  background:radial-gradient(340px circle at var(--mx,62%) var(--my,45%),
+    rgba(232,121,249,.5),rgba(157,140,245,.28) 42%,
+    rgba(255,255,255,.05) 68%,transparent 82%);
+  -webkit-background-clip:text;background-clip:text}
+/* fallback: @supports not (background-clip:text) → color:ink-700, no stroke */
+
+// Nav link (inactive) — glass-pill response with INVISIBLE border
+"rounded-full border border-transparent px-3 py-1.5 text-sm font-medium text-ink-400
+ transition duration-200 ease-out
+ hover:-translate-y-1 hover:bg-accent-400/[.14] hover:text-accent-300
+ hover:shadow-glow-accent hover:border-transparent
+ motion-reduce:hover:transform-none"
+// Nav link (active) — the complete primary-CTA effect as "you are here"
+"rounded-full border border-primary-400 bg-primary-400 px-3 py-1.5 text-sm font-semibold
+ text-ink-950 shadow-e1 transition duration-200 ease-out
+ hover:-translate-y-1 hover:scale-[1.03] hover:border-primary-300 hover:bg-primary-300
+ hover:shadow-glow-primary-lg
+ motion-reduce:hover:transform-none"</code></pre>
 
     <h3>Framer Motion primitives (Tier 1)</h3>
     <pre><code>// Reveal (wrap section content)
@@ -668,7 +712,7 @@ const y = useTransform(scrollYProgress, [0,1], ['0%','-30%']);  // 0.3× speed
   </section>
 
   <footer class="sheet">
-    Designsheet v3.3 · "Clean Core" (Apple Hybrid) · grellmann.app · 2026-08 · Supersedes v2.0 "Warm Glass &amp; Wood" · Accents fixed (fuchsia-400 #e879f9 / cyan-400 #22d3ee) · One ink scale, glass surfaces, no pure white/black · WCAG 2 AA verified by treasures/contrast-test.mjs (21/21) · System type, zero font bytes · Tiers 0–3 with zero SEO/GEO cost per §8 contract · v3.3: unified response-hover across CTA family + nav CTA
+    Designsheet v3.4 · "Clean Core" (Apple Hybrid) · grellmann.app · 2026-08 · Supersedes v2.0 "Warm Glass &amp; Wood" · Accents fixed (fuchsia-400 #e879f9 / cyan-400 #22d3ee) · One ink scale, glass surfaces, no pure white/black · WCAG 2 AA verified by treasures/contrast-test.mjs (22/22) · System type, zero font bytes · Tiers 0–3 with zero SEO/GEO cost per §8 contract · v3.3: unified response-hover across CTA family, nav CTA + nav links (invisible-border glass-pill hover) · v3.4: nav active = complete primary-CTA effect ("you are here") + etched parallax numeral (invisible structure, readable by light)
   </footer>
 </div>
 
@@ -688,14 +732,19 @@ const y = useTransform(scrollYProgress, [0,1], ['0%','-30%']);  // 0.3× speed
     els.forEach(function(el){io.observe(el);});
   }
 
-  /* Reactive light — one delegated listener, pointer:fine only */
+  /* Reactive light — one delegated listener, pointer:fine only.
+     .lit  = sheen overlay on glass cards
+     .track = light-position provider for etched numerals (vars inherit down) */
   if(!reduce && matchMedia('(pointer: fine)').matches){
     document.addEventListener('pointermove', function(ev){
-      var t = ev.target && ev.target.closest ? ev.target.closest('.lit') : null;
-      if(!t) return;
-      var r = t.getBoundingClientRect();
-      t.style.setProperty('--mx', ((ev.clientX - r.left) / r.width * 100) + '%');
-      t.style.setProperty('--my', ((ev.clientY - r.top) / r.height * 100) + '%');
+      if(!ev.target || !ev.target.closest) return;
+      ['.lit','.track'].forEach(function(sel){
+        var t = ev.target.closest(sel);
+        if(!t) return;
+        var r = t.getBoundingClientRect();
+        t.style.setProperty('--mx', ((ev.clientX - r.left) / r.width * 100) + '%');
+        t.style.setProperty('--my', ((ev.clientY - r.top) / r.height * 100) + '%');
+      });
     }, {passive:true});
   }
 })();

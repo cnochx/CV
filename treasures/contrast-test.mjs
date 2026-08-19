@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * Readability test for Designsheet v3.3 "Clean Core"
- * (treasures/designsheet-grellmann-app-v3.3.html, §2 contrast receipts).
+ * Readability test for Designsheet v3.4 "Clean Core"
+ * (treasures/designsheet-grellmann-app-v3.4.html, §2 contrast receipts).
  *
  * Computes WCAG 2 contrast ratios (relative luminance) for every
  * text/surface pair the sheet licenses — including alpha-composited
@@ -62,6 +62,7 @@ const S = {
   'border accent-400/55 ∘ ink-900': comp('ink-900', ['accent-400', 0.55]),
   'border white/16 ∘ ink-950': comp('ink-950', ['white', 0.16]),
   'nav 950/62 ∘ ink-900': comp('ink-900', ['ink-950', 0.62]),
+  'wash-accent ∘ nav ∘ ink-900': comp('ink-900', ['ink-950', 0.62], ['accent-400', 0.14]),
 };
 const bg = (name) => S[name] ?? hex(T[name]);
 
@@ -89,6 +90,7 @@ const pairs = [
   ['ink-500', 'field-well ∘ ink-950', 4.5, 'Form placeholder'],
   ['accent-300', 'wash-accent ∘ glass-1 ∘ ink-900', 4.5, 'Glass-pill hover label on cyan wash'],
   ['frost-100', 'nav 950/62 ∘ ink-900', 4.5, 'Nav text over content (worst case)'],
+  ['accent-300', 'wash-accent ∘ nav ∘ ink-900', 4.5, 'Nav-link hover label on cyan wash'],
   // Non-text UI ≥ 3.0
   ['accent-400', 'ink-950', 3.0, 'Focus ring (UI)'],
   ['border accent-400/55 ∘ ink-900', 'ink-900', 3.0, 'Skill-active / pill-hover border (UI)'],
