@@ -54,6 +54,7 @@ const NavSections: FC<NavProps> = memo(({currentSectionId, className}) => {
         aria-label="Jump to next section"
         className="relative flex h-10 w-10 items-center justify-center sm:h-12 sm:w-12"
         href={`/#${nextSection}`}
+        scroll={false}
         title="Jump to next section"
       >
         <span className="absolute inset-0 rounded-full bg-accent-400/15 ring-1 ring-accent-400 ring-offset-2 ring-offset-ink-950 transition-colors duration-200" />

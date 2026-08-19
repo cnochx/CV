@@ -141,7 +141,8 @@ const MobileNav: FC<NavProps> = memo(({navSections, currentSection, onSelectSect
       <Link
         className="fixed right-16 top-2 z-40 rounded-full border border-white/[.16] bg-ink-950/70 px-4 py-2.5 text-sm font-semibold text-frost-100 backdrop-blur-md transition-colors duration-200 hover:border-primary-300 hover:bg-primary-300 hover:text-ink-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 sm:hidden"
         href={`#${SectionId.Contact}`}
-        onClick={handleContactClick}>
+        onClick={handleContactClick}
+        scroll={false}>
         Contact
       </Link>
 
@@ -208,7 +209,11 @@ const NavItem: FC<NavItemProps> = memo(
         aria-current={current ? 'location' : undefined}
         className={current ? activeClass : inactiveClass}
         href={`#${section}`}
-        onClick={handleClick}>
+        onClick={handleClick}
+        /* Next's own hash scrolling would jump instantly and beat the smooth
+           scroll; SmoothScroll owns anchor navigation instead (and falls back
+           to the native jump when Lenis is not active). */
+        scroll={false}>
         {section}
       </Link>
     );

@@ -38,6 +38,12 @@ const SkillsArticle: FC<SkillsArticleProps> = memo(
     // Tier 1: cursor sheen + ≤4° tilt on the glass surface (§5).
     const reactiveLight = useReactiveLight();
 
+    /** Sets the hover state and caches the tilt geometry for this hover. */
+    const handleArticleEnter = useCallback(() => {
+      handleMouseEnter();
+      reactiveLight.onPointerEnter();
+    }, [handleMouseEnter, reactiveLight]);
+
     /** Clears both the hover state and the tilt when the pointer leaves. */
     const handleArticleLeave = useCallback(() => {
       handleMouseLeave();
@@ -73,7 +79,7 @@ const SkillsArticle: FC<SkillsArticleProps> = memo(
         className={articleClassName}
         id={ArticleId}
         onClick={toggleAccordion}
-        onMouseEnter={handleMouseEnter}
+        onMouseEnter={handleArticleEnter}
         onMouseLeave={handleArticleLeave}
         onMouseMove={reactiveLight.onPointerMove}
         ref={reactiveLight.ref as React.RefObject<HTMLDivElement>}

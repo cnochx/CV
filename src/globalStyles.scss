@@ -59,11 +59,19 @@
     perspective: 1200px;
   }
 
-  /* Perspective tilt, capped at ±4° by the hook. */
+  /* Perspective tilt, capped at ±4° by the hook.
+     The transition only covers the glide back to rest — while the pointer moves,
+     `.tilt-following` removes it so the surface tracks the cursor directly
+     instead of restarting a 400ms easing on every pointer event. */
   .tilt-target {
-    transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+    transform: rotate3d(1, 0, 0, var(--tilt-x, 0deg)) rotate3d(0, 1, 0, var(--tilt-y, 0deg));
     transform-style: preserve-3d;
     transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .tilt-target.tilt-following {
+    transition: none;
+    will-change: transform;
   }
 
   /* Cursor-following sheen, clipped to the surface via border-radius: inherit. */

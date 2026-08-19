@@ -14,13 +14,18 @@
  */
 
 export const SKILLS_SURFACE_TOKENS = {
-  // `lit` + `tilt-target` are Tier 1 utilities (globalStyles.scss) driven by
-  // useReactiveLight; they collapse to flat surfaces under reduced motion.
   containerBase:
-    'group relative overflow-hidden rounded-2xl text-frost-100 transition-colors duration-200 lit tilt-target',
+    'group relative overflow-hidden rounded-2xl text-frost-100 transition-colors duration-200',
 
+  // Tier 1 motion utilities (globalStyles.scss), driven by useReactiveLight and
+  // collapsing to flat surfaces under reduced motion.
+  //
+  // Deliberately applied to the OUTER card only: CSS custom properties inherit,
+  // so tagging the nested cards as well would make them rotate with the parent's
+  // --tilt-* values and paint a second sheen gradient — visually wrong and a
+  // needless per-frame compositing cost.
   articleSpacing:
-    'flex flex-col gap-4 p-4 cursor-pointer bg-cover bg-center bg-no-repeat',
+    'flex flex-col gap-4 p-4 cursor-pointer bg-cover bg-center bg-no-repeat lit tilt-target',
 
   sectionSpacing:
     'flex h-auto w-96 flex-col p-4 cursor-pointer',

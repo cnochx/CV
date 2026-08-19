@@ -4,41 +4,52 @@ import {FC, memo, useEffect} from 'react';
 import {useMotionGate} from '../../hooks/useMotionGate';
 
 /**
- * Attaches Lenis smooth scrolling to the page (Tier 1, Designsheet §4).
+ * Owns in-page anchor navigation and, on capable clients, smooth scrolling.
  *
- * Deliberate constraints:
- * - Desktop only (`pointer: fine`) — touch devices keep native momentum scroll,
- *   which is both faster and what mobile users expect.
- * - Disabled under `prefers-reduced-motion` and when `Save-Data` is requested.
- * - Anchor navigation is delegated to Lenis so the existing `#section` links and
- *   `useNavObserver` keep working; `scroll-behavior: smooth` in CSS is disabled
- *   while Lenis is active to avoid two scroll engines fighting each other.
+ * The nav `Link`s are rendered with `scroll={false}` because Next's own hash
+ * handling jumps instantly and would beat any animation to the target. This
+ * component therefore takes over anchor navigation completely — and does so for
+ * *every* client, not just the ones that get Lenis:
  *
- * Renders nothing — this is a behavior-only component.
+ * - Lenis active (desktop, motion allowed, no Save-Data): animated scroll.
+ * - Otherwise: native `scrollIntoView`, which honours the CSS
+ *   `scroll-behavior` and `scroll-margin-top` already defined in the design.
+ *
+ * The scroll offset is read from the target's computed `scroll-margin-top`, so
+ * the CSS stays the single source of truth for how far below the fixed header a
+ * section should land — no duplicated magic number.
+ *
+ * Renders nothing; this is a behavior-only component.
  */
 const SmoothScroll: FC = memo(() => {
   const {allowSmoothScroll} = useMotionGate();
 
   useEffect(() => {
-    if (!allowSmoothScroll) return;
-
-    const lenis = new Lenis({
-      duration: 1.05,
-      // Apple-quiet glide: fast start, long settle, no overshoot.
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      touchMultiplier: 0,
-    });
+    const lenis = allowSmoothScroll
+      ? new Lenis({
+          duration: 1.05,
+          // Apple-quiet glide: fast start, long settle, no overshoot.
+          easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          smoothWheel: true,
+          touchMultiplier: 0,
+        })
+      : null;
 
     let frame = 0;
-    const raf = (time: number) => {
-      lenis.raf(time);
+    if (lenis) {
+      const raf = (time: number) => {
+        lenis.raf(time);
+        frame = requestAnimationFrame(raf);
+      };
       frame = requestAnimationFrame(raf);
-    };
-    frame = requestAnimationFrame(raf);
+    }
 
-    // Let Lenis own in-page anchor jumps (keeps the nav observer in sync).
     const handleAnchorClick = (event: MouseEvent) => {
+      // Let modified clicks (new tab, download, etc.) behave natively.
+      if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) {
+        return;
+      }
+
       const target = event.target as HTMLElement | null;
       const anchor = target?.closest?.('a[href*="#"]') as HTMLAnchorElement | null;
       if (!anchor) return;
@@ -50,21 +61,33 @@ const SmoothScroll: FC = memo(() => {
       if (!destination) return;
 
       event.preventDefault();
-      lenis.scrollTo(destination, {offset: -80});
+
+      // CSS owns the header offset via scroll-margin-top.
+      const scrollMargin = parseFloat(window.getComputedStyle(destination).scrollMarginTop) || 0;
+
+      if (lenis) {
+        lenis.scrollTo(destination, {offset: -scrollMargin});
+      } else {
+        destination.scrollIntoView({block: 'start'});
+      }
+
       window.history.replaceState(null, '', `#${hash}`);
     };
 
     document.addEventListener('click', handleAnchorClick);
 
-    // Disable the CSS smooth scroll so only one engine drives the viewport.
+    // With Lenis driving the viewport, the CSS smooth scroll must stand down so
+    // the two engines cannot fight over the same scroll position.
     const previousBehavior = document.documentElement.style.scrollBehavior;
-    document.documentElement.style.scrollBehavior = 'auto';
+    if (lenis) {
+      document.documentElement.style.scrollBehavior = 'auto';
+    }
 
     return () => {
-      cancelAnimationFrame(frame);
+      if (frame) cancelAnimationFrame(frame);
       document.removeEventListener('click', handleAnchorClick);
       document.documentElement.style.scrollBehavior = previousBehavior;
-      lenis.destroy();
+      lenis?.destroy();
     };
   }, [allowSmoothScroll]);
 
