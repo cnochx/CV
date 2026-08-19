@@ -9,6 +9,7 @@ import useInterval from '../../hooks/useInterval';
 import useWindow from '../../hooks/useWindow';
 import QuoteIcon from '../Icon/QuoteIcon';
 import SectionLayout from '../Layout/DarkSpecial/SectionLayout';
+import Reveal from '../Motion/Reveal';
 
 const Testimonials: FC = memo(() => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -82,7 +83,7 @@ const Testimonials: FC = memo(() => {
           {'bg-ink-900': !imageSrc},
         )}
         style={imageSrc ? {backgroundImage: `url(${resolveSrc}`} : undefined}>
-        <div className="z-10 w-full max-w-screen-md px-4 lg:px-0">
+        <Reveal className="z-10 w-full max-w-screen-md px-4 lg:px-0">
           <div className="flex flex-col items-center gap-y-6 rounded-xl border border-white/10 bg-ink-950/50 p-6 shadow-e1 backdrop-blur-sm">
             <div
               aria-label="Quotes from employment reference letters"
@@ -117,7 +118,7 @@ const Testimonials: FC = memo(() => {
               })}
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </SectionLayout>
   );

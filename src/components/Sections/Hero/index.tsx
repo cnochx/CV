@@ -9,6 +9,8 @@ import SkillsElmnt from '../../Layout/ExtElmnt/SkillsElmnt';
 import ArticleExtShell from '../../Layout/ExtShell/ArticleExtShell';
 import HeaderExtShell from '../../Layout/ExtShell/HeaderExtShell';
 import SectionExtShell from '../../Layout/ExtShell/SectionExtShell';
+import GlowParallax from '../../Motion/GlowParallax';
+import Reveal from '../../Motion/Reveal';
 import NavSections from '../../Navigation/NavSections';
 import Socials from '../../Socials';
 
@@ -66,12 +68,8 @@ const Hero: FC = memo(() => {
       Padding={false}
       SectionId={SectionId.Hero}
     >
-      {/* L0 glow layer — pure decoration, zero layout impact (§5) */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0">
-        <div className="absolute -left-[12vw] -top-[18vw] h-[56vw] w-[56vw] rounded-full bg-[radial-gradient(closest-side,rgba(232,121,249,0.20),transparent)]" />
-        <div className="absolute -right-[16vw] top-[22vh] h-[44vw] w-[44vw] rounded-full bg-[radial-gradient(closest-side,rgba(34,211,238,0.16),transparent)]" />
-        <div className="absolute -bottom-[14vw] left-[26vw] h-[38vw] w-[38vw] rounded-full bg-[radial-gradient(closest-side,rgba(157,140,245,0.16),transparent)]" />
-      </div>
+      {/* L0 glow layer — pure decoration with scroll parallax, zero layout impact (§5) */}
+      <GlowParallax />
 
       <div className="relative z-10 flex min-h-screen w-full items-center justify-center px-4 py-24 lg:px-8">
 
@@ -125,7 +123,9 @@ const Hero: FC = memo(() => {
             ))}
           </SectionExtShell>
 
-          <aside className="flex flex-col items-center gap-y-8">
+          {/* Only the actions get an entrance. The H1 above is the LCP element and
+              must paint immediately — never wrap it in a reveal (§8). */}
+          <Reveal Delay={150} Element="aside" className="flex flex-col items-center gap-y-8">
             <div className="flex w-full flex-wrap justify-center gap-3">
               {actions.map(({href, text, primary, Icon}) => (
                 <a
@@ -142,7 +142,7 @@ const Hero: FC = memo(() => {
             <div className="flex justify-center gap-x-4 text-frost-100">
               <Socials />
             </div>
-          </aside>
+          </Reveal>
         </ArticleExtShell>
 
         <div className="absolute bottom-6 left-1/2 z-20 -translate-x-1/2">

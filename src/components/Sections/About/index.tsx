@@ -6,6 +6,7 @@ import HeaderData from '../../../data/HeaderData';
 import {SectionId} from '../../../data/SectionIdData';
 import {resolveImgSrc} from '../../../utilComp/ResolveHelper/ResolveImageSrc';
 import SectionLayout from '../../Layout/DarkSpecial/SectionLayout';
+import Reveal from '../../Motion/Reveal';
 
 
 const About: FC = memo(() => {
@@ -33,7 +34,7 @@ const About: FC = memo(() => {
         className="bg-ink-900 px-4 py-16 md:py-24 lg:px-8"
         sectionId={SectionId.About}>
 
-      <div className="mx-auto max-w-screen-lg">
+      <Reveal className="mx-auto max-w-screen-lg">
         <article className="grid grid-cols-1 gap-y-4 md:grid-cols-4">
 
           <div className="col-span-1 flex justify-center md:justify-start">
@@ -91,7 +92,7 @@ const About: FC = memo(() => {
           </div>
 
         </article>
-      </div>
+      </Reveal>
 
       <hr className="mt-8 h-0.5 rounded border-0 bg-aurora" />
 

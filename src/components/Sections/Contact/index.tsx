@@ -13,6 +13,7 @@ import InstagramIcon from '../../Icon/InstagramIcon';
 import LinkedInIcon from '../../Icon/LinkedInIcon';
 import TwitterIcon from '../../Icon/TwitterIcon';
 import SectionLayout from '../../Layout/DarkSpecial/SectionLayout';
+import Reveal from '../../Motion/Reveal';
 
 const ContactValueMap: Record<ContactType, ContactValue> = {
   [ContactType.Email]: {Icon: EnvelopeIcon, srLabel: 'Email'},
@@ -32,7 +33,7 @@ const Contact: FC = memo(() => {
         IsMain={true}
         className="bg-ink-950"
         sectionId={SectionId.Contact}>
-      <div className="flex flex-col gap-y-6">
+      <Reveal className="flex flex-col gap-y-6">
         <div className="flex flex-col gap-6 md:flex-row md:items-center">
           <EnvelopeIcon className="hidden h-16 w-16 text-frost-100 md:block" />
           <h2 className="text-h2 font-bold text-frost-100"
@@ -84,7 +85,7 @@ const Contact: FC = memo(() => {
             </button>
           </a>
         </div>
-      </div>
+      </Reveal>
     </SectionLayout>
   );
 });

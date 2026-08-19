@@ -10,6 +10,7 @@ import {ExtCallToActionDef} from '../../../data/utilComp/GeneralDef';
 import HeaderLayout from '../../Layout/DarkSpecial/HeaderLayout';
 import SectionLayout from '../../Layout/DarkSpecial/SectionLayout';
 import AsideExtShell from '../../Layout/ExtShell/AsideExtShell';
+import Reveal from '../../Motion/Reveal';
 import SkillsArticle from './SkillsArticle';
 
 /**
@@ -81,7 +82,7 @@ const Skills: FC = memo(() => {
       IsMain={true}
       className="md:py-24 lg:px-8 bg-ink-900 px-4 py-16"
       sectionId={SectionId.Skills}>
-      <div className="mx-auto max-w-screen-lg">
+      <Reveal className="mx-auto max-w-screen-lg">
 
         <HeaderLayout
           ClassName="flex flex-col gap-y-2"
@@ -99,7 +100,8 @@ const Skills: FC = memo(() => {
         </div>
 
         <div className="mt-10 rounded-3xl border border-white/10 bg-white/5 p-6">
-          <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2">
+          {/* tilt-scene gives the cards a shared vanishing point (Tier 1, §5) */}
+          <div className="tilt-scene grid w-full grid-cols-1 gap-6 md:grid-cols-2">
 
             {SkillsCollectionData.map(
               (skillsCollection: SkillsCollection, index: number) => (
@@ -130,8 +132,8 @@ const Skills: FC = memo(() => {
           SectionId={SectionId.Skills}
         />
 
-      </div>
-      
+      </Reveal>
+
     </SectionLayout>
   );
 });

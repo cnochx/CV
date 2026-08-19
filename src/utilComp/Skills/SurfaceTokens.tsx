@@ -14,8 +14,10 @@
  */
 
 export const SKILLS_SURFACE_TOKENS = {
+  // `lit` + `tilt-target` are Tier 1 utilities (globalStyles.scss) driven by
+  // useReactiveLight; they collapse to flat surfaces under reduced motion.
   containerBase:
-    'group relative overflow-hidden rounded-2xl text-frost-100 transition-colors duration-200',
+    'group relative overflow-hidden rounded-2xl text-frost-100 transition-colors duration-200 lit tilt-target',
 
   articleSpacing:
     'flex flex-col gap-4 p-4 cursor-pointer bg-cover bg-center bg-no-repeat',

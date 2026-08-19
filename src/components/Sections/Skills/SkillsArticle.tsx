@@ -3,6 +3,7 @@ import {FC, memo, MouseEvent, useCallback} from 'react';
 
 import {SkillItem} from '../../../data/Skills/SkillCollectionDef';
 import {SkillsArticleProps} from '../../../data/utilComp/UtilImportPropsDef';
+import {useReactiveLight} from '../../../hooks/useReactiveLight';
 import {resolveImageSrc} from '../../../utilComp/SectionHelper';
 import {SKILLS_SURFACE_TOKENS} from '../../../utilComp/Skills/SurfaceTokens';
 import UseAccordion from '../../../utilComp/UseAccordion';
@@ -34,6 +35,15 @@ const SkillsArticle: FC<SkillsArticleProps> = memo(
       handleKeyDown,
     } = UseAccordion();
 
+    // Tier 1: cursor sheen + ≤4° tilt on the glass surface (§5).
+    const reactiveLight = useReactiveLight();
+
+    /** Clears both the hover state and the tilt when the pointer leaves. */
+    const handleArticleLeave = useCallback(() => {
+      handleMouseLeave();
+      reactiveLight.onPointerLeave();
+    }, [handleMouseLeave, reactiveLight]);
+
     const handleTriggerClick = useCallback(
       (event: MouseEvent<HTMLButtonElement>) => {
         event.stopPropagation();
@@ -64,7 +74,9 @@ const SkillsArticle: FC<SkillsArticleProps> = memo(
         id={ArticleId}
         onClick={toggleAccordion}
         onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+        onMouseLeave={handleArticleLeave}
+        onMouseMove={reactiveLight.onPointerMove}
+        ref={reactiveLight.ref as React.RefObject<HTMLDivElement>}
         style={
           resolvedImgSrc
             ? {

@@ -4,6 +4,7 @@ import {SectionId} from '../../../../data/SectionIdData';
 import {HeadingTag, StrngUndfndType} from '../../../../data/utilComp/generalTypeDef';
 import {ContentIndexLytProps} from '../../../../data/utilComp/UtilImportPropsDef';
 import {getId} from '../../../../utilComp/SectionHelper';
+import Reveal from '../../../Motion/Reveal';
 import AsideExtShell from '../../ExtShell/AsideExtShell';
 import SectionExtShell from '../../ExtShell/BPSectionLyt';
 import HeaderExtShell from '../../ExtShell/HeaderExtShell';
@@ -77,7 +78,7 @@ const PBIndexLyt: FC<ContentIndexLytProps> = memo(({IdxContent, MainSectionId}) 
       SectionId={MainSectionId}
       sectionClassName="bg-ink-950">
 
-      <article className="flex flex-col gap-y-12">
+      <Reveal Element="article" className="flex flex-col gap-y-12">
         <BPArtPillLyt
           ClassNameOverlay={classNameOverlay}
           ClassNameParent="relative overflow-hidden rounded-2xl bg-cover bg-center"
@@ -145,7 +146,7 @@ const PBIndexLyt: FC<ContentIndexLytProps> = memo(({IdxContent, MainSectionId}) 
         />
 
 
-      </article>
+      </Reveal>
     </SectionExtShell>
   );
 });
