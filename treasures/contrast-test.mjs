@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * Readability test for Design Pattern v3.0 "Clean Core"
- * (treasures/designsheet-grellmann-app-v3.html, §2 contrast receipts).
+ * Readability test for Designsheet v3.3 "Clean Core"
+ * (treasures/designsheet-grellmann-app-v3.3.html, §2 contrast receipts).
  *
  * Computes WCAG 2 contrast ratios (relative luminance) for every
  * text/surface pair the sheet licenses — including alpha-composited
