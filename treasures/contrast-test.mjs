@@ -62,6 +62,7 @@ const S = {
   'border accent-400/55 ∘ ink-900': comp('ink-900', ['accent-400', 0.55]),
   'border white/16 ∘ ink-950': comp('ink-950', ['white', 0.16]),
   'nav 950/62 ∘ ink-900': comp('ink-900', ['ink-950', 0.62]),
+  'nav 950/62 ∘ ink-950': comp('ink-950', ['ink-950', 0.62], ['white', 0.05]),
   'wash-accent ∘ nav ∘ ink-900': comp('ink-900', ['ink-950', 0.62], ['accent-400', 0.14]),
   'wash-primary ∘ nav ∘ ink-900': comp('ink-900', ['ink-950', 0.62], ['primary-400', 0.14]),
 };
@@ -96,6 +97,9 @@ const pairs = [
   ['primary-300', 'wash-primary ∘ nav ∘ ink-900', 4.5, 'Nav active label on fuchsia wash (hover)'],
   // Non-text UI ≥ 3.0
   ['accent-400', 'ink-950', 3.0, 'Focus ring (UI)'],
+  // Nav CTA + mobile CTA pill (step 5): glass over the nav/canvas surface
+  ['frost-100', 'nav 950/62 ∘ ink-950', 4.5, 'Nav CTA label at rest'],
+  ['ink-950', 'primary-300', 3.0, 'Nav/mobile CTA label on hover fill (UI dup)'],
   ['border accent-400/55 ∘ ink-900', 'ink-900', 3.0, 'Skill-active / pill-hover border (UI)'],
 ];
 

@@ -11,10 +11,13 @@ const CallToAction: FC<CallToActionProps> = memo(
 
     const Icon: IconDef = CtaIcon;
 
+    // v3.4 primary CTA (designsheet §6): the purple→pink gradient retires —
+    // gradients are licensed for 1–2px aurora hairlines only, never fills.
+    // Solid primary-400 with ink-950 label = 8.04:1, hover 300 = 11.24:1.
     return (
-      <div className="flex flex-col items-stretch mt-4">
+      <div className="mt-4 flex flex-col items-stretch">
         <a
-          className="inline-flex items-center justify-center text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-base px-8 py-4 me-2 mb-2 border border-cyan-500 w-full"
+          className="mb-2 inline-flex w-full items-center justify-center gap-x-2 rounded-full bg-primary-400 px-8 py-4 text-base font-semibold text-ink-950 shadow-e1 transition duration-200 ease-out hover:-translate-y-0.5 hover:bg-primary-300 hover:shadow-glow-primary-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950 motion-reduce:hover:transform-none"
           href={CtaHref}
         >
           {Icon ? <Icon className="h-7 w-7" /> : null}

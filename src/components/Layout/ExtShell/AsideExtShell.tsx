@@ -47,7 +47,7 @@ const AsideExtShell: FC<AsideLytProps> = memo(({children, SectionId, CallToActio
 
             {DisplayDivide
               ? (<div className="pt-12 mb-4">
-                  <hr className="mt-1 border-0 border-b-2 border-fuchsia-400" />
+                  <hr className="mt-1 h-0.5 rounded border-0 bg-aurora" />
                 </div>)
               : <div className="pt-8"> </div>}
 

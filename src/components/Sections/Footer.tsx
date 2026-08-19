@@ -13,12 +13,13 @@ const Footer: FC = memo(() => {
   const {link, Icon, textContent, copyrightText} = footerItems;
   return (
     <footer className="relative border-t border-white/10 bg-ink-950 px-4 pb-6 pt-12 sm:px-16 sm:pb-8 sm:pt-14">
+      {/* §7.5: back-to-top as a glass circle, hover speaks the cyan response */}
       <div className="absolute inset-x-0 -top-4 flex justify-center sm:-top-6">
         <a
           aria-label="Back to top of the page"
-          className="rounded-full bg-frost-100 p-1 text-ink-950 ring-accent-400 ring-offset-2 ring-offset-ink-950 focus:outline-none focus:ring-2 sm:p-2"
+          className="rounded-full border border-white/10 bg-ink-900/80 p-1 text-frost-100 backdrop-blur-md transition duration-200 ease-out hover:-translate-y-0.5 hover:border-accent-400/55 hover:bg-accent-400/15 hover:text-accent-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950 motion-reduce:hover:transform-none sm:p-2"
           href={`/#${SectionId.Hero}`}>
-          <ChevronUpIcon aria-hidden="true" className="h-6 w-6 bg-transparent sm:h-8 sm:w-8" />
+          <ChevronUpIcon aria-hidden="true" className="h-6 w-6 sm:h-8 sm:w-8" />
         </a>
       </div>
       <div className="flex flex-col items-center gap-y-6">

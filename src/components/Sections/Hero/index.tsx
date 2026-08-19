@@ -1,10 +1,10 @@
-import classNames from 'classnames';
 import React, {FC, memo} from 'react';
 
 import HeroSectionData from '../../../data/Hero/HeroSectionData';
 import {heroData} from '../../../data/HeroData';
 import {SectionId} from '../../../data/SectionIdData';
 import {HeadingTag} from '../../../data/utilComp/generalTypeDef';
+import {getCtaPillClass} from '../../../utilComp/Layout/CtaLayoutSub';
 import SkillsElmnt from '../../Layout/ExtElmnt/SkillsElmnt';
 import ArticleExtShell from '../../Layout/ExtShell/ArticleExtShell';
 import HeaderExtShell from '../../Layout/ExtShell/HeaderExtShell';
@@ -129,12 +129,7 @@ const Hero: FC = memo(() => {
             <div className="flex w-full flex-wrap justify-center gap-3">
               {actions.map(({href, text, primary, Icon}) => (
                 <a
-                  className={classNames(
-                    'flex gap-x-2 rounded-full border px-5 py-2.5 text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-ink-950 sm:text-base',
-                    primary
-                      ? 'border-primary-400 bg-primary-400 text-ink-950 shadow-e1 ring-accent-400 hover:bg-primary-300'
-                      : 'border-white/10 bg-white/5 text-frost-100 ring-accent-400 backdrop-blur-md hover:border-accent-400/55 hover:bg-accent-400/15 hover:text-accent-300',
-                  )}
+                  className={getCtaPillClass(primary, 'px-5 py-2.5')}
                   href={href}
                   key={text}
                 >
