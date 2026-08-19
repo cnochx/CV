@@ -22,16 +22,28 @@ export const testimonial: TestimonialSection = {
   imageSrc: testimonialImage,
   testimonials: [
     {
-      label: 'SAP full-stack development',
-      text: 'ABAP, CDS, OData, Fiori/UI5, RAP, CAP and SAP BTP form the core of my current specialization.',
+      label: 'BA Business Advice GmbH — reference letter, 31 December 2024 (translated from German)',
+      text: '“Thanks to his outstanding problem-solving skills, he consistently developed creative and workable solutions to customer-side challenges in everyday consulting, within his area of responsibility. He showed no hesitation in working his way into new topics.”',
     },
     {
-      label: 'Modernization and clean core',
-      text: 'I focus on S/4HANA modernization, migration support, clean-core aligned extensions and refactoring of legacy applications.',
+      label: 'BA Business Advice GmbH — reference letter, 31 December 2024 (translated from German)',
+      text: '“His quick grasp allowed him to keep an overview even of complex matters, and thanks to his logical and analytical thinking he always arrived at balanced and accurate results. He worked extremely conscientiously and, in day-to-day business, self-organised, prudently and trustworthily. Even under heavy pressure he acted calmly and deliberately.”',
     },
     {
-      label: 'Durable engineering quality',
-      text: 'Maintainability, clean code, SOLID principles, code reviews and sustainable architecture are central to the way I build software.',
+      label: 'Sengicon GmbH — reference letter, 21 December 2021 (translated from German)',
+      text: '“Mr Grellmann stood out in particular through the successful conversion of an outdated PHP web application into a modern PHP REST backend, connected to a React web frontend he had built himself.”',
+    },
+    {
+      label: 'Sengicon GmbH — reference letter, 21 December 2021 (translated from German)',
+      text: '“He carried out all tasks independently, very carefully and in a well-planned manner. He always acted calmly, deliberately, in a goal-oriented and precise way. He found good solutions for any problems that arose. His performance earned our full recognition in every respect.”',
+    },
+    {
+      label: 'Ferienhaus-Vermittlung fincaferien.de GmbH — reference letter, 31 December 2019 (translated from German)',
+      text: '“Thanks to his quick grasp and his lasting ability to learn, he was able to analyse complex problems at any time. He worked out solutions independently and implemented them in a targeted way. Even under pronounced pressure, Mr Grellmann always kept a complete overview.”',
+    },
+    {
+      label: 'Ferienhaus-Vermittlung fincaferien.de GmbH — reference letter, 31 December 2019 (translated from German)',
+      text: '“He worked his way into the extensively grown range of tasks and always handled the tasks assigned to him extremely carefully and with consistently high quality. He always acted to our fullest satisfaction.”',
     },
   ],
 };
@@ -52,8 +64,8 @@ export const contact: ContactSection = {
     },
     {
       type: ContactType.Github,
-      text: 'Martin Grellmann / chnochx',
-      href: 'https://github.com/chnochx',
+      text: 'Martin Grellmann / cnochx',
+      href: 'https://github.com/cnochx',
     },
     {
       type: ContactType.Phone,

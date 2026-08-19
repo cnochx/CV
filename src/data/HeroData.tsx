@@ -1,4 +1,4 @@
-import {ArrowDownTrayIcon} from '@heroicons/react/24/outline';
+import {ArrowDownTrayIcon, RectangleStackIcon} from '@heroicons/react/24/outline';
 
 import home from '../images/home.webp';
 import {Hero} from './HeroDataDef';
@@ -74,6 +74,12 @@ export const heroData: Hero = {
       text: 'CV (contractor)',
       primary: true,
       Icon: ArrowDownTrayIcon,
+    },
+    {
+      href: `#${SectionId.Contractor}`,
+      text: 'CV by focus area',
+      primary: false,
+      Icon: RectangleStackIcon,
     },
     {
       href: `#${SectionId.Contact}`,

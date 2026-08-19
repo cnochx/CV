@@ -65,9 +65,9 @@ export const imprintItems: ImprintItems = {
   headerLegal: 'Data protection',
   legalContent: (
     <>
-      <h4 className="font-bold text-neutral-200">
+      <h3 className="font-bold text-neutral-200">
         The sole purpose of this website is to present my CV and related professional content.
-      </h4>
+      </h3>
       <p className="text-neutral-300">
         No personal data is intentionally collected on this page apart from the usual technical log files of the hosting
         provider.
@@ -79,9 +79,9 @@ export const imprintItems: ImprintItems = {
         If a contact form or e-mail action is used, the transmitted contact data is processed only for the purpose of
         responding to the request.
       </p>
-      <h4 className="font-bold text-neutral-200">
+      <h3 className="font-bold text-neutral-200">
         Responsibility for the content of external websites linked from this page lies with their respective operators.
-      </h4>
+      </h3>
       <p className="text-neutral-200">
         At the time of linking, no illegal content was apparent on the referenced external pages.
       </p>

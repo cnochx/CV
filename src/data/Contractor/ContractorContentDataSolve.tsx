@@ -1,4 +1,3 @@
-// data/cv/items/jobSAP.ts
 
 
 import {BaseAlContentDef} from '../utilComp/GeneralDef';
@@ -10,32 +9,25 @@ export const ContractorContentDataSolve: BaseAlContentDef = {
     HdrId: 'title',
     HdrTitle: 'Problems I solve',
   },
-  AlDescription1:{
+  AlDescription1: {
     DnId: 'modernizing',
-    DnHead: 'SAP Clean Core Modernization for Heavily Customized Landscapes',
+    DnHead: 'Systems That Have Grown for Years and Now Need to Change',
     DnText: (
       <>
         <p>
-          I help companies with heavily customized SAP systems to reduce technical debt,
-          get ready for S/4HANA and move towards a clean, upgrade-friendly core.
-          That typically means refactoring legacy ABAP, stabilizing critical
-          interfaces, and designing API-driven architectures that play nicely
-          with cloud and non-SAP systems.
+          I work with companies whose software still runs, but has become expensive to change. That happens
+          in SAP landscapes with twenty years of custom code, and it happens just as much in a PHP platform
+          that nobody has maintained for five years. The technology differs, the problem does not.
         </p>
 
         <p>
-          My background: 20+ years in enterprise and web development, with recent
-          years focused on ABAP Objects, CDS/OData, SAP BTP, UI5/Fiori and
-          API-centric integration scenarios.
-          <br />
-          I help organizations that are stuck between a heavily customized ECC
-          system and the pressure to move towards a lean, upgradeable S/4HANA
-          and cloud landscape.
+          My background: 20+ years in web and enterprise development, with the recent years split between
+          ABAP Objects, CDS, OData, SAP BTP and Fiori on one side, and PHP, React, TypeScript, Node.js and
+          REST APIs on the other.
         </p>
 
         <p>
-          If you’re looking at S/4HANA or already there, you probably see at least
-          some of these challenges:
+          If any of the following sounds familiar, we probably have something to talk about:
         </p>
       </>
     ),
@@ -52,75 +44,106 @@ export const ContractorContentDataSolve: BaseAlContentDef = {
         AlsKey: 1,
         AlsOpen: false,
         AlsDescription: {
-          DnHead: 'Legacy Code Debt',
+          DnHead: 'Legacy code debt',
           DnId: 'title',
           DnText: (
             <>
-              <p>Refactor too much legacy ABAP and Z-logic, poorly documented and hard to test in a modern approach.</p>
+              <p>
+                Too much grown custom code, poorly documented and hard to test. Every change takes longer
+                than the estimate, and nobody can say for sure what a given report actually does.
+              </p>
             </>
-          )
-        }
+          ),
+        },
       },
       {
-        AlsId: 'upgrade_risk',
+        AlsId: 'nobody_knows_the_system',
         AlsKey: 2,
         AlsOpen: false,
         AlsDescription: {
-          DnHead: 'Upgrade Risk',
+          DnHead: 'Nobody knows the system any more',
           DnId: 'title',
           DnText: (
             <>
-              <p>Refactor Business-critical custom code that makes every upgrade or support package risky to
-                clean core code</p>
+              <p>
+                The developers who built it have left, there is no documentation, and the business rules only
+                exist inside the code. This is where AI-assisted analysis plus disciplined verification saves
+                the most time.
+              </p>
             </>
-          )
-        }
+          ),
+        },
       },
       {
-        AlsId: 'integration_spaghetti',
+        AlsId: 'upgrade_risk',
         AlsKey: 3,
         AlsOpen: false,
         AlsDescription: {
-          DnHead: 'Integration Spaghetti',
+          DnHead: 'Upgrade and migration risk',
           DnId: 'title',
           DnText: (
             <>
-              <p>Refactor “Spaghetti” integrations using old RFC/BAPI calls and point-to-point connections,
-                process-oriented into a object oriented SAP standard‑aligned architecture.</p>
+              <p>
+                Business-critical custom code that makes every upgrade, support package or platform move a
+                risk. Moving that code into clean, upgrade-safe structures takes the risk out of the calendar.
+              </p>
             </>
-          )
-        }
+          ),
+        },
       },
       {
-        AlsId: 'missing_clean_core_strategy',
+        AlsId: 'integration_spaghetti',
         AlsKey: 4,
         AlsOpen: false,
         AlsDescription: {
-          DnHead: 'Missing Clean-Core Strategy',
+          DnHead: 'Integration spaghetti',
           DnId: 'title',
           DnText: (
             <>
-              <p>Develop a "no clear" strategy for clean core, extensions and SAP BTP into an Technical‑debt‑reducing SAP
-                core strategy.</p>
+              <p>
+                Point-to-point connections, old RFC and BAPI calls, undocumented interfaces between shops,
+                partners and internal systems. I replace them with documented API-driven integration that
+                works across on-premise and cloud.
+              </p>
             </>
-          )
-        }
+          ),
+        },
       },
       {
-        AlsId: 'delivery_pressure',
+        AlsId: 'broken_business_processes',
         AlsKey: 5,
         AlsOpen: false,
         AlsDescription: {
-          DnHead: 'Delivery Pressure',
+          DnHead: 'Business processes that quietly broke',
           DnId: 'title',
           DnText: (
             <>
-              <p>Resolve the Pressure from the business to deliver new features faster – without breaking what works.</p>
+              <p>
+                Availability that is wrong, bookings that do not arrive, orders that need a manual fix every
+                day. Usually a symptom of the points above, and usually the reason someone finally calls.
+              </p>
             </>
-          )
-        }
-      }
-    ]
-  }
-}
-export default ContractorContentDataSolve
+          ),
+        },
+      },
+      {
+        AlsId: 'delivery_pressure',
+        AlsKey: 6,
+        AlsOpen: false,
+        AlsDescription: {
+          DnHead: 'Delivery pressure',
+          DnId: 'title',
+          DnText: (
+            <>
+              <p>
+                Pressure from the business to deliver new features faster, without breaking what already
+                works. That is a sequencing problem, and it can be planned.
+              </p>
+            </>
+          ),
+        },
+      },
+    ],
+  },
+};
+export default ContractorContentDataSolve;

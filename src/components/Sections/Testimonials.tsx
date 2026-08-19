@@ -85,9 +85,12 @@ const Testimonials: FC = memo(() => {
         <div className="z-10 w-full max-w-screen-md px-4 lg:px-0">
           <div className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/60 p-6 shadow-lg">
             <div
-              className="no-scrollbar flex w-full touch-pan-x snap-x snap-mandatory gap-x-6 overflow-x-auto scroll-smooth"
+              aria-label="Quotes from employment reference letters"
+              className="no-scrollbar flex w-full touch-pan-x snap-x snap-mandatory gap-x-6 overflow-x-auto scroll-smooth focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400"
               onScroll={handleScroll}
-              ref={scrollContainer}>
+              ref={scrollContainer}
+              role="group"
+              tabIndex={0}>
               {testimonials.map((testimonial, index) => {
                 const isActive = index === activeIndex;
                 return (
@@ -100,13 +103,16 @@ const Testimonials: FC = memo(() => {
                 const isActive = index === activeIndex;
                 return (
                   <button
+                    aria-current={isActive}
+                    aria-label={`Show quote ${index + 1} of ${testimonials.length}`}
                     className={classNames(
                       'h-3 w-3 rounded-full bg-gray-300 transition-all duration-500 sm:h-4 sm:w-4',
                       isActive ? 'scale-100 opacity-100' : 'scale-75 opacity-60',
                     )}
                     disabled={isActive}
                     key={`select-button-${index}`}
-                    onClick={setTestimonial(index)}></button>
+                    onClick={setTestimonial(index)}
+                    type="button"></button>
                 );
               })}
             </div>

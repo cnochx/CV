@@ -21,7 +21,7 @@ const Imprint: FC = memo(() => {
           <h2 className="font-bold text-xl text-neutral-100">{header}</h2>
         </header>
         <section className="w-1/2">
-          {adressheader && <h4 className="font-bold text-white">{adressheader}</h4>}
+          {adressheader && <h3 className="font-bold text-white">{adressheader}</h3>}
           {personInCharge && (
             <>
               <p className="text-white">
