@@ -12,17 +12,17 @@ const currentYear = new Date().getFullYear();
 const Footer: FC = memo(() => {
   const {link, Icon, textContent, copyrightText} = footerItems;
   return (
-    <footer className="relative bg-neutral-800 px-4 pb-6 pt-12 sm:px-16 sm:pb-8 sm:pt-14">
+    <footer className="relative border-t border-white/10 bg-ink-950 px-4 pb-6 pt-12 sm:px-16 sm:pb-8 sm:pt-14">
       <div className="absolute inset-x-0 -top-4 flex justify-center sm:-top-6">
         <a
           aria-label="Back to top of the page"
-          className="rounded-full bg-neutral-100 p-1 ring-white ring-offset-2 ring-offset-gray-700/80 focus:outline-none focus:ring-2 sm:p-2"
+          className="rounded-full bg-frost-100 p-1 text-ink-950 ring-accent-400 ring-offset-2 ring-offset-ink-950 focus:outline-none focus:ring-2 sm:p-2"
           href={`/#${SectionId.Hero}`}>
           <ChevronUpIcon aria-hidden="true" className="h-6 w-6 bg-transparent sm:h-8 sm:w-8" />
         </a>
       </div>
       <div className="flex flex-col items-center gap-y-6">
-        <div className="flex gap-x-4 text-neutral-500">
+        <div className="flex gap-x-4 text-ink-400">
           <Socials />
         </div>
         <section className="flex flex-col items-center gap-y-6">
@@ -32,14 +32,14 @@ const Footer: FC = memo(() => {
           <div className="my-4" />
           <a
             className={classNames(
-              '-m-2 flex items-center gap-x-1 rounded-md p-2 ring-fuchsia-400 focus:outline-none focus:ring-2',
+              '-m-2 flex items-center gap-x-1 rounded-md p-2 ring-accent-400 focus:outline-none focus:ring-2',
             )}
             href={link}>
             {textContent}
-            {Icon && <Icon className="h-5 w-5 text-fuchsia-400" />}
+            {Icon && <Icon className="h-5 w-5 text-primary-400" />}
           </a>
           <div className="my-4" />
-          <span className="text-sm text-neutral-100">
+          <span className="text-sm text-frost-100">
             {currentYear} {copyrightText}
           </span>
         </aside>

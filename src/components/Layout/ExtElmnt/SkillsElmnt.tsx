@@ -71,7 +71,7 @@ const SkillsElmnt: FC<SkillsElmntProps> = memo(({
             {AlSkills?.SeiSkillsItems?.map((SkillItem: BaseAlSkills) => (
               <React.Fragment key={SkillItem.AlsKey}>
                 {SkillItem.AlsName && (
-                  <span className="cursor-pointer rounded-full border border-fuchsia-400 bg-neutral-600 px-2 py-0.5 text-xs text-neutral-100 transition-transform duration-200 hover:-translate-y-0.5 hover:border-fuchsia-400/75 hover:bg-neutral-200 hover:text-neutral-600">
+                  <span className="cursor-pointer rounded-full border border-white/10 bg-white/10 px-2 py-0.5 text-xs text-frost-100 transition-transform duration-200 hover:-translate-y-0.5 hover:border-accent-400/55 hover:bg-accent-400/15 hover:text-accent-300">
                     {SkillItem.AlsName}
                   </span>
                 )}

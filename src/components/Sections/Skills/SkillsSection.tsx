@@ -74,13 +74,13 @@ const SkillsSection: FC<SkillsProps> = memo(
       ? `${SKILLS_SURFACE_TOKENS.containerBase} ${SKILLS_SURFACE_TOKENS.sectionSpacing} ${SKILLS_SURFACE_TOKENS.borderActive} ${SKILLS_SURFACE_TOKENS.activeRingInner}`
       : `${SKILLS_SURFACE_TOKENS.containerBase} ${SKILLS_SURFACE_TOKENS.sectionSpacing} ${SKILLS_SURFACE_TOKENS.borderInactive}`;
 
-    const titleClassName = 'ml-2 text-sm font-medium text-neutral-100';
+    const titleClassName = 'ml-2 text-sm font-medium text-frost-100';
 
     const iconClassName = isActiveVisual
       ? `h-6 w-6 transition-colors duration-200 ${SKILLS_SURFACE_TOKENS.iconActive}`
       : `h-6 w-6 transition-colors duration-200 ${SKILLS_SURFACE_TOKENS.iconInactive}`;
 
-    const detailTextClassName = 'ml-2 mt-2 text-sm text-neutral-100';
+    const detailTextClassName = 'ml-2 mt-2 text-sm text-frost-100';
 
     const progressBarClassName = isActiveVisual
       ? `h-full rounded-full transition-colors duration-200 ${SKILLS_SURFACE_TOKENS.progressActive}`
@@ -137,7 +137,7 @@ const SkillsSection: FC<SkillsProps> = memo(
             )}
           </div>
 
-          <div className="mb-2 h-5 w-full overflow-hidden rounded-full bg-neutral-100/40">
+          <div className="mb-2 h-5 w-full overflow-hidden rounded-full bg-frost-100/15">
             <div
               className={progressBarClassName}
               style={{width: `${percentage}%`}}

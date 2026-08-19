@@ -79,14 +79,14 @@ const Testimonials: FC = memo(() => {
         className={classNames(
           'flex w-full items-center justify-center bg-cover bg-center px-4 py-16 md:py-24 lg:px-8',
           parallaxEnabled && 'bg-fixed',
-          {'bg-neutral-700': !imageSrc},
+          {'bg-ink-900': !imageSrc},
         )}
         style={imageSrc ? {backgroundImage: `url(${resolveSrc}`} : undefined}>
         <div className="z-10 w-full max-w-screen-md px-4 lg:px-0">
-          <div className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/60 p-6 shadow-lg">
+          <div className="flex flex-col items-center gap-y-6 rounded-xl border border-white/10 bg-ink-950/50 p-6 shadow-e1 backdrop-blur-sm">
             <div
               aria-label="Quotes from employment reference letters"
-              className="no-scrollbar flex w-full touch-pan-x snap-x snap-mandatory gap-x-6 overflow-x-auto scroll-smooth focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400"
+              className="no-scrollbar flex w-full touch-pan-x snap-x snap-mandatory gap-x-6 overflow-x-auto scroll-smooth focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400"
               onScroll={handleScroll}
               ref={scrollContainer}
               role="group"
@@ -106,7 +106,7 @@ const Testimonials: FC = memo(() => {
                     aria-current={isActive}
                     aria-label={`Show quote ${index + 1} of ${testimonials.length}`}
                     className={classNames(
-                      'h-3 w-3 rounded-full bg-gray-300 transition-all duration-500 sm:h-4 sm:w-4',
+                      'h-3 w-3 rounded-full bg-frost-300 transition-all duration-500 sm:h-4 sm:w-4',
                       isActive ? 'scale-100 opacity-100' : 'scale-75 opacity-60',
                     )}
                     disabled={isActive}
@@ -132,15 +132,15 @@ const Testimonial: FC<{testimonial: Testimonial; isActive: boolean}> = memo(
       )}>
       {image ? (
         <div className="relative h-14 w-14 shrink-0 sm:h-16 sm:w-16">
-          <QuoteIcon className="absolute -left-2 -top-2 h-4 w-4 stroke-black text-white" />
+          <QuoteIcon className="absolute -left-2 -top-2 h-4 w-4 stroke-black text-frost-100" />
           <img alt={label} className="h-full w-full rounded-full" src={image} />
         </div>
       ) : (
-        <QuoteIcon className="h-5 w-5 shrink-0 text-white sm:h-8 sm:w-8" />
+        <QuoteIcon className="h-5 w-5 shrink-0 text-frost-100 sm:h-8 sm:w-8" />
       )}
       <div className="flex flex-col gap-y-4">
-        <p className="text-xs italic text-white sm:text-sm md:text-base lg:text-lg">{label}</p>
-        <p className="prose prose-sm font-medium italic text-white sm:prose-base">{text}</p>
+        <p className="text-xs italic text-frost-300 sm:text-sm md:text-base lg:text-lg">{label}</p>
+        <p className="prose prose-sm font-medium italic text-frost-100 sm:prose-base">{text}</p>
       </div>
     </div>
   ),

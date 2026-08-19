@@ -67,7 +67,7 @@ const BPSectionLyt: FC<ContentSectionLytProps> = memo(({
       className="grid grid-cols-1 gap-y-3 md:grid-cols-[180px_minmax(0,1fr)_minmax(0,1fr)] md:gap-x-8"
       id={sectionIds.idSection}
     >
-      <div className="text-sm font-medium italic leading-7 text-gray-600 sm:text-base md:col-start-1 md:row-start-1">
+      <div className="text-sm font-medium italic leading-7 text-ink-400 sm:text-base md:col-start-1 md:row-start-1">
         {AlDateCustomVal ? (
           AlDateCustomVal
         ) : !AlDateCustom && dateRange ? (

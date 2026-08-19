@@ -64,16 +64,18 @@ const PBIndexLyt: FC<ContentIndexLytProps> = memo(({IdxContent, MainSectionId}) 
 
 
   const classNameOverlay = IdxContent.IxMainImg?.ImgSrc
-    ? 'absolute inset-0 bg-gray-800/50'
-    : 'absolute inset-0 bg-gray-900/95';
+    ? 'absolute inset-0 bg-ink-950/45'
+    : 'absolute inset-0 bg-ink-900';
 
 
+  // v3.4: the former bright world joins the one dark world (§7) —
+  // these sections sit on the canvas ink-950 between ink-900 neighbors.
   return (
     <SectionExtShell
       IsMain={true}
       LabelId={mainSectionLabelBy}
       SectionId={MainSectionId}
-      sectionClassName="bg-neutral-100">
+      sectionClassName="bg-ink-950">
 
       <article className="flex flex-col gap-y-12">
         <BPArtPillLyt
@@ -82,7 +84,7 @@ const PBIndexLyt: FC<ContentIndexLytProps> = memo(({IdxContent, MainSectionId}) 
           ImgSrc={IdxContent.IxMainImg?.ImgSrc}>
 
           <HeaderExtShell
-            HeaderClassName="relative z-10 flex flex-col gap-y-3 px-6 py-10 text-neutral-100 sm:px-8 sm:py-12"
+            HeaderClassName="relative z-10 flex flex-col gap-y-3 px-6 py-10 text-frost-100 sm:px-8 sm:py-12"
             HeaderId={MainSectionId}
             HeaderItem={IxHeader}
             SetUnderline={true}
@@ -112,7 +114,7 @@ const PBIndexLyt: FC<ContentIndexLytProps> = memo(({IdxContent, MainSectionId}) 
               </p>
             ) : null}
 
-            <div className="mt-8 max-w text-neutral-100">
+            <div className="mt-8 max-w text-frost-100">
               {IxDescription.DnHead}
             </div>
           </section>
@@ -132,7 +134,7 @@ const PBIndexLyt: FC<ContentIndexLytProps> = memo(({IdxContent, MainSectionId}) 
           <BPArtFooterLyt
             BottomSuffix={IdxContent.IxBottomSuffix}
             SectionId={MainSectionId}
-            footerClassName="relative z-10 flex flex-col gap-y-3 px-6 py-10 text-neutral-100 sm:px-8 sm:py-12"
+            footerClassName="relative z-10 flex flex-col gap-y-3 px-6 py-10 text-frost-100 sm:px-8 sm:py-12"
           />
 
         </BPArtPillLyt>

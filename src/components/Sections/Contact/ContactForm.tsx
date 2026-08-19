@@ -41,7 +41,7 @@ const ContactForm: FC = memo(() => {
   );
 
   const inputClasses =
-    'bg-neutral-700 border-0 focus:border-0 focus:outline-none focus:ring-1 focus:ring-orange-600 rounded-md placeholder:text-neutral-400 placeholder:text-sm text-neutral-200 text-sm';
+    'bg-white/5 border border-white/10 focus:border-accent-400 focus:outline-none focus:ring-1 focus:ring-accent-400 rounded-md placeholder:text-ink-500 placeholder:text-sm text-frost-100 text-sm';
 
   return (
     <form className="grid min-h-[320px] grid-cols-1 gap-y-4" method="POST" onSubmit={handleSendMessage}>
@@ -66,7 +66,7 @@ const ContactForm: FC = memo(() => {
       />
       <button
         aria-label="Submit contact form"
-        className="w-max rounded-full border-2 border-fuchsia-400 bg-stone-900 px-4 py-2 text-sm font-medium text-white shadow-md outline-none hover:bg-stone-800 focus:ring-2 focus:ring-fuchsia-500 focus:ring-offset-2 focus:ring-offset-stone-800"
+        className="w-max rounded-full bg-accent-400 px-4 py-2 text-sm font-medium text-ink-950 shadow-e1 outline-none hover:bg-accent-300 focus:ring-2 focus:ring-accent-400 focus:ring-offset-2 focus:ring-offset-ink-950"
         type="submit">
         Send Message
       </button>

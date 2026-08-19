@@ -1,32 +1,36 @@
-
+/**
+ * v3.4 "Clean Core" mapping (designsheet §6): the accent-swap games of v1
+ * (fuchsia ring on cyan bg etc.) simplify to tinted glass — bg = own accent
+ * at 15% alpha, ring = own accent. Focus is always the cyan response ring.
+ */
 const ICON_BUTTON_COLOR_MAP = {
   bright: {
-    text: 'text-fuchsia-400',
-    ring: 'ring-neutral-100',
-    bg: 'bg-gray-800/90',
-    focusRing: 'focus:ring-fuchsia-400',
-    offsetRing: 'ring-offset-gray-800',
+    text: 'text-frost-100',
+    ring: 'ring-white/10',
+    bg: 'bg-white/5 backdrop-blur-md',
+    focusRing: 'focus:ring-accent-400',
+    offsetRing: 'ring-offset-ink-950',
   },
   dark: {
-    text: 'text-neutral-800',
-    ring: 'ring-neutral-800',
-    bg: 'bg-neutral-700/90',
-    focusRing: 'focus:ring-fuchsia-400',
-    offsetRing: 'ring-offset-gray-800',
+    text: 'text-ink-950',
+    ring: 'ring-ink-950',
+    bg: 'bg-frost-100/90',
+    focusRing: 'focus:ring-accent-400',
+    offsetRing: 'ring-offset-ink-950',
   },
   highlight: {
-    text: 'text-fuchsia-400',
-    ring: 'ring-fuchsia-400',
-    bg: 'bg-cyan-300/40',
-    focusRing: 'focus:ring-fuchsia-400',
-    offsetRing: 'ring-offset-gray-800',
+    text: 'text-primary-400',
+    ring: 'ring-primary-400',
+    bg: 'bg-primary-400/15',
+    focusRing: 'focus:ring-accent-400',
+    offsetRing: 'ring-offset-ink-950',
   },
   highlightAlt: {
-    text: 'text-cyan-500',
-    ring: 'ring-cyan-500',
-    bg: 'bg-fuchsia-400/90',
-    focusRing: 'focus:ring-fuchsia-400',
-    offsetRing: 'ring-offset-gray-800',
+    text: 'text-accent-400',
+    ring: 'ring-accent-400',
+    bg: 'bg-accent-400/15',
+    focusRing: 'focus:ring-accent-400',
+    offsetRing: 'ring-offset-ink-950',
   },
 } as const;
 

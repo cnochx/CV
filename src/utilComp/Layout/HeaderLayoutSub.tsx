@@ -2,23 +2,27 @@ import {SetHover} from '../../data/SectionHelperDef';
 
 /**
  * Provides semantic border and text class mappings for shared icon button helpers.
+ *
+ * v3.4 "Clean Core" mapping (designsheet §6, semantic variant enum):
+ * bright = default on ink surfaces · dark = on accent/frost fills only ·
+ * highlight = primary identity accent · highlightAlt = active/response.
  */
 const ICON_BUTTON_COLOR_MAP = {
   bright: {
-    border: 'border-neutral-100',
-    text: 'text-neutral-100',
+    border: 'border-white/10',
+    text: 'text-frost-100',
   },
   dark: {
-    border: 'border-neutral-800',
-    text: 'text-neutral-800',
+    border: 'border-ink-950',
+    text: 'text-ink-950',
   },
   highlight: {
-    border: 'border-fuchsia-400',
-    text: 'text-fuchsia-400',
+    border: 'border-primary-400',
+    text: 'text-primary-400',
   },
   highlightAlt: {
-    border: 'border-cyan-500',
-    text: 'text-cyan-500',
+    border: 'border-accent-400',
+    text: 'text-accent-400',
   }
 } as const;
 

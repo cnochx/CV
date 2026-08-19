@@ -30,7 +30,7 @@ const About: FC = memo(() => {
   return (
     <SectionLayout
         IsMain={true}
-        className="bg-neutral-800 px-4 py-16 md:py-24 lg:px-8"
+        className="bg-ink-900 px-4 py-16 md:py-24 lg:px-8"
         sectionId={SectionId.About}>
 
       <div className="mx-auto max-w-screen-lg">
@@ -57,14 +57,14 @@ const About: FC = memo(() => {
           <div className="col-span-1 flex flex-col gap-y-6 md:col-span-3">
 
             <header className="flex flex-col gap-y-2">
-              <h2 className="text-2xl font-bold text-neutral-100"
+              <h2 className="text-2xl font-bold text-frost-100"
                   id={TitleId}>{Title}</h2>
               <span className="absolute inset-x-0 -bottom-1 border-b-2 border-fuchsia-400" />
             </header>
 
             <section className="col-span-1 flex flex-col gap-y-6 md:col-span-3">
 
-              <div className="prose prose-sm text-neutral-200 sm:prose-base">
+              <div className="prose prose-sm text-frost-300 sm:prose-base">
                 {Description}
               </div>
 
@@ -79,8 +79,8 @@ const About: FC = memo(() => {
                       </span>
                     )}
                     <div>
-                      <span className="text-sm font-bold text-neutral-100">{label}:</span>{' '}
-                      <span className="text-sm text-neutral-200">{text}</span>
+                      <span className="text-sm font-bold text-frost-100">{label}:</span>{' '}
+                      <span className="text-sm text-frost-300">{text}</span>
                     </div>
                   </li>
                 ))}

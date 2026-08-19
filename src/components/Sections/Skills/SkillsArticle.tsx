@@ -49,10 +49,10 @@ const SkillsArticle: FC<SkillsArticleProps> = memo(
       : `${SKILLS_SURFACE_TOKENS.containerBase} ${SKILLS_SURFACE_TOKENS.articleSpacing} ${SKILLS_SURFACE_TOKENS.borderInactive}`;
 
     const headerClassName =
-      'relative m-4 w-full text-center text-neutral-100';
+      'relative m-4 w-full text-center text-frost-100';
 
     const titleClassName =
-      'text-lg font-bold text-neutral-100';
+      'text-lg font-bold text-frost-100';
 
     const iconClassName = isActiveVisual
       ? `h-8 w-8 shrink-0 transition-colors duration-200 ${SKILLS_SURFACE_TOKENS.iconActive}`
@@ -91,7 +91,7 @@ const SkillsArticle: FC<SkillsArticleProps> = memo(
                 <button
                   aria-controls={`${ArticleId}-content`}
                   aria-expanded={isOpen}
-                  className="w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400"
+                  className="w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400"
                   onClick={handleTriggerClick}
                   onKeyDown={handleKeyDown}
                   type="button">

@@ -5,11 +5,6 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // DEPRECATED (v1): only used by FooterData.tsx credit — replace with
-        // frost-300 italic in refactoring step 5, then delete this override
-        // (unblocks Tailwind's real yellow scale).
-        yellow: '#efc603',
-
         /* ══ Designsheet v3.4 "Clean Core" tokens ═══════════════════════
            Contract: treasures/designsheet-grellmann-app-v3.4.html §2/§9.
            AA-verified pairs only — run `node treasures/contrast-test.mjs`

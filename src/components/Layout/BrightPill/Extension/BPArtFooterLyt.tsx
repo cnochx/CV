@@ -43,7 +43,7 @@ const BPArtFooterLyt: FC<ArticleFooterLytProps> = memo(({children,
           ) : null}
 
           {BottomSuffix ? (
-            <div className="suffixClassNammax space-y-4 text-sm leading-7 text-neutral-100 sm:text-base">
+            <div className="suffixClassNammax space-y-4 text-sm leading-7 text-frost-100 sm:text-base">
               {BottomSuffix.SxSuffix}
             </div>
           ) : undefined}

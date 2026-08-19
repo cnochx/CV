@@ -30,18 +30,18 @@ const Contact: FC = memo(() => {
   return (
     <SectionLayout
         IsMain={true}
-        className="bg-neutral-800"
+        className="bg-ink-950"
         sectionId={SectionId.Contact}>
       <div className="flex flex-col gap-y-6">
         <div className="flex flex-col gap-6 md:flex-row md:items-center">
-          <EnvelopeIcon className="hidden h-16 w-16 text-white md:block" />
-          <h2 className="text-2xl font-bold text-white"
+          <EnvelopeIcon className="hidden h-16 w-16 text-frost-100 md:block" />
+          <h2 className="text-2xl font-bold text-frost-100"
               id={SectionId.Contact}>{headerText}</h2>
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <p className="prose leading-6 text-neutral-300">{description}</p>
+          <p className="prose leading-6 text-frost-300">{description}</p>
           <div className="order-2 col-span-1 md:order-1 ">
-            <dl className="flex flex-col space-y-4 text-base text-neutral-500 sm:space-y-2">
+            <dl className="flex flex-col space-y-4 text-base text-ink-400 sm:space-y-2">
               {items.map(({type, text, href}) => {
                 const {Icon, srLabel} = ContactValueMap[type];
                 return (
@@ -50,12 +50,12 @@ const Contact: FC = memo(() => {
                     <dd className="flex items-center">
                       <a
                         className={classNames(
-                          '-m-2 flex rounded-md p-2 text-neutral-100 hover:text-fuchsia-400 focus:outline-none focus:ring-2 focus:ring-fuchsia-400',
-                          {'hover:text-white': href},
+                          '-m-2 flex rounded-md p-2 text-frost-100 hover:text-accent-300 focus:outline-none focus:ring-2 focus:ring-accent-400',
+                          {'hover:text-frost-100': !href},
                         )}
                         href={href}
                         target="_blank">
-                        <Icon aria-hidden="true" className="h-4 w-4 flex-shrink-0 text-neutral-100 sm:h-5 sm:w-5" />
+                        <Icon aria-hidden="true" className="h-4 w-4 flex-shrink-0 text-frost-100 sm:h-5 sm:w-5" />
                         <span className="ml-3 text-sm sm:text-base">{text}</span>
                       </a>
                     </dd>

@@ -96,8 +96,7 @@ const Hero: FC = memo(() => {
           <div className="z-10 max-w-screen-lg max-h-screen px-4 lg:px-0">
 
             <ArticleExtShell
-              ArticleClassName="grid w-full max-w-screen-xl grid-cols-3 gap-x-4 gap-y-1 rounded-xl bg-gray-800/40 p-4 text-center shadow-lg backdrop-blur-sm sm:gap-x-6 sm:gap-y-6 sm:p-6 lg:gap-x-8 lg:gap-y-10 lg: p-8
-  "
+              ArticleClassName="grid w-full max-w-screen-xl grid-cols-3 gap-x-4 gap-y-1 rounded-xl border border-white/10 bg-ink-950/40 p-4 text-center shadow-e1 backdrop-blur-sm sm:gap-x-6 sm:gap-y-6 sm:p-6 lg:gap-x-8 lg:gap-y-10 lg:p-8"
               ArticleId={`${SectionId.Hero}-intro`}
               DisplaySubDiv={false}
               LabelledBy={`${SectionId.Hero}-${IxHeader.HdrId}`}
@@ -109,7 +108,7 @@ const Hero: FC = memo(() => {
                   HeaderItem={IxHeader}
                 >
                   <ArticleTitleTagMain
-                    className="text-2xl font-bold text-stone-300 sm:text-5xl lg:text-6xl"
+                    className="text-2xl font-bold text-frost-300 sm:text-5xl lg:text-6xl"
                     id={`${SectionId.Hero}-${IxHeader.HdrId}`}
                   >
                     {IxHeader.HdrTitle}
@@ -117,7 +116,7 @@ const Hero: FC = memo(() => {
 
                   {IxHeader?.HdrSubTitle && (
                     <ArticleTitleTagSub
-                      className="text-xl font-bold text-stone-100 sm:text-4xl lg:text-5xl"
+                      className="text-xl font-bold text-frost-100 sm:text-4xl lg:text-5xl"
                       id={`${SectionId.Hero}-${IxHeader.HdrSubId}`}
                     >
                       {IxHeader.HdrSubTitle}
@@ -139,14 +138,14 @@ const Hero: FC = memo(() => {
                     DescriptionClassName=""
                     LiClassName="w-full"
                     ParentId={`${SectionId.Hero}-content`}
-                    UlClassName="w-full px-2 w-full px-2 w-full px-2 text-stone-300 font-medium  text-xl  sm:space-y-2  lg:space-y-3 sm:text-2xl lg:text-3xl"
+                    UlClassName="w-full px-2 w-full px-2 w-full px-2 text-frost-300 font-medium  text-xl  sm:space-y-2  lg:space-y-3 sm:text-2xl lg:text-3xl"
                     key={ContentItem?.AlSkills?.SeiId}
                   />
                 ))}
               </SectionExtShell>
 
               <aside className="col-span-3 flex flex-col items-center gap-y-8 pt-2">
-                <div className="flex justify-center gap-x-4 text-neutral-100">
+                <div className="flex justify-center gap-x-4 text-frost-100">
                   <Socials />
                 </div>
 
@@ -154,14 +153,14 @@ const Hero: FC = memo(() => {
                   {actions.map(({href, text, primary, Icon}) => (
                     <a
                       className={classNames(
-                        'flex gap-x-2 rounded-full border-2 bg-none px-4 py-2 text-sm font-medium text-neutral-100 ring-offset-gray-700/80 hover:bg-gray-700/80 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-base',
-                        primary ? 'border-fuchsia-400 ring-fuchsia-400' : 'border-neutral-100 ring-neutral-100',
+                        'flex gap-x-2 rounded-full border bg-white/5 px-4 py-2 text-sm font-medium text-frost-100 ring-offset-ink-950 backdrop-blur-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-base',
+                        primary ? 'border-primary-400 ring-primary-400' : 'border-white/10 ring-white/25',
                       )}
                       href={href}
                       key={text}
                     >
                       {text}
-                      {Icon && <Icon className="h-5 w-5 text-neutral-100 sm:h-6 sm:w-6" />}
+                      {Icon && <Icon className="h-5 w-5 text-frost-100 sm:h-6 sm:w-6" />}
                     </a>
                   ))}
                 </div>

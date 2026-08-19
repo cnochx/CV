@@ -79,7 +79,7 @@ const Skills: FC = memo(() => {
   return (
     <SectionLayout
       IsMain={true}
-      className="md:py-24 lg:px-8 bg-neutral-800 px-4 py-16"
+      className="md:py-24 lg:px-8 bg-ink-900 px-4 py-16"
       sectionId={SectionId.Skills}>
       <div className="mx-auto max-w-screen-lg">
 
@@ -94,11 +94,11 @@ const Skills: FC = memo(() => {
           </h2>
         </HeaderLayout>
 
-        <div className="mt-8 max-w text-neutral-100">
+        <div className="mt-8 max-w text-frost-100">
           {Description}
         </div>
 
-        <div className="mt-10 rounded-3xl bg-neutral-800 p-6">
+        <div className="mt-10 rounded-3xl border border-white/10 bg-white/5 p-6">
           <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2">
 
             {SkillsCollectionData.map(
@@ -121,7 +121,7 @@ const Skills: FC = memo(() => {
           </div>
         </div>
 
-        <div className="flex flex-col space-y-32 mt-8 text-neutral-100">
+        <div className="flex flex-col space-y-32 mt-8 text-frost-100">
           {Suffix}
         </div>
 

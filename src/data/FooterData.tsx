@@ -8,8 +8,8 @@ export const footerItems: FooterItems = {
   textContent: (
     <>
       <span>
-        <span className="text-neutral-100">Fork of React</span>
-        <span className="italic text-yellow">Resume</span>
+        <span className="text-frost-100">Fork of React</span>
+        <span className="italic text-frost-300">Resume</span>
       </span>
     </>
   ),
@@ -65,24 +65,24 @@ export const imprintItems: ImprintItems = {
   headerLegal: 'Data protection',
   legalContent: (
     <>
-      <h3 className="font-bold text-neutral-200">
+      <h3 className="font-bold text-frost-300">
         The sole purpose of this website is to present my CV and related professional content.
       </h3>
-      <p className="text-neutral-300">
+      <p className="text-frost-300">
         No personal data is intentionally collected on this page apart from the usual technical log files of the hosting
         provider.
       </p>
-      <p className="text-neutral-200">
+      <p className="text-frost-300">
         Log data may be evaluated for technical accessibility, website stability and continuous improvement.
       </p>
-      <p className="text-neutral-200">
+      <p className="text-frost-300">
         If a contact form or e-mail action is used, the transmitted contact data is processed only for the purpose of
         responding to the request.
       </p>
-      <h3 className="font-bold text-neutral-200">
+      <h3 className="font-bold text-frost-300">
         Responsibility for the content of external websites linked from this page lies with their respective operators.
       </h3>
-      <p className="text-neutral-200">
+      <p className="text-frost-300">
         At the time of linking, no illegal content was apparent on the referenced external pages.
       </p>
     </>

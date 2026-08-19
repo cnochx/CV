@@ -10,13 +10,13 @@ const CallToAction: FC<CallToActionProps> = memo(({CallToActionItem}) => {
     <div className="mx-auto max-w-screen-lg">
       <div className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 text-sm sm:text-base">
         {CtaPre ? (
-          <span className="text-sm font-normal tracking-normal text-neutral-600 sm:text-base">
+          <span className="text-sm font-normal tracking-normal text-ink-400 sm:text-base">
             {CtaPre}
           </span>
         ) : null}
 
         <a
-          className="inline-flex items-center gap-x-2 font-semibold text-cyan-700 underline decoration-cyan-600/70 decoration-2 underline-offset-4 transition-colors hover:text-fuchsia-700 hover:decoration-fuchsia-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-100"
+          className="inline-flex items-center gap-x-2 font-semibold text-accent-400 underline decoration-accent-400/70 decoration-2 underline-offset-4 transition-colors hover:text-accent-300 hover:decoration-accent-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950"
           href={CtaHref}
         >
           {CtaIcon ? (

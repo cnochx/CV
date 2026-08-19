@@ -56,8 +56,8 @@ const NavSections: FC<NavProps> = memo(({currentSectionId, className}) => {
         href={`/#${nextSection}`}
         title="Jump to next section"
       >
-        <span className="absolute inset-0 rounded-full bg-cyan-300/20 ring-1 ring-fuchsia-400 ring-offset-2 ring-offset-gray-800 transition-colors duration-200" />
-        <ChevronDownIcon className="relative z-10 h-8 w-8 text-fuchsia-400 sm:h-6 sm:w-6" />
+        <span className="absolute inset-0 rounded-full bg-accent-400/15 ring-1 ring-accent-400 ring-offset-2 ring-offset-ink-950 transition-colors duration-200" />
+        <ChevronDownIcon className="relative z-10 h-8 w-8 text-accent-400 sm:h-6 sm:w-6" />
       </Link>
     </nav>
   );

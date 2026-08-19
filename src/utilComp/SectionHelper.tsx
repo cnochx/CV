@@ -9,20 +9,22 @@ import {ContentIdsType, HeaderIdsType, SectionIdsType} from '../data/utilComp/Ut
 /**
  * Provides semantic color mappings used by shared Tailwind helper functions.
  */
+// v3.4 "Clean Core": one consolidated ink scale + frost text light,
+// accents re-based on primary/accent tokens (see tailwind.config.js).
 const COLOR_MAP: Readonly<Record<SetColor, string>> = {
-  bright: 'neutral-100',
-  dark: 'neutral-800',
-  mediumDark: 'neutral-700',
-  mediumBright: 'gray-800',
-  highlight: 'fuchsia-400',
-  highlightAlt: 'cyan-500',
+  bright: 'frost-100',
+  dark: 'ink-950',
+  mediumDark: 'ink-800',
+  mediumBright: 'ink-800',
+  highlight: 'primary-400',
+  highlightAlt: 'accent-400',
   purpleDef: 'purple-500',
   purplePale: 'purple-200',
   purpleDark: 'purple-800',
   pinkDef: 'pink-500',
-  stoneBright: 'stone-100',
-  stoneMediumBright: 'stone-200',
-  stoneDef: 'stone-300',
+  stoneBright: 'frost-100',
+  stoneMediumBright: 'frost-300',
+  stoneDef: 'frost-300',
   default: '',
   none: '',
 };
