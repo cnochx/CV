@@ -45,8 +45,13 @@ const SmoothScroll: FC = memo(() => {
     }
 
     const handleAnchorClick = (event: MouseEvent) => {
-      // Let modified clicks (new tab, download, etc.) behave natively.
-      if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) {
+      // Let modified clicks (new tab, background tab, ...) behave natively.
+      //
+      // Note: `defaultPrevented` must NOT be checked here. Next's `Link` always
+      // calls preventDefault() before this bubble-phase listener runs, so
+      // bailing out on it would silently disable smooth anchor scrolling for
+      // exactly the links that need it.
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) {
         return;
       }
 

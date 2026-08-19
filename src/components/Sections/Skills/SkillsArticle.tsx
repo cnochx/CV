@@ -38,11 +38,14 @@ const SkillsArticle: FC<SkillsArticleProps> = memo(
     // Tier 1: cursor sheen + ≤4° tilt on the glass surface (§5).
     const reactiveLight = useReactiveLight();
 
-    /** Sets the hover state and caches the tilt geometry for this hover. */
-    const handleArticleEnter = useCallback(() => {
-      handleMouseEnter();
-      reactiveLight.onPointerEnter();
-    }, [handleMouseEnter, reactiveLight]);
+    /** Sets the hover state and primes the tilt geometry for this hover. */
+    const handleArticleEnter = useCallback(
+      (event: MouseEvent<HTMLElement>) => {
+        handleMouseEnter();
+        reactiveLight.onPointerEnter(event);
+      },
+      [handleMouseEnter, reactiveLight],
+    );
 
     /** Clears both the hover state and the tilt when the pointer leaves. */
     const handleArticleLeave = useCallback(() => {

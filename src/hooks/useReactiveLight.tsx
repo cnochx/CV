@@ -8,8 +8,8 @@ const TILT_MAX_DEG = 4;
 export interface ReactiveLight {
   /** Ref to attach to the element that should catch the light. */
   ref: React.RefObject<HTMLElement>;
-  /** Caches geometry and switches the surface into direct-follow mode. */
-  onPointerEnter: () => void;
+  /** Caches geometry, positions the sheen and switches to direct-follow mode. */
+  onPointerEnter: (event: ReactMouseEvent<HTMLElement>) => void;
   /** Pointer handler updating the light position and tilt. */
   onPointerMove: (event: ReactMouseEvent<HTMLElement>) => void;
   /** Handler easing light and tilt back to rest when the pointer leaves. */
@@ -66,14 +66,24 @@ export const useReactiveLight = (): ReactiveLight => {
     };
   }, [allowPointerEffects]);
 
-  const onPointerEnter = useCallback(() => {
-    const element = ref.current;
-    if (!allowPointerEffects || !element) return;
+  const onPointerEnter = useCallback(
+    (event: ReactMouseEvent<HTMLElement>) => {
+      const element = ref.current;
+      if (!allowPointerEffects || !element) return;
 
-    rectRef.current = element.getBoundingClientRect();
-    // Follow the cursor directly: no transition to restart on every move.
-    element.classList.add('tilt-following');
-  }, [allowPointerEffects]);
+      const rect = element.getBoundingClientRect();
+      rectRef.current = rect;
+
+      // Place the sheen under the cursor before it fades in, so it never
+      // flashes at its resting position in the corner.
+      element.style.setProperty('--mx-px', `${Math.round(event.clientX - rect.left)}px`);
+      element.style.setProperty('--my-px', `${Math.round(event.clientY - rect.top)}px`);
+
+      // Follow the cursor directly: no transition to restart on every move.
+      element.classList.add('tilt-following');
+    },
+    [allowPointerEffects],
+  );
 
   const onPointerMove = useCallback(
     (event: ReactMouseEvent<HTMLElement>) => {
@@ -90,14 +100,17 @@ export const useReactiveLight = (): ReactiveLight => {
         const pointer = pendingRef.current;
         if (!element || !rect || !pointer) return;
 
-        const relativeX = (pointer.x - rect.left) / rect.width;
-        const relativeY = (pointer.y - rect.top) / rect.height;
+        const offsetX = pointer.x - rect.left;
+        const offsetY = pointer.y - rect.top;
+        const relativeX = offsetX / rect.width;
+        const relativeY = offsetY / rect.height;
 
-        element.style.setProperty('--mx', `${relativeX * 100}%`);
-        element.style.setProperty('--my', `${relativeY * 100}%`);
+        // Pixel offsets drive the sheen, which is translated rather than repainted.
+        element.style.setProperty('--mx-px', `${Math.round(offsetX)}px`);
+        element.style.setProperty('--my-px', `${Math.round(offsetY)}px`);
         // Tilt away from the cursor: the left edge lifts when pointing right.
-        element.style.setProperty('--tilt-y', `${(relativeX - 0.5) * 2 * TILT_MAX_DEG}deg`);
-        element.style.setProperty('--tilt-x', `${(0.5 - relativeY) * 2 * TILT_MAX_DEG}deg`);
+        element.style.setProperty('--tilt-y', `${((relativeX - 0.5) * 2 * TILT_MAX_DEG).toFixed(2)}deg`);
+        element.style.setProperty('--tilt-x', `${((0.5 - relativeY) * 2 * TILT_MAX_DEG).toFixed(2)}deg`);
       });
     },
     [allowPointerEffects],
