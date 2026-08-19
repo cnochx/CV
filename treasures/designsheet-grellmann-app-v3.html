@@ -26,8 +26,8 @@
     --ink-900:#101014;          /* alternating section background           */
     --ink-800:#17171c;          /* opaque card fallback (no-blur browsers)  */
     --ink-700:#26262e;          /* hairlines, dividers, giant display type  */
-    --ink-500:#80808e;          /* meta text (AA 4.9:1 on ink-950)          */
-    --ink-400:#9d9daa;          /* muted / secondary text (7.2:1)           */
+    --ink-500:#80808e;          /* meta text (AA 5.08:1 on ink-950)         */
+    --ink-400:#9d9daa;          /* muted / secondary text (7.38:1)          */
 
     /* Frost — the light that replaces ivory. Text + glass, never a canvas. */
     --frost-100:#f5f5f7;        /* primary text · the "white" that isn't    */
@@ -67,6 +67,10 @@
     --shadow-2:0 8px 30px rgba(0,0,0,.45);
     --glow-shadow-primary:0 0 24px rgba(232,121,249,.22);
     --glow-shadow-accent:0 0 24px rgba(34,211,238,.25);
+    /* Hover glows — one level stronger, wider. Hover must be unmissable. */
+    --glow-hover-primary:0 0 36px rgba(232,121,249,.5),0 0 12px rgba(232,121,249,.35);
+    --glow-hover-accent:0 0 36px rgba(34,211,238,.5),0 0 12px rgba(34,211,238,.35);
+    --wash-accent:rgba(34,211,238,.14);   /* cyan response wash for glass hover */
   }
 
   *{box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
@@ -148,14 +152,16 @@
   .btn{font-family:var(--font-sys);font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.55rem;border-radius:999px;transition:transform var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out),background-color var(--dur-fast),color var(--dur-fast),border-color var(--dur-fast)}
   .btn:focus-visible{outline:none;box-shadow:0 0 0 2px var(--ink-950),0 0 0 4px var(--accent-400)}
   .btn-primary{background:var(--primary-400);color:var(--ink-950);border:1px solid var(--primary-400);padding:.85rem 1.9rem;font-size:1rem;box-shadow:var(--shadow-1)}
-  .btn-primary:hover{background:var(--primary-300);transform:translateY(-2px);box-shadow:var(--shadow-2),var(--glow-shadow-primary)}
-  .btn-primary:active{transform:translateY(0);box-shadow:var(--shadow-1)}
+  .btn-primary:hover{background:var(--primary-300);border-color:var(--primary-300);transform:translateY(-3px) scale(1.03);box-shadow:var(--shadow-2),var(--glow-hover-primary)}
+  .btn-primary:active{transform:translateY(-1px) scale(1);box-shadow:var(--shadow-1)}
   .btn-glass{background:var(--glass-1);color:var(--frost-100);border:1px solid var(--glass-border);padding:.65rem 1.4rem;font-size:.9rem;font-weight:500;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
-  .btn-glass:hover{background:var(--glass-2);border-color:var(--glass-border-strong);transform:translateY(-2px)}
-  .btn-ghost{background:none;border:none;color:var(--accent-400);padding:.5rem .25rem;font-size:.9rem;font-weight:500;border-radius:.375rem}
-  .btn-ghost:hover{color:var(--accent-300);transform:translateX(2px)}
+  .btn-glass:hover{background:var(--wash-accent);border-color:rgba(34,211,238,.55);color:var(--accent-300);transform:translateY(-3px);box-shadow:var(--glow-shadow-accent)}
+  .btn-glass:active{transform:translateY(-1px)}
+  .btn-ghost{background:none;border:none;color:var(--accent-400);padding:.5rem .25rem;font-size:.9rem;font-weight:500;border-radius:.375rem;text-underline-offset:4px}
+  .btn-ghost:hover{color:var(--accent-300);transform:translateX(3px);text-decoration:underline;text-decoration-thickness:2px}
   .btn-submit{background:var(--accent-400);color:var(--ink-950);border:none;padding:.85rem 2.2rem;font-size:1rem;box-shadow:var(--shadow-1)}
-  .btn-submit:hover{background:var(--accent-300);transform:translateY(-2px);box-shadow:var(--shadow-2),var(--glow-shadow-accent)}
+  .btn-submit:hover{background:var(--accent-300);transform:translateY(-3px) scale(1.03);box-shadow:var(--shadow-2),var(--glow-hover-accent)}
+  .btn-submit:active{transform:translateY(-1px) scale(1)}
 
   /* Nav sample */
   .nav-demo{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.55rem 1.1rem;border-radius:999px;background:rgba(10,10,12,.62);-webkit-backdrop-filter:blur(var(--blur-nav));backdrop-filter:blur(var(--blur-nav));border:1px solid var(--glass-border)}
@@ -287,7 +293,7 @@
       <div class="sw"><div class="chip" style="background:var(--ink-900)"></div><div class="lbl"><span class="name">ink-900</span><span class="hex">#101014</span><span class="use">Alternating section bg, code wells</span></div></div>
       <div class="sw"><div class="chip" style="background:var(--ink-800)"></div><div class="lbl"><span class="name">ink-800</span><span class="hex">#17171c</span><span class="use">Opaque card fallback for no-blur browsers only</span></div></div>
       <div class="sw"><div class="chip" style="background:var(--ink-700)"></div><div class="lbl"><span class="name">ink-700</span><span class="hex">#26262e</span><span class="use">Hairlines/dividers on canvas, giant display numerals</span></div></div>
-      <div class="sw"><div class="chip" style="background:var(--ink-400)"></div><div class="lbl"><span class="name">ink-400 / 500</span><span class="hex">#9d9daa · #80808e</span><span class="use">Muted text (7.2:1) / meta floor (4.9:1) on ink surfaces</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--ink-400)"></div><div class="lbl"><span class="name">ink-400 / 500</span><span class="hex">#9d9daa · #80808e</span><span class="use">Muted text (7.38:1) / meta floor (5.08:1) on ink surfaces</span></div></div>
       <div class="sw"><div class="chip" style="background:var(--frost-100)"></div><div class="lbl"><span class="name">frost-100</span><span class="hex">#f5f5f7</span><span class="use">Primary text — the "white" that isn't (Apple's off-white)</span></div></div>
       <div class="sw"><div class="chip" style="background:var(--frost-300)"></div><div class="lbl"><span class="name">frost-300</span><span class="hex">#c9c9d3</span><span class="use">Emphasized secondary text, code blocks</span></div></div>
     </div>
@@ -303,20 +309,24 @@
       <tr><td>Rim vignette</td><td>radial <code>transparent 40% → black/28 → black/50</code></td><td>Image cards only (skills) — reads as ambient occlusion, survives from v1</td></tr>
     </table>
 
-    <h3>Contrast receipts — measured (WCAG 2 relative luminance)</h3>
+    <h3>Contrast receipts — measured by <code>treasures/contrast-test.mjs</code> (WCAG 2)</h3>
     <table>
       <tr><th>Pair</th><th>Ratio</th><th>AA (4.5 / 3.0 UI)</th><th>Licensed use</th></tr>
-      <tr><td>frost-100 on ink-950</td><td><strong>18.1:1</strong></td><td class="pass">pass</td><td>Primary text anywhere in the dark world</td></tr>
-      <tr><td>frost-300 on ink-950</td><td><strong>11.8:1</strong></td><td class="pass">pass</td><td>Secondary text, code</td></tr>
-      <tr><td>ink-400 on ink-950</td><td><strong>7.2:1</strong></td><td class="pass">pass</td><td>Muted/body-secondary text</td></tr>
-      <tr><td>ink-400 on glass-2-over-900</td><td><strong>5.9:1</strong></td><td class="pass">pass</td><td>Muted text on raised glass</td></tr>
-      <tr><td>ink-500 on ink-950</td><td><strong>4.9:1</strong></td><td class="pass">pass</td><td>Meta/caption floor — nothing dimmer than this, ever</td></tr>
-      <tr><td>primary-400 on ink-950</td><td><strong>8.2:1</strong></td><td class="pass">pass</td><td>Accent text/eyebrows</td></tr>
-      <tr><td>accent-400 on ink-950</td><td><strong>11.2:1</strong></td><td class="pass">pass</td><td>Links, active labels</td></tr>
-      <tr><td>ink-950 on primary-400</td><td><strong>8.2:1</strong></td><td class="pass">pass</td><td>Primary CTA label</td></tr>
-      <tr><td>ink-950 on accent-400</td><td><strong>11.2:1</strong></td><td class="pass">pass</td><td>Submit label</td></tr>
+      <tr><td>frost-100 on ink-950 / ink-900</td><td><strong>18.17 / 17.43:1</strong></td><td class="pass">pass</td><td>Primary text anywhere in the dark world</td></tr>
+      <tr><td>frost-300 on ink-950</td><td><strong>12.04:1</strong></td><td class="pass">pass</td><td>Secondary text, code</td></tr>
+      <tr><td>ink-400 on ink-950 / ink-900</td><td><strong>7.38 / 7.08:1</strong></td><td class="pass">pass</td><td>Muted/body-secondary text</td></tr>
+      <tr><td>ink-400 on glass-2 ∘ ink-900</td><td><strong>5.84:1</strong></td><td class="pass">pass</td><td>Muted text on raised glass</td></tr>
+      <tr><td>ink-500 on ink-950</td><td><strong>5.08:1</strong></td><td class="pass">pass</td><td>Meta/caption floor — nothing dimmer than this, ever</td></tr>
+      <tr><td>ink-500 on field-well (white/4 ∘ 950)</td><td><strong>4.74:1</strong></td><td class="pass">pass</td><td>Form placeholder</td></tr>
+      <tr><td>primary-400 on ink-950</td><td><strong>8.04:1</strong></td><td class="pass">pass</td><td>Accent text/eyebrows</td></tr>
+      <tr><td>accent-400 / accent-300 on ink-950</td><td><strong>10.95 / 13.65:1</strong></td><td class="pass">pass</td><td>Links, active labels / hover text</td></tr>
+      <tr><td>ink-950 on primary-400 → 300 (hover)</td><td><strong>8.04 → 11.24:1</strong></td><td class="pass">pass</td><td>Primary CTA label — hover <em>gains</em> contrast</td></tr>
+      <tr><td>ink-950 on accent-400 → 300 (hover)</td><td><strong>10.95 → 13.65:1</strong></td><td class="pass">pass</td><td>Submit label — hover <em>gains</em> contrast</td></tr>
+      <tr><td>accent-300 on cyan wash ∘ glass-1 ∘ 900</td><td><strong>8.84:1</strong></td><td class="pass">pass</td><td>Glass-pill hover label</td></tr>
+      <tr><td>frost-100 on glass-3 ∘ 950 / nav ∘ 900</td><td><strong>13.62 / 17.91:1</strong></td><td class="pass">pass</td><td>Active pill / nav over content</td></tr>
+      <tr><td>accent-400/55 border ∘ ink-900 (UI 3.0)</td><td><strong>3.86:1</strong></td><td class="pass">pass</td><td>Skill-active + pill-hover border</td></tr>
     </table>
-    <p class="src">Every text token is licensed for its surface family; glass alphas ≤12% shift contrast by &lt;0.5, so ink-on-950 licenses extend to glass-1…3 over ink-950/900. New combos must be re-measured — no "looks fine" exceptions. (Rule kept from v2.)</p>
+    <p class="src">Full run: <code>node treasures/contrast-test.mjs</code> — 21/21 pairs pass, glass surfaces alpha-composited before measuring, exits non-zero on any failure (CI-ready). Every text token is licensed for its surface family; new combos must be added to the test before use — no "looks fine" exceptions. (Rule kept from v2.)</p>
 
     <h3>Migration map — live site (v1) → v3</h3>
     <table>
@@ -404,7 +414,7 @@
       <a class="btn btn-glass" href="#">↓ CV · Contractor</a>
       <button class="btn btn-ghost">Jump to contact →</button>
     </div>
-    <p class="capt">Primary: solid <code>primary-400</code>, ink text (8.2:1), hover lightens + lifts + fuchsia glow shadow. Secondary is now a <strong>glass pill</strong> (was hairline-fuchsia in v1/v2) — P6: no accent borders at rest. Ghost: cyan text link, 2px x-shift. Submit (below) completes the family.</p>
+    <p class="capt">Hover is a <strong>response</strong>, so it speaks cyan (P3) and must be unmissable — three cues fire at once, and at least one survives reduced-motion. Primary: fill lightens to 300, −3px lift + 3% scale, wide fuchsia hover-glow. Glass pill: cyan wash <code>accent-400/14</code> + cyan border 55% + cyan text + glow (rest stays neutral glass, P6 intact — hover <em>is</em> a state). Ghost: 2px underline + brighter cyan + 3px x-shift. Under <code>prefers-reduced-motion</code> transforms flatten but color, border, underline and glow changes remain fully visible.</p>
 
     <h3>Skill cards — before / after (the design anchor)</h3>
     <div class="stage">
@@ -556,6 +566,8 @@
       e2:'0 8px 30px rgba(0,0,0,.45)',
       'glow-primary':'0 0 24px rgba(232,121,249,.22)',
       'glow-accent':'0 0 24px rgba(34,211,238,.25)',
+      'glow-primary-lg':'0 0 36px rgba(232,121,249,.5),0 0 12px rgba(232,121,249,.35)',
+      'glow-accent-lg':'0 0 36px rgba(34,211,238,.5),0 0 12px rgba(34,211,238,.35)',
     },
     backgroundImage: {
       aurora:'linear-gradient(100deg,#e879f9,#9d8cf5 50%,#22d3ee)',
@@ -572,16 +584,20 @@
  transition duration-400 ease-out hover:-translate-y-0.5 hover:bg-white/[.08] hover:shadow-e2
  supports-[not(backdrop-filter:blur(0))]:bg-ink-800 [transform-style:preserve-3d]"
 
-// Primary CTA
+// Primary CTA — hover: 3 cues (fill step, lift+scale, wide glow)
 "rounded-full bg-primary-400 px-8 py-3.5 font-semibold text-ink-950 shadow-e1
- transition duration-200 ease-out hover:-translate-y-0.5 hover:bg-primary-300 hover:shadow-glow-primary
+ transition duration-200 ease-out
+ hover:-translate-y-1 hover:scale-[1.03] hover:bg-primary-300 hover:shadow-glow-primary-lg
  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400
- focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950"
+ focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950
+ motion-reduce:hover:transform-none"
 
-// Glass pill (secondary / CV downloads / nav CTA)
+// Glass pill (secondary / CV downloads / nav CTA) — hover speaks cyan (P3)
 "rounded-full border border-white/10 bg-white/5 px-5 py-2.5 text-sm font-medium text-frost-100
  backdrop-blur-md transition duration-200 ease-out
- hover:-translate-y-0.5 hover:border-white/[.16] hover:bg-white/[.08]"
+ hover:-translate-y-1 hover:border-accent-400/55 hover:bg-accent-400/[.14]
+ hover:text-accent-300 hover:shadow-glow-accent
+ motion-reduce:hover:transform-none"
 
 // Skill card active state (P6: accent = state, not rest)
 "border-accent-400/55 shadow-glow-accent"
