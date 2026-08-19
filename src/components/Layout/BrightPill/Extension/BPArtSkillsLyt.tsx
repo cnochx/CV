@@ -27,7 +27,7 @@ const BPArtSkillsLyt: FC<ArtSkillsLytProps> = memo(({
               <>
                 {SkillItem.AlsName && (
                   <span
-                    className="cursor-pointer rounded-full border border-white/10 bg-white/10 px-2 py-0.5 text-xs text-frost-100 hover:bg-accent-400/15 hover:text-accent-300 hover:border-accent-400/55 hover:-translate-y-0.5 transition-transform duration-200"
+                    className="hover-stable cursor-pointer rounded-full border border-white/10 bg-white/10 px-2 py-0.5 text-xs text-frost-100 hover:bg-accent-400/15 hover:text-accent-300 hover:border-accent-400/55 hover:-translate-y-0.5 transition-transform duration-200"
                     key={SkillItem.AlsKey}>
                 {SkillItem.AlsName}
               </span>)}

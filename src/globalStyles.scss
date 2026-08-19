@@ -68,16 +68,43 @@
      transforms of their own, and preserve-3d would force the browser to keep
      every child in its own 3D plane and re-rasterize the whole subtree (image,
      overlays, vignette) each frame. Flattened, the card is rasterized once and
-     the rotation runs on the compositor. */
+     the rotation runs on the compositor.
+
+     At rest the element carries NO transform at all. A permanent transform —
+     even `rotate3d(..., 0deg)` — keeps the card on its own compositor layer,
+     where a hairline `white/10` border on rounded corners visibly frays from
+     re-sampling. Saturated borders hide this, faint ones do not. `.tilt-primed`
+     is therefore only present while hovering and during the glide back. */
   .tilt-target {
+    transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .tilt-target.tilt-primed {
     transform: rotate3d(1, 0, 0, var(--tilt-x, 0deg)) rotate3d(0, 1, 0, var(--tilt-y, 0deg));
     backface-visibility: hidden;
-    transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .tilt-target.tilt-following {
     transition: none;
     will-change: transform;
+  }
+
+  /* Stable hover hitbox.
+     Elements that lift on hover move out from under the cursor. At the edge that
+     produces a feedback loop: hover lifts the element, the pointer is no longer
+     over it, it drops back, hover triggers again — the flicker reads as the UI
+     being unable to decide. An invisible pseudo-element extends the hit area
+     further than the lift distance, so the pointer never leaves.
+     Bonus: it enlarges small touch targets. */
+  .hover-stable {
+    position: relative;
+  }
+
+  .hover-stable::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    z-index: 0;
   }
 
   /* Cursor-following sheen.

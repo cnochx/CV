@@ -1,5 +1,5 @@
 import {ChevronDownIcon, ChevronUpIcon} from '@heroicons/react/24/solid';
-import {FC, memo, MouseEvent, useCallback} from 'react';
+import {FC, memo, MouseEvent, useCallback, useEffect, useRef} from 'react';
 
 import {SkillItem} from '../../../data/Skills/SkillCollectionDef';
 import {SkillsArticleProps} from '../../../data/utilComp/UtilImportPropsDef';
@@ -38,19 +38,43 @@ const SkillsArticle: FC<SkillsArticleProps> = memo(
     // Tier 1: cursor sheen + ≤4° tilt on the glass surface (§5).
     const reactiveLight = useReactiveLight();
 
+    /** Pending leave, kept so a momentary edge flicker can cancel it. */
+    const leaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+    useEffect(
+      () => () => {
+        if (leaveTimerRef.current) clearTimeout(leaveTimerRef.current);
+      },
+      [],
+    );
+
     /** Sets the hover state and primes the tilt geometry for this hover. */
     const handleArticleEnter = useCallback(
       (event: MouseEvent<HTMLElement>) => {
+        if (leaveTimerRef.current) {
+          clearTimeout(leaveTimerRef.current);
+          leaveTimerRef.current = null;
+        }
         handleMouseEnter();
         reactiveLight.onPointerEnter(event);
       },
       [handleMouseEnter, reactiveLight],
     );
 
-    /** Clears both the hover state and the tilt when the pointer leaves. */
+    /**
+     * Releases the hover state after a short grace period.
+     *
+     * The tilt moves the card's own edges, so a pointer resting near the border
+     * can leave and re-enter within a few frames. Acting on that immediately
+     * would flip the border and sheen back and forth.
+     */
     const handleArticleLeave = useCallback(() => {
-      handleMouseLeave();
-      reactiveLight.onPointerLeave();
+      if (leaveTimerRef.current) clearTimeout(leaveTimerRef.current);
+      leaveTimerRef.current = setTimeout(() => {
+        leaveTimerRef.current = null;
+        handleMouseLeave();
+        reactiveLight.onPointerLeave();
+      }, reactiveLight.leaveGraceMs);
     }, [handleMouseLeave, reactiveLight]);
 
     const handleTriggerClick = useCallback(

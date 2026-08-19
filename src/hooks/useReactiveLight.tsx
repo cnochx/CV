@@ -5,6 +5,18 @@ import {useMotionGate} from './useMotionGate';
 /** Maximum tilt in degrees — Apple restraint (Designsheet §5: caps at ±4°). */
 const TILT_MAX_DEG = 4;
 
+/** Must outlast the CSS glide-back so the transform is only dropped at rest. */
+const TILT_SETTLE_MS = 450;
+
+/**
+ * Grace period before a leave is honoured.
+ *
+ * The tilt rotates the surface, which moves its own edges. Right at the border
+ * that can make the pointer alternate between inside and outside, so hover would
+ * switch on and off repeatedly. Ignoring very short leaves absorbs that.
+ */
+const LEAVE_GRACE_MS = 90;
+
 export interface ReactiveLight {
   /** Ref to attach to the element that should catch the light. */
   ref: React.RefObject<HTMLElement>;
@@ -14,6 +26,11 @@ export interface ReactiveLight {
   onPointerMove: (event: ReactMouseEvent<HTMLElement>) => void;
   /** Handler easing light and tilt back to rest when the pointer leaves. */
   onPointerLeave: () => void;
+  /**
+   * Grace period in milliseconds that a consumer should wait before treating a
+   * leave as real, so hover-driven styling does not flicker at the edges either.
+   */
+  leaveGraceMs: number;
   /** True when the effect is active for this client. */
   isEnabled: boolean;
 }
@@ -45,6 +62,7 @@ export const useReactiveLight = (): ReactiveLight => {
   const rectRef = useRef<DOMRect | null>(null);
   const frameRef = useRef(0);
   const pendingRef = useRef<{x: number; y: number} | null>(null);
+  const settleRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   /** Refreshes cached geometry while the pointer is over the surface. */
   useEffect(() => {
@@ -71,6 +89,12 @@ export const useReactiveLight = (): ReactiveLight => {
       const element = ref.current;
       if (!allowPointerEffects || !element) return;
 
+      // A leave that is being debounced is cancelled: the pointer never really left.
+      if (settleRef.current) {
+        clearTimeout(settleRef.current);
+        settleRef.current = null;
+      }
+
       const rect = element.getBoundingClientRect();
       rectRef.current = rect;
 
@@ -79,8 +103,8 @@ export const useReactiveLight = (): ReactiveLight => {
       element.style.setProperty('--mx-px', `${Math.round(event.clientX - rect.left)}px`);
       element.style.setProperty('--my-px', `${Math.round(event.clientY - rect.top)}px`);
 
-      // Follow the cursor directly: no transition to restart on every move.
-      element.classList.add('tilt-following');
+      // `primed` enables the transform, `following` removes the transition.
+      element.classList.add('tilt-primed', 'tilt-following');
     },
     [allowPointerEffects],
   );
@@ -131,9 +155,24 @@ export const useReactiveLight = (): ReactiveLight => {
     element.classList.remove('tilt-following');
     element.style.setProperty('--tilt-x', '0deg');
     element.style.setProperty('--tilt-y', '0deg');
+
+    // Drop the transform once the glide has finished, returning the card to a
+    // plain, uncomposited element with crisp edges.
+    if (settleRef.current) clearTimeout(settleRef.current);
+    settleRef.current = setTimeout(() => {
+      settleRef.current = null;
+      ref.current?.classList.remove('tilt-primed');
+    }, TILT_SETTLE_MS);
   }, []);
 
-  return {ref, onPointerEnter, onPointerMove, onPointerLeave, isEnabled: allowPointerEffects};
+  return {
+    ref,
+    onPointerEnter,
+    onPointerMove,
+    onPointerLeave,
+    leaveGraceMs: allowPointerEffects ? LEAVE_GRACE_MS : 0,
+    isEnabled: allowPointerEffects,
+  };
 };
 
 export default useReactiveLight;

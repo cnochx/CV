@@ -17,8 +17,10 @@
  * color, border and glow changes stay fully visible.
  */
 
+// `hover-stable` keeps the hover hitbox constant while the pill lifts, so the
+// pointer cannot fall off the edge and start a hover feedback loop.
 const CTA_BASE =
-  'inline-flex items-center justify-center gap-x-2 rounded-full text-sm font-medium ' +
+  'hover-stable inline-flex items-center justify-center gap-x-2 rounded-full text-sm font-medium ' +
   'transition duration-200 ease-out focus:outline-none focus-visible:ring-2 ' +
   'focus-visible:ring-accent-400 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950 ' +
   'motion-reduce:hover:transform-none sm:text-base';
