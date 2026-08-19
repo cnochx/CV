@@ -681,29 +681,13 @@ const y = useTransform(scrollYProgress, [0,1], ['0%','-30%']);  // 0.3× speed
 // Tilt: useSpring(useTransform(pointer, …)), clamp ±4deg
 // All gated: const reduce = useReducedMotion();  reduce ⇒ render static</code></pre>
 
-    <h3>JSON-LD — Person + ProfilePage (ships with T0, the open high-ROI item)</h3>
-    <pre><code>// src/pages/_document.tsx head (or next/head in index) — schema-dts typed
-&lt;script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
-  '@context':'https://schema.org',
-  '@type':'ProfilePage',
-  dateModified: BUILD_DATE,
-  mainEntity: {
-    '@type':'Person',
-    name:'Martin Grellmann',
-    jobTitle:'Senior Full-Stack / SAP Engineer',
-    url:'https://grellmann.app',
-    knowsAbout:['SAP ABAP','SAP BTP','CDS','RAP','CAP','Fiori/UI5',
-                'React','Next.js','Node.js','TypeScript','Drupal'],
-    sameAs:['https://www.linkedin.com/in/…','https://github.com/cnochx'],
-    workLocation:{'@type':'Place', address:{'@type':'PostalAddress',
-      addressLocality:'Dresden', addressCountry:'DE'}},
-  },
-})}} /&gt;</code></pre>
+    <h3>JSON-LD — Person + ProfilePage <span class="pass">✓ already shipped</span></h3>
+    <p class="lede">Verified in the repo: a complete <code>schema-dts</code>-typed <code>@graph</code> (ProfilePage + WebSite + ImageObject + Person with <code>knowsAbout</code>, <code>sameAs</code>, credentials, occupation) lives in <code>src/data/Homepage/HomepageMetaData.tsx</code> and is SSR'd via <code>src/components/Layout/Page.tsx</code> — richer than this sheet's original draft, so the draft was removed. T0 requirement met; only <code>dateModified</code> should move to a build-time constant eventually.</p>
 
     <h3>Refactoring order (lowest risk first)</h3>
     <table>
       <tr><th>Step</th><th>Change</th><th>Blast radius</th></tr>
-      <tr><td>1</td><td>Add v3 tokens to config; delete <code>yellow</code> override + typing/blink keyframes; JSON-LD into head</td><td>Global but additive; JSON-LD is pure win</td></tr>
+      <tr><td>1</td><td>Add v3 tokens to config (purely additive); mark <code>yellow</code> + typing/blink as deprecated — actual deletion moves to steps 4/5 where their components get restyled. JSON-LD: already live ✓</td><td>Zero visual change — safe to deploy</td></tr>
       <tr><td>2</td><td>Flip foundation: body ink-950/frost-100, section alternation, consolidate gray/stone/neutral → ink</td><td>The big visual flip — one PR, reviewed against §2 receipts</td></tr>
       <tr><td>3</td><td>Re-map the 4-variant enum (<code>SurfaceTokens</code>, <code>HeaderLayoutSub</code>, <code>IconButtonLayoutSub</code>) to glass recipes</td><td>All cards/buttons/headers at once — the designed pivot</td></tr>
       <tr><td>4</td><td>Type scale swap (display/h1/h2/h3/body classes); hero restructure to centered stack</td><td>Headers + hero</td></tr>
