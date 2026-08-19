@@ -1,4 +1,4 @@
-import {MouseEvent as ReactMouseEvent, useCallback, useEffect, useRef} from 'react';
+import {MouseEvent as ReactMouseEvent, useCallback, useEffect, useRef, useState} from 'react';
 
 import {useMotionGate} from './useMotionGate';
 
@@ -20,6 +20,15 @@ const LEAVE_GRACE_MS = 90;
 export interface ReactiveLight {
   /** Ref to attach to the element that should catch the light. */
   ref: React.RefObject<HTMLElement>;
+  /**
+   * Motion classes for the current phase, to be merged into the element's
+   * `className` by the consumer.
+   *
+   * These must travel through React rather than `classList`: `className` is a
+   * controlled attribute, so any imperatively added class is wiped on the next
+   * render — and hovering triggers exactly such a render.
+   */
+  tiltClassName: string;
   /** Caches geometry, positions the sheen and switches to direct-follow mode. */
   onPointerEnter: (event: ReactMouseEvent<HTMLElement>) => void;
   /** Pointer handler updating the light position and tilt. */
@@ -58,6 +67,16 @@ export interface ReactiveLight {
  */
 export const useReactiveLight = (): ReactiveLight => {
   const {allowPointerEffects} = useMotionGate();
+  /**
+   * `active`   — pointer is over the surface, follow it directly.
+   * `settling` — pointer left, the transform is still gliding back to rest.
+   * `rest`     — no transform at all, so the element leaves the compositor
+   *              layer and its hairline border renders crisply again.
+   *
+   * Only phase changes re-render (twice per hover); pointer movement itself
+   * writes CSS custom properties and never touches React.
+   */
+  const [phase, setPhase] = useState<'rest' | 'active' | 'settling'>('rest');
   const ref = useRef<HTMLElement>(null);
   const rectRef = useRef<DOMRect | null>(null);
   const frameRef = useRef(0);
@@ -103,8 +122,7 @@ export const useReactiveLight = (): ReactiveLight => {
       element.style.setProperty('--mx-px', `${Math.round(event.clientX - rect.left)}px`);
       element.style.setProperty('--my-px', `${Math.round(event.clientY - rect.top)}px`);
 
-      // `primed` enables the transform, `following` removes the transition.
-      element.classList.add('tilt-primed', 'tilt-following');
+      setPhase('active');
     },
     [allowPointerEffects],
   );
@@ -151,22 +169,35 @@ export const useReactiveLight = (): ReactiveLight => {
     rectRef.current = null;
     pendingRef.current = null;
 
-    // Re-enable the transition so the surface glides back instead of snapping.
-    element.classList.remove('tilt-following');
+    // Leaving `settling` keeps the transform but restores the transition, so
+    // the surface glides back to level instead of snapping.
     element.style.setProperty('--tilt-x', '0deg');
     element.style.setProperty('--tilt-y', '0deg');
+    setPhase('settling');
 
     // Drop the transform once the glide has finished, returning the card to a
     // plain, uncomposited element with crisp edges.
     if (settleRef.current) clearTimeout(settleRef.current);
     settleRef.current = setTimeout(() => {
       settleRef.current = null;
-      ref.current?.classList.remove('tilt-primed');
+      setPhase('rest');
     }, TILT_SETTLE_MS);
   }, []);
 
+  /** Clears the settle timer if the component unmounts mid-glide. */
+  useEffect(
+    () => () => {
+      if (settleRef.current) clearTimeout(settleRef.current);
+    },
+    [],
+  );
+
+  const tiltClassName =
+    phase === 'active' ? 'tilt-primed tilt-following' : phase === 'settling' ? 'tilt-primed' : '';
+
   return {
     ref,
+    tiltClassName,
     onPointerEnter,
     onPointerMove,
     onPointerLeave,

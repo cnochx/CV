@@ -87,9 +87,16 @@ const SkillsArticle: FC<SkillsArticleProps> = memo(
 
     const isActiveVisual = isHovered;
 
-    const articleClassName = isActiveVisual
-      ? `${SKILLS_SURFACE_TOKENS.containerBase} ${SKILLS_SURFACE_TOKENS.articleSpacing} ${SKILLS_SURFACE_TOKENS.borderActive}`
-      : `${SKILLS_SURFACE_TOKENS.containerBase} ${SKILLS_SURFACE_TOKENS.articleSpacing} ${SKILLS_SURFACE_TOKENS.borderInactive}`;
+    const articleClassName = [
+      SKILLS_SURFACE_TOKENS.containerBase,
+      SKILLS_SURFACE_TOKENS.articleSpacing,
+      isActiveVisual ? SKILLS_SURFACE_TOKENS.borderActive : SKILLS_SURFACE_TOKENS.borderInactive,
+      // Motion phase must come through React: className is controlled, so a
+      // class added via classList would be dropped on the next render.
+      reactiveLight.tiltClassName,
+    ]
+      .filter(Boolean)
+      .join(' ');
 
     const headerClassName =
       'relative m-4 w-full text-center text-frost-100';
