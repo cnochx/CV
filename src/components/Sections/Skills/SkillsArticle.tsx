@@ -128,7 +128,13 @@ const SkillsArticle: FC<SkillsArticleProps> = memo(
             : undefined
         }
       >
-        <div className={SKILLS_SURFACE_TOKENS.overlayOuter} />
+        <div
+          className={`${SKILLS_SURFACE_TOKENS.overlayBase} ${
+            isActiveVisual
+              ? SKILLS_SURFACE_TOKENS.overlayOuterActive
+              : SKILLS_SURFACE_TOKENS.overlayOuterRest
+          }`}
+        />
         <div className={SKILLS_SURFACE_TOKENS.rimOuter} />
 
         <div className={SKILLS_SURFACE_TOKENS.contentLayer}>

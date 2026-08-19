@@ -193,7 +193,11 @@ export const useReactiveLight = (): ReactiveLight => {
   );
 
   const tiltClassName =
-    phase === 'active' ? 'tilt-primed tilt-following' : phase === 'settling' ? 'tilt-primed' : '';
+    phase === 'active'
+      ? 'tilt-primed tilt-following lit-on'
+      : phase === 'settling'
+        ? 'tilt-primed'
+        : '';
 
   return {
     ref,

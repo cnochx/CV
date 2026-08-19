@@ -134,7 +134,10 @@
     transition: opacity 400ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  .lit:hover::after {
+  /* Driven by the debounced React phase, not by `:hover`: the tilt moves the
+     element's own edges, so a CSS hover would toggle on and off at the border
+     while the state-driven styling stays put. */
+  .lit.lit-on::after {
     opacity: 1;
   }
 

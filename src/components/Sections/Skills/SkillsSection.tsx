@@ -114,7 +114,13 @@ const SkillsSection: FC<SkillsProps> = memo(
         role="button"
         tabIndex={0}
       >
-        <div className={SKILLS_SURFACE_TOKENS.overlayInner} />
+        <div
+          className={`${SKILLS_SURFACE_TOKENS.overlayBase} ${
+            isActiveVisual
+              ? SKILLS_SURFACE_TOKENS.overlayInnerActive
+              : SKILLS_SURFACE_TOKENS.overlayInnerRest
+          }`}
+        />
         <div className={SKILLS_SURFACE_TOKENS.rimInner} />
 
         <div className={SKILLS_SURFACE_TOKENS.contentLayer}>

@@ -14,8 +14,13 @@
  */
 
 export const SKILLS_SURFACE_TOKENS = {
+  // `bg-clip-padding` keeps the background image out of the border area. A
+  // border is painted over the background by default, and the overlay/vignette
+  // layers only cover the padding box — so a 10% white hairline would show the
+  // raw wood texture through it and read as a blotchy edge instead of a line.
+  // Clipping the background makes the border sit on the dark section surface.
   containerBase:
-    'group relative overflow-hidden rounded-2xl text-frost-100 transition-colors duration-200',
+    'group relative overflow-hidden rounded-2xl bg-clip-padding text-frost-100 transition-colors duration-200',
 
   // Tier 1 motion utilities (globalStyles.scss), driven by useReactiveLight and
   // collapsing to flat surfaces under reduced motion.
@@ -39,11 +44,18 @@ export const SKILLS_SURFACE_TOKENS = {
   progressActive: 'bg-accent-400',
   progressInactive: 'bg-primary-400',
 
-  overlayOuter:
-    'absolute inset-0 rounded-2xl bg-ink-950/45 transition-colors duration-200 group-hover:bg-ink-950/25',
+  // Hover-driven states are selected in React, not with `group-hover`. CSS
+  // hover switches the instant the pointer crosses the geometric edge, which
+  // the tilt itself keeps moving — that ignores the leave hysteresis and makes
+  // the surface flicker. Driving them from the debounced state keeps every
+  // hover reaction in sync.
+  overlayBase: 'absolute inset-0 rounded-2xl transition-colors duration-200',
 
-  overlayInner:
-    'absolute inset-0 rounded-2xl bg-ink-950/35 transition-colors duration-200 group-hover:bg-ink-950/20',
+  overlayOuterRest: 'bg-ink-950/45',
+  overlayOuterActive: 'bg-ink-950/25',
+
+  overlayInnerRest: 'bg-ink-950/35',
+  overlayInnerActive: 'bg-ink-950/20',
 
   rimOuter:
     'absolute inset-0 rounded-2xl bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.28)_78%,rgba(0,0,0,0.5)_100%)]',
