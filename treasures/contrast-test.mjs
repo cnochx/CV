@@ -63,6 +63,7 @@ const S = {
   'border white/16 ∘ ink-950': comp('ink-950', ['white', 0.16]),
   'nav 950/62 ∘ ink-900': comp('ink-900', ['ink-950', 0.62]),
   'wash-accent ∘ nav ∘ ink-900': comp('ink-900', ['ink-950', 0.62], ['accent-400', 0.14]),
+  'wash-primary ∘ nav ∘ ink-900': comp('ink-900', ['ink-950', 0.62], ['primary-400', 0.14]),
 };
 const bg = (name) => S[name] ?? hex(T[name]);
 
@@ -91,6 +92,8 @@ const pairs = [
   ['accent-300', 'wash-accent ∘ glass-1 ∘ ink-900', 4.5, 'Glass-pill hover label on cyan wash'],
   ['frost-100', 'nav 950/62 ∘ ink-900', 4.5, 'Nav text over content (worst case)'],
   ['accent-300', 'wash-accent ∘ nav ∘ ink-900', 4.5, 'Nav-link hover label on cyan wash'],
+  ['primary-400', 'wash-primary ∘ nav ∘ ink-900', 4.5, 'Nav active label on fuchsia wash (rest)'],
+  ['primary-300', 'wash-primary ∘ nav ∘ ink-900', 4.5, 'Nav active label on fuchsia wash (hover)'],
   // Non-text UI ≥ 3.0
   ['accent-400', 'ink-950', 3.0, 'Focus ring (UI)'],
   ['border accent-400/55 ∘ ink-900', 'ink-900', 3.0, 'Skill-active / pill-hover border (UI)'],

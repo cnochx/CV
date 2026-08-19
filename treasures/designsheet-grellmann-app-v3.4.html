@@ -71,6 +71,7 @@
     --glow-hover-primary:0 0 36px rgba(232,121,249,.5),0 0 12px rgba(232,121,249,.35);
     --glow-hover-accent:0 0 36px rgba(34,211,238,.5),0 0 12px rgba(34,211,238,.35);
     --wash-accent:rgba(34,211,238,.14);   /* cyan response wash for glass hover */
+    --wash-primary:rgba(232,121,249,.14); /* fuchsia identity wash — nav active  */
   }
 
   *{box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
@@ -170,11 +171,12 @@
      cyan wash + cyan text + lift + glow — no border color ever appears.     */
   .nav-demo a:not(.nav-cta):not(.active):hover{background:var(--wash-accent);color:var(--accent-300);border-color:transparent;transform:translateY(-3px);box-shadow:var(--glow-shadow-accent)}
   .nav-demo a:not(.nav-cta):active{transform:translateY(-1px)}
-  /* Active link = the complete btn-primary effect: solid fuchsia pill at rest,
-     full primary hover (300 fill, lift + scale, wide glow).                  */
-  .nav-demo a.active{background:var(--primary-400);border-color:var(--primary-400);color:var(--ink-950);font-weight:600;box-shadow:var(--shadow-1)}
-  .nav-demo a.active:hover{background:var(--primary-300);border-color:var(--primary-300);color:var(--ink-950);transform:translateY(-3px) scale(1.03);box-shadow:var(--shadow-2),var(--glow-hover-primary)}
-  .nav-demo a.active:active{transform:translateY(-1px) scale(1)}
+  /* Active link = the SAME construction as the inactive hover (wash + colored
+     text + invisible border), only in the identity color: fuchsia. Rests as a
+     wash pill; hover repeats the shared gesture (lift + glow).               */
+  .nav-demo a.active{background:var(--wash-primary);border-color:transparent;color:var(--primary-400);font-weight:600}
+  .nav-demo a.active:hover{color:var(--primary-300);border-color:transparent;transform:translateY(-3px);box-shadow:var(--glow-shadow-primary)}
+  .nav-demo a.active:active{transform:translateY(-1px)}
   .nav-cta{display:inline-block;border:1px solid var(--glass-border-strong);background:var(--glass-1);border-radius:999px;padding:.4rem 1.1rem !important;color:var(--frost-100) !important;font-weight:600 !important;transition:background var(--dur-fast),color var(--dur-fast),border-color var(--dur-fast),transform var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out) !important}
   .nav-cta:hover{background:var(--primary-300);border-color:var(--primary-300);color:var(--ink-950) !important;transform:translateY(-3px) scale(1.03);box-shadow:var(--shadow-2),var(--glow-hover-primary)}
   .nav-cta:active{transform:translateY(-1px) scale(1)}
@@ -346,10 +348,11 @@
       <tr><td>ink-950 on primary-400 → 300 (hover)</td><td><strong>8.04 → 11.24:1</strong></td><td class="pass">pass</td><td>Primary CTA label — hover <em>gains</em> contrast</td></tr>
       <tr><td>ink-950 on accent-400 → 300 (hover)</td><td><strong>10.95 → 13.65:1</strong></td><td class="pass">pass</td><td>Submit label — hover <em>gains</em> contrast</td></tr>
       <tr><td>accent-300 on cyan wash ∘ glass-1 / ∘ nav</td><td><strong>8.84 / 10.61:1</strong></td><td class="pass">pass</td><td>Glass-pill / nav-link hover label</td></tr>
+      <tr><td>primary-400 → 300 on fuchsia wash ∘ nav</td><td><strong>6.53 → 9.13:1</strong></td><td class="pass">pass</td><td>Nav active label (rest → hover)</td></tr>
       <tr><td>frost-100 on glass-3 ∘ 950 / nav ∘ 900</td><td><strong>13.62 / 17.91:1</strong></td><td class="pass">pass</td><td>Active pill / nav over content</td></tr>
       <tr><td>accent-400/55 border ∘ ink-900 (UI 3.0)</td><td><strong>3.86:1</strong></td><td class="pass">pass</td><td>Skill-active + pill-hover border</td></tr>
     </table>
-    <p class="src">Full run: <code>node treasures/contrast-test.mjs</code> — 22/22 pairs pass, glass surfaces alpha-composited before measuring, exits non-zero on any failure (CI-ready). Every text token is licensed for its surface family; new combos must be added to the test before use — no "looks fine" exceptions. (Rule kept from v2.)</p>
+    <p class="src">Full run: <code>node treasures/contrast-test.mjs</code> — 24/24 pairs pass, glass surfaces alpha-composited before measuring, exits non-zero on any failure (CI-ready). Every text token is licensed for its surface family; new combos must be added to the test before use — no "looks fine" exceptions. (Rule kept from v2.)</p>
 
     <h3>Migration map — live site (v1) → v3</h3>
     <table>
@@ -427,7 +430,7 @@
         <a href="#" class="nav-cta">Contact</a>
         <div style="display:flex;gap:.15rem"><a href="#">Education</a><a href="#">Projects</a><a href="#">Imprint</a></div>
       </div>
-      <p class="capt">Surface <code>ink-950/62 + blur 16</code>, 1px glass border; hairline fades in after 24px scroll. Links split around the centered CTA (grid <code>1fr auto 1fr</code>). <strong>Inactive links</strong> hover with the <strong>glass-pill response</strong>: cyan wash <code>accent-400/14</code>, text <code>accent-300</code>, −3px lift + cyan glow — but with an <strong>invisible border</strong> (transparent at rest <em>and</em> on hover), so the pill materializes purely from wash + glow. <strong>Active link = the complete primary-CTA effect</strong>: solid <code>primary-400</code> pill with ink text (8.04:1) at rest, hovering to 300 + lift/scale + wide fuchsia glow — the current section carries the identity color as a "you are here" statement, while cyan stays the response (hover/focus). CTA rests as a glass pill and hovers <strong>exactly like the primary CTA</strong>: fuchsia <code>primary-300</code> fill + ink text (11.24:1), −3px lift + 3% scale, wide fuchsia glow — the nav promise and the hero promise are the same gesture. Mobile: slide-in panel re-surfaces as glass-3 over ink-950; CTA stays beside the burger.</p>
+      <p class="capt">Surface <code>ink-950/62 + blur 16</code>, 1px glass border; hairline fades in after 24px scroll. Links split around the centered CTA (grid <code>1fr auto 1fr</code>). <strong>Inactive links</strong> hover with the <strong>glass-pill response</strong>: cyan wash <code>accent-400/14</code>, text <code>accent-300</code>, −3px lift + cyan glow — but with an <strong>invisible border</strong> (transparent at rest <em>and</em> on hover), so the pill materializes purely from wash + glow. <strong>Active link = the same construction in the identity color</strong>: a fuchsia wash pill <code>primary-400/14</code> with <code>primary-400</code> text and invisible border — structurally identical to the inactive hover, only the hue says "you are here". No solid fill, so it never competes with the CTA's hover moment; hover on it repeats the shared gesture (lift + soft fuchsia glow). One pill language, two colors, clear roles. CTA rests as a glass pill and hovers <strong>exactly like the primary CTA</strong>: fuchsia <code>primary-300</code> fill + ink text (11.24:1), −3px lift + 3% scale, wide fuchsia glow — the nav promise and the hero promise are the same gesture. Mobile: slide-in panel re-surfaces as glass-3 over ink-950; CTA stays beside the burger.</p>
     </div>
 
     <h3>CTA family</h3>
@@ -659,11 +662,10 @@
  hover:-translate-y-1 hover:bg-accent-400/[.14] hover:text-accent-300
  hover:shadow-glow-accent hover:border-transparent
  motion-reduce:hover:transform-none"
-// Nav link (active) — the complete primary-CTA effect as "you are here"
-"rounded-full border border-primary-400 bg-primary-400 px-3 py-1.5 text-sm font-semibold
- text-ink-950 shadow-e1 transition duration-200 ease-out
- hover:-translate-y-1 hover:scale-[1.03] hover:border-primary-300 hover:bg-primary-300
- hover:shadow-glow-primary-lg
+// Nav link (active) — same construction as inactive hover, identity color
+"rounded-full border border-transparent bg-primary-400/[.14] px-3 py-1.5 text-sm
+ font-semibold text-primary-400 transition duration-200 ease-out
+ hover:-translate-y-1 hover:text-primary-300 hover:shadow-glow-primary
  motion-reduce:hover:transform-none"</code></pre>
 
     <h3>Framer Motion primitives (Tier 1)</h3>
@@ -712,7 +714,7 @@ const y = useTransform(scrollYProgress, [0,1], ['0%','-30%']);  // 0.3× speed
   </section>
 
   <footer class="sheet">
-    Designsheet v3.4 · "Clean Core" (Apple Hybrid) · grellmann.app · 2026-08 · Supersedes v2.0 "Warm Glass &amp; Wood" · Accents fixed (fuchsia-400 #e879f9 / cyan-400 #22d3ee) · One ink scale, glass surfaces, no pure white/black · WCAG 2 AA verified by treasures/contrast-test.mjs (22/22) · System type, zero font bytes · Tiers 0–3 with zero SEO/GEO cost per §8 contract · v3.3: unified response-hover across CTA family, nav CTA + nav links (invisible-border glass-pill hover) · v3.4: nav active = complete primary-CTA effect ("you are here") + etched parallax numeral (invisible structure, readable by light)
+    Designsheet v3.4 · "Clean Core" (Apple Hybrid) · grellmann.app · 2026-08 · Supersedes v2.0 "Warm Glass &amp; Wood" · Accents fixed (fuchsia-400 #e879f9 / cyan-400 #22d3ee) · One ink scale, glass surfaces, no pure white/black · WCAG 2 AA verified by treasures/contrast-test.mjs (24/24) · System type, zero font bytes · Tiers 0–3 with zero SEO/GEO cost per §8 contract · v3.3: unified response-hover across CTA family, nav CTA + nav links (invisible-border glass-pill hover) · v3.4: nav active = fuchsia wash pill (same construction as inactive hover, identity color — no solid fill, no CTA collision) + etched parallax numeral (invisible structure, readable by light)
   </footer>
 </div>
 
