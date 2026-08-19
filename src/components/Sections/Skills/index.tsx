@@ -88,7 +88,7 @@ const Skills: FC = memo(() => {
           SetBorder="highlight"
           UseVariantText="bright">
 
-          <h2 className="text-2xl font-bold" id={TitleId}>
+          <h2 className="text-h2 font-bold" id={TitleId}>
             {Title}
 
           </h2>

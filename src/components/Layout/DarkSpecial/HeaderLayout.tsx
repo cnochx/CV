@@ -29,7 +29,7 @@ const HeaderLayout: FC<HeaderLayoutProps> = memo(
           {borderRender
             ? <span
               className={classNames(
-                'absolute inset-x-0 -bottom-1 border-b-2',
+                'absolute inset-x-0 -bottom-1 h-0.5 rounded',
                 borderColorClass,
               )}
             />

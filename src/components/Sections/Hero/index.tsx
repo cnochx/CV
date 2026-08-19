@@ -1,14 +1,10 @@
 import classNames from 'classnames';
-import Image from 'next/image';
 import React, {FC, memo} from 'react';
 
 import HeroSectionData from '../../../data/Hero/HeroSectionData';
 import {heroData} from '../../../data/HeroData';
 import {SectionId} from '../../../data/SectionIdData';
-import {ImgItem} from '../../../data/utilComp/GeneralDef';
 import {HeadingTag} from '../../../data/utilComp/generalTypeDef';
-import {useIsMobile} from '../../../hooks/useIsMobile';
-import {resolveImgSrc} from '../../../utilComp/ResolveHelper/ResolveImageSrc';
 import SkillsElmnt from '../../Layout/ExtElmnt/SkillsElmnt';
 import ArticleExtShell from '../../Layout/ExtShell/ArticleExtShell';
 import HeaderExtShell from '../../Layout/ExtShell/HeaderExtShell';
@@ -51,125 +47,108 @@ const Hero: FC = memo(() => {
   const {actions} = heroData;
 
   const {
-    IxImages,
     IxHeader,
     IxContent,
   } = HeroSectionData ?? {};
 
-  // Catch mobile picture
-  const isMobile = useIsMobile();
-  const imgType = isMobile ? 'mobile' : 'screen';
-  const selectedImg: ImgItem | undefined = IxImages?.find((imgItem) => imgItem.ImgType === imgType);
-  const resolvedImgSrc: string = resolveImgSrc(selectedImg)
-    ? resolveImgSrc(selectedImg)
-    : '';
-
-  // Hero ArticleTags
-  const ArticleTitleTagMain: HeadingTag = 'h2';
-  const ArticleTitleTagSub: HeadingTag = 'h3';
+  // v3.4 hero (designsheet §7.2): the photo background and glass panel retire —
+  // the atmosphere is glow blobs on the ink-950 canvas. The headline becomes
+  // the page's H1 and the guaranteed LCP element (SSR'd DOM, no image race).
+  const ArticleTitleTagMain: HeadingTag = 'h1';
   const ArticleTitleTagContent: HeadingTag =
     IxHeader.HdrSubId ? 'h3' : 'h2';
 
-
-
-
   return (
     <SectionExtShell
-      ClassNameSection="relative w-full max-h-screen overflow-hidden"
+      ClassNameSection="relative w-full overflow-hidden"
       HideDiv={true}
       IsMain={true}
       Padding={false}
       SectionId={SectionId.Hero}
     >
-      <Image
-        alt=""
-        className="absolute inset-0 z-0 object-cover"
-        decoding="async"
-        fill
-        id={`${SectionId}-image-${imgType ?? 'default'}`}
-        priority
-        src={resolvedImgSrc}
-      />
+      {/* L0 glow layer — pure decoration, zero layout impact (§5) */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0">
+        <div className="absolute -left-[12vw] -top-[18vw] h-[56vw] w-[56vw] rounded-full bg-[radial-gradient(closest-side,rgba(232,121,249,0.20),transparent)]" />
+        <div className="absolute -right-[16vw] top-[22vh] h-[44vw] w-[44vw] rounded-full bg-[radial-gradient(closest-side,rgba(34,211,238,0.16),transparent)]" />
+        <div className="absolute -bottom-[14vw] left-[26vw] h-[38vw] w-[38vw] rounded-full bg-[radial-gradient(closest-side,rgba(157,140,245,0.16),transparent)]" />
+      </div>
 
-      <div className="relative z-10 flex max-h-screen w-full items-center justify-center px-4 py-16 lg:px-8">
-        <div className="relative flex h-screen w-full items-center justify-center">
-          <div className="z-10 max-w-screen-lg max-h-screen px-4 lg:px-0">
+      <div className="relative z-10 flex min-h-screen w-full items-center justify-center px-4 py-24 lg:px-8">
 
-            <ArticleExtShell
-              ArticleClassName="grid w-full max-w-screen-xl grid-cols-3 gap-x-4 gap-y-1 rounded-xl border border-white/10 bg-ink-950/40 p-4 text-center shadow-e1 backdrop-blur-sm sm:gap-x-6 sm:gap-y-6 sm:p-6 lg:gap-x-8 lg:gap-y-10 lg:p-8"
-              ArticleId={`${SectionId.Hero}-intro`}
-              DisplaySubDiv={false}
-              LabelledBy={`${SectionId.Hero}-${IxHeader.HdrId}`}
-            >
-              <div className="col-span-3">
-                <HeaderExtShell
-                  HeaderClassName="space-y-1 sm:space-y-2 lg:space-y-3"
-                  HeaderId={SectionId.Hero}
-                  HeaderItem={IxHeader}
-                >
-                  <ArticleTitleTagMain
-                    className="text-2xl font-bold text-frost-300 sm:text-5xl lg:text-6xl"
-                    id={`${SectionId.Hero}-${IxHeader.HdrId}`}
-                  >
-                    {IxHeader.HdrTitle}
-                  </ArticleTitleTagMain>
-
-                  {IxHeader?.HdrSubTitle && (
-                    <ArticleTitleTagSub
-                      className="text-xl font-bold text-frost-100 sm:text-4xl lg:text-5xl"
-                      id={`${SectionId.Hero}-${IxHeader.HdrSubId}`}
-                    >
-                      {IxHeader.HdrSubTitle}
-                    </ArticleTitleTagSub>
-                  )}
-                </HeaderExtShell>
-              </div>
-
-              <SectionExtShell
-                ClassNameSection="col-span-3 w-full min-w-0"
-                IsMain={false}
-                Padding={false}
-                SectionId={`${SectionId.Hero}-content`}
+        <ArticleExtShell
+          ArticleClassName="mx-auto flex w-full max-w-3xl flex-col items-center gap-y-8 text-center sm:gap-y-10"
+          ArticleId={`${SectionId.Hero}-intro`}
+          DisplaySubDiv={false}
+          LabelledBy={`${SectionId.Hero}-${IxHeader.HdrId}`}
+        >
+          <HeaderExtShell
+            HeaderClassName="flex w-full flex-col items-center"
+            HeaderId={SectionId.Hero}
+            HeaderItem={IxHeader}
+          >
+            {/* Eyebrow (visually above the display headline via column-reverse) */}
+            <div className="flex flex-col-reverse items-center gap-y-4">
+              <ArticleTitleTagMain
+                className="text-4xl font-bold tracking-tight text-frost-100 sm:text-h1 lg:text-display"
+                id={`${SectionId.Hero}-${IxHeader.HdrId}`}
               >
-                {IxContent?.map((ContentItem) => (
-                  <SkillsElmnt
-                    AlSkills={ContentItem?.AlSkills}
-                    ArticleTitleTag={ArticleTitleTagContent}
-                    DescriptionClassName=""
-                    LiClassName="w-full"
-                    ParentId={`${SectionId.Hero}-content`}
-                    UlClassName="w-full px-2 w-full px-2 w-full px-2 text-frost-300 font-medium  text-xl  sm:space-y-2  lg:space-y-3 sm:text-2xl lg:text-3xl"
-                    key={ContentItem?.AlSkills?.SeiId}
-                  />
-                ))}
-              </SectionExtShell>
+                {IxHeader.HdrTitle}
+              </ArticleTitleTagMain>
 
-              <aside className="col-span-3 flex flex-col items-center gap-y-8 pt-2">
-                <div className="flex justify-center gap-x-4 text-frost-100">
-                  <Socials />
-                </div>
+              {IxHeader?.HdrSubTitle && (
+                <p
+                  className="text-xs font-semibold uppercase tracking-[0.22em] text-primary-400 sm:text-sm"
+                  id={`${SectionId.Hero}-${IxHeader.HdrSubId}`}
+                >
+                  {IxHeader.HdrSubTitle}
+                </p>
+              )}
+            </div>
+          </HeaderExtShell>
 
-                <div className="flex w-full flex-wrap justify-center gap-3">
-                  {actions.map(({href, text, primary, Icon}) => (
-                    <a
-                      className={classNames(
-                        'flex gap-x-2 rounded-full border bg-white/5 px-4 py-2 text-sm font-medium text-frost-100 ring-offset-ink-950 backdrop-blur-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-base',
-                        primary ? 'border-primary-400 ring-primary-400' : 'border-white/10 ring-white/25',
-                      )}
-                      href={href}
-                      key={text}
-                    >
-                      {text}
-                      {Icon && <Icon className="h-5 w-5 text-frost-100 sm:h-6 sm:w-6" />}
-                    </a>
-                  ))}
-                </div>
-              </aside>
-            </ArticleExtShell>
+          <SectionExtShell
+            ClassNameSection="w-full min-w-0"
+            IsMain={false}
+            Padding={false}
+            SectionId={`${SectionId.Hero}-content`}
+          >
+            {IxContent?.map((ContentItem) => (
+              <SkillsElmnt
+                AlSkills={ContentItem?.AlSkills}
+                ArticleTitleTag={ArticleTitleTagContent}
+                DescriptionClassName=""
+                LiClassName="w-full"
+                ParentId={`${SectionId.Hero}-content`}
+                UlClassName="w-full px-2 text-base font-medium text-frost-300 sm:space-y-1.5 sm:text-lg"
+                key={ContentItem?.AlSkills?.SeiId}
+              />
+            ))}
+          </SectionExtShell>
 
+          <aside className="flex flex-col items-center gap-y-8">
+            <div className="flex w-full flex-wrap justify-center gap-3">
+              {actions.map(({href, text, primary, Icon}) => (
+                <a
+                  className={classNames(
+                    'flex gap-x-2 rounded-full border px-5 py-2.5 text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-ink-950 sm:text-base',
+                    primary
+                      ? 'border-primary-400 bg-primary-400 text-ink-950 shadow-e1 ring-accent-400 hover:bg-primary-300'
+                      : 'border-white/10 bg-white/5 text-frost-100 ring-accent-400 backdrop-blur-md hover:border-accent-400/55 hover:bg-accent-400/15 hover:text-accent-300',
+                  )}
+                  href={href}
+                  key={text}
+                >
+                  {text}
+                  {Icon && <Icon className="h-5 w-5 sm:h-6 sm:w-6" />}
+                </a>
+              ))}
+            </div>
 
-          </div>
-        </div>
+            <div className="flex justify-center gap-x-4 text-frost-100">
+              <Socials />
+            </div>
+          </aside>
+        </ArticleExtShell>
 
         <div className="absolute bottom-6 left-1/2 z-20 -translate-x-1/2">
         <NavSections

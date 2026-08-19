@@ -90,12 +90,12 @@ const PBIndexLyt: FC<ContentIndexLytProps> = memo(({IdxContent, MainSectionId}) 
             SetUnderline={true}
             SuffixTitleTag={ArticleContentTitleTag}>
 
-            <ArticleMainTitleTag className="text-2xl font-bold sm:text-3xl" id={idH2}>
+            <ArticleMainTitleTag className="text-h2 font-bold" id={idH2}>
               {IxHeader.HdrTitle}
             </ArticleMainTitleTag>
             {IxHeader?.HdrSubTitle ? (
               <ArticleSubTitleTag
-                className="text-2xl font-bold sm:text-2xl"
+                className="text-sub font-semibold text-frost-300"
                 id={idH3}>
                 {IxHeader?.HdrSubTitle}
               </ArticleSubTitleTag>
@@ -108,7 +108,7 @@ const PBIndexLyt: FC<ContentIndexLytProps> = memo(({IdxContent, MainSectionId}) 
           <section>
             {IxDescription.DnHead ? (
               <p
-                className="text-2xl font-bold sm:text-2xl"
+                className="text-sub font-semibold"
                 id={`${IxDescription.DnId}}-title`}>
                 {IxDescription.DnText}
               </p>

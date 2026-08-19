@@ -9,19 +9,22 @@ import {SetHover} from '../../data/SectionHelperDef';
  */
 const ICON_BUTTON_COLOR_MAP = {
   bright: {
-    border: 'border-white/10',
+    border: 'bg-white/10',
     text: 'text-frost-100',
   },
   dark: {
-    border: 'border-ink-950',
+    border: 'bg-ink-950',
     text: 'text-ink-950',
   },
+  // v3.4: the section-header hairline for the primary variant is the aurora
+  // gradient (fuchsia → violet → cyan) — the only gradient in the system,
+  // licensed for 1–2px underlines and rails only (designsheet §2).
   highlight: {
-    border: 'border-primary-400',
+    border: 'bg-aurora',
     text: 'text-primary-400',
   },
   highlightAlt: {
-    border: 'border-accent-400',
+    border: 'bg-accent-400',
     text: 'text-accent-400',
   }
 } as const;

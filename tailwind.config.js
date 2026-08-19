@@ -59,17 +59,8 @@ module.exports = {
         aurora: 'linear-gradient(100deg,#e879f9,#9d8cf5 50%,#22d3ee)',
       },
       keyframes: {
-        // DEPRECATED (v1): typing/blink retire with the hero restyle
-        // (refactoring step 4) — replaced by staggered Framer Motion reveal.
-        typing: {
-          '0%, 100%': {width: '0%'},
-          '30%, 70%': {width: '100%'},
-        },
-        blink: {
-          '0%': {
-            opacity: 0,
-          },
-        },
+        // typing/blink (v1 hero) deleted in step 4 — hero reveal becomes a
+        // staggered Framer Motion animation in Tier 1 (step 6).
         'rotate-loader': {
           '0%': {
             transform: 'rotate(0deg)',

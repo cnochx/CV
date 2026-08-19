@@ -57,9 +57,9 @@ const About: FC = memo(() => {
           <div className="col-span-1 flex flex-col gap-y-6 md:col-span-3">
 
             <header className="flex flex-col gap-y-2">
-              <h2 className="text-2xl font-bold text-frost-100"
+              <h2 className="text-h2 font-bold text-frost-100"
                   id={TitleId}>{Title}</h2>
-              <span className="absolute inset-x-0 -bottom-1 border-b-2 border-fuchsia-400" />
+              <span className="h-0.5 w-2/3 rounded bg-aurora" />
             </header>
 
             <section className="col-span-1 flex flex-col gap-y-6 md:col-span-3">
@@ -93,7 +93,7 @@ const About: FC = memo(() => {
         </article>
       </div>
 
-      <hr className="mt-8 border-0 border-b-2 border-fuchsia-400" />
+      <hr className="mt-8 h-0.5 rounded border-0 bg-aurora" />
 
     </SectionLayout>
   );
