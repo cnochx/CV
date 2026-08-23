@@ -104,7 +104,11 @@ const Testimonials: FC = memo(() => {
               </h2>
             </HeaderLayout>
 
-            <p className="prose prose-sm leading-7 text-frost-300 sm:prose-base">{Description}</p>
+            {/* A div, not a p: the description from HeaderData already contains
+                its own <p>, and nesting paragraphs is invalid HTML. The browser
+                auto-closes the outer one while parsing, so the server markup no
+                longer matches React's tree and hydration fails. */}
+            <div className="prose prose-sm leading-7 text-frost-300 sm:prose-base">{Description}</div>
           </header>
 
           <div className="flex flex-col items-center gap-y-6 rounded-xl border border-white/10 bg-ink-950/50 p-6 shadow-e1 backdrop-blur-sm">
