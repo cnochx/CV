@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import {FC, memo} from 'react';
 
 import {imprintItems} from '../data/FooterData';
+import HeaderLayout from './Layout/DarkSpecial/HeaderLayout';
 
 const Imprint: FC = memo(() => {
   const {
@@ -17,9 +18,14 @@ const Imprint: FC = memo(() => {
   return (
     <section className="flex gap-x-4 items-start">
       <article className="order-1 flex-col w-1/2 gap-y-4 md:order-2 flex">
-        <header>
-          <h2 className="text-h3 font-bold text-frost-100">{header}</h2>
-        </header>
+        {/* Same header mechanism as the page sections: the aurora hairline is
+            resolved through the semantic variant enum, not a local class. */}
+        <HeaderLayout
+          ClassName={null}
+          SetBorder="highlight"
+          UseVariantText="bright">
+          <h2 className="text-h2 font-bold">{header}</h2>
+        </HeaderLayout>
         <section className="w-1/2">
           {adressheader && <h3 className="font-bold text-frost-100">{adressheader}</h3>}
           {personInCharge && (
@@ -89,9 +95,12 @@ const Imprint: FC = memo(() => {
         </section>
       </article>
       <article className="order-3 flex flex-col w-1/2 gap-y-4">
-        <header>
-          <h2 className="text-h3 font-bold text-frost-100">{headerLegal}</h2>
-        </header>
+        <HeaderLayout
+          ClassName={null}
+          SetBorder="highlight"
+          UseVariantText="bright">
+          <h2 className="text-h2 font-bold">{headerLegal}</h2>
+        </HeaderLayout>
         {legalContent && <section>{legalContent}</section>}
       </article>
     </section>
