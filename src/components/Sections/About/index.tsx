@@ -94,7 +94,7 @@ const About: FC = memo(() => {
         </article>
       </Reveal>
 
-      <hr className="mt-8 h-0.5 rounded border-0 bg-aurora" />
+      <hr className="mt-8" />
 
     </SectionLayout>
   );

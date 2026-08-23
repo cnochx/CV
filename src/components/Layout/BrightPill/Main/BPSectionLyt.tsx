@@ -137,7 +137,7 @@ const BPSectionLyt: FC<ContentSectionLytProps> = memo(({
       {AlDivide ? (
         <div className="md:col-span-3">
           <div className="mb-4 pt-12">
-            <hr className="mt-1 border-0 border-b-2 border-fuchsia-400" />
+            <hr className="mt-1" />
           </div>
         </div>
       ) : (

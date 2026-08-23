@@ -55,8 +55,10 @@ module.exports = {
           '0 0 36px rgba(34,211,238,.5),0 0 12px rgba(34,211,238,.35)',
       },
       backgroundImage: {
-        // Aurora hairline — 1–2px underlines/rails ONLY, never a fill (§2)
-        aurora: 'linear-gradient(100deg,#e879f9,#9d8cf5 50%,#22d3ee)',
+        // Aurora hairline — 1–2px underlines/rails ONLY, never a fill (§2).
+        // Defined once as --aurora in globalStyles.scss, shared with the base
+        // `hr` rule so the utility and the element cannot drift apart.
+        aurora: 'var(--aurora)',
       },
       keyframes: {
         // typing/blink (v1 hero) deleted in step 4 — hero reveal becomes a

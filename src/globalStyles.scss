@@ -202,9 +202,27 @@
 }
 
 /* Global styles */
+:root {
+  /* The single aurora definition. tailwind.config.js points `bg-aurora` at this
+     custom property, so the utility and the element styles below cannot drift
+     apart — there is one gradient in the system and one place to change it. */
+  --aurora: linear-gradient(100deg, #e879f9, #9d8cf5 50%, #22d3ee);
+}
+
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Every horizontal rule is an aurora hairline (Designsheet §2: the aurora is
+   licensed for 1–2px lines only, never as a fill). Declaring it on the element
+   means a plain `<hr />` is already correct and call sites only decide spacing.
+   Placed after the Tailwind layers so it overrides preflight's border reset. */
+hr {
+  height: 2px;
+  border: 0;
+  border-radius: 9999px;
+  background-image: var(--aurora);
 }
 
 html {

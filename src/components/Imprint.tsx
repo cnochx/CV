@@ -31,7 +31,7 @@ const Imprint: FC = memo(() => {
           )}
           {addressGermany && (
             <>
-              <hr className="border-ink-700 my-4" />
+              <hr className="my-4" />
               <address>
                 <ul>
                   {addressGermany.map(({aiKey, text}) => {
@@ -47,7 +47,7 @@ const Imprint: FC = memo(() => {
           )}
           {addressBrazil && (
             <>
-              <hr className="border-ink-700 my-4" />
+              <hr className="my-4" />
               <address>
                 <ul>
                   {addressBrazil.map(({aiKey, text}) => {
@@ -63,7 +63,7 @@ const Imprint: FC = memo(() => {
           )}
           {onlineAddress && (
             <>
-              <hr className="border-ink-700 my-4" />
+              <hr className="my-4" />
               <address>
                 <ul>
                   {onlineAddress.map(({liKey, linkLabel, text, href}) => {
