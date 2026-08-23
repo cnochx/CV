@@ -37,7 +37,7 @@ const HeaderExtShell = memo(({children,
     HeaderItem);
 
   const setUnderlineClassName =
-    UnderlineClassName ?? 'mt-1 h-px w-3/4 border-b-2 border-fuchsia-400';
+    UnderlineClassName ?? 'mt-1 h-0.5 w-3/4 rounded bg-aurora';
 
   return (
     <header className={HeaderClassName}>
@@ -56,7 +56,7 @@ const HeaderExtShell = memo(({children,
 
           {HeaderItem.HdrTitleSuffix.SxTitle && SuffixTitleTag
             ? (<SuffixTitleTag
-              className="text-xl font-bold sm:text-xl"
+              className="text-h3 font-semibold"
               id={headerIds.idH}>
               {HeaderItem.HdrTitleSuffix.SxTitle}
             </SuffixTitleTag>)

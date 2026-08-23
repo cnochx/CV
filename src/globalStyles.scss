@@ -12,6 +12,206 @@
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+
+  /* ── Tier 1 motion utilities (Designsheet v3.4 §5) ──────────────────
+     Driven by CSS custom properties that useReactiveLight writes on the
+     element, so pointer movement never triggers a React render.        */
+
+  /* Scroll reveal — fail-safe by construction: `.reveal` alone is visible and
+     does nothing. Only `.reveal-armed`, which Reveal.tsx adds at the same moment
+     it starts observing, hides the element; `.reveal-in` brings it back. */
+  .reveal-armed {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal-armed.reveal-in {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+  }
+
+  /* Glow parallax (L0): GlowParallax.tsx writes --scroll-progress on the layer;
+     each blob multiplies it by its own depth factor. Compositor-only work. */
+  .glow-blob {
+    --glow-depth: 0;
+    transform: translate3d(0, calc(var(--scroll-progress, 0) * var(--glow-depth) * -1px), 0);
+  }
+
+  .glow-blob--primary {
+    --glow-depth: 180;
+  }
+
+  .glow-blob--accent {
+    --glow-depth: 320;
+  }
+
+  .glow-blob--violet {
+    --glow-depth: 260;
+  }
+
+  /* Scene parent: gives children a shared vanishing point. */
+  .tilt-scene {
+    perspective: 1200px;
+  }
+
+  /* Perspective tilt, capped at ±4° by the hook.
+     The transition only covers the glide back to rest — while the pointer moves,
+     `.tilt-following` removes it so the surface tracks the cursor directly
+     instead of restarting a 400ms easing on every pointer event.
+
+     Deliberately NOT `transform-style: preserve-3d`: the children have no 3D
+     transforms of their own, and preserve-3d would force the browser to keep
+     every child in its own 3D plane and re-rasterize the whole subtree (image,
+     overlays, vignette) each frame. Flattened, the card is rasterized once and
+     the rotation runs on the compositor.
+
+     At rest the element carries NO transform at all. A permanent transform —
+     even `rotate3d(..., 0deg)` — keeps the card on its own compositor layer,
+     where a hairline `white/10` border on rounded corners visibly frays from
+     re-sampling. Saturated borders hide this, faint ones do not. `.tilt-primed`
+     is therefore only present while hovering and during the glide back. */
+  .tilt-target {
+    transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .tilt-target.tilt-primed {
+    transform: rotate3d(1, 0, 0, var(--tilt-x, 0deg)) rotate3d(0, 1, 0, var(--tilt-y, 0deg));
+    backface-visibility: hidden;
+  }
+
+  .tilt-target.tilt-following {
+    transition: none;
+    will-change: transform;
+  }
+
+  /* Aurora underline for elements that cannot use an <hr>.
+     A gradient cannot be expressed as a border-color, so the line is drawn as a
+     2px background strip pinned to the bottom edge: no extra element, no effect
+     on layout, and it works on flex containers like the accordion buttons where
+     an ::after would become a flex child. */
+  .aurora-underline {
+    background-image: var(--aurora);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 100% 2px;
+  }
+
+  /* Clean Core shells (L0 decoration).
+     Very slow, opposing rotations — the object should read as "alive" without
+     ever competing with the headline in front of it. Transform only, so the
+     whole thing stays on the compositor. */
+  .cc-shell {
+    animation: cc-orbit 64s linear infinite;
+  }
+
+  .cc-shell--middle {
+    animation-duration: 92s;
+    animation-direction: reverse;
+  }
+
+  .cc-shell--inner {
+    animation-duration: 120s;
+  }
+
+  @keyframes cc-orbit {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cc-shell {
+      animation: none;
+    }
+  }
+
+  /* Stable hover hitbox.
+     Elements that lift on hover move out from under the cursor. At the edge that
+     produces a feedback loop: hover lifts the element, the pointer is no longer
+     over it, it drops back, hover triggers again — the flicker reads as the UI
+     being unable to decide. An invisible pseudo-element extends the hit area
+     further than the lift distance, so the pointer never leaves.
+     Bonus: it enlarges small touch targets. */
+  .hover-stable {
+    position: relative;
+  }
+
+  .hover-stable::before {
+    content: '';
+    position: absolute;
+    /* Vertical only, and smaller than the smallest gap between neighbours.
+       The lift is 2px upwards, so 4px of vertical buffer is enough — expanding
+       sideways as well would make adjacent pills (gap-2 = 8px) overlap by 4px
+       each, and in that overlap the pointer would alternate between them. */
+    top: -4px;
+    right: 0;
+    bottom: -4px;
+    left: 0;
+    z-index: 0;
+  }
+
+  /* Cursor-following sheen.
+     The gradient is a fixed-size circle that is MOVED with translate3d rather
+     than a gradient repainted at a new position on every frame: painting a
+     ~500px radial gradient per pointer event is expensive, translating an
+     already-rasterized layer is nearly free. The parent clips it (overflow
+     hidden), so it still reads as light travelling across the surface. */
+  .lit {
+    position: relative;
+  }
+
+  .lit::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 640px;
+    height: 640px;
+    margin: -320px 0 0 -320px;
+    z-index: 20;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    background: radial-gradient(circle closest-side, rgba(255, 255, 255, 0.1), transparent);
+    transform: translate3d(var(--mx-px, 0px), var(--my-px, 0px), 0);
+    transition: opacity 400ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Driven by the debounced React phase, not by `:hover`: the tilt moves the
+     element's own edges, so a CSS hover would toggle on and off at the border
+     while the state-driven styling stays put. */
+  .lit.lit-on::after {
+    opacity: 1;
+  }
+
+  /* Motion safety: reduced-motion users get the flat Tier 0 surface. */
+  @media (prefers-reduced-motion: reduce) {
+    .tilt-target {
+      transform: none;
+      transition: none;
+    }
+
+    .lit::after {
+      display: none;
+    }
+
+    /* Belt and braces: even if an element was armed before the preference was
+       evaluated, it must not stay hidden. */
+    .reveal-armed {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .glow-blob {
+      transform: none;
+    }
+  }
 }
 
 @supports (-webkit-touch-callout: none) {
@@ -21,9 +221,27 @@
 }
 
 /* Global styles */
+:root {
+  /* The single aurora definition. tailwind.config.js points `bg-aurora` at this
+     custom property, so the utility and the element styles below cannot drift
+     apart — there is one gradient in the system and one place to change it. */
+  --aurora: linear-gradient(100deg, #e879f9, #9d8cf5 50%, #22d3ee);
+}
+
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Every horizontal rule is an aurora hairline (Designsheet §2: the aurora is
+   licensed for 1–2px lines only, never as a fill). Declaring it on the element
+   means a plain `<hr />` is already correct and call sites only decide spacing.
+   Placed after the Tailwind layers so it overrides preflight's border reset. */
+hr {
+  height: 2px;
+  border: 0;
+  border-radius: 9999px;
+  background-image: var(--aurora);
 }
 
 html {
@@ -35,9 +253,11 @@ html {
 body {
   position: relative;
   width: 100%;
-  color: #444444;
+  /* Designsheet v3.4 "Clean Core" foundation (§2): one dark world.
+     frost-100 text on ink-950 canvas — 18.17:1 (contrast-test.mjs). */
+  color: #f5f5f7; // frost-100
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Ubuntu, 'Helvetica Neue', sans-serif;
-  background-color: #fafafa;
+  background-color: #0a0a0c; // ink-950
 }
 
 td,

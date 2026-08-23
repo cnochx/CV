@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design Pattern v2.0 — grellmann.app · Warm Glass & Wood</title>
+<!-- Preview-only webfont load. PRODUCTION self-hosts both families as variable woff2
+     in /public/fonts — see §9 Implementation. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300..700;1,400&family=Space+Grotesk:wght@400..600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* ══ v2.0 TOKENS · "Warm Glass & Wood" ══════════════════════════
+       Rule: no pure #fff / #000 anywhere. Neutrals are plum-tinted
+       (dark world) or ivory-tinted (light world) so they sit on the
+       same hue axis as the two accents.                              */
+
+    /* Accents (fixed by brief) */
+    --primary-300:#f0abfc;      /* fuchsia-300 · tints, soft glow      */
+    --primary-400:#e879f9;      /* fuchsia-400 · PRIMARY               */
+    --primary-600:#c026d3;      /* fuchsia-600 · borders/icons on ivory (≥3:1) */
+    --primary-700:#a21caf;      /* fuchsia-700 · primary TEXT on ivory (AA 4.5)*/
+    --accent-300:#67e8f9;       /* cyan-300 · halos, focus tint        */
+    --accent-400:#22d3ee;       /* cyan-400 · ACCENT / active          */
+    --accent-600:#0891b2;       /* cyan-600 · borders/icons on ivory (≥3:1)    */
+    --accent-800:#155e75;       /* cyan-800 · accent TEXT on ivory (AA 4.5)    */
+
+    /* Ink scale — violet-plum charcoal, replaces neutral-800/900 */
+    --ink-950:#16121d;          /* deepest surface, never #000         */
+    --ink-900:#1c1726;          /* dark section background             */
+    --ink-800:#262032;          /* raised dark surface / cards         */
+    --ink-700:#332b42;          /* hairlines on dark, hover surface    */
+    --ink-500:#6f6580;          /* muted text on IVORY only (AA 4.5)   */
+    --ink-400:#948aa6;          /* muted/meta text on ink (AA 4.5)     */
+
+    /* Ivory scale — warm off-white, pairs with wood, replaces #fafafa */
+    --ivory-50:#f7f4ef;         /* light canvas, never #fff            */
+    --ivory-100:#f0ebe3;        /* raised light surface                */
+    --ivory-200:#e4dcd1;        /* hairlines on light                  */
+    --ivory-300:#efe9f2;        /* cool ivory · text on dark (no #fff) */
+
+    /* Wood scale — sampled register of src/images/wood.webp */
+    --wood-200:#d9c5ab;         /* ash · light grain highlight         */
+    --wood-400:#a87f5c;         /* oak · warm midtone, plinth edges    */
+    --wood-600:#6e4f38;         /* walnut · solid anchor               */
+    --wood-800:#3f2e22;         /* smoked · wood-on-dark, scrims       */
+
+    /* Aurora hairline — the ONLY gradient in the system.
+       1px rings / underlines only. Never a button fill.               */
+    --aurora:linear-gradient(100deg,var(--primary-400),#9d8cf5 50%,var(--accent-400));
+
+    /* Type */
+    --font-body:'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;
+    --font-head:'Space Grotesk',var(--font-body);
+
+    /* Z-space (3D-transmission prep, see §8) */
+    --persp:1200px;
+    --z-rest:0px; --z-raise:24px; --z-float:48px;
+    --ease-glide:cubic-bezier(.22,.61,.25,1);
+    --dur-fast:180ms; --dur-move:320ms;
+
+    /* Elevation — soft plum shadows, Apple-quiet */
+    --shadow-1:0 1px 2px rgba(22,18,29,.25),0 2px 8px rgba(22,18,29,.18);
+    --shadow-2:0 4px 12px rgba(22,18,29,.28),0 12px 32px rgba(22,18,29,.22);
+  }
+
+  *{box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:var(--font-body);font-weight:400;background:var(--ink-900);color:var(--ivory-300);line-height:1.65;font-size:1rem}
+
+  /* ── Sheet chrome (set in the v2 system itself — the sheet is its own demo) ── */
+  .wrap{max-width:1024px;margin:0 auto;padding:0 1.25rem}
+  header.sheet{padding:4.5rem 0 3rem;border-bottom:1px solid var(--ink-700)}
+  .eyebrow{font-family:var(--font-head);font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--primary-400);font-weight:500}
+  h1{font-family:var(--font-head);font-size:clamp(1.73rem,1.1rem + 2.4vw,2.49rem);font-weight:600;color:var(--ivory-300);margin:.4rem 0 .2rem;line-height:1.15;letter-spacing:-.01em}
+  .sub{font-size:clamp(1.05rem,2vw,1.25rem);font-weight:300;color:var(--ink-400);margin:0;max-width:60ch}
+  .meta{color:var(--ink-400);font-size:.85rem;margin-top:1.1rem}
+  .meta code{color:var(--accent-400)}
+
+  section.block{padding:3.5rem 0;border-bottom:1px solid var(--ink-800)}
+  h2{font-family:var(--font-head);font-size:1.44rem;font-weight:500;color:var(--ivory-300);margin:0 0 .3rem;letter-spacing:-.005em;position:relative;display:inline-block;padding-bottom:.4rem}
+  h2::after{content:"";position:absolute;left:0;right:32%;bottom:0;height:2px;border-radius:2px;background:var(--aurora)}
+  .lede{color:var(--ink-400);font-size:.95rem;max-width:64ch;margin:1rem 0 1.8rem}
+  .lede strong{color:var(--ivory-300);font-weight:600}
+  h3{font-family:var(--font-head);font-size:1.05rem;font-weight:500;color:var(--ivory-300);margin:2.2rem 0 .9rem;letter-spacing:.01em}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.82rem;color:var(--accent-300)}
+  .src{font-size:.75rem;color:var(--ink-400);margin-top:.6rem}
+  .src code{color:var(--ink-400)}
+
+  /* Swatches */
+  .swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.8rem}
+  .sw{border-radius:.75rem;overflow:hidden;border:1px solid var(--ink-700);background:var(--ink-800)}
+  .sw .chip{height:60px}
+  .sw .lbl{padding:.55rem .7rem}
+  .sw .name{font-size:.75rem;font-weight:600;color:var(--ivory-300);display:block}
+  .sw .hex{font-size:.75rem;color:var(--ink-400);font-family:ui-monospace,Menlo,monospace}
+  .sw .use{font-size:.75rem;color:var(--ink-400);display:block;margin-top:.15rem;line-height:1.4}
+
+  /* Type rows */
+  .type-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem 1.5rem;padding:.9rem 0;border-bottom:1px dashed var(--ink-800)}
+  .type-row:last-child{border-bottom:none}
+  .type-spec{flex:0 0 210px;font-size:.75rem;color:var(--ink-400);font-family:ui-monospace,Menlo,monospace;line-height:1.5}
+
+  /* Tables */
+  table{border-collapse:collapse;width:100%;font-size:.84rem}
+  th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--ink-800);vertical-align:top}
+  th{font-family:var(--font-head);font-weight:500;color:var(--ivory-300);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase}
+  td{color:var(--ink-400)}
+  td strong{color:var(--ivory-300);font-weight:600}
+  td code{color:var(--accent-300)}
+
+  /* Stages for live samples */
+  .stage{background:var(--ink-800);border:1px solid var(--ink-700);border-radius:1rem;padding:1.6rem;display:flex;flex-wrap:wrap;gap:1.1rem;align-items:center}
+  .stage.bright{background:var(--ivory-50)}
+  .stage.wooden{background:
+      linear-gradient(rgba(63,46,34,.72),rgba(28,23,38,.85)),
+      repeating-linear-gradient(92deg,#6e4f38 0 14px,#5d422e 14px 26px),
+      var(--wood-600)}
+  .capt{font-size:.75rem;color:var(--ink-400);margin-top:.55rem;max-width:70ch}
+
+  /* ══ COMPONENT RECIPES (live) ══════════════════════════════════ */
+
+  /* Primary CTA — solid, high contrast, ink text on fuchsia */
+  .btn{font-family:var(--font-body);font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.55rem;border-radius:999px;transition:transform var(--dur-fast) var(--ease-glide),box-shadow var(--dur-fast) var(--ease-glide),background-color var(--dur-fast),color var(--dur-fast),border-color var(--dur-fast)}
+  .btn:focus-visible{outline:none;box-shadow:0 0 0 2px var(--ink-900),0 0 0 4px var(--accent-400)}
+  .btn-primary{background:var(--primary-400);color:var(--ink-950);border:1px solid var(--primary-400);padding:.8rem 1.75rem;font-size:1rem;box-shadow:var(--shadow-1)}
+  .btn-primary:hover{background:var(--primary-300);transform:translateY(-2px);box-shadow:var(--shadow-2)}
+  .btn-primary:active{transform:translateY(0);box-shadow:var(--shadow-1)}
+  /* Secondary — hairline pill */
+  .btn-secondary{background:transparent;color:var(--ivory-300);border:1.5px solid var(--primary-400);padding:.6rem 1.3rem;font-size:.9rem;font-weight:500}
+  .btn-secondary:hover{background:rgba(34,211,238,.14);border-color:var(--accent-400);transform:translateY(-2px)}
+  .stage.bright .btn-secondary{color:var(--ink-900);border-color:var(--primary-600)}
+  .stage.bright .btn-secondary:hover{border-color:var(--accent-600)}
+  /* Tertiary — quiet text link */
+  .btn-ghost{background:none;border:none;color:var(--accent-400);padding:.5rem .25rem;font-size:.9rem;font-weight:500;border-radius:.375rem}
+  .btn-ghost:hover{color:var(--accent-300);transform:translateX(2px)}
+  /* Submit — max contrast on dark form surface */
+  .btn-submit{background:var(--accent-400);color:var(--ink-950);border:none;padding:.8rem 2.2rem;font-size:1rem;box-shadow:var(--shadow-1)}
+  .btn-submit:hover{background:var(--accent-300);transform:translateY(-2px);box-shadow:var(--shadow-2)}
+
+  /* Nav sample */
+  .nav-demo{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.55rem 1.1rem;border-radius:999px;background:rgba(28,23,38,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--ink-700)}
+  .nav-demo a{color:var(--ink-400);text-decoration:none;font-size:.85rem;font-weight:500;padding:.35rem .6rem;border-radius:.5rem;transition:color var(--dur-fast)}
+  .nav-demo a:hover{color:var(--ivory-300)}
+  .nav-demo a.active{color:var(--accent-400)}
+  .nav-cta{border:1.5px solid var(--primary-400);border-radius:999px;padding:.4rem 1.1rem !important;color:var(--ivory-300) !important;font-weight:600 !important;transition:background var(--dur-fast),color var(--dur-fast) !important}
+  .nav-cta:hover{background:var(--primary-400);color:var(--ink-950) !important}
+
+  /* Skill card — kept from #skills, re-tokenized */
+  .skill-card{position:relative;overflow:hidden;border-radius:1rem;color:var(--ivory-300);width:min(300px,100%);cursor:pointer;border:1px solid var(--primary-400);transition:border-color var(--dur-fast),transform var(--dur-move) var(--ease-glide),box-shadow var(--dur-move) var(--ease-glide);transform-style:preserve-3d}
+  .skill-card .ov{position:absolute;inset:0;background:rgba(38,32,50,.55);transition:background-color var(--dur-fast)}
+  .skill-card .rim{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 35%,rgba(22,18,29,.38) 78%,rgba(22,18,29,.62) 100%)}
+  .skill-card .content{position:relative;z-index:10;padding:1rem;display:flex;flex-direction:column;gap:.6rem}
+  .skill-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-2)}
+  .skill-card:hover .ov{background:rgba(63,46,34,.5)}
+  .skill-card.active{border-color:var(--accent-400);box-shadow:0 0 0 1px rgba(232,121,249,.55),0 0 0 2px var(--ink-800)}
+  .skill-card h4{margin:0;font-family:var(--font-head);font-size:1rem;font-weight:500}
+  .skill-card p{margin:0;font-size:.82rem;color:var(--ink-400)}
+  .progress{height:5px;border-radius:999px;background:rgba(239,233,242,.14);overflow:hidden}
+  .progress i{display:block;height:100%;border-radius:999px}
+  .p-inactive{background:var(--primary-400);width:70%}
+  .p-active{background:var(--accent-400);width:85%}
+
+  /* Wooden plinth panel */
+  .plinth{border-radius:1rem;padding:1.4rem;max-width:340px;color:var(--ivory-300);background:rgba(28,23,38,.6);backdrop-filter:blur(8px);border:1px solid rgba(217,197,171,.28);border-bottom:4px solid var(--wood-400);box-shadow:var(--shadow-1);transition:transform var(--dur-move) var(--ease-glide),box-shadow var(--dur-move) var(--ease-glide)}
+  .plinth:hover{transform:translateY(-3px);box-shadow:var(--shadow-2)}
+  .plinth h4{margin:0 0 .4rem;font-family:var(--font-head);font-weight:500;font-size:1rem}
+  .plinth p{margin:0;font-size:.84rem;color:var(--ivory-200)}
+
+  /* Form fields */
+  .field{display:flex;flex-direction:column;gap:.35rem;min-width:220px;flex:1}
+  .field label{font-size:.78rem;font-weight:600;color:var(--ink-400);letter-spacing:.04em}
+  .field input,.field textarea{font-family:var(--font-body);font-size:.95rem;color:var(--ivory-300);background:var(--ink-900);border:1px solid var(--ink-700);border-radius:.625rem;padding:.7rem .9rem;transition:border-color var(--dur-fast),box-shadow var(--dur-fast)}
+  .field input:hover,.field textarea:hover{border-color:var(--ink-500)}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--accent-400);box-shadow:0 0 0 3px rgba(34,211,238,.18)}
+
+  /* 3D tilt demo (CSS-only Tier 1) */
+  .tilt-scene{perspective:var(--persp);display:inline-block}
+  .tilt{width:230px;border-radius:1rem;background:var(--ink-800);border:1px solid var(--ink-700);border-bottom:4px solid var(--wood-400);padding:1.1rem;transform-style:preserve-3d;transition:transform var(--dur-move) var(--ease-glide),box-shadow var(--dur-move) var(--ease-glide)}
+  .tilt-scene:hover .tilt{transform:rotateX(7deg) rotateY(-9deg) translateZ(var(--z-raise));box-shadow:var(--shadow-2)}
+  .tilt .float{display:inline-block;transform:translateZ(28px);font-family:var(--font-head);font-weight:500;color:var(--primary-400)}
+  .tilt p{margin:.4rem 0 0;font-size:.8rem;color:var(--ink-400);transform:translateZ(14px)}
+  @media (prefers-reduced-motion:reduce){
+    .tilt-scene:hover .tilt,.skill-card:hover,.plinth:hover,.btn:hover{transform:none}
+  }
+
+  /* Blueprint wireframes (§7) */
+  .bp{border:1px dashed var(--ink-700);border-radius:.9rem;padding:1rem;margin:.9rem 0;font-size:.78rem;color:var(--ink-400)}
+  .bp .row{display:flex;gap:.5rem;flex-wrap:wrap;margin:.4rem 0}
+  .bp .cell{border:1px solid var(--ink-700);border-radius:.5rem;padding:.45rem .7rem;background:var(--ink-800);color:var(--ivory-300);font-size:.75rem}
+  .bp .cell.hi{border-color:var(--primary-400)}
+  .bp .cell.alt{border-color:var(--accent-400)}
+  .bp .cell.wood{border-color:var(--wood-400);background:linear-gradient(rgba(63,46,34,.5),rgba(38,32,50,.9))}
+  .bp .cell.grow{flex:1;text-align:center}
+
+  pre{background:var(--ink-950);border:1px solid var(--ink-700);border-radius:.75rem;padding:1rem 1.2rem;overflow-x:auto;font-size:.78rem;line-height:1.6;color:var(--ivory-200)}
+  pre code{color:inherit;font-size:inherit}
+  .ok{color:var(--accent-400)} .warn{color:var(--primary-300)}
+  footer.sheet{padding:2.5rem 0 3.5rem;color:var(--ink-400);font-size:.78rem}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="sheet">
+    <span class="eyebrow">Design Pattern · v2.0 · Refactoring Target · 3D-Transmission Ready</span>
+    <h1>grellmann.app — Warm Glass &amp; Wood</h1>
+    <p class="sub">A minimalist, Apple-grade evolution of the existing system: plum-ink glass surfaces, ivory light, two fixed accents, and wood as the grounding material. Every token here is chosen so the site can later be lifted into real 3D without touching content, SEO, or usability.</p>
+    <p class="meta">Supersedes the v1.0 extraction sheet (this file, previous revision). Implementation surface: <code>tailwind.config.js</code> · <code>globalStyles.scss</code> · the 4-value semantic variant enum in <code>SurfaceTokens.tsx</code> · <code>/public/fonts</code> (new). Stack unchanged: Next.js · TypeScript · Tailwind CSS.</p>
+  </header>
+
+  <!-- ══════════ 1 · PRINCIPLES ══════════ -->
+  <section class="block">
+    <h2>1 · Principles</h2>
+    <table>
+      <tr><th>#</th><th>Principle</th><th>Concrete rule</th></tr>
+      <tr><td>P1</td><td><strong>No absolute white or black</strong></td><td>Lightest value is ivory <code>#f7f4ef</code> / <code>#efe9f2</code>; darkest is ink <code>#16121d</code>. Both carry a hue (warm ivory, plum ink) that ties neutrals to the accents.</td></tr>
+      <tr><td>P2</td><td><strong>Two accents, strict roles</strong></td><td>Fuchsia-400 = identity, rest state, primary action. Cyan-400 = response: active, focus, success, links. They never fight — one surface uses one accent dominantly.</td></tr>
+      <tr><td>P3</td><td><strong>Wood is a material, not a color</strong></td><td><code>wood.webp</code> appears as texture behind glass overlays and as a 4px "plinth" bottom edge on cards. Wood tones are never used for text or interactive states.</td></tr>
+      <tr><td>P4</td><td><strong>Quiet type, smaller headings</strong></td><td>Minor-third scale (×1.2), heading weight 500–600 (never 700), hero caps at ~2.5rem instead of the old 3.75rem. Personality comes from the head family, not from size.</td></tr>
+      <tr><td>P5</td><td><strong>Depth is earned</strong></td><td>One shadow pair (<code>--shadow-1/2</code>), translucent glass, and a single aurora hairline gradient. No decorative gradients on fills.</td></tr>
+      <tr><td>P6</td><td><strong>Content first, 3D as garnish</strong></td><td>All copy is real DOM. Any 3D lives in <code>aria-hidden</code> presentation layers, lazy-loaded, with a 2D fallback identical in content. Zero SEO/GEO cost by construction.</td></tr>
+      <tr><td>P7</td><td><strong>Motion glides, never bounces</strong></td><td>One easing (<code>--ease-glide</code>), 180ms color / 320ms movement, hover = −2…3px lift. <code>prefers-reduced-motion</code> flattens everything.</td></tr>
+      <tr><td>P8</td><td><strong>No logos</strong></td><td>No brand marks anywhere; social links are neutral line icons in circles, identity is set in type only.</td></tr>
+      <tr><td>P9</td><td><strong>AA is a token property</strong></td><td>Text colors ship pre-paired with their surface (see §2 contrast receipts): ink-400 on ink, ink-500 on ivory, 700/800 accent steps for text on light. Minimum text size 12px (0.75rem) — nothing smaller anywhere, including captions and swatch labels.</td></tr>
+    </table>
+  </section>
+
+  <!-- ══════════ 2 · COLOR ══════════ -->
+  <section class="block">
+    <h2>2 · Color — the harmonic scheme</h2>
+    <p class="lede">Built on the two fixed accents. Fuchsia sits at hue ≈ 292°, cyan at ≈ 187°; the neutral "ink" scale lives between them on the violet axis (≈ 260°) so dark surfaces feel related to both. The light world is warm ivory, which is what makes the wood belong. <strong>Contrast rule (WCAG 2 AA, axe-verified):</strong> the 400-step accents are text-safe on ink only. On ivory surfaces, <em>text</em> uses the deep steps — <code>primary-700</code> / <code>accent-800</code> (≥4.5:1) — and the 600s are demoted to borders, icons and large display type (≥3:1). Muted text is likewise paired to its surface: <code>ink-400</code> on ink, <code>ink-500</code> on ivory — never crossed.</p>
+
+    <h3>Accents</h3>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:var(--primary-400)"></div><div class="lbl"><span class="name">primary-400 · fuchsia</span><span class="hex">#e879f9</span><span class="use">Primary CTA fill, borders, inactive skill state, eyebrows on ink</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--primary-300)"></div><div class="lbl"><span class="name">primary-300</span><span class="hex">#f0abfc</span><span class="use">Primary hover fill, soft glow</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--primary-600)"></div><div class="lbl"><span class="name">primary-600</span><span class="hex">#c026d3</span><span class="use">Borders/icons on ivory (3.1:1) — not for small text</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--primary-700)"></div><div class="lbl"><span class="name">primary-700</span><span class="hex">#a21caf</span><span class="use">Primary TEXT on ivory (5.8:1 AA)</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--accent-400)"></div><div class="lbl"><span class="name">accent-400 · cyan</span><span class="hex">#22d3ee</span><span class="use">Active state, focus rings, links, submit fill, progress</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--accent-300)"></div><div class="lbl"><span class="name">accent-300</span><span class="hex">#67e8f9</span><span class="use">Accent hover, halos @ ≤20% alpha</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--accent-600)"></div><div class="lbl"><span class="name">accent-600</span><span class="hex">#0891b2</span><span class="use">Borders/icons on ivory (3.4:1) — not for small text</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--accent-800)"></div><div class="lbl"><span class="name">accent-800</span><span class="hex">#155e75</span><span class="use">Accent TEXT on ivory (6.6:1 AA), links on light</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--aurora)"></div><div class="lbl"><span class="name">aurora hairline</span><span class="hex">fuchsia → violet → cyan</span><span class="use">1–2px underlines &amp; rings ONLY. Never a fill. The violet midpoint (#9d8cf5) is the bridge hue.</span></div></div>
+    </div>
+
+    <h3>Ink (dark world) &amp; Ivory (light world)</h3>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:var(--ink-950)"></div><div class="lbl"><span class="name">ink-950</span><span class="hex">#16121d</span><span class="use">Deepest layer, text on accent fills</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--ink-900)"></div><div class="lbl"><span class="name">ink-900</span><span class="hex">#1c1726</span><span class="use">Dark section background (replaces neutral-800)</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--ink-800)"></div><div class="lbl"><span class="name">ink-800</span><span class="hex">#262032</span><span class="use">Cards, raised dark surfaces</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--ink-700)"></div><div class="lbl"><span class="name">ink-700</span><span class="hex">#332b42</span><span class="use">Hairlines on dark, hover surface</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--ink-400)"></div><div class="lbl"><span class="name">ink-400 / 500</span><span class="hex">#948aa6 · #6f6580</span><span class="use">Muted text, surface-paired: 400 on ink · 500 on ivory. Never crossed (AA)</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--ivory-300)"></div><div class="lbl"><span class="name">ivory-300</span><span class="hex">#efe9f2</span><span class="use">Body text on ink — the "white" that isn't</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--ivory-50)"></div><div class="lbl"><span class="name">ivory-50</span><span class="hex">#f7f4ef</span><span class="use">Light canvas (replaces #fafafa)</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--ivory-100)"></div><div class="lbl"><span class="name">ivory-100 / 200</span><span class="hex">#f0ebe3 · #e4dcd1</span><span class="use">Raised light surface / hairlines on light</span></div></div>
+    </div>
+
+    <h3>Wood (material register)</h3>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:var(--wood-200)"></div><div class="lbl"><span class="name">wood-200 · ash</span><span class="hex">#d9c5ab</span><span class="use">Grain highlight, plinth border on light</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--wood-400)"></div><div class="lbl"><span class="name">wood-400 · oak</span><span class="hex">#a87f5c</span><span class="use">Card plinth edge (4px bottom border)</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--wood-600)"></div><div class="lbl"><span class="name">wood-600 · walnut</span><span class="hex">#6e4f38</span><span class="use">Texture midtone target for wood.webp overlays</span></div></div>
+      <div class="sw"><div class="chip" style="background:var(--wood-800)"></div><div class="lbl"><span class="name">wood-800 · smoked</span><span class="hex">#3f2e22</span><span class="use">Scrim tint over wood texture in dark sections</span></div></div>
+    </div>
+
+    <h3>Contrast receipts — measured (WCAG 2 relative luminance)</h3>
+    <table>
+      <tr><th>Pair</th><th>Ratio</th><th>AA (4.5 / 3.0 UI)</th><th>Licensed use</th></tr>
+      <tr><td>ivory-300 on ink-900</td><td><strong>14.6:1</strong></td><td style="color:var(--accent-400)">pass</td><td>Body text, dark world</td></tr>
+      <tr><td>ink-400 on ink-800</td><td><strong>4.8:1</strong></td><td style="color:var(--accent-400)">pass</td><td>Muted text on cards</td></tr>
+      <tr><td>ink-400 on ink-900</td><td><strong>5.4:1</strong></td><td style="color:var(--accent-400)">pass</td><td>Muted text on sections</td></tr>
+      <tr><td>ink-500 on ivory-50</td><td><strong>5.0:1</strong></td><td style="color:var(--accent-400)">pass</td><td>Muted text, light world</td></tr>
+      <tr><td>primary-400 on ink-900</td><td><strong>7.1:1</strong></td><td style="color:var(--accent-400)">pass</td><td>Accent text/eyebrows on dark</td></tr>
+      <tr><td>ink-950 on primary-400</td><td><strong>7.5:1</strong></td><td style="color:var(--accent-400)">pass</td><td>Primary CTA label</td></tr>
+      <tr><td>ink-950 on accent-400</td><td><strong>10.2:1</strong></td><td style="color:var(--accent-400)">pass</td><td>Submit button label</td></tr>
+      <tr><td>primary-700 on ivory-50</td><td><strong>5.8:1</strong></td><td style="color:var(--accent-400)">pass</td><td>Primary text on light</td></tr>
+      <tr><td>accent-800 on ivory-50</td><td><strong>6.6:1</strong></td><td style="color:var(--accent-400)">pass</td><td>Links/accent text on light</td></tr>
+      <tr><td>primary-600 / accent-600 on ivory-50</td><td><strong>4.3 / 3.4:1</strong></td><td style="color:var(--primary-300)">UI only</td><td>Borders, icons, ≥24px display — never small text</td></tr>
+    </table>
+    <p class="src">Every text-color token is licensed for exactly one surface family. New combinations must be re-measured before use — no "it looks fine" exceptions.</p>
+
+    <h3>Migration map (v1 → v2)</h3>
+    <table>
+      <tr><th>v1 token</th><th>v2 replacement</th><th>Note</th></tr>
+      <tr><td><code>#fafafa</code> body / <code>#444</code> text</td><td><code>ivory-50</code> / <code>ink-500</code></td><td>Warm the light world</td></tr>
+      <tr><td><code>neutral-800/900</code> sections</td><td><code>ink-900 / ink-950</code></td><td>Plum-tinted, pairs with both accents</td></tr>
+      <tr><td><code>neutral-100</code> text on dark</td><td><code>ivory-300</code></td><td>P1: no near-pure white</td></tr>
+      <tr><td>purple-500 → pink-500 CTA gradient</td><td><strong>solid</strong> <code>primary-400</code> fill, ink text</td><td>Gradients retire from fills (P5)</td></tr>
+      <tr><td><code>orange-600</code> form button</td><td><code>accent-400</code> submit fill</td><td>One response color</td></tr>
+      <tr><td>custom <code>yellow #efc603</code></td><td><code>wood-200</code></td><td>Footer credit joins the wood register; delete the custom Tailwind color</td></tr>
+      <tr><td><code>gray-800/x</code> glass overlays</td><td><code>ink-800/x</code>, wood scrim <code>wood-800/70</code></td><td>Same alphas, new bases</td></tr>
+      <tr><td>fuchsia/cyan state pair</td><td><strong>kept as-is</strong></td><td>The v1 core idea survives untouched</td></tr>
+    </table>
+  </section>
+
+  <!-- ══════════ 3 · TYPOGRAPHY ══════════ -->
+  <section class="block">
+    <h2>3 · Typography</h2>
+    <p class="lede"><strong>Body: Source Sans 3</strong> (SIL OFL, variable 200–900, self-hosted woff2 ≈ 48 KB) — clear, humanist, Apple-adjacent rendering. <strong>Headings: Space Grotesk</strong> (SIL OFL, variable 300–700, ≈ 30 KB) — a distinct geometric voice with just enough character for the "solid" brief; used at weight 500–600 with tight −1% tracking. Both live in <code>/public/fonts</code>, loaded with <code>font-display: swap</code> and preloaded — no third-party requests in production. Scale is a minor third (×1.2) from 16px: headings are deliberately <em>smaller than typical</em>; hierarchy comes from family, weight, and space.</p>
+
+    <div class="type-row"><span class="type-spec">display / hero H1<br>clamp(1.73→2.49rem) · Grotesk 600<br>tracking −0.01em · lh 1.15</span><span style="font-family:var(--font-head);font-size:clamp(1.73rem,4vw,2.49rem);font-weight:600;letter-spacing:-.01em;color:var(--ivory-300)">Clean design. Solid systems.</span></div>
+    <div class="type-row"><span class="type-spec">subheadline<br>1.2rem · Source Sans 300<br>ink-400</span><span style="font-size:1.2rem;font-weight:300;color:var(--ink-400)">Senior full-stack engineering — web platforms &amp; clean-core SAP.</span></div>
+    <div class="type-row"><span class="type-spec">h2 section · 1.44rem<br>Grotesk 500 + aurora hairline</span><span style="font-family:var(--font-head);font-size:1.44rem;font-weight:500;position:relative;display:inline-block;padding-bottom:.35rem">Professional Work<span style="position:absolute;left:0;right:32%;bottom:0;height:2px;border-radius:2px;background:var(--aurora)"></span></span></div>
+    <div class="type-row"><span class="type-spec">h3 article · 1.2rem<br>Grotesk 500</span><span style="font-family:var(--font-head);font-size:1.2rem;font-weight:500">SAP Technical Consultant</span></div>
+    <div class="type-row"><span class="type-spec">body · 1rem · Source Sans 400<br>lh 1.65 · ivory-300 / ink-500</span><span style="font-size:1rem">Architect of Drupal and modern SAP landscapes — refactoring legacy into clean-core.</span></div>
+    <div class="type-row"><span class="type-spec">body-s · .875rem<br>(densest text, lists, cards)</span><span style="font-size:.875rem">React, Node.js, Next.js · ABAP, CDS, RAP/CAP on BTP</span></div>
+    <div class="type-row"><span class="type-spec">caption · .75rem · 600<br>eyebrow: +.22em caps, Grotesk</span><span style="font-size:.75rem;color:var(--ink-400)">01/2025 – 07/2026 · Dresden · Contract-based &nbsp;&nbsp;<span class="eyebrow">Eyebrow Label</span></span></div>
+    <p class="src">Full scale: 0.75 / 0.875 / 1 / 1.2 / 1.44 / 1.73 / 2.07 / 2.49 rem — 0.75rem (12px) is the hard floor for any text (P9). Old hero (3.75rem) and 700-weights are retired. Numerals: <code>font-variant-numeric: tabular-nums</code> in date columns.</p>
+  </section>
+
+  <!-- ══════════ 4 · LAYOUT ══════════ -->
+  <section class="block">
+    <h2>4 · Layout, Spacing &amp; Responsiveness</h2>
+    <table>
+      <tr><th>Element</th><th>Spec</th></tr>
+      <tr><td>Content container</td><td><code>max-w-screen-lg</code> (1024px) centered — unchanged; hero <code>max-w-screen-xl</code></td></tr>
+      <tr><td>Section rhythm</td><td><code>px-5 py-20 md:py-28 lg:px-8</code> — one step airier than v1 (80/112px)</td></tr>
+      <tr><td>Grid</td><td>12-col mental model; cards on <code>gap-5</code> (20px); feature grid <code>grid-cols-1 md:grid-cols-2 lg:grid-cols-3</code></td></tr>
+      <tr><td>Card padding</td><td><code>p-4</code> compact (skills) · <code>p-6</code> comfortable (features, testimonial)</td></tr>
+      <tr><td>Radius vocabulary</td><td><code>full</code> pills/CTAs · <code>2xl</code> 16px cards · <code>xl</code> 12px panels · <code>lg</code> 10px fields — drop 3xl</td></tr>
+      <tr><td>Breakpoints</td><td>Tailwind defaults + keep custom <code>touch</code> and <code>tall-nav</code> raw queries</td></tr>
+      <tr><td>Touch targets</td><td>≥ 44×44px on all interactive elements (<code>touch:</code> variant enforces)</td></tr>
+      <tr><td>World alternation</td><td>Keep v1's bright/dark alternation: ivory sections breathe between ink sections; wood texture appears only inside ink sections</td></tr>
+      <tr><td>Scroll</td><td><code>scroll-behavior:smooth</code> · <code>scroll-mt-16</code> under the sticky nav · keep iOS <code>-webkit-fill-available</code> fix</td></tr>
+    </table>
+  </section>
+
+  <!-- ══════════ 5 · SHAPE, DEPTH & Z-SPACE ══════════ -->
+  <section class="block">
+    <h2>5 · Shape, Depth &amp; Z-Space</h2>
+    <p class="lede">Depth model with exactly four layers — and, crucially, these are the <strong>same layers the 3D transmission will inflate</strong>. What is a shadow-and-blur illusion today becomes a real <code>translateZ</code> tomorrow, with no re-design.</p>
+    <table>
+      <tr><th>Layer</th><th>Today (2D/2.5D)</th><th>After 3D transmission</th></tr>
+      <tr><td><strong>L0 canvas</strong></td><td>ivory-50 / ink-900, wood texture + scrim</td><td>Scene background, static</td></tr>
+      <tr><td><strong>L1 surface</strong></td><td>cards <code>ink-800</code>, glass <code>ink-800/55</code> + blur, <code>--shadow-1</code></td><td><code>translateZ(var(--z-rest))</code> plane</td></tr>
+      <tr><td><strong>L2 raised</strong></td><td>hover lift −3px, <code>--shadow-2</code></td><td><code>translateZ(var(--z-raise))</code> = 24px</td></tr>
+      <tr><td><strong>L3 float</strong></td><td>sticky nav, modal, active card ring</td><td><code>translateZ(var(--z-float))</code> = 48px</td></tr>
+    </table>
+    <p class="lede" style="margin-top:1.2rem">Shared constants: <code>perspective: 1200px</code> on scene parents · <code>transform-style: preserve-3d</code> on every card wrapper <em>already now</em> · rotation caps ±9° · shadows always from the plum family, never gray. The v1 rim-vignette recipe survives on image cards (it reads as ambient occlusion in 3D).</p>
+  </section>
+
+  <!-- ══════════ 6 · COMPONENTS (live, hover everything) ══════════ -->
+  <section class="block">
+    <h2>6 · Components — live samples</h2>
+    <p class="lede">Every interactive element below has a hover, active, and focus-visible state. Hover = lift + one color step; focus = 2px cyan ring offset from surface; active = return to rest.</p>
+
+    <h3>Navigation bar (sticky, glass, centered CTA)</h3>
+    <div class="stage" style="display:block">
+      <div class="nav-demo">
+        <div style="display:flex;gap:.15rem"><a href="#" class="active">About</a><a href="#">CV</a><a href="#">Skills</a></div>
+        <a href="#" class="nav-cta">Contact us</a>
+        <div style="display:flex;gap:.15rem"><a href="#">Education</a><a href="#">Projects</a><a href="#">Imprint</a></div>
+      </div>
+      <p class="capt">Links split symmetrically around the centered CTA pill. Surface <code>ink-900/72 + backdrop-blur-md</code>, hairline <code>ink-700</code> bottom border when scrolled. Active link = cyan; CTA fills fuchsia on hover with ink text. Mobile: links collapse to the existing slide-in panel (re-surfaced <code>ink-800</code>), CTA stays visible beside the burger.</p>
+    </div>
+
+    <h3>CTA family</h3>
+    <div class="stage">
+      <button class="btn btn-primary">✉&#xfe0e; Let's talk</button>
+      <a class="btn btn-secondary" href="#">↓ CV · Employee</a>
+      <a class="btn btn-secondary" href="#">↓ CV · Contractor</a>
+      <button class="btn btn-ghost">Jump to contact →</button>
+    </div>
+    <div class="stage bright" style="margin-top:.8rem">
+      <a class="btn btn-secondary" href="#">↓ CV · Employee</a>
+      <button class="btn btn-ghost" style="color:var(--accent-800)">Jump to contact →</button>
+    </div>
+    <p class="capt">Primary: solid <code>primary-400</code>, <code>ink-950</code> text (≈ 8:1), hover lightens to 300 + lifts 2px. Secondary: hairline pill, hover swaps border to cyan with 14% cyan wash. Ghost: text-only, 2px x-shift on hover. On ivory stages <em>text</em> switches to the deep steps — <code>primary-700</code> / <code>accent-800</code> (AA 4.5:1) — while the 600s serve only borders and icons (≥3:1).</p>
+
+    <h3>Skill cards — kept from <code>/#skills</code>, re-tokenized (the design anchor)</h3>
+    <div class="stage">
+      <div class="skill-card"><div class="ov"></div><div class="rim"></div><div class="content">
+        <h4 style="color:var(--primary-400)">Web / API engineering</h4>
+        <p>React, Node.js, Next.js, tested REST APIs.</p>
+        <div class="progress"><i class="p-inactive"></i></div>
+      </div></div>
+      <div class="skill-card active"><div class="ov"></div><div class="rim"></div><div class="content">
+        <h4 style="color:var(--accent-400)">SAP development / Architecture</h4>
+        <p>ABAP, CDS, OData, RAP/CAP on BTP, Fiori/UI5.</p>
+        <div class="progress"><i class="p-active"></i></div>
+      </div></div>
+    </div>
+    <p class="capt">Unchanged logic: fuchsia = inactive, cyan = active; border, heading and progress switch together. New: overlays re-based on ink/wood tints, hover adds the standard L2 lift, wrapper already carries <code>preserve-3d</code>.</p>
+
+    <h3>Wooden plinth card (features / benefits)</h3>
+    <div class="stage wooden">
+      <div class="plinth"><h4>Clean-core refactoring</h4><p>Legacy ABAP to upgrade-stable extensions — measured, testable, documented.</p></div>
+      <div class="plinth"><h4>Web platforms</h4><p>Next.js &amp; Drupal architectures that stay fast at content scale.</p></div>
+    </div>
+    <p class="capt">The signature v2 surface: glass card on wood. Stage background = <code>wood.webp</code> (cover) under a <code>wood-800/70 → ink-900/85</code> scrim; card = <code>ink-900/60 + blur</code>, ash hairline, and the 4px oak plinth edge that gives the "solid character". Hover: L2 lift.</p>
+
+    <h3>Contact form + high-contrast submit</h3>
+    <div class="stage" style="align-items:stretch">
+      <div class="field"><label for="d-name">NAME</label><input id="d-name" placeholder="Jane Doe"></div>
+      <div class="field"><label for="d-mail">EMAIL</label><input id="d-mail" type="email" placeholder="jane@example.com"></div>
+      <div class="field" style="flex-basis:100%"><label for="d-msg">MESSAGE</label><textarea id="d-msg" rows="3" placeholder="What can we build?"></textarea></div>
+      <button class="btn btn-submit">Send message</button>
+    </div>
+    <p class="capt">Fields: <code>ink-900</code> wells, hairline border, cyan focus ring (18% halo). Submit: solid <code>accent-400</code> with ink text — the highest-contrast element in its section by design. Inline validation text uses <code>primary-300</code>, never red-on-dark.</p>
+
+    <h3>3D-ready tilt (CSS Tier 1 — hover me)</h3>
+    <div class="stage">
+      <div class="tilt-scene"><div class="tilt"><span class="float">translateZ(28px)</span><p>Parent has perspective; children sit on real z-offsets. This exact markup later receives the scroll-driven 3D treatment.</p></div></div>
+    </div>
+
+    <h3>Semantic variant enum — v2 mapping (implementation pivot)</h3>
+    <table>
+      <tr><th>Variant</th><th>v2 text</th><th>v2 border/ring</th><th>Meaning (unchanged)</th></tr>
+      <tr><td><code>bright</code></td><td>ivory-300</td><td>ivory-300</td><td>Default on ink surfaces</td></tr>
+      <tr><td><code>dark</code></td><td>ink-800</td><td>ink-800</td><td>On ivory surfaces</td></tr>
+      <tr><td><code>highlight</code></td><td style="color:var(--primary-400)">primary-400 <span style="color:var(--ink-400)">(700 on ivory)</span></td><td style="color:var(--primary-400)">primary-400</td><td>Primary accent</td></tr>
+      <tr><td><code>highlightAlt</code></td><td style="color:var(--accent-400)">accent-400 <span style="color:var(--ink-400)">(800 on ivory)</span></td><td style="color:var(--accent-400)">accent-400</td><td>Active / response</td></tr>
+    </table>
+    <p class="capt">The whole restyle is executed by re-mapping these four variants in <code>SurfaceTokens.tsx</code> + swapping surface classes — the v1 architecture was built for exactly this move.</p>
+  </section>
+
+  <!-- ══════════ 7 · SECTION BLUEPRINT ══════════ -->
+  <section class="block">
+    <h2>7 · Section-by-Section Blueprint</h2>
+
+    <h3>7.1 Navigation — minimalist sticky, Contact CTA centered</h3>
+    <div class="bp"><div class="row"><span class="cell grow">About · CV · Skills</span><span class="cell hi">[ Contact us ]</span><span class="cell grow">Education · Projects · Imprint</span></div></div>
+    <p class="lede">Keep the current sticky/observer behavior (<code>useNavObserver</code>). Height 56px, glass <code>ink-900/72 + blur</code>, no border at top of page — a hairline fades in after 24px scroll. The Contact CTA is the geometric center (CSS grid <code>1fr auto 1fr</code>); on mobile it stays visible next to the burger. Active section = cyan text, no underline bar (quieter than v1).</p>
+
+    <h3>7.2 Hero — bold centered statement, background kept</h3>
+    <div class="bp">
+      <div class="row"><span class="cell grow wood" style="padding:1rem">existing home.webp photo · scrim ink-950/55 → transparent → ink-900 (bottom, blends into next section)</span></div>
+      <div class="row"><span class="cell grow">EYEBROW · Grotesk caps</span></div>
+      <div class="row"><span class="cell grow" style="font-size:.95rem">H1: "Clean design. Solid systems." (≤ 2.49rem)</span></div>
+      <div class="row"><span class="cell grow">Sub: one sentence, Source Sans 300</span></div>
+      <div class="row"><span class="cell hi grow">● Let's talk (primary)</span><span class="cell grow">↓ CV · Employee</span><span class="cell grow">↓ CV · Contractor</span></div>
+    </div>
+    <p class="lede">Layout changes from v1's 3-column grid to a single centered stack (max-w-2xl). The photo background <strong>stays</strong>; the glass info panel dissolves — text sits directly on a stronger scrim (min 4.5:1 verified against the photo's brightest region). CTA row: primary button smooth-scrolls to Contact; the two secondary pills download the employee/contractor CV (keep <code>download</code> attributes and file size in <code>aria-label</code>). Scroll cue: a slow-pulsing chevron, killed by <code>prefers-reduced-motion</code>.</p>
+
+    <h3>7.3 Skills — the anchor, keep as-is</h3>
+    <p class="lede">The <code>/#skills</code> section is the reference implementation the rest of the site converges toward: image cards + glass overlay + rim vignette + fuchsia/cyan state pair + progress bars. Only the token swap from §2 and the L2 hover lift are applied. The horizontal <code>w-96</code> scroll track gains <code>scroll-snap-type: x mandatory</code> and visible snap dots on touch.</p>
+
+    <h3>7.4 Features / Benefits grid (About + CV strengths) — wooden world</h3>
+    <div class="bp"><div class="row"><span class="cell wood grow">plinth card</span><span class="cell wood grow">plinth card</span><span class="cell wood grow">plinth card</span></div><div class="row"><span class="cell wood grow">plinth card</span><span class="cell wood grow">plinth card</span><span class="cell wood grow">plinth card</span></div></div>
+    <p class="lede">Column layout kept. Section background = <code>wood.webp</code>, <code>background-size: cover</code>, fixed-attachment parallax on desktop only (keep the existing <code>isApple</code> guard), under the wood-800/ink scrim. Cards are the §6 plinth pattern; icons are 20px line glyphs in <code>highlight</code>/<code>highlightAlt</code> alternation. Max 6 cards — minimalism over completeness.</p>
+
+    <h3>7.5 Recommendations — remaining sections</h3>
+    <table>
+      <tr><th>Section</th><th>Recommendation</th></tr>
+      <tr><td><strong>About</strong></td><td>Ivory world. Two columns: portrait (rounded-2xl, ash hairline, subtle 3D tilt on hover) + text at 60ch. Cut body copy ~30%; move factlets into a quiet definition list with tabular numerals.</td></tr>
+      <tr><td><strong>CV / Resume timeline</strong></td><td>Ink world. Replace stacked articles with a left aurora timeline rail (2px); each station a dot in <code>highlight</code> (past) or <code>highlightAlt</code> (current). Entry = h3 Grotesk + meta caption + ≤3 bullet lines. This is the section that gains most from the smaller heading scale.</td></tr>
+      <tr><td><strong>Education / Certificates</strong></td><td>Merge visually with CV as a second rail segment; certificates as small plinth chips (wood edge = "credential" metaphor), no images/logos (P8).</td></tr>
+      <tr><td><strong>Contractor</strong></td><td>Ivory world, mirrors CV structure but flags rate/availability in an <code>accent-800</code> text chip with an <code>accent-600</code> border. Ends with the CV·Contractor download pill — the section's own conversion.</td></tr>
+      <tr><td><strong>Testimonials</strong></td><td>Keep 10s carousel + snap dots; card becomes glass <code>ink-800/60</code> with an oversized <code>primary-300</code> quote glyph at 12% opacity. Drop the fixed-background here — one parallax surface per page (7.4) is enough.</td></tr>
+      <tr><td><strong>Imprint / legal</strong></td><td>Ivory, 65ch, caption-scale — invisible until needed.</td></tr>
+    </table>
+
+    <h3>7.6 Contact / conversion</h3>
+    <div class="bp"><div class="row"><span class="cell grow" style="text-align:center">h2 centered · one reassurance line</span></div><div class="row"><span class="cell grow">Name</span><span class="cell grow">Email</span></div><div class="row"><span class="cell grow">Message (4 rows)</span></div><div class="row"><span class="cell alt grow" style="text-align:center">SEND MESSAGE (accent-400, full-width mobile)</span></div></div>
+    <p class="lede">Ink world, single centered column (max-w-xl). Exactly three fields (§6 recipe) — every removed field raises completion. Direct e-mail escape hatch as a ghost link below. Success state replaces the form in place (no redirect), cyan check drawn with a 320ms stroke animation.</p>
+
+    <h3>7.7 Footer</h3>
+    <div class="bp"><div class="row"><span class="cell grow">Sitemap links (caption scale)</span><span class="cell grow" style="text-align:center">○ ○ ○ ○ social placeholders</span><span class="cell grow" style="text-align:right">© 2026 Martin Grellmann</span></div></div>
+    <p class="lede"><code>ink-950</code> with an ash hairline top border. Social placeholders: 40px circles, <code>ink-700</code> border, generic line glyphs (no brand logos, P8), hover = border to <code>primary-400</code> + lift. Template credit moves from yellow to <code>wood-200</code> italic. Back-to-top: ghost chevron, right-aligned.</p>
+  </section>
+
+  <!-- ══════════ 8 · 3D-TRANSMISSION READINESS ══════════ -->
+  <section class="block">
+    <h2>8 · The 3D Transmission — readiness pattern</h2>
+    <p class="lede">Goal: the site can be lifted into an elegant 3D presentation <strong>with zero cost on SEO/GEO or usability</strong>. The trick is that 3D is never load-bearing: it inflates the §5 layer model that the 2D design already draws with shadow and blur.</p>
+
+    <h3>Progressive-enhancement ladder</h3>
+    <table>
+      <tr><th>Tier</th><th>What ships</th><th>Who gets it</th></tr>
+      <tr><td><strong>T0 · Semantic base</strong></td><td>Full HTML content, ivory/ink design, static wood texture. 100% of content lives here.</td><td>Everyone — crawlers, LLM/geo agents, reader mode, JS-off</td></tr>
+      <tr><td><strong>T1 · CSS depth</strong> <span class="ok">← refactoring target</span></td><td>Perspective parents, <code>preserve-3d</code> wrappers, hover tilts ≤9°, z-token lifts, scroll-driven subtle plane separation (CSS scroll-timeline where supported)</td><td>Modern browsers, ~0 KB JS cost</td></tr>
+      <tr><td><strong>T2 · WebGL garnish</strong> <span class="warn">← the future transmission</span></td><td>One lazy React-Three-Fiber scene max per page (e.g. a slowly rotating wooden monolith behind the hero, skill constellation), <code>dynamic(() =&gt; …, {ssr:false})</code>, mounted only when its container intersects</td><td>Desktop + <code>pointer:fine</code> + <code>hardwareConcurrency ≥ 4</code> + no reduced-motion + Save-Data off</td></tr>
+    </table>
+
+    <h3>Hard guarantees (the "no cost" contract)</h3>
+    <table>
+      <tr><th>Concern</th><th>Rule</th></tr>
+      <tr><td>SEO / GEO</td><td>3D canvas is <code>aria-hidden="true"</code>, sits in a presentation layer, duplicates zero text. All copy remains SSR'd DOM. Structured data (<code>schema-dts</code>) untouched. No text ever rendered inside canvas.</td></tr>
+      <tr><td>LCP</td><td>Hero LCP element stays the photo/H1. T2 bundles load after <code>load</code> + intersection; budget ≤ 130 KB gz incl. three.js chunk, else stay at T1.</td></tr>
+      <tr><td>CLS</td><td>Every 3D container has a fixed <code>aspect-ratio</code> box rendered from SSR; canvas fades in over its static poster image (same composition, wood/ink palette).</td></tr>
+      <tr><td>Input</td><td>3D layers get <code>pointer-events:none</code> unless the element is genuinely interactive; focus order and anchor navigation identical across tiers.</td></tr>
+      <tr><td>Motion safety</td><td><code>prefers-reduced-motion</code> collapses T1 to flat and never mounts T2. Scroll-linked rotation capped, no autoplaying camera paths longer than 6s.</td></tr>
+      <tr><td>Battery / data</td><td><code>requestAnimationFrame</code> paused off-screen (IntersectionObserver), <code>navigator.connection.saveData</code> respected, DPR capped at 1.5.</td></tr>
+      <tr><td>Materials</td><td>3D materials sample only §2 tokens: ink glass (transmission + plum tint), oak/walnut PBR from <code>wood.webp</code>, emissive fuchsia/cyan for state — the scene is automatically on-brand.</td></tr>
+    </table>
+  </section>
+
+  <!-- ══════════ 9 · IMPLEMENTATION ══════════ -->
+  <section class="block">
+    <h2>9 · Tailwind implementation</h2>
+
+    <h3>tailwind.config.js — token extension</h3>
+    <pre><code>theme: {
+  extend: {
+    colors: {
+      primary: {300:'#f0abfc', 400:'#e879f9', 600:'#c026d3', 700:'#a21caf'}, // fuchsia, Tailwind-true
+      accent:  {300:'#67e8f9', 400:'#22d3ee', 600:'#0891b2', 800:'#155e75'}, // 700/800 = text-on-ivory (AA)
+      ink:  {400:'#948aa6', 500:'#6f6580', 700:'#332b42',
+             800:'#262032', 900:'#1c1726', 950:'#16121d'},
+      ivory:{ 50:'#f7f4ef', 100:'#f0ebe3', 200:'#e4dcd1', 300:'#efe9f2'},
+      wood: {200:'#d9c5ab', 400:'#a87f5c', 600:'#6e4f38', 800:'#3f2e22'},
+      // remove: yellow '#efc603'
+    },
+    fontFamily: {
+      sans: ['"Source Sans 3"','system-ui','-apple-system','"Segoe UI"','sans-serif'],
+      head: ['"Space Grotesk"','"Source Sans 3"','sans-serif'],
+    },
+    fontSize: {                       // minor-third scale
+      'h3':'1.2rem', 'h2':'1.44rem', 'h1':'1.73rem', 'display':'2.49rem',
+    },
+    transitionTimingFunction: { glide:'cubic-bezier(.22,.61,.25,1)' },
+    boxShadow: {
+      e1:'0 1px 2px rgba(22,18,29,.25),0 2px 8px rgba(22,18,29,.18)',
+      e2:'0 4px 12px rgba(22,18,29,.28),0 12px 32px rgba(22,18,29,.22)',
+    },
+    translate: { 'z-raise':'24px', 'z-float':'48px' },   // used via arbitrary [transform:…]
+    backgroundImage: {
+      aurora:'linear-gradient(100deg,#e879f9,#9d8cf5 50%,#22d3ee)',
+      wood:"url('/images/wood.webp')",
+    },
+    screens: { touch:{raw:'only screen and (pointer: coarse)'},
+               'tall-nav':{raw:'(min-height: 790px)'} },  // keep v1 customs
+  },
+}</code></pre>
+
+    <h3>Self-hosted fonts — <code>/public/fonts</code> + globalStyles.scss</h3>
+    <pre><code>/* files: SourceSans3-Variable.woff2 (~48KB) · SourceSans3-Italic-Variable.woff2
+          SpaceGrotesk-Variable.woff2 (~30KB) — both SIL OFL, ship in repo */
+@font-face { font-family:'Source Sans 3'; src:url('/fonts/SourceSans3-Variable.woff2') format('woff2');
+  font-weight:200 900; font-display:swap; }
+@font-face { font-family:'Space Grotesk'; src:url('/fonts/SpaceGrotesk-Variable.woff2') format('woff2');
+  font-weight:300 700; font-display:swap; }
+/* _document / layout head: */
+&lt;link rel="preload" href="/fonts/SourceSans3-Variable.woff2" as="font" type="font/woff2" crossorigin /&gt;</code></pre>
+
+    <h3>Class recipes (copy-paste)</h3>
+    <pre><code>// Primary CTA
+"rounded-full bg-primary-400 px-7 py-3 font-semibold text-ink-950 shadow-e1
+ transition duration-200 ease-glide hover:-translate-y-0.5 hover:bg-primary-300 hover:shadow-e2
+ focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-900"
+
+// Secondary pill (CV downloads)
+"rounded-full border-[1.5px] border-primary-400 px-5 py-2.5 text-sm font-medium text-ivory-300
+ transition duration-200 ease-glide hover:-translate-y-0.5 hover:border-accent-400 hover:bg-accent-400/15"
+
+// Wooden plinth card
+"rounded-2xl border border-wood-200/25 border-b-4 border-b-wood-400 bg-ink-900/60 p-6
+ backdrop-blur-sm shadow-e1 transition duration-300 ease-glide hover:-translate-y-1 hover:shadow-e2
+ [transform-style:preserve-3d]"
+
+// Wooden section wrapper
+"bg-wood bg-cover bg-center relative
+ before:absolute before:inset-0 before:bg-gradient-to-b before:from-wood-800/70 before:to-ink-900/85"
+
+// Form field
+"rounded-[10px] border border-ink-700 bg-ink-900 px-4 py-3 text-ivory-300
+ hover:border-ink-500 focus:border-accent-400 focus:ring-[3px] focus:ring-accent-400/20 focus:outline-none"
+
+// Section heading + aurora hairline
+"font-head text-h2 font-medium text-ivory-300
+ after:mt-1.5 after:block after:h-0.5 after:w-2/3 after:rounded after:bg-aurora"</code></pre>
+
+    <h3>Refactoring order (lowest risk first)</h3>
+    <table>
+      <tr><th>Step</th><th>Change</th><th>Blast radius</th></tr>
+      <tr><td>1</td><td>Add tokens + fonts to config, ship <code>/public/fonts</code>, set body/head families</td><td>Global but visually additive</td></tr>
+      <tr><td>2</td><td>Re-map the 4-variant enum in <code>SurfaceTokens.tsx</code> + surface classes (ink/ivory swap)</td><td>All sections at once — the designed pivot point</td></tr>
+      <tr><td>3</td><td>Type scale: replace text-2xl…6xl heading classes with h3/h2/h1/display</td><td>Headers, hero</td></tr>
+      <tr><td>4</td><td>CTA family + form + footer recipes (retire gradient, orange, yellow)</td><td>Isolated components</td></tr>
+      <tr><td>5</td><td>Nav center-CTA layout, hero centered stack</td><td>Header/Hero components</td></tr>
+      <tr><td>6</td><td>Wooden features grid + plinth cards</td><td>New section composition</td></tr>
+      <tr><td>7</td><td>T1 3D wrappers (<code>perspective</code>, <code>preserve-3d</code>, z-tokens)</td><td>Zero visual change until hover — the transmission runway</td></tr>
+    </table>
+  </section>
+
+  <footer class="sheet">
+    Design Pattern v2.0 · "Warm Glass &amp; Wood" · grellmann.app · 2026-07 · Overwrites the v1.0 extraction sheet · Accents fixed per brief (fuchsia-400 #e879f9 / cyan-400 #22d3ee) · No pure white/black anywhere · WCAG 2 AA contrast verified per §2 receipts (axe-core) · Fonts: Source Sans 3 + Space Grotesk, SIL OFL, self-hosted · 3D-transmission prepared per §5/§8 with zero SEO/GEO cost
+  </footer>
+</div>
+
+</body>
+</html>

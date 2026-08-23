@@ -88,26 +88,26 @@ const HeaderData: HeaderDataDef = {
     Description: (
       <>
         <ul className="list-none mt-10 pl-0">
-          <li className="mt-6 pl-0"><strong className="font-bold text-neutral-100">SAP development /
+          <li className="mt-6 pl-0"><strong className="font-bold text-frost-100">SAP development /
             Architecture</strong><br />
             Architects Clean-Core-ready S/4HANA backends end to end – from classic ABAP and CDS views to OData, RAP/CAP
             on
             SAP BTP and Fiori / UI5 frontends – so modernization projects ship without breaking the core.
           </li>
 
-          <li className="mt-6 pl-0"><strong className="font-bold text-neutral-100">Web / API engineering</strong><br />
+          <li className="mt-6 pl-0"><strong className="font-bold text-frost-100">Web / API engineering</strong><br />
             Designs and implements robust JavaScript/TypeScript services with React and Node.js, Next.js, Express and
             thoroughly tested REST APIs, ready to integrate SAP or legacy systems into modern, scalable web products.
           </li>
 
-          <li className="mt-6 pl-0"><strong className="font-bold text-neutral-100">PHP / Drupal /
+          <li className="mt-6 pl-0"><strong className="font-bold text-frost-100">PHP / Drupal /
             Platforms</strong><br />
             Builds and runs high-traffic PHP/Drupal platforms on solid LAMP and cloud infrastructure, covering CI
             tooling,
             package management and SQL databases so business-critical sites stay fast, secure and maintainable.
           </li>
 
-          <li className="mt-6 pl-0"><strong className="font-bold text-neutral-100">Methods / Quality</strong><br />
+          <li className="mt-6 pl-0"><strong className="font-bold text-frost-100">Methods / Quality</strong><br />
             Applies Clean Code, SOLID, disciplined refactoring, Git-based workflows and agile collaboration to keep
             projects
             productive and codebases stable, even on long-running SAP and full-stack projects in demanding enterprise
@@ -278,6 +278,23 @@ const HeaderData: HeaderDataDef = {
     ImageSrc: '',
     ShowSpacer: false,
   }],
+  TestimonialsMain: [{
+    Variant: null,
+    Title: 'References / Testimonials',
+    SubTitle: '',
+    Description: (
+      <>
+        <p>
+          Quotes taken from written employment references and project feedback. They describe how the
+          collaboration worked in practice — on modernization projects, in SAP and web teams, and in
+          direct contact with business stakeholders.
+        </p>
+      </>
+    ),
+    ImageSrc: '',
+    ShowSpacer: false,
+  }],
+
   ContactMain: [{
     Variant: null,
     Title: '',

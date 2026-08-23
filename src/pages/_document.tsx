@@ -14,8 +14,14 @@ export default function Document() {
           - https://github.com/facebook/react/issues/11538
           - https://bugs.chromium.org/p/chromium/issues/detail?id=872770 */}
         <meta content="notranslate" name="google" />
+        {/* Tier 1 safety net: scroll reveals start at opacity 0 and are resolved
+            by Framer Motion. Without JS the content must still be visible —
+            crawlers read the DOM text either way, humans need this rule. */}
+        <noscript>
+          <style>{`[data-framer-appear-id],[style*="opacity:0"],[style*="opacity: 0"]{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
       </Head>
-      <body className="bg-black">
+      <body className="bg-ink-950">
         <Main />
         <NextScript />
       </body>

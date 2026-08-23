@@ -1,7 +1,22 @@
 /* eslint-env node */
 
+/*
+ * Timestamp of the current build, exposed to the app as `process.env.BUILD_TIME`.
+ *
+ * Next inlines this as a string literal at build time, so server and client
+ * receive the exact same value — a runtime `new Date()` would differ between
+ * the two and break hydration.
+ *
+ * Used for `dateModified` in the JSON-LD, which previously carried a
+ * hand-written date that silently went stale.
+ */
+const BUILD_TIME = new Date().toISOString();
+
 // https://github.com/vercel/next.js/blob/master/packages/next/next-server/server/config.ts
 const nextConfig = {
+  env: {
+    BUILD_TIME,
+  },
   webpack: config => {
     const oneOfRule = config.module.rules.find(rule => rule.oneOf);
 

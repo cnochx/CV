@@ -4,6 +4,7 @@ import {SectionId} from '../../../../data/SectionIdData';
 import {HeadingTag, StrngUndfndType} from '../../../../data/utilComp/generalTypeDef';
 import {ContentIndexLytProps} from '../../../../data/utilComp/UtilImportPropsDef';
 import {getId} from '../../../../utilComp/SectionHelper';
+import Reveal from '../../../Motion/Reveal';
 import AsideExtShell from '../../ExtShell/AsideExtShell';
 import SectionExtShell from '../../ExtShell/BPSectionLyt';
 import HeaderExtShell from '../../ExtShell/HeaderExtShell';
@@ -64,36 +65,38 @@ const PBIndexLyt: FC<ContentIndexLytProps> = memo(({IdxContent, MainSectionId}) 
 
 
   const classNameOverlay = IdxContent.IxMainImg?.ImgSrc
-    ? 'absolute inset-0 bg-gray-800/50'
-    : 'absolute inset-0 bg-gray-900/95';
+    ? 'absolute inset-0 bg-ink-950/45'
+    : 'absolute inset-0 bg-ink-900';
 
 
+  // v3.4: the former bright world joins the one dark world (§7) —
+  // these sections sit on the canvas ink-950 between ink-900 neighbors.
   return (
     <SectionExtShell
       IsMain={true}
       LabelId={mainSectionLabelBy}
       SectionId={MainSectionId}
-      sectionClassName="bg-neutral-100">
+      sectionClassName="bg-ink-950">
 
-      <article className="flex flex-col gap-y-12">
+      <Reveal Element="article" className="flex flex-col gap-y-12">
         <BPArtPillLyt
           ClassNameOverlay={classNameOverlay}
           ClassNameParent="relative overflow-hidden rounded-2xl bg-cover bg-center"
           ImgSrc={IdxContent.IxMainImg?.ImgSrc}>
 
           <HeaderExtShell
-            HeaderClassName="relative z-10 flex flex-col gap-y-3 px-6 py-10 text-neutral-100 sm:px-8 sm:py-12"
+            HeaderClassName="relative z-10 flex flex-col gap-y-3 px-6 py-10 text-frost-100 sm:px-8 sm:py-12"
             HeaderId={MainSectionId}
             HeaderItem={IxHeader}
             SetUnderline={true}
             SuffixTitleTag={ArticleContentTitleTag}>
 
-            <ArticleMainTitleTag className="text-2xl font-bold sm:text-3xl" id={idH2}>
+            <ArticleMainTitleTag className="text-h2 font-bold" id={idH2}>
               {IxHeader.HdrTitle}
             </ArticleMainTitleTag>
             {IxHeader?.HdrSubTitle ? (
               <ArticleSubTitleTag
-                className="text-2xl font-bold sm:text-2xl"
+                className="text-sub font-semibold text-frost-300"
                 id={idH3}>
                 {IxHeader?.HdrSubTitle}
               </ArticleSubTitleTag>
@@ -106,13 +109,13 @@ const PBIndexLyt: FC<ContentIndexLytProps> = memo(({IdxContent, MainSectionId}) 
           <section>
             {IxDescription.DnHead ? (
               <p
-                className="text-2xl font-bold sm:text-2xl"
+                className="text-sub font-semibold"
                 id={`${IxDescription.DnId}}-title`}>
                 {IxDescription.DnText}
               </p>
             ) : null}
 
-            <div className="mt-8 max-w text-neutral-100">
+            <div className="mt-8 max-w text-frost-100">
               {IxDescription.DnHead}
             </div>
           </section>
@@ -132,7 +135,7 @@ const PBIndexLyt: FC<ContentIndexLytProps> = memo(({IdxContent, MainSectionId}) 
           <BPArtFooterLyt
             BottomSuffix={IdxContent.IxBottomSuffix}
             SectionId={MainSectionId}
-            footerClassName="relative z-10 flex flex-col gap-y-3 px-6 py-10 text-neutral-100 sm:px-8 sm:py-12"
+            footerClassName="relative z-10 flex flex-col gap-y-3 px-6 py-10 text-frost-100 sm:px-8 sm:py-12"
           />
 
         </BPArtPillLyt>
@@ -143,7 +146,7 @@ const PBIndexLyt: FC<ContentIndexLytProps> = memo(({IdxContent, MainSectionId}) 
         />
 
 
-      </article>
+      </Reveal>
     </SectionExtShell>
   );
 });

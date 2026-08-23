@@ -15,10 +15,12 @@ const BPArtDescriptionLyt: FC<ArtDescriptionLyt> = memo(({
   const baseId = `${SectionId}-${AlDescription.DnId}`;
   const titleId = `${baseId}-title`;
   const contentId = `${baseId}-content`;
-  const iconClassName = 'ml-2 h-7 w-7 shrink-0 text-fuchsia-400';
+  const iconClassName = 'ml-2 h-7 w-7 shrink-0 text-primary-400';
   const buttonClassName = [
-    'flex w-full items-center justify-between pb-2 text-left text-lg font-bold',
-    !IsOpen ? 'border-b border-fuchsia-400' : '',
+    'flex w-full items-center justify-between pb-2 text-left text-h3 font-semibold',
+    // Closed accordions show the aurora hairline; an open one hands the line
+    // over to its content, so two rules never stack up.
+    !IsOpen ? 'aurora-underline' : '',
   ].join(' ');
 
   return (

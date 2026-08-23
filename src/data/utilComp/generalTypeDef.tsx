@@ -42,12 +42,21 @@ export type BgImageSrc =
   | ImgItem
   | undefined;
 
-/** Supported semantic header and layout style variants. */
+/**
+ * Supported semantic header and layout style variants.
+ *
+ * `quiet` is the subordinate step: same structure as the others, but dimmed
+ * text and a faded hairline. It exists so secondary areas such as the footer
+ * can stay visually subordinate without opting out of the shared header
+ * mechanism — the alternative would be one-off classes at the call site, which
+ * a later re-mapping of the variants would silently miss.
+ */
 export type HdrVariantStyleType =
   | 'bright'
   | 'dark'
   | 'highlight'
   | 'highlightAlt'
+  | 'quiet'
   | null;
 
 /** Date label type used by timeline and article entries. */

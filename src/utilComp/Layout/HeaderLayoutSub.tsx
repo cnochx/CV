@@ -2,23 +2,37 @@ import {SetHover} from '../../data/SectionHelperDef';
 
 /**
  * Provides semantic border and text class mappings for shared icon button helpers.
+ *
+ * v3.4 "Clean Core" mapping (designsheet §6, semantic variant enum):
+ * bright = default on ink surfaces · dark = on accent/frost fills only ·
+ * highlight = primary identity accent · highlightAlt = active/response.
  */
 const ICON_BUTTON_COLOR_MAP = {
   bright: {
-    border: 'border-neutral-100',
-    text: 'text-neutral-100',
+    border: 'bg-white/10',
+    text: 'text-frost-100',
   },
   dark: {
-    border: 'border-neutral-800',
-    text: 'text-neutral-800',
+    border: 'bg-ink-950',
+    text: 'text-ink-950',
   },
+  // v3.4: the section-header hairline for the primary variant is the aurora
+  // gradient (fuchsia → violet → cyan) — the only gradient in the system,
+  // licensed for 1–2px underlines and rails only (designsheet §2).
   highlight: {
-    border: 'border-fuchsia-400',
-    text: 'text-fuchsia-400',
+    border: 'bg-aurora',
+    text: 'text-primary-400',
   },
   highlightAlt: {
-    border: 'border-cyan-500',
-    text: 'text-cyan-500',
+    border: 'bg-accent-400',
+    text: 'text-accent-400',
+  },
+  // Subordinate step for secondary areas (footer): the same aurora hairline and
+  // the same heading structure, only dimmed — secondary text colour and the
+  // gradient at 45% so it reads as a divider rather than a section marker.
+  quiet: {
+    border: 'bg-aurora opacity-45',
+    text: 'text-frost-300',
   }
 } as const;
 
@@ -78,11 +92,11 @@ export function getHeaderBorder(
 
   const c = ICON_BUTTON_COLOR_MAP[resolvedColor];
 
+  // Any known variant draws the underline; only an explicit null or undefined
+  // suppresses it. Listing the variants individually here meant every new one
+  // silently rendered without a line until it was added in two places.
   const borderRender =
-    setBorder === 'bright' ||
-    setBorder === 'dark' ||
-    setBorder === 'highlight' ||
-    setBorder === 'highlightAlt';
+    setBorder != null && setBorder in ICON_BUTTON_COLOR_MAP;
 
   return {
     borderRender: borderRender,

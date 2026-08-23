@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import {FC, memo} from 'react';
 
 import {imprintItems} from '../data/FooterData';
+import HeaderLayout from './Layout/DarkSpecial/HeaderLayout';
 
 const Imprint: FC = memo(() => {
   const {
@@ -17,26 +18,31 @@ const Imprint: FC = memo(() => {
   return (
     <section className="flex gap-x-4 items-start">
       <article className="order-1 flex-col w-1/2 gap-y-4 md:order-2 flex">
-        <header>
-          <h2 className="font-bold text-xl text-neutral-100">{header}</h2>
-        </header>
+        {/* Same mechanism as the page sections, but on the `quiet` step: the
+            footer should stay subordinate to the content above it. */}
+        <HeaderLayout
+          ClassName={null}
+          SetBorder="quiet"
+          UseVariantText="quiet">
+          <h2 className="text-h3 font-semibold">{header}</h2>
+        </HeaderLayout>
         <section className="w-1/2">
-          {adressheader && <h3 className="font-bold text-white">{adressheader}</h3>}
+          {adressheader && <h3 className="font-bold text-frost-100">{adressheader}</h3>}
           {personInCharge && (
             <>
-              <p className="text-white">
+              <p className="text-frost-100">
                 <strong className="font-bold">{personInCharge}</strong>
               </p>
             </>
           )}
           {addressGermany && (
             <>
-              <hr className="border-gray-400 my-4" />
+              <hr className="my-4" />
               <address>
                 <ul>
                   {addressGermany.map(({aiKey, text}) => {
                     return (
-                      <li className="text-neutral-400" key={aiKey}>
+                      <li className="text-ink-400" key={aiKey}>
                         {text}
                       </li>
                     );
@@ -47,12 +53,12 @@ const Imprint: FC = memo(() => {
           )}
           {addressBrazil && (
             <>
-              <hr className="border-gray-400 my-4" />
+              <hr className="my-4" />
               <address>
                 <ul>
                   {addressBrazil.map(({aiKey, text}) => {
                     return (
-                      <li className="text-neutral-100" key={aiKey}>
+                      <li className="text-frost-100" key={aiKey}>
                         {text}
                       </li>
                     );
@@ -63,17 +69,17 @@ const Imprint: FC = memo(() => {
           )}
           {onlineAddress && (
             <>
-              <hr className="border-gray-400 my-4" />
+              <hr className="my-4" />
               <address>
                 <ul>
                   {onlineAddress.map(({liKey, linkLabel, text, href}) => {
                     return (
                       <li key={liKey}>
-                        <span className="text-neutral-400">{linkLabel}</span>
+                        <span className="text-ink-400">{linkLabel}</span>
                         <a
                           className={classNames(
-                            '-m-2 flex rounded-md p-2 text-neutral-100 hover:text-fuchsia-400 focus:outline-none focus:ring-2 focus:ring-fuchsia-400',
-                            {'hover:text-white': href},
+                            '-m-2 flex rounded-md p-2 text-frost-100 hover:text-accent-300 focus:outline-none focus:ring-2 focus:ring-accent-400',
+                            {'hover:text-frost-100': !href},
                           )}
                           href={href}
                           target="_blank">
@@ -89,9 +95,12 @@ const Imprint: FC = memo(() => {
         </section>
       </article>
       <article className="order-3 flex flex-col w-1/2 gap-y-4">
-        <header>
-          <h2 className="font-bold text-xl text-neutral-100">{headerLegal}</h2>
-        </header>
+        <HeaderLayout
+          ClassName={null}
+          SetBorder="quiet"
+          UseVariantText="quiet">
+          <h2 className="text-h3 font-semibold">{headerLegal}</h2>
+        </HeaderLayout>
         {legalContent && <section>{legalContent}</section>}
       </article>
     </section>

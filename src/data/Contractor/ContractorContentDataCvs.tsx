@@ -5,8 +5,8 @@ import {FC, memo, ReactNode} from 'react';
 import {BaseAlContentDef} from '../utilComp/GeneralDef';
 
 const linkClass =
-  'font-semibold underline decoration-2 underline-offset-4 transition-colors hover:text-fuchsia-600 ' +
-  'focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400 focus-visible:ring-offset-2';
+  'font-semibold text-accent-400 underline decoration-accent-400/70 decoration-2 underline-offset-4 transition-colors hover:text-accent-300 ' +
+  'focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950';
 
 /**
  * Renders the employee and contractor download pair for one focus area.

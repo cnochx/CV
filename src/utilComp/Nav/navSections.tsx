@@ -21,6 +21,30 @@ export const navSections: SectionId[] = [
 ];
 
 /**
+ * Human-readable label for each section in the navigation.
+ *
+ * Decouples what a link *says* from what it *points at*. The nav used to render
+ * the raw section id with a `first-letter:uppercase` rule, which tied the two
+ * together, so the abbreviation `cv` came out as "Cv".
+ *
+ * Labels can now be edited without touching anchors, and screen readers
+ * announce the label instead of the identifier.
+ *
+ * @constant {Record<SectionId, string>}
+ */
+export const navLabels: Record<SectionId, string> = {
+  [SectionId.Hero]: 'Home',
+  [SectionId.About]: 'About',
+  [SectionId.Contractor]: 'Contractor',
+  [SectionId.Skills]: 'Skills',
+  [SectionId.CV]: 'CV',
+  [SectionId.Education]: 'Education',
+  [SectionId.Portfolio]: 'Stack',
+  [SectionId.Testimonials]: 'Reference',
+  [SectionId.Contact]: 'Contact',
+};
+
+/**
  * Resolves the next section identifier for the current navigation position.
  *
  * Uses the shared `navSections` order to look up the current section and

@@ -12,7 +12,9 @@ import GithubIcon from '../../Icon/GithubIcon';
 import InstagramIcon from '../../Icon/InstagramIcon';
 import LinkedInIcon from '../../Icon/LinkedInIcon';
 import TwitterIcon from '../../Icon/TwitterIcon';
+import HeaderLayout from '../../Layout/DarkSpecial/HeaderLayout';
 import SectionLayout from '../../Layout/DarkSpecial/SectionLayout';
+import Reveal from '../../Motion/Reveal';
 
 const ContactValueMap: Record<ContactType, ContactValue> = {
   [ContactType.Email]: {Icon: EnvelopeIcon, srLabel: 'Email'},
@@ -27,21 +29,32 @@ const ContactValueMap: Record<ContactType, ContactValue> = {
 
 const Contact: FC = memo(() => {
   const {headerText, description, items} = contact;
+
+  // Own id, matching the `-title` pattern of the other sections. Previously the
+  // heading reused the section id, which duplicated an id in the document.
+  const TitleId = `${SectionId.Contact}-title`;
+
   return (
     <SectionLayout
         IsMain={true}
-        className="bg-neutral-800"
+        className="bg-ink-950"
         sectionId={SectionId.Contact}>
-      <div className="flex flex-col gap-y-6">
+      <Reveal className="flex flex-col gap-y-6">
         <div className="flex flex-col gap-6 md:flex-row md:items-center">
-          <EnvelopeIcon className="hidden h-16 w-16 text-white md:block" />
-          <h2 className="text-2xl font-bold text-white"
-              id={SectionId.Contact}>{headerText}</h2>
+          <EnvelopeIcon className="hidden h-16 w-16 text-frost-100 md:block" />
+          {/* Same mechanism as the Skills header: the aurora hairline comes from
+              the semantic variant enum, not from a hand-written class. */}
+          <HeaderLayout
+            ClassName={null}
+            SetBorder="highlight"
+            UseVariantText="bright">
+            <h2 className="text-h2 font-bold" id={TitleId}>{headerText}</h2>
+          </HeaderLayout>
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <p className="prose leading-6 text-neutral-300">{description}</p>
+          <p className="prose leading-6 text-frost-300">{description}</p>
           <div className="order-2 col-span-1 md:order-1 ">
-            <dl className="flex flex-col space-y-4 text-base text-neutral-500 sm:space-y-2">
+            <dl className="flex flex-col space-y-4 text-base text-ink-400 sm:space-y-2">
               {items.map(({type, text, href}) => {
                 const {Icon, srLabel} = ContactValueMap[type];
                 return (
@@ -50,12 +63,12 @@ const Contact: FC = memo(() => {
                     <dd className="flex items-center">
                       <a
                         className={classNames(
-                          '-m-2 flex rounded-md p-2 text-neutral-100 hover:text-fuchsia-400 focus:outline-none focus:ring-2 focus:ring-fuchsia-400',
-                          {'hover:text-white': href},
+                          '-m-2 flex rounded-md p-2 text-frost-100 hover:text-accent-300 focus:outline-none focus:ring-2 focus:ring-accent-400',
+                          {'hover:text-frost-100': !href},
                         )}
                         href={href}
                         target="_blank">
-                        <Icon aria-hidden="true" className="h-4 w-4 flex-shrink-0 text-neutral-100 sm:h-5 sm:w-5" />
+                        <Icon aria-hidden="true" className="h-4 w-4 flex-shrink-0 text-frost-100 sm:h-5 sm:w-5" />
                         <span className="ml-3 text-sm sm:text-base">{text}</span>
                       </a>
                     </dd>
@@ -65,14 +78,15 @@ const Contact: FC = memo(() => {
             </dl>
           </div>
         </div>
-        <div className="flex flex-col items-stretch mt-4">
+        <div className="mt-4 flex flex-col items-stretch">
           <a href="mailto:martin@grellmann.eu?subject=Send from grellmann.app CV">
+            {/* v3.4 primary CTA — gradient fill retired (§6), solid primary-400 */}
             <button
-              className="inline-flex items-center justify-center text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-base px-8 py-4 me-2 mb-2 border border-cyan-500 w-full"
+              className="mb-2 inline-flex w-full items-center justify-center gap-x-2 rounded-full bg-primary-400 px-8 py-4 text-base font-semibold text-ink-950 shadow-e1 transition duration-200 ease-out hover:-translate-y-0.5 hover:bg-primary-300 hover:shadow-glow-primary-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950 motion-reduce:hover:transform-none"
               type="button">
               <svg
                 aria-hidden="true"
-                className="w-6 h-6 text-white me-2 ml-2"
+                className="h-6 w-6"
                 fill="currentColor"
                 viewBox="0 0 20 16"
                 xmlns="http://www.w3.org/2000/svg">
@@ -83,7 +97,7 @@ const Contact: FC = memo(() => {
             </button>
           </a>
         </div>
-      </div>
+      </Reveal>
     </SectionLayout>
   );
 });

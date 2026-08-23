@@ -76,10 +76,10 @@ const BPArticleLyt: FC<ContentArticleLytProps> = memo(
                 HeaderId={articleIds.idArticle}
                 HeaderItem={AlHeaderItem}
                 SetUnderline={true}
-                UnderlineClassName="mt-1 h-px w-2/3 border-b-2 border-fuchsia-400"
+                UnderlineClassName="mt-1 h-0.5 w-2/3 rounded bg-aurora"
               >
                 <ArticleTitleTag
-                  className="text-lg font-bold uppercase md:text-xl"
+                  className="text-h3 font-semibold uppercase"
                   id={articleIds.idMain}
                 >
                   {AlHeaderItem?.HdrTitle}

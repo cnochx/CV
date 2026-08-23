@@ -2,8 +2,14 @@ import type {Graph} from 'schema-dts';
 
 import {HomepageMetaDataDef} from './HomepageMetaDataDef';
 
-
-
+/**
+ * Timestamp of the deployed build, injected via `next.config.js`.
+ *
+ * Reported to crawlers as `dateModified`. Because the value is inlined at build
+ * time it is identical on server and client, unlike a runtime `new Date()`.
+ * The fallback only applies to tooling that runs outside a Next build.
+ */
+const BUILD_TIME: string = process.env.BUILD_TIME ?? new Date().toISOString();
 
 
 const structuredData: Graph = {
@@ -16,7 +22,7 @@ const structuredData: Graph = {
       name: 'Martin Grellmann — Senior Full-Stack Engineer, SAP Developer & Legacy Modernization',
       description:
         'Online CV of Martin Grellmann, Senior Full-Stack Engineer with 20+ years of experience. SAP S/4HANA and BTP development, ABAP custom code refactoring, AI-assisted modernization of legacy applications, travel and booking platforms, and full-stack web development with React, TypeScript, Node.js and PHP.',
-      dateModified: '2026-08-18T00:00:00+02:00',
+      dateModified: BUILD_TIME,
       inLanguage: 'en',
       isPartOf: {'@id': 'https://www.grellmann.app/#website'},
       mainEntity: {'@id': 'https://www.grellmann.app/#person'},
