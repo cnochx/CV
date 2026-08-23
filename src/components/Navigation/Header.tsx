@@ -7,6 +7,7 @@ import {FC, Fragment, memo, useCallback, useMemo, useState} from 'react';
 import {SectionId} from '../../data/SectionIdData';
 import {NavItemProps, NavProps} from '../../data/utilComp/UtilImportPropsDef';
 import {useNavObserver} from '../../hooks/useNavObserver';
+import {navLabels, navSections as sharedNavSections} from '../../utilComp/Nav/navSections';
 
 export const headerID = 'headerNav';
 
@@ -15,19 +16,9 @@ export const headerID = 'headerNav';
 const Header: FC = memo(() => {
   const [currentSection, setCurrentSection] = useState<SectionId | null>(null);
 
-  const navSections = useMemo(
-    () => [
-      SectionId.Hero,
-      SectionId.About,
-      SectionId.Contractor,
-      SectionId.Skills,
-      SectionId.CV,
-      SectionId.Education,
-      SectionId.Testimonials,
-      SectionId.Contact,
-    ],
-    [],
-  );
+  // Shared with the next-section jump control instead of keeping a second copy
+  // here, so the two orders cannot drift apart.
+  const navSections = useMemo(() => sharedNavSections, []);
 
   const handleSectionChange = useCallback((section: SectionId | null) => {
     if (section) {
@@ -65,7 +56,7 @@ const Header: FC = memo(() => {
  */
 const NAV_CTA_CLASS =
   'rounded-full border border-white/[.16] bg-white/5 px-4 py-1.5 text-sm font-semibold ' +
-  'text-frost-100 backdrop-blur-md transition duration-200 ease-out first-letter:uppercase ' +
+  'text-frost-100 backdrop-blur-md transition duration-200 ease-out ' +
   'hover:-translate-y-0.5 hover:scale-[1.03] hover:border-primary-300 hover:bg-primary-300 ' +
   'hover:text-ink-950 hover:shadow-glow-primary-lg motion-reduce:hover:transform-none ' +
   'focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 ' +
@@ -75,7 +66,7 @@ const DesktopNav: FC<NavProps> = memo(({navSections, currentSection, onSelectSec
   // v3.4 nav language (designsheet §6): inactive = muted, hovers with the cyan
   // response wash; active = fuchsia identity wash pill ("you are here").
   const baseClass =
-    'rounded-full p-1.5 px-3 font-bold first-letter:uppercase transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400';
+    'rounded-full p-1.5 px-3 font-bold transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400';
   const activeClass = classNames(baseClass, 'bg-primary-400/15 text-primary-400');
   const inactiveClass = classNames(baseClass, 'text-ink-400 sm:hover:bg-accent-400/15 sm:hover:text-accent-300');
 
@@ -131,7 +122,7 @@ const MobileNav: FC<NavProps> = memo(({navSections, currentSection, onSelectSect
   }, [onSelectSection]);
 
   const baseClass =
-    'rounded-full p-2 px-4 first-letter:uppercase transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400';
+    'rounded-full p-2 px-4 transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400';
   const activeClass = classNames(baseClass, 'bg-primary-400/15 font-bold text-primary-400');
   const inactiveClass = classNames(baseClass, 'font-medium text-frost-300');
 
@@ -214,7 +205,7 @@ const NavItem: FC<NavItemProps> = memo(
            scroll; SmoothScroll owns anchor navigation instead (and falls back
            to the native jump when Lenis is not active). */
         scroll={false}>
-        {section}
+        {navLabels[section] ?? section}
       </Link>
     );
   },
