@@ -6,7 +6,7 @@ export const CVContentDataFf: BaseAlContentDef = {
   AlCompany: 'Ferienhaus-Vermittlung fincaferien.de GmbH',
   AlCountry: 'Germany',
   AlDateEnd: '12/2019',
-  AlDateStrt: '04/2004',
+  AlDateStrt: '04/2002',
   AlDateCustom: true,
   AlDescription1: {
     DnHead: 'Web development, operations, optimization and technical infrastructure.',
@@ -17,7 +17,8 @@ export const CVContentDataFf: BaseAlContentDef = {
         <p>
           Developed and maintained websites and web applications with PHP, Drupal, HTML and CSS, managed Linux and
           network environments and improved traffic, performance and usability through technical SEO and
-          usability-focused optimization.
+          usability-focused optimization. Started in 04/2002 as a part-time role of about ten hours per week alongside my
+          apprenticeship as an Industrial Clerk, with full technical responsibility from 04/2004.
         </p>
       </>
     )
