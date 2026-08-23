@@ -70,7 +70,7 @@ export interface HeaderDataDef {
   /** Header configuration for the IC education subsection. */
   EducationIc: HeaderItem[];
 
-  /** Header configuration for the testimonials section (anchor: `foresight`). */
+  /** Header configuration for the testimonials section (anchor: `reference`). */
   TestimonialsMain: HeaderItem[];
 
   /** Header configuration for the main contact section. */

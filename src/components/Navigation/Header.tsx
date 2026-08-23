@@ -68,7 +68,7 @@ const DesktopNav: FC<NavProps> = memo(({navSections, currentSection, onSelectSec
   const baseClass =
     'rounded-full p-1.5 px-3 font-bold transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400';
   const activeClass = classNames(baseClass, 'bg-primary-400/15 text-primary-400');
-  const inactiveClass = classNames(baseClass, 'text-ink-400 sm:hover:bg-accent-400/15 sm:hover:text-accent-300');
+  const inactiveClass = classNames(baseClass, 'text-ink-400 lg:hover:bg-accent-400/15 lg:hover:text-accent-300');
 
   // §7.1: the Contact CTA is the geometric center (grid 1fr auto 1fr); the
   // remaining links split symmetrically around it.
@@ -90,8 +90,11 @@ const DesktopNav: FC<NavProps> = memo(({navSections, currentSection, onSelectSec
     ));
 
   return (
+    /* The full bar needs about 850px: eight labels plus the centred CTA. Below
+       `lg` it would run past the viewport edge (at `sm` the last items were cut
+       off entirely), so the burger menu takes over up to 1024px. */
     <header
-      className="fixed top-0 z-50 hidden w-full border-b border-white/10 bg-ink-950/60 p-4 backdrop-blur sm:block"
+      className="fixed top-0 z-50 hidden w-full border-b border-white/10 bg-ink-950/60 p-4 backdrop-blur lg:block"
       id={headerID}>
       <nav className="mx-auto grid max-w-screen-xl grid-cols-[1fr_auto_1fr] items-center gap-x-4">
         <div className="flex justify-end gap-x-4">{renderItems(leftSections)}</div>
@@ -130,7 +133,7 @@ const MobileNav: FC<NavProps> = memo(({navSections, currentSection, onSelectSect
     <>
       {/* §7.1: on mobile the Contact CTA stays visible beside the burger */}
       <Link
-        className="fixed right-16 top-2 z-40 rounded-full border border-white/[.16] bg-ink-950/70 px-4 py-2.5 text-sm font-semibold text-frost-100 backdrop-blur-md transition-colors duration-200 hover:border-primary-300 hover:bg-primary-300 hover:text-ink-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 sm:hidden"
+        className="fixed right-16 top-2 z-40 rounded-full border border-white/[.16] bg-ink-950/70 px-4 py-2.5 text-sm font-semibold text-frost-100 backdrop-blur-md transition-colors duration-200 hover:border-primary-300 hover:bg-primary-300 hover:text-ink-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 lg:hidden"
         href={`#${SectionId.Contact}`}
         onClick={handleContactClick}
         scroll={false}>
@@ -139,14 +142,14 @@ const MobileNav: FC<NavProps> = memo(({navSections, currentSection, onSelectSect
 
       <button
         aria-label="Menu Button"
-        className="fixed right-2 top-2 z-40 rounded-full bg-primary-400 p-2 ring-offset-ink-950/60 hover:bg-primary-300 focus:outline-none focus:ring-0 focus-visible:ring-2 focus-visible:ring-accent-400 focus-visible:ring-offset-2 sm:hidden"
+        className="fixed right-2 top-2 z-40 rounded-full bg-primary-400 p-2 ring-offset-ink-950/60 hover:bg-primary-300 focus:outline-none focus:ring-0 focus-visible:ring-2 focus-visible:ring-accent-400 focus-visible:ring-offset-2 lg:hidden"
         onClick={toggleOpen}>
         <Bars3BottomRightIcon className="h-8 w-8 text-ink-950" />
         <span className="sr-only">Open sidebar</span>
       </button>
 
       <Transition.Root as={Fragment} show={isOpen}>
-        <Dialog as="div" className="fixed inset-0 z-40 flex sm:hidden" onClose={toggleOpen}>
+        <Dialog as="div" className="fixed inset-0 z-40 flex lg:hidden" onClose={toggleOpen}>
           <Transition.Child
             as={Fragment}
             enter="transition-opacity ease-linear duration-300"

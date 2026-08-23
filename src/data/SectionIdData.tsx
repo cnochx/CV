@@ -9,7 +9,7 @@ export const SectionId = {
   CV: 'cv',
   Education: 'education',
   Portfolio: 'stack',
-  Testimonials: 'foresight',
+  Testimonials: 'reference',
   Contact: 'contact',
 } as const;
 
