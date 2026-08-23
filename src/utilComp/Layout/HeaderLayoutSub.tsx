@@ -26,6 +26,13 @@ const ICON_BUTTON_COLOR_MAP = {
   highlightAlt: {
     border: 'bg-accent-400',
     text: 'text-accent-400',
+  },
+  // Subordinate step for secondary areas (footer): the same aurora hairline and
+  // the same heading structure, only dimmed — secondary text colour and the
+  // gradient at 45% so it reads as a divider rather than a section marker.
+  quiet: {
+    border: 'bg-aurora opacity-45',
+    text: 'text-frost-300',
   }
 } as const;
 
@@ -85,11 +92,11 @@ export function getHeaderBorder(
 
   const c = ICON_BUTTON_COLOR_MAP[resolvedColor];
 
+  // Any known variant draws the underline; only an explicit null or undefined
+  // suppresses it. Listing the variants individually here meant every new one
+  // silently rendered without a line until it was added in two places.
   const borderRender =
-    setBorder === 'bright' ||
-    setBorder === 'dark' ||
-    setBorder === 'highlight' ||
-    setBorder === 'highlightAlt';
+    setBorder != null && setBorder in ICON_BUTTON_COLOR_MAP;
 
   return {
     borderRender: borderRender,

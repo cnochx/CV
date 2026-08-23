@@ -18,13 +18,13 @@ const Imprint: FC = memo(() => {
   return (
     <section className="flex gap-x-4 items-start">
       <article className="order-1 flex-col w-1/2 gap-y-4 md:order-2 flex">
-        {/* Same header mechanism as the page sections: the aurora hairline is
-            resolved through the semantic variant enum, not a local class. */}
+        {/* Same mechanism as the page sections, but on the `quiet` step: the
+            footer should stay subordinate to the content above it. */}
         <HeaderLayout
           ClassName={null}
-          SetBorder="highlight"
-          UseVariantText="bright">
-          <h2 className="text-h2 font-bold">{header}</h2>
+          SetBorder="quiet"
+          UseVariantText="quiet">
+          <h2 className="text-h3 font-semibold">{header}</h2>
         </HeaderLayout>
         <section className="w-1/2">
           {adressheader && <h3 className="font-bold text-frost-100">{adressheader}</h3>}
@@ -97,9 +97,9 @@ const Imprint: FC = memo(() => {
       <article className="order-3 flex flex-col w-1/2 gap-y-4">
         <HeaderLayout
           ClassName={null}
-          SetBorder="highlight"
-          UseVariantText="bright">
-          <h2 className="text-h2 font-bold">{headerLegal}</h2>
+          SetBorder="quiet"
+          UseVariantText="quiet">
+          <h2 className="text-h3 font-semibold">{headerLegal}</h2>
         </HeaderLayout>
         {legalContent && <section>{legalContent}</section>}
       </article>
