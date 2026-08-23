@@ -89,6 +89,18 @@
     will-change: transform;
   }
 
+  /* Aurora underline for elements that cannot use an <hr>.
+     A gradient cannot be expressed as a border-color, so the line is drawn as a
+     2px background strip pinned to the bottom edge: no extra element, no effect
+     on layout, and it works on flex containers like the accordion buttons where
+     an ::after would become a flex child. */
+  .aurora-underline {
+    background-image: var(--aurora);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 100% 2px;
+  }
+
   /* Clean Core shells (L0 decoration).
      Very slow, opposing rotations — the object should read as "alive" without
      ever competing with the headline in front of it. Transform only, so the

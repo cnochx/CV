@@ -76,7 +76,7 @@ const About: FC = memo(() => {
                   <li className="col-span-1 flex items-start gap-x-3" key={idx}>
                     {Icon && (
                       <span className="mt-0.5 flex w-7 shrink-0 justify-center">
-                        <Icon className="h-6 w-6 text-fuchsia-400" />
+                        <Icon className="h-6 w-6 text-primary-400" />
                       </span>
                     )}
                     <div>
