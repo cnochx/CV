@@ -12,6 +12,7 @@ import GithubIcon from '../../Icon/GithubIcon';
 import InstagramIcon from '../../Icon/InstagramIcon';
 import LinkedInIcon from '../../Icon/LinkedInIcon';
 import TwitterIcon from '../../Icon/TwitterIcon';
+import HeaderLayout from '../../Layout/DarkSpecial/HeaderLayout';
 import SectionLayout from '../../Layout/DarkSpecial/SectionLayout';
 import Reveal from '../../Motion/Reveal';
 
@@ -28,6 +29,11 @@ const ContactValueMap: Record<ContactType, ContactValue> = {
 
 const Contact: FC = memo(() => {
   const {headerText, description, items} = contact;
+
+  // Own id, matching the `-title` pattern of the other sections. Previously the
+  // heading reused the section id, which duplicated an id in the document.
+  const TitleId = `${SectionId.Contact}-title`;
+
   return (
     <SectionLayout
         IsMain={true}
@@ -36,8 +42,14 @@ const Contact: FC = memo(() => {
       <Reveal className="flex flex-col gap-y-6">
         <div className="flex flex-col gap-6 md:flex-row md:items-center">
           <EnvelopeIcon className="hidden h-16 w-16 text-frost-100 md:block" />
-          <h2 className="text-h2 font-bold text-frost-100"
-              id={SectionId.Contact}>{headerText}</h2>
+          {/* Same mechanism as the Skills header: the aurora hairline comes from
+              the semantic variant enum, not from a hand-written class. */}
+          <HeaderLayout
+            ClassName={null}
+            SetBorder="highlight"
+            UseVariantText="bright">
+            <h2 className="text-h2 font-bold" id={TitleId}>{headerText}</h2>
+          </HeaderLayout>
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <p className="prose leading-6 text-frost-300">{description}</p>
