@@ -8,17 +8,15 @@ const TILT_MAX_DEG = 4;
 /** Must outlast the CSS glide-back so the transform is only dropped at rest. */
 const TILT_SETTLE_MS = 450;
 
-/**
- * Grace period before a leave is honoured.
- *
- * The tilt rotates the surface, which moves its own edges. Right at the border
- * that can make the pointer alternate between inside and outside, so hover would
- * switch on and off repeatedly. Ignoring very short leaves absorbs that.
- */
-const LEAVE_GRACE_MS = 90;
-
 export interface ReactiveLight {
-  /** Ref to attach to the element that should catch the light. */
+  /**
+   * Ref for the element that receives the pointer events and is measured.
+   *
+   * This must be a wrapper that does **not** transform. Measuring the tilted
+   * element itself makes its own rotation move its hit area, which turns a
+   * pointer resting near the edge into an enter/leave oscillation. The CSS
+   * custom properties written here are inherited by the tilted child.
+   */
   ref: React.RefObject<HTMLElement>;
   /**
    * Motion classes for the current phase, to be merged into the element's
@@ -35,11 +33,6 @@ export interface ReactiveLight {
   onPointerMove: (event: ReactMouseEvent<HTMLElement>) => void;
   /** Handler easing light and tilt back to rest when the pointer leaves. */
   onPointerLeave: () => void;
-  /**
-   * Grace period in milliseconds that a consumer should wait before treating a
-   * leave as real, so hover-driven styling does not flicker at the edges either.
-   */
-  leaveGraceMs: number;
   /** True when the effect is active for this client. */
   isEnabled: boolean;
 }
@@ -205,7 +198,6 @@ export const useReactiveLight = (): ReactiveLight => {
     onPointerEnter,
     onPointerMove,
     onPointerLeave,
-    leaveGraceMs: allowPointerEffects ? LEAVE_GRACE_MS : 0,
     isEnabled: allowPointerEffects,
   };
 };

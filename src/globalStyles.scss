@@ -144,7 +144,14 @@
   .hover-stable::before {
     content: '';
     position: absolute;
-    inset: -6px;
+    /* Vertical only, and smaller than the smallest gap between neighbours.
+       The lift is 2px upwards, so 4px of vertical buffer is enough — expanding
+       sideways as well would make adjacent pills (gap-2 = 8px) overlap by 4px
+       each, and in that overlap the pointer would alternate between them. */
+    top: -4px;
+    right: 0;
+    bottom: -4px;
+    left: 0;
     z-index: 0;
   }
 

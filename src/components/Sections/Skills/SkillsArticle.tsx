@@ -1,5 +1,5 @@
 import {ChevronDownIcon, ChevronUpIcon} from '@heroicons/react/24/solid';
-import {FC, memo, MouseEvent, useCallback, useEffect, useRef} from 'react';
+import {FC, memo, MouseEvent, useCallback} from 'react';
 
 import {SkillItem} from '../../../data/Skills/SkillCollectionDef';
 import {SkillsArticleProps} from '../../../data/utilComp/UtilImportPropsDef';
@@ -38,23 +38,9 @@ const SkillsArticle: FC<SkillsArticleProps> = memo(
     // Tier 1: cursor sheen + ≤4° tilt on the glass surface (§5).
     const reactiveLight = useReactiveLight();
 
-    /** Pending leave, kept so a momentary edge flicker can cancel it. */
-    const leaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-    useEffect(
-      () => () => {
-        if (leaveTimerRef.current) clearTimeout(leaveTimerRef.current);
-      },
-      [],
-    );
-
     /** Sets the hover state and primes the tilt geometry for this hover. */
     const handleArticleEnter = useCallback(
       (event: MouseEvent<HTMLElement>) => {
-        if (leaveTimerRef.current) {
-          clearTimeout(leaveTimerRef.current);
-          leaveTimerRef.current = null;
-        }
         handleMouseEnter();
         reactiveLight.onPointerEnter(event);
       },
@@ -62,19 +48,15 @@ const SkillsArticle: FC<SkillsArticleProps> = memo(
     );
 
     /**
-     * Releases the hover state after a short grace period.
+     * Releases the hover state immediately.
      *
-     * The tilt moves the card's own edges, so a pointer resting near the border
-     * can leave and re-enter within a few frames. Acting on that immediately
-     * would flip the border and sheen back and forth.
+     * No debouncing: the wrapper that receives these events does not transform,
+     * so a leave is always a real leave. The previous grace period existed only
+     * to mask the oscillation caused by measuring the moving card itself.
      */
     const handleArticleLeave = useCallback(() => {
-      if (leaveTimerRef.current) clearTimeout(leaveTimerRef.current);
-      leaveTimerRef.current = setTimeout(() => {
-        leaveTimerRef.current = null;
-        handleMouseLeave();
-        reactiveLight.onPointerLeave();
-      }, reactiveLight.leaveGraceMs);
+      handleMouseLeave();
+      reactiveLight.onPointerLeave();
     }, [handleMouseLeave, reactiveLight]);
 
     const handleTriggerClick = useCallback(
@@ -109,14 +91,23 @@ const SkillsArticle: FC<SkillsArticleProps> = memo(
       : `h-8 w-8 shrink-0 transition-colors duration-200 ${SKILLS_SURFACE_TOKENS.iconInactive}`;
 
     return (
+      /* The pointer handlers and the measured geometry live on this wrapper,
+         which never transforms. Putting them on the card itself made its own
+         tilt move its hit area out from under the cursor: enter → rotate away →
+         leave → rotate back → enter, an oscillation that debouncing could only
+         slow down, never stop. The wrapper stays put, so a leave now means the
+         pointer really left. It also supplies the perspective, giving each card
+         its own vanishing point. */
+      <div
+        className="tilt-scene"
+        onMouseEnter={handleArticleEnter}
+        onMouseLeave={handleArticleLeave}
+        onMouseMove={reactiveLight.onPointerMove}
+        ref={reactiveLight.ref as React.RefObject<HTMLDivElement>}>
       <article
         className={articleClassName}
         id={ArticleId}
         onClick={toggleAccordion}
-        onMouseEnter={handleArticleEnter}
-        onMouseLeave={handleArticleLeave}
-        onMouseMove={reactiveLight.onPointerMove}
-        ref={reactiveLight.ref as React.RefObject<HTMLDivElement>}
         style={
           resolvedImgSrc
             ? {
@@ -183,6 +174,7 @@ const SkillsArticle: FC<SkillsArticleProps> = memo(
           )}
         </div>
       </article>
+      </div>
     );
   }
 );

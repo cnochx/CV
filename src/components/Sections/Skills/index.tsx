@@ -100,8 +100,8 @@ const Skills: FC = memo(() => {
         </div>
 
         <div className="mt-10 rounded-3xl border border-white/10 bg-white/5 p-6">
-          {/* tilt-scene gives the cards a shared vanishing point (Tier 1, §5) */}
-          <div className="tilt-scene grid w-full grid-cols-1 gap-6 md:grid-cols-2">
+          {/* Perspective sits on each card's own wrapper, not here */}
+          <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2">
 
             {SkillsCollectionData.map(
               (skillsCollection: SkillsCollection, index: number) => (
