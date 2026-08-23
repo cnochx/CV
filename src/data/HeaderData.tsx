@@ -278,6 +278,23 @@ const HeaderData: HeaderDataDef = {
     ImageSrc: '',
     ShowSpacer: false,
   }],
+  TestimonialsMain: [{
+    Variant: null,
+    Title: 'References / Testimonials',
+    SubTitle: '',
+    Description: (
+      <>
+        <p>
+          Quotes taken from written employment references and project feedback. They describe how the
+          collaboration worked in practice — on modernization projects, in SAP and web teams, and in
+          direct contact with business stakeholders.
+        </p>
+      </>
+    ),
+    ImageSrc: '',
+    ShowSpacer: false,
+  }],
+
   ContactMain: [{
     Variant: null,
     Title: '',

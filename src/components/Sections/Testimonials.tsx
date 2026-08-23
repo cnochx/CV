@@ -4,10 +4,12 @@ import {FC, memo, UIEventHandler, useCallback, useEffect, useMemo, useRef, useSt
 import {isApple, isMobile} from '../../config';
 import {testimonial} from '../../data/data';
 import {Testimonial} from '../../data/dataDef';
+import HeaderData from '../../data/HeaderData';
 import {SectionId} from '../../data/SectionIdData'
 import useInterval from '../../hooks/useInterval';
 import useWindow from '../../hooks/useWindow';
 import QuoteIcon from '../Icon/QuoteIcon';
+import HeaderLayout from '../Layout/DarkSpecial/HeaderLayout';
 import SectionLayout from '../Layout/DarkSpecial/SectionLayout';
 import Reveal from '../Motion/Reveal';
 
@@ -22,6 +24,12 @@ const Testimonials: FC = memo(() => {
   const {width} = useWindow();
 
   const {imageSrc, testimonials} = testimonial;
+
+  const {
+    TestimonialsMain: [{Title, Description}],
+  } = HeaderData;
+
+  const TitleId = `${SectionId.Testimonials}-title`;
 
   const resolveSrc = useMemo(() => {
     if (!imageSrc) return undefined;
@@ -83,7 +91,22 @@ const Testimonials: FC = memo(() => {
           {'bg-ink-900': !imageSrc},
         )}
         style={imageSrc ? {backgroundImage: `url(${resolveSrc}`} : undefined}>
-        <Reveal className="z-10 w-full max-w-screen-md px-4 lg:px-0">
+        <Reveal className="z-10 flex w-full max-w-screen-md flex-col gap-y-8 px-4 lg:px-0">
+          {/* Same header mechanism as the other sections: the aurora hairline
+              comes from the semantic variant enum. */}
+          <header className="flex flex-col gap-y-3">
+            <HeaderLayout
+              ClassName={null}
+              SetBorder="highlight"
+              UseVariantText="bright">
+              <h2 className="text-h2 font-bold" id={TitleId}>
+                {Title}
+              </h2>
+            </HeaderLayout>
+
+            <p className="prose prose-sm leading-7 text-frost-300 sm:prose-base">{Description}</p>
+          </header>
+
           <div className="flex flex-col items-center gap-y-6 rounded-xl border border-white/10 bg-ink-950/50 p-6 shadow-e1 backdrop-blur-sm">
             <div
               aria-label="Quotes from employment reference letters"

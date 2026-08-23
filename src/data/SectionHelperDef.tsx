@@ -1,26 +1,12 @@
 
-/**
- * Defines the semantic color tokens used by section style helpers.
- *
- * Keeps shared color variant values consistent across background, text,
- * border, and ring class resolution.
+/*
+ * `SetColor` and `Tailwind` lived here to support a runtime class builder in
+ * SectionHelper. That builder was never called, and several of its tokens
+ * (purple, pink, stone) named colors that v3.4 retired. Both were removed
+ * together with it — the semantic variants that are actually in use live in
+ * HeaderLayoutSub and IconButtonLayoutSub, where they are full literal class
+ * names that Tailwind's scanner can see.
  */
-export type SetColor =
-  | 'bright'
-  | 'dark'
-  | 'mediumDark'
-  | 'mediumBright'
-  | 'highlight'
-  | 'highlightAlt'
-  | 'purpleDef'
-  | 'purpleDark'
-  | 'purplePale'
-  | 'pinkDef'
-  | 'stoneBright'
-  | 'stoneMediumBright'
-  | 'stoneDef'
-  | 'default'
-  | 'none';
 
 /**
  * Defines the supported hover style values.
@@ -31,14 +17,3 @@ export type SetColor =
 export type SetHover =
   | string
   | 'none';
-
-export type Tailwind =
-  | 'bg'
-  | 'text'
-  | 'border'
-  | 'ring'
-  | 'stroke'
-  | 'from'
-  | 'to'
-  | 'offset'
-  | undefined;
