@@ -13,7 +13,7 @@ export const footerItems: FooterItems = {
       </span>
     </>
   ),
-  copyrightText: '- Changes written by Martin Grellmann',
+  copyrightText: '- Changes written by Martin Grellmann, AI Assisted (Claude Opus 5)',
 };
 
 /**
