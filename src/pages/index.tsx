@@ -29,6 +29,10 @@ const Header = dynamic(() => import('../components/Navigation/Header'), {ssr: fa
  * - Reads the page-level metadata from `homePageMeta`.
  * - Passes SEO and social preview values to the `Page` layout component.
  * - Composes the homepage section flow from hero content through footer content.
+ * - Wraps the content sections in a `<main>` landmark. `Header` (banner) and
+ *   `Footer` (contentinfo) stay outside it, so screen-reader users get the
+ *   three top-level landmarks the WAI-ARIA authoring practices expect and
+ *   Lighthouse's "document has a main landmark" audit passes.
  *
  * @returns {JSX.Element} Rendered homepage output.
  */
@@ -67,14 +71,16 @@ const Home: FC = memo(() => {
       twitterCreator={twitterCreator}
       url={url}>
       <Header />
-      <Hero />
-      <Apout />
-      <Contractor />
-      <Skills />
-      <CV />
-      <Education />
-      <Testimonials />
-      <Contact />
+      <main id="main">
+        <Hero />
+        <Apout />
+        <Contractor />
+        <Skills />
+        <CV />
+        <Education />
+        <Testimonials />
+        <Contact />
+      </main>
       <Footer />
     </Page>
   );
