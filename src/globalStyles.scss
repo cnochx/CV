@@ -89,6 +89,35 @@
     will-change: transform;
   }
 
+  /* Clean Core shells (L0 decoration).
+     Very slow, opposing rotations — the object should read as "alive" without
+     ever competing with the headline in front of it. Transform only, so the
+     whole thing stays on the compositor. */
+  .cc-shell {
+    animation: cc-orbit 64s linear infinite;
+  }
+
+  .cc-shell--middle {
+    animation-duration: 92s;
+    animation-direction: reverse;
+  }
+
+  .cc-shell--inner {
+    animation-duration: 120s;
+  }
+
+  @keyframes cc-orbit {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cc-shell {
+      animation: none;
+    }
+  }
+
   /* Stable hover hitbox.
      Elements that lift on hover move out from under the cursor. At the edge that
      produces a feedback loop: hover lifts the element, the pointer is no longer

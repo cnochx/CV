@@ -9,6 +9,7 @@ import SkillsElmnt from '../../Layout/ExtElmnt/SkillsElmnt';
 import ArticleExtShell from '../../Layout/ExtShell/ArticleExtShell';
 import HeaderExtShell from '../../Layout/ExtShell/HeaderExtShell';
 import SectionExtShell from '../../Layout/ExtShell/SectionExtShell';
+import CleanCore from '../../Motion/CleanCore';
 import GlowParallax from '../../Motion/GlowParallax';
 import Reveal from '../../Motion/Reveal';
 import NavSections from '../../Navigation/NavSections';
@@ -70,6 +71,9 @@ const Hero: FC = memo(() => {
     >
       {/* L0 glow layer — pure decoration with scroll parallax, zero layout impact (§5) */}
       <GlowParallax />
+
+      {/* L0 hero object: SSR'd SVG poster, optionally upgraded to WebGL (§7.2/§8) */}
+      <CleanCore />
 
       <div className="relative z-10 flex min-h-screen w-full items-center justify-center px-4 py-24 lg:px-8">
 
