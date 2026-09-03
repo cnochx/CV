@@ -130,7 +130,7 @@ const structuredData: Graph = {
           '@type': 'EducationalOccupationalCredential',
           name: 'Certified Professional for Software Architecture – Foundation Level (CPSA-F) training, certificate of attendance',
           credentialCategory: 'Certificate of Attendance',
-          url: 'https://grellmann.app/assets/reference/en/translation-certificate_attendance_CPSA-F.pdf',
+          url: 'https://grellmann.app/assets/reference/en/translation_certificate_attendance_cpsa_f.pdf',
           dateCreated: '2025-07-18',
           recognizedBy: {
             '@type': 'Organization',
