@@ -23,7 +23,7 @@ export const EductionContentDataSaIs: BaseAlContentDef = {
                   architectures.</p>
 
               <p>Certificate of attendance for 14–17 July 2025, issued on 18 July 2025 (
-                  <a className="underline" href="/assets/reference/en/translation-certificate_attendance_CPSA-F.pdf"
+                  <a className="underline" href="/assets/reference/en/translation_certificate_attendance_cpsa_f.pdf"
                      rel="noopener noreferrer" target="_blank">English translation</a>,{' '}
                   <a className="underline" href="/assets/reference/de/teilnahmebescheinigung_cpsa_f.pdf"
                      rel="noopener noreferrer" target="_blank">German original</a>
