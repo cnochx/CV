@@ -128,6 +128,18 @@ const structuredData: Graph = {
         },
         {
           '@type': 'EducationalOccupationalCredential',
+          name: 'Certified Professional for Software Architecture – Foundation Level (CPSA-F) training, certificate of attendance',
+          credentialCategory: 'Certificate of Attendance',
+          url: 'https://grellmann.app/assets/reference/en/translation-certificate_attendance_CPSA-F.pdf',
+          dateCreated: '2025-07-18',
+          recognizedBy: {
+            '@type': 'Organization',
+            name: 'Software Academy by intecsoft group',
+            url: 'https://www.software-academy.de',
+          },
+        },
+        {
+          '@type': 'EducationalOccupationalCredential',
           name: 'Full Stack Web Developer',
           credentialCategory: 'Vocational Training Certificate',
           dateCreated: '2021-08-01',
@@ -142,7 +154,7 @@ const structuredData: Graph = {
           '@type': 'EducationalOrganization',
           name: 'Software Academy by intecsoft',
           description:
-            'Software architecture programme following the iSAQB CPSA-F Foundation Level curriculum, 2025 to 2026. Foundation Level training completed, certification exam planned for Q4 2026.',
+            '5-day online training following the iSAQB CPSA-F Foundation Level curriculum, July 2025 (certificate of attendance dated 18 July 2025). Certification exam planned for Q4 2026.',
         },
         {
           '@type': 'EducationalOrganization',

@@ -40,7 +40,7 @@ export const AboutData: AboutDataDef = {
     },
     {
       label: 'Architecture',
-      text: 'iSAQB CPSA-F Foundation Level training completed, exam planned for Q4 2026',
+      text: 'iSAQB CPSA-F Foundation Level training completed (July 2025, certificate of attendance), exam planned for Q4 2026',
       Icon: AcademicCapIcon,
     },
     {label: 'Certifications', text: 'Professional Scrum Master I (Scrum.org), Full-Stack Web Developer certification', Icon: AcademicCapIcon},

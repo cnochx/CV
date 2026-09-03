@@ -30,7 +30,7 @@ export const EductionContentDataTfswdIds: BaseAlContentDef = {
   AlLocation: 'Leipzig',
   AlCountry: 'Germany',
   AlDateStrt: '01/2020',
-  AlDateEnd: '01/021',
+  AlDateEnd: '01/2021',
   AlDateCustom: true,
   AlDivide: true,
 }
