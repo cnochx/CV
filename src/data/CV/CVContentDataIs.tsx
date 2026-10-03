@@ -5,7 +5,7 @@ import {BaseAlContentDef} from '../utilComp/GeneralDef';
 export const CVContentDataIs: BaseAlContentDef = {
   AlCompany: 'Intecsoft GmbH & Co',
   AlCountry: 'Germany',
-  AlDateEnd: 'Present',
+  AlDateEnd: '09/2026',
   AlDateStrt: '01/2025',
   AlDateCustom: true,
   AlDescription1: {
@@ -23,6 +23,15 @@ export const CVContentDataIs: BaseAlContentDef = {
           Worked closely with business stakeholders, solution managers and developers to align implementation with
           functional requirements.
         </p>
+        <p>
+          The employment ended on 30 September 2026 for operational reasons. Reference letter, overall rating very
+          good (
+          <a className="underline" href="/assets/reference/en/translation_reference_letter_intecsoft.pdf"
+             rel="noopener noreferrer" target="_blank">English translation</a>,{' '}
+          <a className="underline" href="/assets/reference/de/arbeitszeugnis_intecsoft.pdf"
+             rel="noopener noreferrer" target="_blank">German original</a>
+          ).
+        </p>
       </>
     )
   },
@@ -32,6 +41,11 @@ export const CVContentDataIs: BaseAlContentDef = {
     DnText: (
       <>
           <ul className="list-disc space-y-4 pl-6">
+            <li>Converted existing procedural components into object-oriented ABAP components.</li>
+            <li>Analysed the existing intecsoft SAP solution Collection Sense IS-U and programmed and extended the
+              intecsoft SAP solution Collection Sense FI.</li>
+            <li>Supported interface development in a customer project in the area of SAP PSM (Public Sector
+              Management).</li>
             <li>Designed and implemented technical concepts for API interfaces in an
               S/4HANA project, improving integration readiness and long-term maintainability.</li>
             <li>Refactored an existing SAP Business Suite application with the goal of future-proofing
