@@ -53,8 +53,8 @@ export const ContractorContentDataCvs: BaseAlContentDef = {
           contractor variant.
         </p>
         <p>
-          All of them are three to four pages, in English, and include the reference letters and
-          certificates. If you need a German version or a specific format, just ask.
+          All of them are three to four pages, in English, with linked certificates; reference letters are
+          available on request. If you need a German version or a specific format, just ask.
         </p>
       </>
     ),
