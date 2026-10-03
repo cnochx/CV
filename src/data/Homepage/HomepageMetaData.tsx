@@ -196,11 +196,6 @@ const structuredData: Graph = {
       worksFor: [
         {
           '@type': 'Organization',
-          name: 'intecsoft GmbH & Co. KG',
-          url: 'https://www.intecsoft.de',
-        },
-        {
-          '@type': 'Organization',
           name: 'Ferienhausvermittlung fincaferien',
           url: 'https://www.fincaferien.de',
         },
