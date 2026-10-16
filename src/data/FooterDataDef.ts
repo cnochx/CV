@@ -14,7 +14,6 @@ export interface ImprintItems {
   header: string;
   adressheader: string;
   personInCharge: string;
-  addressGermany: AddressItem[];
   addressBrazil: AddressItem[];
   onlineAddress: LinkItem[];
   headerLegal: string;

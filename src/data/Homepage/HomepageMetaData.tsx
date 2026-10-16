@@ -12,6 +12,18 @@ import {HomepageMetaDataDef} from './HomepageMetaDataDef';
 const BUILD_TIME: string = process.env.BUILD_TIME ?? new Date().toISOString();
 
 
+/**
+ * Postal address, identical to the imprint (`FooterData.tsx`).
+ */
+const POSTAL_ADDRESS = {
+  '@type': 'PostalAddress',
+  streetAddress: 'Sitio Cristal, 5, Povoado do Moinho',
+  addressLocality: 'Alto Paraíso de Goiás',
+  addressRegion: 'GO',
+  postalCode: '73770-000',
+  addressCountry: 'BR',
+} as const;
+
 const structuredData: Graph = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -55,28 +67,17 @@ const structuredData: Graph = {
       image: {'@id': 'https://www.grellmann.app/#primaryimage'},
       jobTitle: 'Senior Full-Stack Engineer, SAP Developer & Modernization Architect',
       description:
-        'Senior Full-Stack Engineer and SAP Developer with 20+ years experience. SAP S/4HANA and BTP, ABAP Objects, CDS, OData, Fiori/UI5 and Clean Core, custom code refactoring, AI-assisted legacy modernization, travel and booking platforms, React, TypeScript, Node.js and PHP. Based in Goiás, Brazil and Leipzig, Germany.',
+        'Senior Full-Stack Engineer and SAP Developer with 20+ years experience. SAP S/4HANA and BTP, ABAP Objects, CDS, OData, Fiori/UI5 and Clean Core, custom code refactoring, AI-assisted legacy modernization, travel and booking platforms, React, TypeScript, Node.js and PHP. Based in Goiás, Brazil.',
+      address: POSTAL_ADDRESS,
       homeLocation: {
         '@type': 'Place',
-        name: 'Brazil',
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'Alto Paraíso de Goiás',
-          addressRegion: 'Goiás',
-          addressCountry: 'BR',
-        },
+        name: 'Alto Paraíso de Goiás, Goiás, Brazil',
+        address: POSTAL_ADDRESS,
       },
-      workLocation: {
-        '@type': 'Place',
-        name: 'Leipzig, Saxony, Germany',
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'Leipzig',
-          addressRegion: 'Saxony',
-          addressCountry: 'DE',
-        },
+      nationality: {
+        '@type': 'Country',
+        name: 'Germany',
       },
-      nationality: 'German',
       knowsAbout: [
         'SAP BTP',
         'SAP S/4HANA',
@@ -118,12 +119,12 @@ const structuredData: Graph = {
           '@type': 'EducationalOccupationalCredential',
           name: 'Professional Scrum Master I (PSM I)',
           credentialCategory: 'Professional Certification',
-          url: 'https://scrum.org/certificates/542876',
+          url: 'https://www.scrum.org/certificates/542876',
           dateCreated: '2020-06-08',
           recognizedBy: {
             '@type': 'Organization',
             name: 'Scrum.org',
-            url: 'https://scrum.org',
+            url: 'https://www.scrum.org',
           },
         },
         {
@@ -142,10 +143,32 @@ const structuredData: Graph = {
           '@type': 'EducationalOccupationalCredential',
           name: 'Full Stack Web Developer',
           credentialCategory: 'Vocational Training Certificate',
+          url: 'https://grellmann.app/assets/reference/en/translation_certificate_full_stack_web_developer.pdf',
           dateCreated: '2021-08-01',
           recognizedBy: {
             '@type': 'Organization',
-            name: 'indisoft GmbH',
+            name: 'Indisoft GmbH',
+          },
+        },
+        {
+          '@type': 'EducationalOccupationalCredential',
+          name: 'Agile Project Management (Scrum and Kanban)',
+          credentialCategory: 'Training Certificate',
+          url: 'https://grellmann.app/assets/reference/en/translation_certificate_agile_project_management.pdf',
+          recognizedBy: {
+            '@type': 'Organization',
+            name: 'Indisoft GmbH',
+          },
+        },
+        {
+          '@type': 'EducationalOccupationalCredential',
+          name: 'Object-Oriented PHP',
+          credentialCategory: 'Course Certificate',
+          url: 'https://grellmann.app/assets/reference/de/oop_php_udemy.pdf',
+          recognizedBy: {
+            '@type': 'Organization',
+            name: 'Udemy',
+            url: 'https://www.udemy.com',
           },
         },
       ],
@@ -158,7 +181,7 @@ const structuredData: Graph = {
         },
         {
           '@type': 'EducationalOrganization',
-          name: 'indisoft GmbH',
+          name: 'Indisoft GmbH',
           description: 'Vocational retraining as Full-Stack Web Developer with agile project management, 2020 to 2021.',
         },
         {
