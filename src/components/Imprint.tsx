@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import {FC, memo} from 'react';
+import {FC, Fragment, memo} from 'react';
 
 import {imprintItems} from '../data/FooterData';
 import HeaderLayout from './Layout/DarkSpecial/HeaderLayout';
@@ -9,7 +9,6 @@ const Imprint: FC = memo(() => {
     header,
     adressheader,
     personInCharge,
-    addressGermany,
     addressBrazil,
     onlineAddress,
     headerLegal,
@@ -35,35 +34,16 @@ const Imprint: FC = memo(() => {
               </p>
             </>
           )}
-          {addressGermany && (
+          {addressBrazil.length > 0 && (
             <>
               <hr className="my-4" />
-              <address>
-                <ul>
-                  {addressGermany.map(({aiKey, text}) => {
-                    return (
-                      <li className="text-ink-400" key={aiKey}>
-                        {text}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </address>
-            </>
-          )}
-          {addressBrazil && (
-            <>
-              <hr className="my-4" />
-              <address>
-                <ul>
-                  {addressBrazil.map(({aiKey, text}) => {
-                    return (
-                      <li className="text-frost-100" key={aiKey}>
-                        {text}
-                      </li>
-                    );
-                  })}
-                </ul>
+              <address className="text-frost-100">
+                {addressBrazil.map(({aiKey, text}, index) => (
+                  <Fragment key={aiKey}>
+                    {text}
+                    {index < addressBrazil.length - 1 && <br />}
+                  </Fragment>
+                ))}
               </address>
             </>
           )}

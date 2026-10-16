@@ -28,7 +28,6 @@ export const CVSectionData:BaseIndexContentDef = {
         <p className="mt-4">Focused on scalable business applications, Knowledge of clean architecture and SOLID principles.</p>
         <ul className="mt-4">
           <li>Goiás, Brazil | Timezone: America/Sao_Paulo, BRT, UTC−03:00, no DST)</li>
-          <li>Leipzig, Germany | Timezone: Europe/Berlin, CET/CEST, UTC+01:00 / UTC+02:00)</li>
         </ul>
       </>)
   }},

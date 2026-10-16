@@ -16,7 +16,7 @@ export const EductionContentDataApIds: BaseAlContentDef = {
     DnHead: 'Intensive agile project management training',
     DnText: (
       <>
-        <p>Intensive agile project management (Scrum) training at Indisoft GmbH (Leipzig) with focus on Scrum and Kanban
+        <p>Intensive agile project management (Scrum) training at Indisoft GmbH with focus on Scrum and Kanban
           (05/2020–06/2020). Covered Scrum roles, events, and artifacts, agile planning and scaling,
           Scrum simulations in practice, and Kanban principles such as WIP limits and continuous improvement.
           Successfully completed the program and obtained the Professional Scrum Master I (PSM I) certification
@@ -24,7 +24,6 @@ export const EductionContentDataApIds: BaseAlContentDef = {
       </>
     )
   },
-  AlLocation: 'Leipzig',
   AlCountry: 'Germany',
   AlDateStrt: '05/2020',
   AlDateEnd: '06/2020',

@@ -17,7 +17,7 @@ export const EductionContentDataTfswdIds: BaseAlContentDef = {
     DnHead: 'Full-Stack Web Developer training covering modern web development',
     DnText: (
       <>
-        <p>One‑year, practice‑oriented Full‑Stack Web Developer program in Leipzig (01/2020–01/2021) covering modern web
+        <p>One‑year, practice‑oriented Full‑Stack Web Developer program (01/2020–01/2021) covering modern web
           development with HTML5, CSS3, JavaScript, jQuery/AJAX, PHP, and MySQL, combined with Linux/server administration
           and content‑management systems. The curriculum included responsive web design, WordPress and TYPO3 for
           developers, e‑commerce and shop systems, SEO/SEA, social media marketing, and project work, linking
@@ -27,7 +27,6 @@ export const EductionContentDataTfswdIds: BaseAlContentDef = {
       </>
     ),
   },
-  AlLocation: 'Leipzig',
   AlCountry: 'Germany',
   AlDateStrt: '01/2020',
   AlDateEnd: '01/2021',

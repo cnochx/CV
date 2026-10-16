@@ -62,7 +62,6 @@ export const CVContentDataSc: BaseAlContentDef = {
   },
   AlId: 'software_developer_linux_administrator_sc',
   AlKey: 4,
-  AlLocation: 'Leipzig',
   AlRole: 'Contract-based',
   AlDivide: true,
   AlSkills: {

@@ -33,7 +33,6 @@ export const CVContentDataIds: BaseAlContentDef = {
   },
   AlId: 'training_Full-Stack_Web_Developer_is',
   AlKey: 5,
-  AlLocation: 'Leipzig',
   AlRole: 'Certification',
   AlDivide: true,
 }

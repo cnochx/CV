@@ -23,7 +23,7 @@ export const AboutData: AboutDataDef = {
   description: ``,
   aboutItems: [
     {label: 'Location',
-      text: 'Goiás, Brazil and Leipzig, Germany',
+      text: 'Goiás, Brazil',
       Icon: MapIcon},
     {label: 'Nationality',
       text: 'German citizen / unrestricted work and residence permit in Brazil',

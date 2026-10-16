@@ -23,17 +23,12 @@ export const imprintItems: ImprintItems = {
   header: 'Imprint',
   adressheader: 'Person in charge / Responsibility',
   personInCharge: 'Martin Grellmann',
-  addressGermany: [
-    {
-      aiKey: 0,
-      text: 'Leipzig, Germany',
-    },
-  ],
   addressBrazil: [
-    {
-      aiKey: 0,
-      text: 'Alto Paraíso de Goiás, Goiás, Brazil',
-    },
+    {aiKey: 0, text: 'Sitio Cristal, 5'},
+    {aiKey: 1, text: 'Povoado do Moinho'},
+    {aiKey: 2, text: 'Alto Paraíso de Goiás, Goiás'},
+    {aiKey: 3, text: '73770-000'},
+    {aiKey: 4, text: 'Brasil'},
   ],
   onlineAddress: [
     {
